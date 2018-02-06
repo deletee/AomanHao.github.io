@@ -78,5 +78,5 @@ theme: yilia
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/AomanHao.github.io
+  repository: https://github.com/AomanHao/AomanHao.github.io
   branch: master
