@@ -157,19 +157,115 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hexo_2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/06/hexo/">hexo-github博客首页菜单中文乱码两种解决方案</a>
+      <a class="article-title" href="/2018/02/08/hexo_2/">hexo博客yilia主题_more截断文章_多标签添加</a>
     </h1>
   
 
         
-        <a href="/2018/02/06/hexo/" class="archive-article-date">
+        <a href="/2018/02/08/hexo_2/" class="archive-article-date">
+  	<time datetime="2018-02-08T09:00:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下均为自己遇到的问题并加以修改或者纠正.</p>
+<p>在文章下方可以使用more语句进行截断，这样博客首页只会出现文章的前面一小部分，看起来很清爽简约</p>
+<blockquote>
+<p>或者</p>
+<p>anguage: zh-CN</p>
+<figure class="highlight plain"><figcaption><span>```//在需要阶段的地方插入该代码语句</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt;</span><br><span class="line">&gt; aa</span><br><span class="line"></span><br><span class="line">在这里，yilia主题会判断含有`&lt;!--more--&gt;`的位置，然后文章截断两部分，第一部分展示在博客首页，第二部分即上方的aa只能点开展开全文，才能继续阅读文章。</span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line">截断效果如下图：</span><br><span class="line"></span><br><span class="line">![效果](http://upload-images.jianshu.io/upload_images/6280966-dff71bcc18df7583.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">在这里我对yilia主题做了修改</span><br><span class="line"></span><br><span class="line">原始效果为：</span><br><span class="line"></span><br><span class="line">![原始效果](http://upload-images.jianshu.io/upload_images/6280966-2bc7446857bc04e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">修改后为：去掉了more按钮，打开文章可以点击文章或者点击展开全文</span><br><span class="line"></span><br><span class="line">![修改效果](http://upload-images.jianshu.io/upload_images/6280966-51ea736ffd940d2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">做法很简单，进入theme目录，打开yilia目录下的_config.yml文件，修改excerpt_link参数：</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>excerpt_link：之后的more单词换成空格<br>注：‘excerpt_link： ’。其中：后有一个空格键<br>```</p>
+<p>修改图如下图</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/6280966-c3ec0b215421bcee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>如何给文章加多个标签：</p>
+<p>修改如下图，格式为 [tag1, tag2]</p>
+<p>注：逗号之后要有一个空格。[tag1, tag2]= [tag1+逗号+空格+tag2]</p>
+<p>修改如下图所示：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/6280966-62305c940fee2082.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/02/08/hexo_2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo_1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/06/hexo_1/">hexo-github博客首页菜单中文乱码两种解决方案</a>
+    </h1>
+  
+
+        
+        <a href="/2018/02/06/hexo_1/" class="archive-article-date">
   	<time datetime="2018-02-06T15:22:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-06</time>
 </a>
         
@@ -211,7 +307,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/06/hexo/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/02/06/hexo_1/">展开全文 >></a>
         </p>
       
 
@@ -473,15 +569,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>
