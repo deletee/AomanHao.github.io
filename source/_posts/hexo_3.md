@@ -15,7 +15,7 @@ hexo博客yilia主题,左侧栏目有一个全部文章的按钮，刚开始开�
 -------------
 
 
-<h1> 1、查看node版本 <h1/>
+# 1、查看node版本
 
 
 ```win键+R键``` 打开命令控制台，输入代码  ```node -v``` 查看node版本，如下图：
@@ -24,7 +24,7 @@ hexo博客yilia主题,左侧栏目有一个全部文章的按钮，刚开始开�
 
 只要node的版本高于6.2就行
 
-<h1> 2、运行命令行 <h1/>
+# 2、运行命令行
 
 
 博客根目录下运行命令行 ```npm i  hexo-generator-json-content --save```
@@ -35,7 +35,7 @@ hexo博客yilia主题,左侧栏目有一个全部文章的按钮，刚开始开�
 
 ![这里写图片描述](http://upload-images.jianshu.io/upload_images/6280966-7bdc3639ca05cc64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-<h1> 3、配置文件 <h1/>
+# 3、配置文件
 
 
 博客根目录下，找到_config.yml，打开找一个空白地方复制一下配置信息：
@@ -78,7 +78,7 @@ jsonContent:
     tags: true
 ```
 
-<h4>注（重点）：细节处--复制的信息格式要调好 <h4/>
+#### 注（重点）：细节处--复制的信息格式要调好
 
 
 1、配置文件内找空白处粘贴文件
