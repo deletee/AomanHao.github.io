@@ -99,3 +99,9 @@ deploy:
   type: git
   repository: https://github.com/AomanHao/AomanHao.github.io
   branch: master
+
+# 自动生成sitemap
+sitemap:
+path: sitemap.xml
+baidusitemap:
+path: baidusitemap.xml
