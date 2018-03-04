@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.haoloverongrong.top">
-  <title>Archives: 2018/2 | AomanHao</title>
+  <title>数据库Mysql——2 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AomanHao">
-<meta property="og:url" content="http://www.haoloverongrong.top/archives/2018/02/index.html">
+  <meta name="description" content="1.数据库约束– 1 默认值约束(default)– 2 非空约束( not null )– 3 唯一约束(unique)CREATE TABLE test(    id INT  UNIQUE ,– 唯一    NAME VARCHAR(20) NOT NULL, – 非空    gender VARCHAR(2) DEFAULT ‘男’ – 默认值约束); – 4 主键约束(primary k">
+<meta name="keywords" content="Mysql,java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库Mysql——2">
+<meta property="og:url" content="http://www.haoloverongrong.top/2018/03/04/database_2/index.html">
 <meta property="og:site_name" content="AomanHao">
+<meta property="og:description" content="1.数据库约束– 1 默认值约束(default)– 2 非空约束( not null )– 3 唯一约束(unique)CREATE TABLE test(    id INT  UNIQUE ,– 唯一    NAME VARCHAR(20) NOT NULL, – 非空    gender VARCHAR(2) DEFAULT ‘男’ – 默认值约束); – 4 主键约束(primary k">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-04T13:06:25.524Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AomanHao">
+<meta name="twitter:title" content="数据库Mysql——2">
+<meta name="twitter:description" content="1.数据库约束– 1 默认值约束(default)– 2 非空约束( not null )– 3 唯一约束(unique)CREATE TABLE test(    id INT  UNIQUE ,– 唯一    NAME VARCHAR(20) NOT NULL, – 非空    gender VARCHAR(2) DEFAULT ‘男’ – 默认值约束); – 4 主键约束(primary k">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -152,221 +157,162 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-database_2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据库Mysql——2
+    </h1>
+  
+
+        
+        <a href="/2018/03/04/database_2/" class="archive-article-date">
+  	<time datetime="2018-03-04T04:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-04</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-数据库约束"><a href="#1-数据库约束" class="headerlink" title="1.数据库约束"></a>1.数据库约束</h1><p>– 1 默认值约束(default)<br>– 2 非空约束( not null )<br>– 3 唯一约束(unique)<br>CREATE TABLE test(<br>    id INT  UNIQUE ,– 唯一<br>    NAME VARCHAR(20) NOT NULL, – 非空<br>    gender VARCHAR(2) DEFAULT ‘男’ – 默认值约束<br>);</p>
+<p>– 4 主键约束(primary key 作用:非空+唯一约束)<br>– 5 自增长约束(auto_increment)<br>CREATE TABLE test2(<br>    id INT  PRIMARY KEY AUTO_INCREMENT,– 非空+唯一约束+自增长约束<br>    NAME VARCHAR(20) ,<br>    gender VARCHAR(2) ,<br>);</p>
+<p>– 6 外键约束(属于数据库中表的设计)<br>– 外键约束:约束两个或者两个以上的表的数据，一般情况有两种表(主表,副表)<br>DROP TABLE employee2<br>DELETE FROM employee2</p>
+<p>SELECT <em> FROM employee2<br>SELECT </em> FROM dept</p>
+<p>– 员工表<br>CREATE TABLE employee2(<br>    id INT PRIMARY KEY AUTO_INCREMENT,<br>    NAME VARCHAR(20),<br>    deptId INT,<br>    – 添加外键约束<br>    CONSTRAINT employee_dept_fk FOREIGN KEY (deptId) REFERENCES dept(id)<br> –     声明         外键名称    外键    被约束的字段  关联     部门表中id的字段<br>);</p>
+<p>INSERT INTO employee2 (NAME,deptId) VALUES(‘张三’,1) ;<br>INSERT INTO employee2 (NAME,deptId) VALUES(‘李四’,2) ;<br>INSERT INTO employee2 (NAME,deptId) VALUES(‘王五’,1) ;<br>INSERT INTO employee2 (NAME,deptId) VALUES(‘陈六’,1) ;</p>
+<p>– 可以设计一个独立的表-部门表 专门用来存储部门名称,来解决数据冗余的问题<br>– 部门表(主表,约束别人的表)<br>CREATE TABLE dept(<br>    id INT PRIMARY KEY AUTO_INCREMENT ,<br>    NAME VARCHAR(20) – 部门名称<br>);</p>
+<p>– 插入几个部门名称<br>INSERT INTO dept (NAME) VALUES (‘软件开发部’) ;<br>INSERT INTO dept (NAME) VALUES (‘软件维护部’) ;</p>
+<p>– 给员工表中插入数据<br>INSERT INTO employee2 (NAME,deptId) VALUES(‘王五’,1) ;<br>INSERT INTO employee2 (NAME,deptId) VALUES(‘陈六’,1) ;<br>INSERT INTO employee2 (NAME,deptId) VALUES(‘李四’,2) ;</p>
+<p>– 给部门表添加数据<br>INSERT INTO dept (id,NAME) VALUES(3,’硬件开发部’);<br>– 修改数据<br>UPDATE employee2 SET deptId = 3 WHERE id = 3;</p>
+<p>– 删除数据<br>DELETE FROM employee2 WHERE id =2;</p>
+<p>– 7 补充<br>– 常遇到字段类型:<br>– 1)char(20) vs varchar(20)<br>– char(20):是一个固定长度的字符串,存储字符串内容,一定是20个字符串<br>– varchar(20):可变的字符串长度,实际存储的时候是根据当前实际的字符串长度</p>
+<p>DROP TABLE test ;<br>– 2) int 和int(4)<br>– int:默认的长度11位,再存储数值类型的时候,存储实际长度<br>– int(4):固定长度</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/08/hexo_3/" class="archive-article-date">
-  	<time datetime="2018-02-08T10:44:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/08/hexo_3/">hexo博客yilia主题_缺失模块_解决方案</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/03/04/database_2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/08/hexo_2/" class="archive-article-date">
-  	<time datetime="2018-02-08T09:00:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/04/database_1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据库Mysql——1</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/08/hexo_2/">hexo博客yilia主题_more截断文章_多标签添加</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/06/hexo_1/" class="archive-article-date">
-  	<time datetime="2018-02-06T15:22:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/06/hexo_1/">hexo-github博客首页菜单中文乱码两种解决方案</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/06/hello-world/" class="archive-article-date">
-  	<time datetime="2018-02-06T13:01:07.566Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/06/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/04/Linux_1/" class="archive-article-date">
-  	<time datetime="2018-02-04T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/04/Linux_1/">Linux入门及初体验</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -393,8 +339,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.haoloverongrong.top">
-  <title>Archives: 2018/2 | AomanHao</title>
+  <title>数据库Mysql——1 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AomanHao">
-<meta property="og:url" content="http://www.haoloverongrong.top/archives/2018/02/index.html">
+  <meta name="description" content="1.mysql常用命令– 1– 管理CREATE DATABASE Aoman_OS – 创建数据库USE  Aoman_OS – 使用数据库DROP DATABASE Aoman_OS  – 删除数据库 – 数据库内容CREATE TABLE employee(  – 创建数据库表格id INT,NAME VARCHAR(20),gender VARCHAR(2),title VARCHAR(1">
+<meta name="keywords" content="Mysql,java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库Mysql——1">
+<meta property="og:url" content="http://www.haoloverongrong.top/2018/03/04/database_1/index.html">
 <meta property="og:site_name" content="AomanHao">
+<meta property="og:description" content="1.mysql常用命令– 1– 管理CREATE DATABASE Aoman_OS – 创建数据库USE  Aoman_OS – 使用数据库DROP DATABASE Aoman_OS  – 删除数据库 – 数据库内容CREATE TABLE employee(  – 创建数据库表格id INT,NAME VARCHAR(20),gender VARCHAR(2),title VARCHAR(1">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-04T12:59:38.493Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AomanHao">
+<meta name="twitter:title" content="数据库Mysql——1">
+<meta name="twitter:description" content="1.mysql常用命令– 1– 管理CREATE DATABASE Aoman_OS – 创建数据库USE  Aoman_OS – 使用数据库DROP DATABASE Aoman_OS  – 删除数据库 – 数据库内容CREATE TABLE employee(  – 创建数据库表格id INT,NAME VARCHAR(20),gender VARCHAR(2),title VARCHAR(1">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -152,221 +157,175 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-database_1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      数据库Mysql——1
+    </h1>
+  
+
+        
+        <a href="/2018/03/04/database_1/" class="archive-article-date">
+  	<time datetime="2018-03-04T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-04</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-mysql常用命令"><a href="#1-mysql常用命令" class="headerlink" title="1.mysql常用命令"></a>1.mysql常用命令</h1><p>– 1<br>– 管理<br>CREATE DATABASE Aoman_OS – 创建数据库<br>USE  Aoman_OS – 使用数据库<br>DROP DATABASE Aoman_OS  – 删除数据库</p>
+<p>– 数据库内容<br>CREATE TABLE employee(  – 创建数据库表格<br>id INT,NAME VARCHAR(20),gender VARCHAR(2),title VARCHAR(10),email VARCHAR(20)<br>);<br>SELECT * FROM employee – 查看数据库表格</p>
+<p>– 2<br>– 增加数据库内容<br>INSERT INTO employee VALUES(1,’依依’,’女’,’程序员鼓励师’,’123@163.com’);<br>INSERT INTO employee VALUES(2,’尔尔’,’男’,’程序开发工程师’,’124@163.com’);<br>INSERT INTO employee VALUES(3,’散散’,’男’,’程序维护工程师’,’125@163.com’);</p>
+<p>– 插入部分数据<br>INSERT INTO employee (id,NAME) VALUES (4,’思思’);</p>
+<p>– 修改数据<br>UPDATE employee SET gender=’女’,title=’文秘’ WHERE id =4;</p>
+<p>– 删除表中所有数据<br>DELETE     * FROM employee<br>– 删除数据表<br>DROP FROM employee</p>
+<p>– 3<br>– 查询<br>SELECT id AS ‘1’ FROM employee<br>SELECT id AS ‘1’ ，NAME AS ‘尔尔’ FROM employee</p>
+<p>– 不重复的查询<br>SELECT DISTINCT email FROM employee</p>
+<p>– 条件查询<br>SELECT <em> FROM employee WHERE id=1 OR NAME = ‘思思’ ; – or 并集<br>SELECT </em> FROM employee WHERE id=1 AND NAME = ‘思思’ ; – and 交集</p>
+<p>– 判断查询<br>– 大于 &gt;,小于&lt;，等于=<br>– 不等于 ！= 或者 &lt;&gt;， 在什么之间 between 1 and 2，<br>– 非空 isnot null 或者 不等于 ‘’</p>
+<p>– 模糊查询<br>SELECT * FROM studet WHERE NAME LIKE ‘思%’<br>– %代替任何字符，任何长度的字符<br>– -仅仅代替一个字符</p>
+<p>– asc 升序 desc 降序<br>– 默认情况下:是按照插入顺序进行排序<br>SELECT * FROM student ORDER BY id ASC ;</p>
+<p>– 需求:servlet成绩是一个降序排序<br>SELECT * FROM student ORDER BY servlet DESC ;</p>
+<h2 id="2-小练习"><a href="#2-小练习" class="headerlink" title="2.小练习"></a>2.小练习</h2><p>CREATE TABLE student2(<br>    id INT,<br>    NAME VARCHAR(20),<br>    chinese FLOAT,<br>    english FLOAT,<br>    math FLOAT<br>);</p>
+<p>INSERT INTO student2(id,NAME,chinese,english,math) VALUES(1,’张小明’,89,78,90);<br>INSERT INTO student2(id,NAME,chinese,english,math) VALUES(2,’李进’,67,53,95);<br>INSERT INTO student2(id,NAME,chinese,english,math) VALUES(3,’王五’,87,78,77);<br>INSERT INTO student2(id,NAME,chinese,english,math) VALUES(4,’李一’,88,98,92);<br>INSERT INTO student2(id,NAME,chinese,english,math) VALUES(5,’李来财’,82,84,67);<br>INSERT INTO student2(id,NAME,chinese,english,math) VALUES(6,’张进宝’,55,85,45);<br>INSERT INTO student2(id,NAME,chinese,english,math) VALUES(7,’黄蓉’,75,65,30)</p>
+<p>– 查询操作练习(在学生表数据基础上：student.sql)<br>–     查询表中所有学生的信息。<br>SELECT * FROM student2 ;<br>– 查询表中所有学生的姓名和对应的英语成绩。<br>SELECT  NAME ,english FROM student2<br>–     使用别名表示学生分数。<br>SELECT id AS ‘编号’,NAME AS ‘姓名’,chinese AS ‘语文’,english AS ‘英语’,math AS ‘数学’ FROM student2 ;</p>
+<p>–     查询姓名为李一的学生成绩<br>SELECT <em> FROM student2 WHERE NAME = ‘李一’;<br>–     查询英语成绩大于等于90分的同学<br>SELECT </em> FROM student2 WHERE english &gt;=90<br>–     查询总分大于200分的所有同学<br>SELECT <em> FROM student2 WHERE (chinese+english+math)&gt;200;<br>–     查询所有姓李的学生英语成绩。<br>SELECT NAME,english FROM student2 WHERE NAME LIKE ‘李%’<br>–     查询英语&gt;80或者总分&gt;200的同学<br>SELECT </em> FROM student2 WHERE english &gt;80 OR (chinese+english+math)&gt;200;</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/08/hexo_3/" class="archive-article-date">
-  	<time datetime="2018-02-08T10:44:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/08/hexo_3/">hexo博客yilia主题_缺失模块_解决方案</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/03/04/database_1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/08/hexo_2/" class="archive-article-date">
-  	<time datetime="2018-02-08T09:00:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/03/04/database_2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据库Mysql——2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/08/hexo_3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo博客yilia主题_缺失模块_解决方案</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/08/hexo_2/">hexo博客yilia主题_more截断文章_多标签添加</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/06/hexo_1/" class="archive-article-date">
-  	<time datetime="2018-02-06T15:22:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/06/hexo_1/">hexo-github博客首页菜单中文乱码两种解决方案</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/06/hello-world/" class="archive-article-date">
-  	<time datetime="2018-02-06T13:01:07.566Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/06/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/04/Linux_1/" class="archive-article-date">
-  	<time datetime="2018-02-04T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/04/Linux_1/">Linux入门及初体验</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -393,8 +352,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
