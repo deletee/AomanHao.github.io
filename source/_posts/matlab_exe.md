@@ -5,7 +5,7 @@ tags: [Matlab, GUI]
 ---
 
 # 解决方案
-
+<!--more-->
 报错情况： 目标是把.m文件转化为exe文件，先运行
 mcc -m 你的文件+.m后缀
 如果报错Test checkout of feature 'Compiler' failed ，是因为你的matlab2014a破解不完全。

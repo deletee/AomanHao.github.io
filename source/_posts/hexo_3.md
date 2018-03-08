@@ -5,12 +5,10 @@ tags: [GitHub, Hexo, yilia]
 ---
 
 hexo博客yilia主题,左侧栏目有一个全部文章的按钮，刚开始开始报错缺失模块，如下图：
-
+<!--more-->
 ![这里写图片描述](http://upload-images.jianshu.io/upload_images/6280966-d3fb28b5a1dcb69c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 我解决了这个问题着实不容易饶了弯路，但是跟着提示步骤，其实很简单，走起：
-
-<!--more-->
 
 -------------
 

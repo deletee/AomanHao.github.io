@@ -4,6 +4,7 @@ date: 2018-03-04 10:59:59
 tags: [Mysql, java]
 ---
 # 1.mysql常用命令
+<!--more-->
 -- 1
 -- 管理
 CREATE DATABASE Aoman_OS -- 创建数据库

@@ -4,7 +4,7 @@ date: 2018-03-04 12:59:59
 tags: [Mysql, java]
 ---
 # 1.数据库约束
-
+<!--more-->
 -- 1 默认值约束(default)
 -- 2 非空约束( not null )
 -- 3 唯一约束(unique)
