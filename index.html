@@ -154,6 +154,174 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-matlab_vs2015" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/07/matlab_vs2015/">Matlab2014a vs2015编译器解决方法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/07/matlab_vs2015/" class="archive-article-date">
+  	<time datetime="2018-03-07T03:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#h3 准备工作<br>前提：<br>电脑已经安装<br>1、Matlab版本2014a<br>2、VS版本2015</p>
+<p>目标：<br>结合Matlab和VS2015，实现Matlab的GUI文件和.m文件转化为.exe文件，然后可以单独运行.exe文件</p>
+<p>首先在Matlab命令行输入<br>mbuild -setup<br>报错红色，显示没有选择项，此处没有截图不直观<br>我猜测可能是matlab2014a的破解不完全</p>
+<hr>
+<p>#h3 解决方案</p>
+<p>下载资源链接：<a href="https://pan.b链aidu.com/s/1hoDxMKFU2l-3ZhTObFetCw" target="_blank" rel="noopener">https://pan.b链aidu.com/s/1hoDxMKFU2l-3ZhTObFetCw</a> 密码：vdlq<br>然后替换文件<br>附件下面的将mexopts/下的msvc2015.xml和msvcpp2015.xml复制到Matlab目录下的bin/win64/mexopts下就可以了</p>
+<p>首先在Matlab命令行输入<br>mbuild -setup<br><img src="http://p3qhnc0eg.bkt.clouddn.com/VS2015_1.png" alt="原始效果"></p>
+<p>然后输入<br>mex -setup<br><img src="http://p3qhnc0eg.bkt.clouddn.com/VS2015_1.png" alt="原始效果"></p>
+<p>选项都选择C++的就哦了</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Matlab</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GUI</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/07/matlab_vs2015/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-matlab_exe" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/07/matlab_exe/">matlab2014a破解不完全，报错Test checkout of feature &#39;Compiler&#39; failed</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/07/matlab_exe/" class="archive-article-date">
+  	<time datetime="2018-03-07T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>报错情况： 目标是把.m文件转化为exe文件，先运行<br>mcc -m 你的文件+.m后缀<br>如果报错Test checkout of feature ‘Compiler’ failed ，是因为你的matlab2014a破解不完全。<br>前提是你的电脑已经安装好了VS编译器</p>
+<p>2014a的解决办法：<br>下载资源：ht链tps://pan.baidu.com/s/1KNZqVqxMx6f接IaxQULAIq_g 密码：cti0</p>
+<p>下载后解压，把install.jar以及相应位数的三个文件（compiler.dll，mcc.exe，libmwservices.dll）复制到对应位置替换即可<br>在matlab安装目录下搜索到文件然后替换，保险起见先把要替换的文件剪切出来，实际上我的操作是成功的，万一万一万一不成功还能复原回去</p>
+<p>另外把license.lic改为与MATLAB\licenses文件夹下的那个lic文件同名，复制并替换之。<br>如图所示，我把需要替换的文件都拿了出来，其中license文件是绑定了你的电脑名称，所以需要把新文件改名</p>
+<p><img src="http://p3qhnc0eg.bkt.clouddn.com/VSjietu.png" alt="原始效果"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Matlab</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GUI</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/07/matlab_exe/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-database_2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -869,6 +1037,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GUI</a>
               </li>
             
             <div class="clearfix"></div>
