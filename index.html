@@ -159,6 +159,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-matlab_gui_exit" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/09/matlab_gui_exit/">matlab的gui图像处理操作界面，实现重置和退出按钮功能</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/09/matlab_gui_exit/" class="archive-article-date">
+  	<time datetime="2018-03-09T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>axes控件实现了展示图片，动态txt控件实现了展示或者输入参数。<br>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Matlab</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Gui</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/09/matlab_gui_exit/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hexo_music list" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -656,21 +734,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>以下均为自己遇到的问题并加以修改或者纠正.</p>
-<p>在文章下方可以使用more语句进行截断，这样博客首页只会出现文章的前面一小部分，看起来很清爽简约</p>
-<blockquote>
-<p>或者</p>
-<p>anguage: zh-CN</p>
-<figure class="highlight plain"><figcaption><span>```//在需要阶段的地方插入该代码语句</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt;</span><br><span class="line">&gt; aa</span><br><span class="line"></span><br><span class="line">在这里，yilia主题会判断含有`&lt;!--more--&gt;`的位置，然后文章截断两部分，第一部分展示在博客首页，第二部分即上方的aa只能点开展开全文，才能继续阅读文章。</span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line">截断效果如下图：</span><br><span class="line"></span><br><span class="line">![效果](http://upload-images.jianshu.io/upload_images/6280966-dff71bcc18df7583.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">在这里我对yilia主题做了修改</span><br><span class="line"></span><br><span class="line">原始效果为：</span><br><span class="line"></span><br><span class="line">![原始效果](http://upload-images.jianshu.io/upload_images/6280966-2bc7446857bc04e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">修改后为：去掉了more按钮，打开文章可以点击文章或者点击展开全文</span><br><span class="line"></span><br><span class="line">![修改效果](http://upload-images.jianshu.io/upload_images/6280966-51ea736ffd940d2c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">做法很简单，进入theme目录，打开yilia目录下的_config.yml文件，修改excerpt_link参数：</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>excerpt_link：之后的more单词换成空格<br>注：‘excerpt_link： ’。其中：后有一个空格键<br>```</p>
-<p>修改图如下图</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6280966-c3ec0b215421bcee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<p>如何给文章加多个标签：</p>
-<p>修改如下图，格式为 [tag1, tag2]</p>
-<p>注：逗号之后要有一个空格。[tag1, tag2]= [tag1+逗号+空格+tag2]</p>
-<p>修改如下图所示：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6280966-62305c940fee2082.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-
+        
       
 
       
@@ -752,12 +816,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>方案一：</p>
-<p>菜单设置成中文显示，编辑博客根目录下的_config.yml文件</p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20180206230112.png" alt="配置文件"></p>
-<p>设置language字段如下:</p>
-<p>language: zh-Hans</p>
-<p>或者</p>
-<p>language: zh-CN</p>
         
       
 
@@ -835,7 +893,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+        <a id="more"></a>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
@@ -886,82 +945,10 @@
 
 
   
-    <article id="post-Linux_1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/04/Linux_1/">Linux入门及初体验</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/04/Linux_1/" class="archive-article-date">
-  	<time datetime="2018-02-04T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-linux-文件夹含义"><a href="#1-linux-文件夹含义" class="headerlink" title="1.linux 文件夹含义"></a>1.linux 文件夹含义</h1><pre><code>主要的目录的有/、/root、/home、/usr、/bin等。
-</code></pre><p>其中：</p>
-<p>/bin 普通用户的可执行文件，系统的任何用户都可以执行该目录中的命令<br>/boot 存放Linux操作系统启动时所需要的文件<br>/dev 系统中所有设备文件<br>/etc 系统中的配置文件<br>/home 普通用户的宿主目录，每个用户在该目下都有一个于用户名同名的目录。<br>/mnt 中的子目录用于系统中可移动设备的挂载点<br>/root 超级用户root的宿主目录<br>/sbin 系统中的管理命令，普通用户不能执行<br>/tmp 系统的临时目录<br>/usr  系统应用程序的相关文件<br>/var 系统中经常变化的文件如日志文件和用户邮件</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/04/Linux_1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -1090,6 +1077,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Gui</a>
               </li>
              
               <li class="article-tag-list-item">

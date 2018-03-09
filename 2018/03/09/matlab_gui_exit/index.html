@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.haoloverongrong.top">
-  <title>Archives: 2018/3 | AomanHao</title>
+  <title>matlab的gui图像处理操作界面，实现重置和退出按钮功能 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AomanHao">
-<meta property="og:url" content="http://www.haoloverongrong.top/archives/2018/03/index.html">
+  <meta name="description" content="axes控件实现了展示图片，动态txt控件实现了展示或者输入参数。">
+<meta name="keywords" content="Matlab,Gui">
+<meta property="og:type" content="article">
+<meta property="og:title" content="matlab的gui图像处理操作界面，实现重置和退出按钮功能">
+<meta property="og:url" content="http://www.haoloverongrong.top/2018/03/09/matlab_gui_exit/index.html">
 <meta property="og:site_name" content="AomanHao">
+<meta property="og:description" content="axes控件实现了展示图片，动态txt控件实现了展示或者输入参数。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/matlab/%E7%95%8C%E9%9D%A2_%E9%87%8D%E7%BD%AE1.png">
+<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/matlab/%E7%95%8C%E9%9D%A2_%E9%87%8D%E7%BD%AE2.png">
+<meta property="og:updated_time" content="2018-03-09T14:15:22.861Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AomanHao">
+<meta name="twitter:title" content="matlab的gui图像处理操作界面，实现重置和退出按钮功能">
+<meta name="twitter:description" content="axes控件实现了展示图片，动态txt控件实现了展示或者输入参数。">
+<meta name="twitter:image" content="http://p3qhnc0eg.bkt.clouddn.com/matlab/%E7%95%8C%E9%9D%A2_%E9%87%8D%E7%BD%AE1.png">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -157,36 +165,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-matlab_gui_exit" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/09/matlab_gui_exit/" class="archive-article-date">
-  	<time datetime="2018-03-09T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/09/matlab_gui_exit/">matlab的gui图像处理操作界面，实现重置和退出按钮功能</a>
+    <h1 class="article-title" itemprop="name">
+      matlab的gui图像处理操作界面，实现重置和退出按钮功能
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/03/09/matlab_gui_exit/" class="archive-article-date">
+  	<time datetime="2018-03-09T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>axes控件实现了展示图片，动态txt控件实现了展示或者输入参数。<br><a id="more"></a></p>
+<p>在gui界面右键点击“重置”pushbotton回到代码块callback，编写代码</p>
+<p><img src="http://p3qhnc0eg.bkt.clouddn.com/matlab/%E7%95%8C%E9%9D%A2_%E9%87%8D%E7%BD%AE1.png" alt="这里写图片描述"></p>
+<p><img src="http://p3qhnc0eg.bkt.clouddn.com/matlab/%E7%95%8C%E9%9D%A2_%E9%87%8D%E7%BD%AE2.png" alt="这里写图片描述"></p>
+<p>以下代码是实现图片和参数数字重置，是重置按钮（puttern）的功能实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function pushbutton1_Callback(hObject, eventdata, handles)</span><br><span class="line">% hObject    handle to pushbutton1 (see GCBO)</span><br><span class="line">% eventdata  reserved - to be defined in a future version of MATLAB</span><br><span class="line">% handles    structure with handles and user data (see GUIDATA)</span><br><span class="line">% 重置清空图片 美滋滋</span><br><span class="line">cla(handles.axes1,&apos;reset&apos;);</span><br><span class="line">cla(handles.axes2,&apos;reset&apos;);</span><br><span class="line">cla(handles.axes3,&apos;reset&apos;);</span><br><span class="line">cla(handles.axes4,&apos;reset&apos;);</span><br><span class="line">cla(handles.axes5,&apos;reset&apos;);</span><br><span class="line"></span><br><span class="line">% 重置清空动态txt的文字 美滋滋</span><br><span class="line">set(handles.edit1,&apos;string&apos;,&apos;&apos;)</span><br><span class="line">set(handles.edit2,&apos;string&apos;,&apos;&apos;)</span><br><span class="line">set(handles.edit3,&apos;string&apos;,&apos;&apos;)</span><br><span class="line">set(handles.edit4,&apos;string&apos;,&apos;&apos;)</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>退出按钮：<br>在gui界面右键点击“退出”pushbotton回到代码块callback，编写代码<br>即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">close</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -202,194 +215,105 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/03/09/matlab_gui_exit/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/08/hexo_music list/" class="archive-article-date">
-  	<time datetime="2018-03-08T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-08</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/08/hexo_music list/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo博客添加背景音乐和音乐歌单(举例网易云音乐)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/08/hexo_music list/">Hexo博客添加背景音乐和音乐歌单(举例网易云音乐)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Music</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/07/matlab_vs2015/" class="archive-article-date">
-  	<time datetime="2018-03-07T03:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/07/matlab_vs2015/">Matlab2014a vs2015编译器解决方法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Matlab</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GUI</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/07/matlab_exe/" class="archive-article-date">
-  	<time datetime="2018-03-07T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/07/matlab_exe/">matlab2014a破解不完全，报错Test checkout of feature &#39;Compiler&#39; failed</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Matlab</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GUI</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/04/database_2/" class="archive-article-date">
-  	<time datetime="2018-03-04T04:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/04/database_2/">数据库Mysql——2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2018/03/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/03/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -417,8 +341,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
