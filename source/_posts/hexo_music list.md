@@ -19,7 +19,7 @@ tags: [Hexo, yilia, Music]
 		打开yilia主题下的_partial文件夹下的left-col.ejs文件
 		复制文件内容到最下端
 
-![](http://p3qhnc0eg.bkt.clouddn.com/%E7%BD%91%E6%98%93%E4%B8%8E_%E5%A4%96%E9%93%BE3.png)
+![](http://p3qhnc0eg.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20180308212600.png)
 
 红线内的iframe框为复制的外链播放器代码，如图红线内，把代码放在div框
 		例如：

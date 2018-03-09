@@ -4,6 +4,7 @@ date: 2018-02-04 10:59:59
 tags: Linux
 ---
 # 1.linux 文件夹含义
+<!--more-->
 	主要的目录的有/、/root、/home、/usr、/bin等。
 其中：
 
@@ -19,7 +20,7 @@ tags: Linux
 /usr  系统应用程序的相关文件
 /var 系统中经常变化的文件如日志文件和用户邮件
 
-<!--more-->
+
 
 ## 2.1	Linux命令
 	进入系统控制台，看到>[root@loca~],

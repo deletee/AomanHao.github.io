@@ -5,6 +5,7 @@ tags: [GitHub, Hexo]
 ---
 方案一：
 
+<!--more-->
 菜单设置成中文显示，编辑博客根目录下的_config.yml文件
 
 
@@ -19,7 +20,6 @@ language: zh-Hans
 
 language: zh-CN
 
-<!--more-->
 
 
 
