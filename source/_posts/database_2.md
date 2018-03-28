@@ -1,7 +1,7 @@
 ---
 title: 数据库Mysql——2
 date: 2018-03-04 12:59:59
-tags: [Mysql, java]
+tags: [Mysql, Java]
 ---
 # 1.数据库约束
 <!--more-->

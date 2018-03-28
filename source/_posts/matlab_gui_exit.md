@@ -1,7 +1,7 @@
 ---
 title: matlab的gui图像处理操作界面，实现重置和退出按钮功能
 date: 2018-03-09 10:59:59
-tags: [Matlab, Gui]
+tags: [Matlab, GUI]
 ---
 
 axes控件实现了展示图片，动态txt控件实现了展示或者输入参数。

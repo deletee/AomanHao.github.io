@@ -1,7 +1,7 @@
 ---
 title: 数据库Mysql——1
 date: 2018-03-04 10:59:59
-tags: [Mysql, java]
+tags: [Mysql, Java]
 ---
 # 1.mysql常用命令
 <!--more-->
