@@ -6,15 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.haoloverongrong.top">
-  <title>Archives | AomanHao</title>
+  <title>安装mysql，和遇到的一些错误及解决方案 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AomanHao">
-<meta property="og:url" content="http://www.haoloverongrong.top/archives/page/2/index.html">
+  <meta name="description" content="1、下载：">
+<meta name="keywords" content="Mysql,Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装mysql，和遇到的一些错误及解决方案">
+<meta property="og:url" content="http://www.haoloverongrong.top/2018/03/28/database_install/index.html">
 <meta property="og:site_name" content="AomanHao">
+<meta property="og:description" content="1、下载：">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_my_ini.png">
+<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_succ_insta.png">
+<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_not_craet_direc.png">
+<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_my_ini_word.png">
+<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_error5.png">
+<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_starting.png">
+<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_start_and_stop.png">
+<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_suc_start.png">
+<meta property="og:updated_time" content="2018-03-28T01:21:37.392Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AomanHao">
+<meta name="twitter:title" content="安装mysql，和遇到的一些错误及解决方案">
+<meta name="twitter:description" content="1、下载：">
+<meta name="twitter:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_my_ini.png">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -157,36 +171,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-database_install" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/04/database_2/" class="archive-article-date">
-  	<time datetime="2018-03-04T04:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/04/database_2/">数据库Mysql——2</a>
+    <h1 class="article-title" itemprop="name">
+      安装mysql，和遇到的一些错误及解决方案
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/03/28/database_install/" class="archive-article-date">
+  	<time datetime="2018-03-28T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1、下载：<br><a id="more"></a><br>mysql-5.7.20是解压版免安装的，mysql-5.7.20下载地址：<a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">http://dev.mysql.com/downloads/mysql/</a></p>
+<hr>
+<p>2、安装<br>  解压在你喜欢的位置</p>
+<hr>
+<p>3、配置<br>  新建一个ini文件，并命名为my.ini，放置到mysql根目录下，文件内容如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[mysql]  </span><br><span class="line"># 设置mysql客户端默认字符集  </span><br><span class="line">default-character-set=utf8  </span><br><span class="line">[mysqld]  </span><br><span class="line">#设置3306端口  </span><br><span class="line">port = 3306  </span><br><span class="line"># 设置mysql的安装目录  </span><br><span class="line">basedir=E:\program2\javaTool\mysql-5.7.20-winx64</span><br><span class="line"># 设置mysql数据库的数据的存放目录  </span><br><span class="line">datadir=E:\program2\javaTool\mysql-5.7.20-winx64\data</span><br><span class="line"># 允许最大连接数  </span><br><span class="line">max_connections=200  </span><br><span class="line"># 服务端使用的字符集默认为8比特编码的latin1字符集  </span><br><span class="line">character-set-server=utf8  </span><br><span class="line"># 创建新表时将使用的默认存储引擎  </span><br><span class="line">default-storage-engine=INNODB</span><br></pre></td></tr></table></figure>
+<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_my_ini.png" alt="这里写图片描述"></p>
+<p>注：<br>设置mysql的安装目录 basedir=<br>设置mysql数据库的数据的存放目录 datadir=<br>这两个参数改为你所解压后的文件夹的位置</p>
+<hr>
+<p>4、安装mysql服务<br>4.1、管理员身份打开cmd.exe<br>文件位置C:\Windows\System32\cmd.exe,找到右击选择管理员身份打开（重点），如果没有一管理员身份打开运行cmd.exe，会报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Install/Remove of the Service Denied! mysql</span><br></pre></td></tr></table></figure>
+<p>将目录切换到你mysql安装目录的bin目录后，在cmd窗口输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld install</span><br></pre></td></tr></table></figure>
+<p>回车运行即可。</p>
+<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_succ_insta.png" alt="这里写图片描述"></p>
+<p>4.2、创建data文件<br>将目录切换到你mysql安装目录的bin目录后，再输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize -insecure --user=mysql</span><br></pre></td></tr></table></figure>
+<p>在软件目录下生成data文件夹。mysql登录的用户名为root，密码为空</p>
+<p>之前的my.ini中两个参数要改为自己的：<br>设置mysql的安装目录 basedir=软件安装目录<br>设置mysql数据库的数据的存放目录   datadir=软件安装目录\data<br>这两个参数改为你所解压后的文件夹的位置，否则会报错“无法初始化库文件等”如下图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld: Can&apos;t create/write to file</span><br></pre></td></tr></table></figure>
+<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_not_craet_direc.png" alt="这里写图片描述"></p>
+<p>4.3 测试启动<br>启动mysql服务：</p>
+<p>将目录切换到你mysql安装目录的bin目录，输入 net start mysql 启动服务，OK成功。</p>
+<p>4.3.1报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Found option without preceding group in config file:XXX;</span><br><span class="line">Fatal error in defaults handling.</span><br></pre></td></tr></table></figure>
+<p>原因：用记事本配置my.ini编码格式有问题，一般情况下是UTF-8编码格式，但是这里需要ANSI编码格式<br>用记事本打开my.ini文件，然后点击：文件–&gt;另存为–&gt;将编码修改为：ANSI–&gt;保存！</p>
+<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_my_ini_word.png" alt="这里写图片描述"></p>
+<p>然后cmd窗口输入命令行启动mysql</p>
+<p>4.3.2报错</p>
+<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_error5.png" alt="这里写图片描述"></p>
+<p>解决：以管理员身份来运行cmd程序来启动mysql。</p>
+<p>4.3.3运行net start mysql</p>
+<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_starting.png" alt="这里写图片描述"></p>
+<p>报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">服务正在启动或停止中，请稍候片刻后再试一次。</span><br></pre></td></tr></table></figure></p>
+<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_start_and_stop.png" alt="这里写图片描述"></p>
+<p>解决方法：打开任务管理器，把mysql进程关闭，再次启动mysql服务器</p>
+<p>启动成功</p>
+<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_suc_start.png" alt="这里写图片描述"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -202,205 +252,107 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/03/28/database_install/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/04/database_1/" class="archive-article-date">
-  	<time datetime="2018-03-04T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-04</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/03/09/matlab_gui_exit/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">matlab的gui图像处理操作界面，实现重置和退出按钮功能</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/04/database_1/">数据库Mysql——1</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/08/hexo_3/" class="archive-article-date">
-  	<time datetime="2018-02-08T10:44:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/08/hexo_3/">hexo博客yilia主题_缺失模块_解决方案</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/08/hexo_2/" class="archive-article-date">
-  	<time datetime="2018-02-08T09:00:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/08/hexo_2/">hexo博客yilia主题_more截断文章_多标签添加</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/06/hexo_1/" class="archive-article-date">
-  	<time datetime="2018-02-06T15:22:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/06/hexo_1/">hexo-github博客首页菜单中文乱码两种解决方案</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/3/">Next &raquo;</a>
-    </nav>
   
 
+  
 
+  
 
-<!-- 目录内容 -->
-       
-       <!-- 目录内容结束 -->
 
           </div>
         </div>
@@ -426,8 +378,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
