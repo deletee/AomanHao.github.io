@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://www.haoloverongrong.top">
   <title>数据库相关_6_15 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关系规范化中的删除操作异常是不该删除的数据被删除 关系规范化中的删除操作失败是应该删除的数据未被删除 数据库中通常采用is NULL和is not NULL进行比较不用=等于号 插图矩形框：表示实体，在框中记入实体名。菱形框：表示联系，在框中记入联系名。椭圆形框：表示实体或联系的属性，将属性名记入框中。对于主属性名，则在其名称下划一下划线。连线：实体与属性之间；实体与联系之间；联系与属性之间用直">
+  <meta name="description" content="关系规范化中的删除操作异常是不该删除的数据被删除">
 <meta name="keywords" content="GitHub,Mysql,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库相关_6_15">
 <meta property="og:url" content="http://www.haoloverongrong.top/2018/06/15/sql_6_15/index.html">
 <meta property="og:site_name" content="AomanHao">
-<meta property="og:description" content="关系规范化中的删除操作异常是不该删除的数据被删除 关系规范化中的删除操作失败是应该删除的数据未被删除 数据库中通常采用is NULL和is not NULL进行比较不用=等于号 插图矩形框：表示实体，在框中记入实体名。菱形框：表示联系，在框中记入联系名。椭圆形框：表示实体或联系的属性，将属性名记入框中。对于主属性名，则在其名称下划一下划线。连线：实体与属性之间；实体与联系之间；联系与属性之间用直">
+<meta property="og:description" content="关系规范化中的删除操作异常是不该删除的数据被删除">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-03T12:08:19.257Z">
+<meta property="og:updated_time" content="2018-07-04T14:38:26.481Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库相关_6_15">
-<meta name="twitter:description" content="关系规范化中的删除操作异常是不该删除的数据被删除 关系规范化中的删除操作失败是应该删除的数据未被删除 数据库中通常采用is NULL和is not NULL进行比较不用=等于号 插图矩形框：表示实体，在框中记入实体名。菱形框：表示联系，在框中记入联系名。椭圆形框：表示实体或联系的属性，将属性名记入框中。对于主属性名，则在其名称下划一下划线。连线：实体与属性之间；实体与联系之间；联系与属性之间用直">
+<meta name="twitter:description" content="关系规范化中的删除操作异常是不该删除的数据被删除">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -177,11 +177,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>关系规范化中的删除操作异常是</p><h3>不该删除的数据被删除</h3><p></p>
+        <p>关系规范化中的删除操作异常是</p><h3>不该删除的数据被删除</h3><br><a id="more"></a><p></p>
 <p>关系规范化中的删除操作失败是</p><h3>应该删除的数据未被删除</h3><p></p>
+<hr>
 <p>数据库中通常采用is NULL和is not NULL进行比较不用=等于号</p>
 <p>插图<br>矩形框：表示实体，在框中记入实体名。<br>菱形框：表示联系，在框中记入联系名。<br>椭圆形框：表示实体或联系的属性，将属性名记入框中。对于主属性名，则在其名称下划一下划线。<br>连线：实体与属性之间；实体与联系之间；联系与属性之间用直线相连，并在直线上标注联系的类型。（对于一对一联系，要在两个实体连线方向各写1； 对于一对多联系，要在一的一方写1，多的一方写N；对于多对多关系，则要在两个实体连线方向各写N,M。)</p>
+<hr>
 <p>一个m：n联系转换为一个关系模式，关系的码为各实体码的组合；一个1：n联系转换为一个关系模式，关系的码为n端实体的码；一个1：1联系转换为一个关系模式，关系的码为任意一端实体的码。</p>
 <p>满足最低程度要求的范式属于第一范式，简称1NF；在第一范式中进一步满足一些要求的关系属于第二范式，简称2NF，依次类推，还有3NF、BCNF、4NF、5NF，这些都是关系范式。对关系模式的属性间的函数依赖加以不同的限制就形成了不同的范式。这些范式是递进的，即如果是一个关系是1NF的，它比不是1NF的关系要好；同样，2NF的关系比1NF的关系要好等等，范式越高、规范化程度越高，关系模式就越好。<br>总而言之：<br>  满足第三范式（3NF）必须先满足第二范式（2NF）。满足第二范式（2NF）必须先满足第一范式（1NF）。</p>
 
@@ -418,6 +419,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -438,11 +443,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Music</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color1">Music</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -451,10 +456,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GUI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>

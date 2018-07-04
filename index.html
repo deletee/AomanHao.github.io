@@ -174,38 +174,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p></p><h1>一级标题</h1><br>用”<h数字></h数字>“或者多个”#”隔开<p></p>
-<pre><code>&lt;h1&gt;一级标题&lt;/h1&gt;
-# 一级标题
-</code></pre><h2>二级标题</h2>
-
-<pre><code>&lt;h2&gt;二级标题&lt;/h2&gt;
-## 二级标题
-</code></pre><p>以此类推</p>
-<hr>
-<h2>代码块</h2>
-
-<p>四个空格后开始写代码<br>（空空空空zxcvbasdfgqwert）</p>
-<p>或者用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<pre><code>AAA
-```
-</code></pre><p> (四个空格两个字节)zxcvbasdfgqwert</p>
-<hr>
-<h2>斜体</h2><br>文字两端使用1个”<em>“或者”_”夹起来
-
-</em>a<em>
-
-    </em>a<em><br>    或者<br>    <em>a</em><br><br>—<br><br><h2>粗体</h2><br>文字两端使用2个”</em>“或者”_”夹起来<br><br>—<br><br><h2>分隔线</h2><br>三个”<em>“或者”-“<br><br>    **</em><br>    —<br><br>—<br><br><h2>无序列表</h2>
-
-<p>使用加号”+”或是减号”-“作为列表标记：</p>
-<ul>
-<li>可乐</li>
-<li><p>雪碧</p>
-<p>  +（空格）可乐<br>  +（空格）雪碧</p>
-</li>
-</ul>
-
+        <p>markdown 基本用法<br>
+        
       
 
       
@@ -364,14 +334,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>关系规范化中的删除操作异常是</p><h3>不该删除的数据被删除</h3><p></p>
-<p>关系规范化中的删除操作失败是</p><h3>应该删除的数据未被删除</h3><p></p>
-<p>数据库中通常采用is NULL和is not NULL进行比较不用=等于号</p>
-<p>插图<br>矩形框：表示实体，在框中记入实体名。<br>菱形框：表示联系，在框中记入联系名。<br>椭圆形框：表示实体或联系的属性，将属性名记入框中。对于主属性名，则在其名称下划一下划线。<br>连线：实体与属性之间；实体与联系之间；联系与属性之间用直线相连，并在直线上标注联系的类型。（对于一对一联系，要在两个实体连线方向各写1； 对于一对多联系，要在一的一方写1，多的一方写N；对于多对多关系，则要在两个实体连线方向各写N,M。)</p>
-<p>一个m：n联系转换为一个关系模式，关系的码为各实体码的组合；一个1：n联系转换为一个关系模式，关系的码为n端实体的码；一个1：1联系转换为一个关系模式，关系的码为任意一端实体的码。</p>
-<p>满足最低程度要求的范式属于第一范式，简称1NF；在第一范式中进一步满足一些要求的关系属于第二范式，简称2NF，依次类推，还有3NF、BCNF、4NF、5NF，这些都是关系范式。对关系模式的属性间的函数依赖加以不同的限制就形成了不同的范式。这些范式是递进的，即如果是一个关系是1NF的，它比不是1NF的关系要好；同样，2NF的关系比1NF的关系要好等等，范式越高、规范化程度越高，关系模式就越好。<br>总而言之：<br>  满足第三范式（3NF）必须先满足第二范式（2NF）。满足第二范式（2NF）必须先满足第一范式（1NF）。</p>
-
+        <p>关系规范化中的删除操作异常是</p><h3>不该删除的数据被删除</h3><br>
+        
       
 
       
@@ -622,49 +586,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h2>安装mysql</h2>
-
-
-<p></p><h2>1、下载</h2><br>mysql-5.7.20是解压版免安装的，mysql-5.7.20下载地址：<a href="http://dev.mysql.com/downloads/mysql/" target="_blank" rel="noopener">http://dev.mysql.com/downloads/mysql/</a><p></p>
-<hr>
-<p></p><h2>2、安装</h2><br>  解压在你喜欢的位置<p></p>
-<hr>
-<p></p><h2>3、配置</h2><br>  新建一个ini文件，并命名为my.ini，放置到mysql根目录下，文件内容如下<p></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[mysql]  </span><br><span class="line"># 设置mysql客户端默认字符集  </span><br><span class="line">default-character-set=utf8  </span><br><span class="line">[mysqld]  </span><br><span class="line">#设置3306端口  </span><br><span class="line">port = 3306  </span><br><span class="line"># 设置mysql的安装目录  </span><br><span class="line">basedir=E:\program2\javaTool\mysql-5.7.20-winx64</span><br><span class="line"># 设置mysql数据库的数据的存放目录  </span><br><span class="line">datadir=E:\program2\javaTool\mysql-5.7.20-winx64\data</span><br><span class="line"># 允许最大连接数  </span><br><span class="line">max_connections=200  </span><br><span class="line"># 服务端使用的字符集默认为8比特编码的latin1字符集  </span><br><span class="line">character-set-server=utf8  </span><br><span class="line"># 创建新表时将使用的默认存储引擎  </span><br><span class="line">default-storage-engine=INNODB</span><br></pre></td></tr></table></figure>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_my_ini.png" alt="这里写图片描述"></p>
-<p>注：<br>设置mysql的安装目录 basedir=<br>设置mysql数据库的数据的存放目录 datadir=<br>这两个参数改为你所解压后的文件夹的位置</p>
-<hr>
-<p></p><h2>4、安装mysql服务</h2><br>4.1、管理员身份打开cmd.exe<br>文件位置C:\Windows\System32\cmd.exe,找到右击选择管理员身份打开（重点），如果没有一管理员身份打开运行cmd.exe，会报错<p></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Install/Remove of the Service Denied! mysql</span><br></pre></td></tr></table></figure>
-<p>将目录切换到你mysql安装目录的bin目录后，在cmd窗口输入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld install</span><br></pre></td></tr></table></figure>
-<p>回车运行即可。</p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_succ_insta.png" alt="这里写图片描述"></p>
-<p></p><h3>4.2、创建data文件</h3><br>将目录切换到你mysql安装目录的bin目录后，再输入<p></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize -insecure --user=mysql</span><br></pre></td></tr></table></figure>
-<p>在软件目录下生成data文件夹。mysql登录的用户名为root，密码为空</p>
-<p>之前的my.ini中两个参数要改为自己的：<br>设置mysql的安装目录 basedir=软件安装目录<br>设置mysql数据库的数据的存放目录   datadir=软件安装目录\data<br>这两个参数改为你所解压后的文件夹的位置，否则会报错“无法初始化库文件等”如下图</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld: Can&apos;t create/write to file</span><br></pre></td></tr></table></figure>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_not_craet_direc.png" alt="这里写图片描述"></p>
-<p></p><h3>4.3 测试启动</h3><br>启动mysql服务：<p></p>
-<p>将目录切换到你mysql安装目录的bin目录，输入 net start mysql 启动服务，OK成功。</p>
-<p><em>4.3.1 报错</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Found option without preceding group in config file:XXX;</span><br><span class="line">Fatal error in defaults handling.</span><br></pre></td></tr></table></figure>
-<p>原因：用记事本配置my.ini编码格式有问题，一般情况下是UTF-8编码格式，但是这里需要ANSI编码格式<br>用记事本打开my.ini文件，然后点击：文件–&gt;另存为–&gt;将编码修改为：ANSI–&gt;保存！</p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_my_ini_word.png" alt="这里写图片描述"></p>
-<p>然后cmd窗口输入命令行启动mysql</p>
-<p><em>4.3.2 报错</em></p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_error5.png" alt="这里写图片描述"></p>
-<p>解决：以管理员身份来运行cmd程序来启动mysql。</p>
-<p><em>4.3.3运行 net start mysql</em></p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_starting.png" alt="这里写图片描述"></p>
-<p>报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">服务正在启动或停止中，请稍候片刻后再试一次。</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_start_and_stop.png" alt="这里写图片描述"></p>
-<p>解决方法：打开任务管理器，把mysql进程关闭，再次启动mysql服务器</p>
-<p>启动成功</p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_suc_start.png" alt="这里写图片描述"></p>
-
+        <p></p><h2>安装mysql</h2><br>
+        
       
 
       
@@ -741,15 +664,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>axes控件实现了展示图片，动态txt控件实现了展示或者输入参数。</p>
-<p>在gui界面右键点击“重置”pushbotton回到代码块callback，编写代码</p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/matlab/%E7%95%8C%E9%9D%A2_%E9%87%8D%E7%BD%AE1.png" alt="这里写图片描述"></p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/matlab/%E7%95%8C%E9%9D%A2_%E9%87%8D%E7%BD%AE2.png" alt="这里写图片描述"></p>
-<p>以下代码是实现图片和参数数字重置，是重置按钮（puttern）的功能实现<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function pushbutton1_Callback(hObject, eventdata, handles)</span><br><span class="line">% hObject    handle to pushbutton1 (see GCBO)</span><br><span class="line">% eventdata  reserved - to be defined in a future version of MATLAB</span><br><span class="line">% handles    structure with handles and user data (see GUIDATA)</span><br><span class="line">% 重置清空图片 美滋滋</span><br><span class="line">cla(handles.axes1,&apos;reset&apos;);</span><br><span class="line">cla(handles.axes2,&apos;reset&apos;);</span><br><span class="line">cla(handles.axes3,&apos;reset&apos;);</span><br><span class="line">cla(handles.axes4,&apos;reset&apos;);</span><br><span class="line">cla(handles.axes5,&apos;reset&apos;);</span><br><span class="line"></span><br><span class="line">% 重置清空动态txt的文字 美滋滋</span><br><span class="line">set(handles.edit1,&apos;string&apos;,&apos;&apos;)</span><br><span class="line">set(handles.edit2,&apos;string&apos;,&apos;&apos;)</span><br><span class="line">set(handles.edit3,&apos;string&apos;,&apos;&apos;)</span><br><span class="line">set(handles.edit4,&apos;string&apos;,&apos;&apos;)</span><br></pre></td></tr></table></figure></p>
-<hr>
-<p>退出按钮：<br>在gui界面右键点击“退出”pushbotton回到代码块callback，编写代码<br>即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">close</span><br></pre></td></tr></table></figure></p>
-
+        <p>axes控件实现了展示图片，动态txt控件实现了展示或者输入参数。<br>
+        
       
 
       
@@ -908,7 +824,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#h3 准备工作<br>
+        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2>
         
       
 
@@ -973,7 +889,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/07/matlab_exe/">matlab2014a破解不完全，报错Test checkout of feature &#39;Compiler&#39; failed</a>
+      <a class="article-title" href="/2018/03/07/matlab_exe/">解决方案matlab2014a破解不完全，报错Test checkout of feature &#39;Compiler&#39; failed</a>
     </h1>
   
 
@@ -986,7 +902,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1>
+        <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2>
         
       
 
@@ -1152,6 +1068,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -1172,11 +1092,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Music</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color1">Music</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1185,10 +1105,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GUI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>
