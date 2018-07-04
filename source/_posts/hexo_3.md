@@ -3,9 +3,9 @@ title: hexo博客yilia主题_缺失模块_解决方案
 date: 2018-02-08 18:44:45
 tags: [GitHub, Hexo, yilia]
 ---
-
+hexo博客yilia主题
 <!--more-->
-hexo博客yilia主题,左侧栏目有一个全部文章的按钮，刚开始开始报错缺失模块，如下图：
+左侧栏目有一个全部文章的按钮，刚开始开始报错缺失模块，如下图：
 
 ![这里写图片描述](http://upload-images.jianshu.io/upload_images/6280966-d3fb28b5a1dcb69c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 

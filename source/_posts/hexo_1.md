@@ -3,7 +3,7 @@ title: hexo-github博客首页菜单中文乱码两种解决方案
 date: 2018-02-06 23:22:06
 tags: [GitHub, Hexo]
 ---
-方案一：
+## 方案一：
 
 <!--more-->
 菜单设置成中文显示，编辑博客根目录下的_config.yml文件
@@ -14,13 +14,11 @@ tags: [GitHub, Hexo]
 
 设置language字段如下:
 
-language: zh-Hans
+```language: zh-Hans```
 
 或者
 
-language: zh-CN
-
-
+```language: zh-CN```
 
 
 ![语言分类](http://p3qhnc0eg.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20180206230033.png)
@@ -31,9 +29,7 @@ language: zh-CN
 
 
 
-
-
-方案二：
+##方案二：
 
 根目录下的配置文件是_config.yml文件
 
@@ -47,7 +43,3 @@ language: zh-CN
 此处用atom文本编辑器打开编辑，保存后不会出现乱码问题了
 
 ![文件](http://p3qhnc0eg.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20180206230542.png)
-
-[简书文章地址](https://www.jianshu.com/p/81027eb27a39)
-
-[本人博客小站](http://www.haoloverongrong.top/)

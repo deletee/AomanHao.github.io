@@ -5,8 +5,8 @@ tags: [Mysql, Java]
 ---
 
 
-<!--more-->
 <h2>安装mysql</h2>
+<!--more-->
 
 
 <h2>1、下载</h2>

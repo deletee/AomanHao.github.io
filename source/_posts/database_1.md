@@ -3,8 +3,8 @@ title: 数据库Mysql_3_4
 date: 2018-03-04 10:59:59
 tags: [Mysql, Java]
 ---
-<!--more-->
 ## 一、 mysql常用命令
+<!--more-->
 
 ### 1.1 管理
 

@@ -3,8 +3,8 @@ title: 数据库Mysql_3_4
 date: 2018-03-04 12:59:59
 tags: [Mysql, Java]
 ---
-<!--more-->
 <h2> 一、数据库约束 </h2>
+<!--more-->
 
 ### 1.1 默认值约束(default)
 ### 1.2 非空约束( not null )
