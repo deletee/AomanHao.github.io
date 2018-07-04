@@ -154,6 +154,273 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-database_2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/04/database_2/">数据库Mysql_3_4</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/04/database_2/" class="archive-article-date">
+  	<time datetime="2018-03-04T04:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h2> 一、数据库约束 </h2>
+
+<h3 id="1-1-默认值约束-default"><a href="#1-1-默认值约束-default" class="headerlink" title="1.1 默认值约束(default)"></a>1.1 默认值约束(default)</h3><h3 id="1-2-非空约束-not-null"><a href="#1-2-非空约束-not-null" class="headerlink" title="1.2 非空约束( not null )"></a>1.2 非空约束( not null )</h3><h3 id="1-3-唯一约束-unique"><a href="#1-3-唯一约束-unique" class="headerlink" title="1.3 唯一约束(unique)"></a>1.3 唯一约束(unique)</h3><pre><code>CREATE TABLE test(
+id INT  UNIQUE ,-- 唯一
+NAME VARCHAR(20) NOT NULL, -- 非空
+gender VARCHAR(2) DEFAULT &apos;男&apos; -- 默认值约束
+);
+</code></pre><h3 id="1-4-主键约束-primary-key-作用-非空-唯一约束"><a href="#1-4-主键约束-primary-key-作用-非空-唯一约束" class="headerlink" title="1.4 主键约束(primary key 作用:非空+唯一约束)"></a>1.4 主键约束(primary key 作用:非空+唯一约束)</h3><h3 id="1-5-自增长约束-auto-increment"><a href="#1-5-自增长约束-auto-increment" class="headerlink" title="1.5 自增长约束(auto_increment)"></a>1.5 自增长约束(auto_increment)</h3><pre><code>CREATE TABLE test2(
+    id INT  PRIMARY KEY AUTO_INCREMENT,-- 非空+唯一约束+自增长约束
+    NAME VARCHAR(20) ,
+    gender VARCHAR(2) ,
+);
+</code></pre><h3 id="1-6-外键约束-属于数据库中表的设计"><a href="#1-6-外键约束-属于数据库中表的设计" class="headerlink" title="1.6 外键约束(属于数据库中表的设计)"></a>1.6 外键约束(属于数据库中表的设计)</h3><h3 id="1-6-1-外键约束-约束两个或者两个以上的表的数据，一般情况有两种表-主表-副表"><a href="#1-6-1-外键约束-约束两个或者两个以上的表的数据，一般情况有两种表-主表-副表" class="headerlink" title="1.6.1 外键约束:约束两个或者两个以上的表的数据，一般情况有两种表(主表,副表)"></a>1.6.1 外键约束:约束两个或者两个以上的表的数据，一般情况有两种表(主表,副表)</h3><pre><code>DROP TABLE employee2
+DELETE FROM employee2
+
+SELECT * FROM employee2
+SELECT * FROM dept
+</code></pre><h3 id="1-6-2-员工表"><a href="#1-6-2-员工表" class="headerlink" title="1.6.2 员工表"></a>1.6.2 员工表</h3><pre><code>CREATE TABLE employee2(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    NAME VARCHAR(20),
+    deptId INT,
+    -- 添加外键约束
+    CONSTRAINT employee_dept_fk FOREIGN KEY (deptId) REFERENCES dept(id)
+--     声明         外键名称    外键    被约束的字段  关联     部门表中id的字段
+);
+
+INSERT INTO employee2 (NAME,deptId) VALUES(&apos;张三&apos;,1) ;
+INSERT INTO employee2 (NAME,deptId) VALUES(&apos;李四&apos;,2) ;
+INSERT INTO employee2 (NAME,deptId) VALUES(&apos;王五&apos;,1) ;
+INSERT INTO employee2 (NAME,deptId) VALUES(&apos;陈六&apos;,1) ;
+</code></pre><p>可以设计一个独立的表-部门表 专门用来存储部门名称,来解决数据冗余的问题</p>
+<h3 id="1-6-3-部门表-主表-约束别人的表"><a href="#1-6-3-部门表-主表-约束别人的表" class="headerlink" title="1.6.3 部门表(主表,约束别人的表)"></a>1.6.3 部门表(主表,约束别人的表)</h3><pre><code>CREATE TABLE dept(
+    id INT PRIMARY KEY AUTO_INCREMENT ,
+    NAME VARCHAR(20) -- 部门名称
+);
+</code></pre><h4 id="插入几个部门名称"><a href="#插入几个部门名称" class="headerlink" title="插入几个部门名称"></a>插入几个部门名称</h4><pre><code>INSERT INTO dept (NAME) VALUES (&apos;软件开发部&apos;) ;
+INSERT INTO dept (NAME) VALUES (&apos;软件维护部&apos;) ;
+</code></pre><h4 id="给员工表中插入数据"><a href="#给员工表中插入数据" class="headerlink" title="给员工表中插入数据"></a>给员工表中插入数据</h4><pre><code>INSERT INTO employee2 (NAME,deptId) VALUES(&apos;王五&apos;,1) ;
+INSERT INTO employee2 (NAME,deptId) VALUES(&apos;陈六&apos;,1) ;
+INSERT INTO employee2 (NAME,deptId) VALUES(&apos;李四&apos;,2) ;
+</code></pre><h4 id="给部门表添加数据"><a href="#给部门表添加数据" class="headerlink" title="给部门表添加数据"></a>给部门表添加数据</h4><pre><code>INSERT INTO dept (id,NAME) VALUES(3,&apos;硬件开发部&apos;);
+</code></pre><h4 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h4><pre><code>UPDATE employee2 SET deptId = 3 WHERE id = 3;
+</code></pre><h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4><pre><code>DELETE FROM employee2 WHERE id =2;
+</code></pre><h3 id="1-7-补充"><a href="#1-7-补充" class="headerlink" title="1.7 补充"></a>1.7 补充</h3><p> –常遇到字段类型:</p>
+<h4 id="1-char-20-vs-varchar-20"><a href="#1-char-20-vs-varchar-20" class="headerlink" title="1)char(20) vs varchar(20)"></a>1)char(20) vs varchar(20)</h4><blockquote>
+<p>char(20):是一个固定长度的字符串,存储字符串内容,一定是20个字符串。<br><br>varchar(20):可变的字符串长度,实际存储的时候是根据当前实际的字符串长度</p>
+</blockquote>
+<p>DROP TABLE test ;</p>
+<h4 id="2-int-和int-4"><a href="#2-int-和int-4" class="headerlink" title="2) int 和int(4)"></a>2) int 和int(4)</h4><blockquote>
+<p>int:默认的长度11位,再存储数值类型的时候,存储实际长度<br><br>int(4):固定长度</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/04/database_2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-database_1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/04/database_1/">数据库Mysql_3_4</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/04/database_1/" class="archive-article-date">
+  	<time datetime="2018-03-04T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h2 id="一、-mysql常用命令"><a href="#一、-mysql常用命令" class="headerlink" title="一、 mysql常用命令"></a>一、 mysql常用命令</h2><h3 id="1-1-管理"><a href="#1-1-管理" class="headerlink" title="1.1 管理"></a>1.1 管理</h3><pre><code>CREATE DATABASE Aoman_OS -- 创建数据库
+USE  Aoman_OS -- 使用数据库
+DROP DATABASE Aoman_OS  -- 删除数据库
+</code></pre><h3 id="1-2-数据库内容"><a href="#1-2-数据库内容" class="headerlink" title="1.2 数据库内容"></a>1.2 数据库内容</h3><pre><code>CREATE TABLE employee(  -- 创建数据库表格
+id INT,NAME VARCHAR(20),gender VARCHAR(2),title VARCHAR(10),email VARCHAR(20)
+);
+SELECT * FROM employee -- 查看数据库表格
+</code></pre><h3 id="2-1-增加数据库内容"><a href="#2-1-增加数据库内容" class="headerlink" title="2.1 增加数据库内容"></a>2.1 增加数据库内容</h3><pre><code>INSERT INTO employee VALUES(1,&apos;依依&apos;,&apos;女&apos;,&apos;程序员鼓励师&apos;,&apos;123@163.com&apos;);
+INSERT INTO employee VALUES(2,&apos;尔尔&apos;,&apos;男&apos;,&apos;程序开发工程师&apos;,&apos;124@163.com&apos;);
+INSERT INTO employee VALUES(3,&apos;散散&apos;,&apos;男&apos;,&apos;程序维护工程师&apos;,&apos;125@163.com&apos;);
+</code></pre><h3 id="2-2-插入部分数据"><a href="#2-2-插入部分数据" class="headerlink" title="2.2 插入部分数据"></a>2.2 插入部分数据</h3><pre><code>INSERT INTO employee (id,NAME) VALUES (4,&apos;思思&apos;);
+</code></pre><h3 id="2-3-修改数据"><a href="#2-3-修改数据" class="headerlink" title="2.3 修改数据"></a>2.3 修改数据</h3><pre><code>UPDATE employee SET gender=&apos;女&apos;,title=&apos;文秘&apos; WHERE id =4;
+</code></pre><h3 id="2-4-删除表中所有数据"><a href="#2-4-删除表中所有数据" class="headerlink" title="2.4 删除表中所有数据"></a>2.4 删除表中所有数据</h3><pre><code>DELETE     * FROM employee
+</code></pre><h3 id="2-5-删除数据表"><a href="#2-5-删除数据表" class="headerlink" title="2.5 删除数据表"></a>2.5 删除数据表</h3><pre><code>DROP FROM employee
+</code></pre><h3 id="3-1-查询"><a href="#3-1-查询" class="headerlink" title="3.1 查询"></a>3.1 查询</h3><pre><code>SELECT id AS &apos;1&apos; FROM employee
+SELECT id AS &apos;1&apos; ，NAME AS &apos;尔尔&apos; FROM employee
+</code></pre><h3 id="3-2-不重复的查询"><a href="#3-2-不重复的查询" class="headerlink" title="3.2 不重复的查询"></a>3.2 不重复的查询</h3><pre><code>SELECT DISTINCT email FROM employee
+</code></pre><h3 id="3-3-条件查询"><a href="#3-3-条件查询" class="headerlink" title="3.3 条件查询"></a>3.3 条件查询</h3><pre><code>SELECT * FROM employee WHERE id=1 OR NAME = &apos;思思&apos; ; -- or 并集
+SELECT * FROM employee WHERE id=1 AND NAME = &apos;思思&apos; ; -- and 交集
+</code></pre><h3 id="3-4-判断查询"><a href="#3-4-判断查询" class="headerlink" title="3.4 判断查询"></a>3.4 判断查询</h3><pre><code>大于 &gt; ,小于 &lt; ,等于 = 
+不等于 ！= 或者 &lt;&gt;， 在什么之间 between 1 and 2，
+非空 isnot null 或者 不等于 &apos;&apos;
+</code></pre><h3 id="3-5-模糊查询"><a href="#3-5-模糊查询" class="headerlink" title="3.5 模糊查询"></a>3.5 模糊查询</h3><pre><code>SELECT * FROM studet WHERE NAME LIKE &apos;思%&apos;
+%代替任何字符，任何长度的字符
+-仅仅代替一个字符
+</code></pre><h3 id="3-6-asc-升序-desc-降序"><a href="#3-6-asc-升序-desc-降序" class="headerlink" title="3.6 asc 升序 desc 降序"></a>3.6 asc 升序 desc 降序</h3><pre><code>默认情况下:是按照插入顺序进行排序
+SELECT * FROM student ORDER BY id ASC ;
+需求:servlet成绩是一个降序排序
+SELECT * FROM student ORDER BY servlet DESC ;
+</code></pre><h2 id="二、小练习"><a href="#二、小练习" class="headerlink" title="二、小练习"></a>二、小练习</h2><pre><code>CREATE TABLE student2(
+    id INT,
+    NAME VARCHAR(20),
+    chinese FLOAT,
+    english FLOAT,
+    math FLOAT
+);
+
+INSERT INTO student2(id,NAME,chinese,english,math) VALUES(1,&apos;张小明&apos;,89,78,90);
+INSERT INTO student2(id,NAME,chinese,english,math) VALUES(2,&apos;李进&apos;,67,53,95);
+INSERT INTO student2(id,NAME,chinese,english,math) VALUES(3,&apos;王五&apos;,87,78,77);
+INSERT INTO student2(id,NAME,chinese,english,math) VALUES(4,&apos;李一&apos;,88,98,92);
+INSERT INTO student2(id,NAME,chinese,english,math) VALUES(5,&apos;李来财&apos;,82,84,67);
+INSERT INTO student2(id,NAME,chinese,english,math) VALUES(6,&apos;张进宝&apos;,55,85,45);
+INSERT INTO student2(id,NAME,chinese,english,math) VALUES(7,&apos;黄蓉&apos;,75,65,30)
+</code></pre><h4 id="查询操作练习-在学生表数据基础上：student-sql"><a href="#查询操作练习-在学生表数据基础上：student-sql" class="headerlink" title="查询操作练习(在学生表数据基础上：student.sql)"></a>查询操作练习(在学生表数据基础上：student.sql)</h4><p>–     查询表中所有学生的信息。</p>
+<pre><code>SELECT * FROM student2 ;
+</code></pre><p>– 查询表中所有学生的姓名和对应的英语成绩。</p>
+<pre><code>SELECT  NAME ,english FROM student2
+</code></pre><p>–     使用别名表示学生分数。</p>
+<pre><code>SELECT id AS &apos;编号&apos;,NAME AS &apos;姓名&apos;,chinese AS &apos;语文&apos;,english AS &apos;英语&apos;,math AS &apos;数学&apos; FROM student2 ;
+</code></pre><p>–     查询姓名为李一的学生成绩</p>
+<pre><code>SELECT * FROM student2 WHERE NAME = &apos;李一&apos;;
+</code></pre><p>–     查询英语成绩大于等于90分的同学</p>
+<pre><code>SELECT * FROM student2 WHERE english &gt;=90
+</code></pre><p>–     查询总分大于200分的所有同学</p>
+<pre><code>SELECT * FROM student2 WHERE (chinese+english+math)&gt;200;
+</code></pre><p>–     查询所有姓李的学生英语成绩。</p>
+<pre><code>SELECT NAME,english FROM student2 WHERE NAME LIKE &apos;李%&apos;
+</code></pre><p>–     查询英语&gt;80或者总分&gt;200的同学</p>
+<pre><code>SELECT * FROM student2 WHERE english &gt;80 OR (chinese+english+math)&gt;200;
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/04/database_1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hexo_3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -174,8 +441,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>hexo博客yilia主题,左侧栏目有一个全部文章的按钮，刚开始开始报错缺失模块，如下图：<br>
-        
+        <a id="more"></a>
+<p>hexo博客yilia主题,左侧栏目有一个全部文章的按钮，刚开始开始报错缺失模块，如下图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/6280966-d3fb28b5a1dcb69c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>我解决了这个问题着实不容易饶了弯路，但是跟着提示步骤，其实很简单，走起：</p>
+<hr>
+<h2 id="1、查看node版本"><a href="#1、查看node版本" class="headerlink" title="1、查看node版本"></a>1、查看node版本</h2><figure class="highlight plain"><figcaption><span>打开命令控制台，输入代码  ```node -v``` 查看node版本，如下图：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![这里写图片描述](http://upload-images.jianshu.io/upload_images/6280966-e798155edf9d3c60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">只要node的版本高于6.2就行</span><br><span class="line"></span><br><span class="line">## 2、运行命令行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">博客根目录下运行命令行 ```npm i  hexo-generator-json-content --save</span><br></pre></td></tr></table></figure>
+<p>如果这个包已经存在，会报错，图忘了截了。</p>
+<p>但是你需要在theme文件夹的yilia主题文件夹下，找到node—modules文件夹。如果hexo-generator-json-content 这个包是存在的就OK，可以进行第三步了，见下图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/6280966-7bdc3639ca05cc64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<h2 id="3、配置文件"><a href="#3、配置文件" class="headerlink" title="3、配置文件"></a>3、配置文件</h2><p>博客根目录下，找到_config.yml，打开找一个空白地方复制一下配置信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">jsonContent:</span><br><span class="line"></span><br><span class="line">  meta: false</span><br><span class="line"></span><br><span class="line">  pages: false</span><br><span class="line"></span><br><span class="line">  posts:</span><br><span class="line"></span><br><span class="line">    title: true</span><br><span class="line"></span><br><span class="line">    date: true</span><br><span class="line"></span><br><span class="line">    path: true</span><br><span class="line"></span><br><span class="line">    text: false</span><br><span class="line"></span><br><span class="line">    raw: false</span><br><span class="line"></span><br><span class="line">    content: false</span><br><span class="line"></span><br><span class="line">    slug: false</span><br><span class="line"></span><br><span class="line">    updated: false</span><br><span class="line"></span><br><span class="line">    comments: false</span><br><span class="line"></span><br><span class="line">    link: false</span><br><span class="line"></span><br><span class="line">    permalink: false</span><br><span class="line"></span><br><span class="line">    excerpt: false</span><br><span class="line"></span><br><span class="line">    categories: false</span><br><span class="line"></span><br><span class="line">    tags: true</span><br></pre></td></tr></table></figure>
+<h3 id="注（重点）：细节处–复制的信息格式要调好"><a href="#注（重点）：细节处–复制的信息格式要调好" class="headerlink" title="注（重点）：细节处–复制的信息格式要调好"></a>注（重点）：细节处–复制的信息格式要调好</h3><p>1、配置文件内找空白处粘贴文件</p>
+<p>2、第一行jsonContent: - 即下图46行前没有空格</p>
+<p>下图47、48、49行前有一个空格</p>
+<p>剩下的有两个空格</p>
+<p>具体格式如下图所示：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/6280966-30e468dd4732ea42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
+<p>保存后同步文件在看你的博客，点全部文章按钮</p>
+<p>应该是修复了缺失模块这个报错</p>
+
       
 
       
@@ -650,15 +935,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -670,7 +955,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color1">Music</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -682,7 +971,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Music</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>

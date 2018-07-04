@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.haoloverongrong.top">
-  <title>数据库Mysql——1 | AomanHao</title>
+  <title>数据库Mysql_3_4 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.mysql常用命令">
+  <meta name="description" content="一、 mysql常用命令1.1 管理CREATE DATABASE Aoman_OS -- 创建数据库 USE  Aoman_OS -- 使用数据库 DROP DATABASE Aoman_OS  -- 删除数据库 1.2 数据库内容CREATE TABLE employee(  -- 创建数据库表格 id INT,NAME VARCHAR(20),gender VARCHAR(2),title">
 <meta name="keywords" content="Mysql,Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库Mysql——1">
+<meta property="og:title" content="数据库Mysql_3_4">
 <meta property="og:url" content="http://www.haoloverongrong.top/2018/03/04/database_1/index.html">
 <meta property="og:site_name" content="AomanHao">
-<meta property="og:description" content="1.mysql常用命令">
+<meta property="og:description" content="一、 mysql常用命令1.1 管理CREATE DATABASE Aoman_OS -- 创建数据库 USE  Aoman_OS -- 使用数据库 DROP DATABASE Aoman_OS  -- 删除数据库 1.2 数据库内容CREATE TABLE employee(  -- 创建数据库表格 id INT,NAME VARCHAR(20),gender VARCHAR(2),title">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-28T01:20:01.063Z">
+<meta property="og:updated_time" content="2018-07-04T12:32:08.347Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库Mysql——1">
-<meta name="twitter:description" content="1.mysql常用命令">
+<meta name="twitter:title" content="数据库Mysql_3_4">
+<meta name="twitter:description" content="一、 mysql常用命令1.1 管理CREATE DATABASE Aoman_OS -- 创建数据库 USE  Aoman_OS -- 使用数据库 DROP DATABASE Aoman_OS  -- 删除数据库 1.2 数据库内容CREATE TABLE employee(  -- 创建数据库表格 id INT,NAME VARCHAR(20),gender VARCHAR(2),title">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -164,7 +164,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      数据库Mysql——1
+      数据库Mysql_3_4
     </h1>
   
 
@@ -177,25 +177,68 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-mysql常用命令"><a href="#1-mysql常用命令" class="headerlink" title="1.mysql常用命令"></a>1.mysql常用命令</h1><a id="more"></a>
-<p>– 1<br>– 管理<br>CREATE DATABASE Aoman_OS – 创建数据库<br>USE  Aoman_OS – 使用数据库<br>DROP DATABASE Aoman_OS  – 删除数据库</p>
-<p>– 数据库内容<br>CREATE TABLE employee(  – 创建数据库表格<br>id INT,NAME VARCHAR(20),gender VARCHAR(2),title VARCHAR(10),email VARCHAR(20)<br>);<br>SELECT * FROM employee – 查看数据库表格</p>
-<p>– 2<br>– 增加数据库内容<br>INSERT INTO employee VALUES(1,’依依’,’女’,’程序员鼓励师’,’123@163.com’);<br>INSERT INTO employee VALUES(2,’尔尔’,’男’,’程序开发工程师’,’124@163.com’);<br>INSERT INTO employee VALUES(3,’散散’,’男’,’程序维护工程师’,’125@163.com’);</p>
-<p>– 插入部分数据<br>INSERT INTO employee (id,NAME) VALUES (4,’思思’);</p>
-<p>– 修改数据<br>UPDATE employee SET gender=’女’,title=’文秘’ WHERE id =4;</p>
-<p>– 删除表中所有数据<br>DELETE     * FROM employee<br>– 删除数据表<br>DROP FROM employee</p>
-<p>– 3<br>– 查询<br>SELECT id AS ‘1’ FROM employee<br>SELECT id AS ‘1’ ，NAME AS ‘尔尔’ FROM employee</p>
-<p>– 不重复的查询<br>SELECT DISTINCT email FROM employee</p>
-<p>– 条件查询<br>SELECT <em> FROM employee WHERE id=1 OR NAME = ‘思思’ ; – or 并集<br>SELECT </em> FROM employee WHERE id=1 AND NAME = ‘思思’ ; – and 交集</p>
-<p>– 判断查询<br>– 大于 &gt;,小于&lt;，等于=<br>– 不等于 ！= 或者 &lt;&gt;， 在什么之间 between 1 and 2，<br>– 非空 isnot null 或者 不等于 ‘’</p>
-<p>– 模糊查询<br>SELECT * FROM studet WHERE NAME LIKE ‘思%’<br>– %代替任何字符，任何长度的字符<br>– -仅仅代替一个字符</p>
-<p>– asc 升序 desc 降序<br>– 默认情况下:是按照插入顺序进行排序<br>SELECT * FROM student ORDER BY id ASC ;</p>
-<p>– 需求:servlet成绩是一个降序排序<br>SELECT * FROM student ORDER BY servlet DESC ;</p>
-<h2 id="2-小练习"><a href="#2-小练习" class="headerlink" title="2.小练习"></a>2.小练习</h2><p>CREATE TABLE student2(<br>    id INT,<br>    NAME VARCHAR(20),<br>    chinese FLOAT,<br>    english FLOAT,<br>    math FLOAT<br>);</p>
-<p>INSERT INTO student2(id,NAME,chinese,english,math) VALUES(1,’张小明’,89,78,90);<br>INSERT INTO student2(id,NAME,chinese,english,math) VALUES(2,’李进’,67,53,95);<br>INSERT INTO student2(id,NAME,chinese,english,math) VALUES(3,’王五’,87,78,77);<br>INSERT INTO student2(id,NAME,chinese,english,math) VALUES(4,’李一’,88,98,92);<br>INSERT INTO student2(id,NAME,chinese,english,math) VALUES(5,’李来财’,82,84,67);<br>INSERT INTO student2(id,NAME,chinese,english,math) VALUES(6,’张进宝’,55,85,45);<br>INSERT INTO student2(id,NAME,chinese,english,math) VALUES(7,’黄蓉’,75,65,30)</p>
-<p>– 查询操作练习(在学生表数据基础上：student.sql)<br>–     查询表中所有学生的信息。<br>SELECT * FROM student2 ;<br>– 查询表中所有学生的姓名和对应的英语成绩。<br>SELECT  NAME ,english FROM student2<br>–     使用别名表示学生分数。<br>SELECT id AS ‘编号’,NAME AS ‘姓名’,chinese AS ‘语文’,english AS ‘英语’,math AS ‘数学’ FROM student2 ;</p>
-<p>–     查询姓名为李一的学生成绩<br>SELECT <em> FROM student2 WHERE NAME = ‘李一’;<br>–     查询英语成绩大于等于90分的同学<br>SELECT </em> FROM student2 WHERE english &gt;=90<br>–     查询总分大于200分的所有同学<br>SELECT <em> FROM student2 WHERE (chinese+english+math)&gt;200;<br>–     查询所有姓李的学生英语成绩。<br>SELECT NAME,english FROM student2 WHERE NAME LIKE ‘李%’<br>–     查询英语&gt;80或者总分&gt;200的同学<br>SELECT </em> FROM student2 WHERE english &gt;80 OR (chinese+english+math)&gt;200;</p>
+        <a id="more"></a>
+<h2 id="一、-mysql常用命令"><a href="#一、-mysql常用命令" class="headerlink" title="一、 mysql常用命令"></a>一、 mysql常用命令</h2><h3 id="1-1-管理"><a href="#1-1-管理" class="headerlink" title="1.1 管理"></a>1.1 管理</h3><pre><code>CREATE DATABASE Aoman_OS -- 创建数据库
+USE  Aoman_OS -- 使用数据库
+DROP DATABASE Aoman_OS  -- 删除数据库
+</code></pre><h3 id="1-2-数据库内容"><a href="#1-2-数据库内容" class="headerlink" title="1.2 数据库内容"></a>1.2 数据库内容</h3><pre><code>CREATE TABLE employee(  -- 创建数据库表格
+id INT,NAME VARCHAR(20),gender VARCHAR(2),title VARCHAR(10),email VARCHAR(20)
+);
+SELECT * FROM employee -- 查看数据库表格
+</code></pre><h3 id="2-1-增加数据库内容"><a href="#2-1-增加数据库内容" class="headerlink" title="2.1 增加数据库内容"></a>2.1 增加数据库内容</h3><pre><code>INSERT INTO employee VALUES(1,&apos;依依&apos;,&apos;女&apos;,&apos;程序员鼓励师&apos;,&apos;123@163.com&apos;);
+INSERT INTO employee VALUES(2,&apos;尔尔&apos;,&apos;男&apos;,&apos;程序开发工程师&apos;,&apos;124@163.com&apos;);
+INSERT INTO employee VALUES(3,&apos;散散&apos;,&apos;男&apos;,&apos;程序维护工程师&apos;,&apos;125@163.com&apos;);
+</code></pre><h3 id="2-2-插入部分数据"><a href="#2-2-插入部分数据" class="headerlink" title="2.2 插入部分数据"></a>2.2 插入部分数据</h3><pre><code>INSERT INTO employee (id,NAME) VALUES (4,&apos;思思&apos;);
+</code></pre><h3 id="2-3-修改数据"><a href="#2-3-修改数据" class="headerlink" title="2.3 修改数据"></a>2.3 修改数据</h3><pre><code>UPDATE employee SET gender=&apos;女&apos;,title=&apos;文秘&apos; WHERE id =4;
+</code></pre><h3 id="2-4-删除表中所有数据"><a href="#2-4-删除表中所有数据" class="headerlink" title="2.4 删除表中所有数据"></a>2.4 删除表中所有数据</h3><pre><code>DELETE     * FROM employee
+</code></pre><h3 id="2-5-删除数据表"><a href="#2-5-删除数据表" class="headerlink" title="2.5 删除数据表"></a>2.5 删除数据表</h3><pre><code>DROP FROM employee
+</code></pre><h3 id="3-1-查询"><a href="#3-1-查询" class="headerlink" title="3.1 查询"></a>3.1 查询</h3><pre><code>SELECT id AS &apos;1&apos; FROM employee
+SELECT id AS &apos;1&apos; ，NAME AS &apos;尔尔&apos; FROM employee
+</code></pre><h3 id="3-2-不重复的查询"><a href="#3-2-不重复的查询" class="headerlink" title="3.2 不重复的查询"></a>3.2 不重复的查询</h3><pre><code>SELECT DISTINCT email FROM employee
+</code></pre><h3 id="3-3-条件查询"><a href="#3-3-条件查询" class="headerlink" title="3.3 条件查询"></a>3.3 条件查询</h3><pre><code>SELECT * FROM employee WHERE id=1 OR NAME = &apos;思思&apos; ; -- or 并集
+SELECT * FROM employee WHERE id=1 AND NAME = &apos;思思&apos; ; -- and 交集
+</code></pre><h3 id="3-4-判断查询"><a href="#3-4-判断查询" class="headerlink" title="3.4 判断查询"></a>3.4 判断查询</h3><pre><code>大于 &gt; ,小于 &lt; ,等于 = 
+不等于 ！= 或者 &lt;&gt;， 在什么之间 between 1 and 2，
+非空 isnot null 或者 不等于 &apos;&apos;
+</code></pre><h3 id="3-5-模糊查询"><a href="#3-5-模糊查询" class="headerlink" title="3.5 模糊查询"></a>3.5 模糊查询</h3><pre><code>SELECT * FROM studet WHERE NAME LIKE &apos;思%&apos;
+%代替任何字符，任何长度的字符
+-仅仅代替一个字符
+</code></pre><h3 id="3-6-asc-升序-desc-降序"><a href="#3-6-asc-升序-desc-降序" class="headerlink" title="3.6 asc 升序 desc 降序"></a>3.6 asc 升序 desc 降序</h3><pre><code>默认情况下:是按照插入顺序进行排序
+SELECT * FROM student ORDER BY id ASC ;
+需求:servlet成绩是一个降序排序
+SELECT * FROM student ORDER BY servlet DESC ;
+</code></pre><h2 id="二、小练习"><a href="#二、小练习" class="headerlink" title="二、小练习"></a>二、小练习</h2><pre><code>CREATE TABLE student2(
+    id INT,
+    NAME VARCHAR(20),
+    chinese FLOAT,
+    english FLOAT,
+    math FLOAT
+);
 
+INSERT INTO student2(id,NAME,chinese,english,math) VALUES(1,&apos;张小明&apos;,89,78,90);
+INSERT INTO student2(id,NAME,chinese,english,math) VALUES(2,&apos;李进&apos;,67,53,95);
+INSERT INTO student2(id,NAME,chinese,english,math) VALUES(3,&apos;王五&apos;,87,78,77);
+INSERT INTO student2(id,NAME,chinese,english,math) VALUES(4,&apos;李一&apos;,88,98,92);
+INSERT INTO student2(id,NAME,chinese,english,math) VALUES(5,&apos;李来财&apos;,82,84,67);
+INSERT INTO student2(id,NAME,chinese,english,math) VALUES(6,&apos;张进宝&apos;,55,85,45);
+INSERT INTO student2(id,NAME,chinese,english,math) VALUES(7,&apos;黄蓉&apos;,75,65,30)
+</code></pre><h4 id="查询操作练习-在学生表数据基础上：student-sql"><a href="#查询操作练习-在学生表数据基础上：student-sql" class="headerlink" title="查询操作练习(在学生表数据基础上：student.sql)"></a>查询操作练习(在学生表数据基础上：student.sql)</h4><p>–     查询表中所有学生的信息。</p>
+<pre><code>SELECT * FROM student2 ;
+</code></pre><p>– 查询表中所有学生的姓名和对应的英语成绩。</p>
+<pre><code>SELECT  NAME ,english FROM student2
+</code></pre><p>–     使用别名表示学生分数。</p>
+<pre><code>SELECT id AS &apos;编号&apos;,NAME AS &apos;姓名&apos;,chinese AS &apos;语文&apos;,english AS &apos;英语&apos;,math AS &apos;数学&apos; FROM student2 ;
+</code></pre><p>–     查询姓名为李一的学生成绩</p>
+<pre><code>SELECT * FROM student2 WHERE NAME = &apos;李一&apos;;
+</code></pre><p>–     查询英语成绩大于等于90分的同学</p>
+<pre><code>SELECT * FROM student2 WHERE english &gt;=90
+</code></pre><p>–     查询总分大于200分的所有同学</p>
+<pre><code>SELECT * FROM student2 WHERE (chinese+english+math)&gt;200;
+</code></pre><p>–     查询所有姓李的学生英语成绩。</p>
+<pre><code>SELECT NAME,english FROM student2 WHERE NAME LIKE &apos;李%&apos;
+</code></pre><p>–     查询英语&gt;80或者总分&gt;200的同学</p>
+<pre><code>SELECT * FROM student2 WHERE english &gt;80 OR (chinese+english+math)&gt;200;
+</code></pre>
       
 
       
@@ -286,7 +329,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          数据库Mysql——2
+          数据库Mysql_3_4
         
       </div>
     </a>
@@ -425,15 +468,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,7 +488,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color1">Music</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -457,7 +504,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Music</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>

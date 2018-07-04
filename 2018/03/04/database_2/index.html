@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.haoloverongrong.top">
-  <title>数据库Mysql——2 | AomanHao</title>
+  <title>数据库Mysql_3_4 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.数据库约束">
+  <meta name="description" content="一、数据库约束   1.1 默认值约束(default)1.2 非空约束( not null )1.3 唯一约束(unique)CREATE TABLE test( id INT  UNIQUE ,-- 唯一 NAME VARCHAR(20) NOT NULL, -- 非空 gender VARCHAR(2) DEFAULT &amp;apos;男&amp;apos; -- 默认值约束 ); 1.4 主键约束">
 <meta name="keywords" content="Mysql,Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库Mysql——2">
+<meta property="og:title" content="数据库Mysql_3_4">
 <meta property="og:url" content="http://www.haoloverongrong.top/2018/03/04/database_2/index.html">
 <meta property="og:site_name" content="AomanHao">
-<meta property="og:description" content="1.数据库约束">
+<meta property="og:description" content="一、数据库约束   1.1 默认值约束(default)1.2 非空约束( not null )1.3 唯一约束(unique)CREATE TABLE test( id INT  UNIQUE ,-- 唯一 NAME VARCHAR(20) NOT NULL, -- 非空 gender VARCHAR(2) DEFAULT &amp;apos;男&amp;apos; -- 默认值约束 ); 1.4 主键约束">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-28T01:19:59.804Z">
+<meta property="og:updated_time" content="2018-07-04T13:10:53.765Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库Mysql——2">
-<meta name="twitter:description" content="1.数据库约束">
+<meta name="twitter:title" content="数据库Mysql_3_4">
+<meta name="twitter:description" content="一、数据库约束   1.1 默认值约束(default)1.2 非空约束( not null )1.3 唯一约束(unique)CREATE TABLE test( id INT  UNIQUE ,-- 唯一 NAME VARCHAR(20) NOT NULL, -- 非空 gender VARCHAR(2) DEFAULT &amp;apos;男&amp;apos; -- 默认值约束 ); 1.4 主键约束">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -164,7 +164,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      数据库Mysql——2
+      数据库Mysql_3_4
     </h1>
   
 
@@ -177,20 +177,58 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-数据库约束"><a href="#1-数据库约束" class="headerlink" title="1.数据库约束"></a>1.数据库约束</h1><a id="more"></a>
-<p>– 1 默认值约束(default)<br>– 2 非空约束( not null )<br>– 3 唯一约束(unique)<br>CREATE TABLE test(<br>    id INT  UNIQUE ,– 唯一<br>    NAME VARCHAR(20) NOT NULL, – 非空<br>    gender VARCHAR(2) DEFAULT ‘男’ – 默认值约束<br>);</p>
-<p>– 4 主键约束(primary key 作用:非空+唯一约束)<br>– 5 自增长约束(auto_increment)<br>CREATE TABLE test2(<br>    id INT  PRIMARY KEY AUTO_INCREMENT,– 非空+唯一约束+自增长约束<br>    NAME VARCHAR(20) ,<br>    gender VARCHAR(2) ,<br>);</p>
-<p>– 6 外键约束(属于数据库中表的设计)<br>– 外键约束:约束两个或者两个以上的表的数据，一般情况有两种表(主表,副表)<br>DROP TABLE employee2<br>DELETE FROM employee2</p>
-<p>SELECT <em> FROM employee2<br>SELECT </em> FROM dept</p>
-<p>– 员工表<br>CREATE TABLE employee2(<br>    id INT PRIMARY KEY AUTO_INCREMENT,<br>    NAME VARCHAR(20),<br>    deptId INT,<br>    – 添加外键约束<br>    CONSTRAINT employee_dept_fk FOREIGN KEY (deptId) REFERENCES dept(id)<br> –     声明         外键名称    外键    被约束的字段  关联     部门表中id的字段<br>);</p>
-<p>INSERT INTO employee2 (NAME,deptId) VALUES(‘张三’,1) ;<br>INSERT INTO employee2 (NAME,deptId) VALUES(‘李四’,2) ;<br>INSERT INTO employee2 (NAME,deptId) VALUES(‘王五’,1) ;<br>INSERT INTO employee2 (NAME,deptId) VALUES(‘陈六’,1) ;</p>
-<p>– 可以设计一个独立的表-部门表 专门用来存储部门名称,来解决数据冗余的问题<br>– 部门表(主表,约束别人的表)<br>CREATE TABLE dept(<br>    id INT PRIMARY KEY AUTO_INCREMENT ,<br>    NAME VARCHAR(20) – 部门名称<br>);</p>
-<p>– 插入几个部门名称<br>INSERT INTO dept (NAME) VALUES (‘软件开发部’) ;<br>INSERT INTO dept (NAME) VALUES (‘软件维护部’) ;</p>
-<p>– 给员工表中插入数据<br>INSERT INTO employee2 (NAME,deptId) VALUES(‘王五’,1) ;<br>INSERT INTO employee2 (NAME,deptId) VALUES(‘陈六’,1) ;<br>INSERT INTO employee2 (NAME,deptId) VALUES(‘李四’,2) ;</p>
-<p>– 给部门表添加数据<br>INSERT INTO dept (id,NAME) VALUES(3,’硬件开发部’);<br>– 修改数据<br>UPDATE employee2 SET deptId = 3 WHERE id = 3;</p>
-<p>– 删除数据<br>DELETE FROM employee2 WHERE id =2;</p>
-<p>– 7 补充<br>– 常遇到字段类型:<br>– 1)char(20) vs varchar(20)<br>– char(20):是一个固定长度的字符串,存储字符串内容,一定是20个字符串<br>– varchar(20):可变的字符串长度,实际存储的时候是根据当前实际的字符串长度</p>
-<p>DROP TABLE test ;<br>– 2) int 和int(4)<br>– int:默认的长度11位,再存储数值类型的时候,存储实际长度<br>– int(4):固定长度</p>
+        <a id="more"></a>
+<h2> 一、数据库约束 </h2>
+
+<h3 id="1-1-默认值约束-default"><a href="#1-1-默认值约束-default" class="headerlink" title="1.1 默认值约束(default)"></a>1.1 默认值约束(default)</h3><h3 id="1-2-非空约束-not-null"><a href="#1-2-非空约束-not-null" class="headerlink" title="1.2 非空约束( not null )"></a>1.2 非空约束( not null )</h3><h3 id="1-3-唯一约束-unique"><a href="#1-3-唯一约束-unique" class="headerlink" title="1.3 唯一约束(unique)"></a>1.3 唯一约束(unique)</h3><pre><code>CREATE TABLE test(
+id INT  UNIQUE ,-- 唯一
+NAME VARCHAR(20) NOT NULL, -- 非空
+gender VARCHAR(2) DEFAULT &apos;男&apos; -- 默认值约束
+);
+</code></pre><h3 id="1-4-主键约束-primary-key-作用-非空-唯一约束"><a href="#1-4-主键约束-primary-key-作用-非空-唯一约束" class="headerlink" title="1.4 主键约束(primary key 作用:非空+唯一约束)"></a>1.4 主键约束(primary key 作用:非空+唯一约束)</h3><h3 id="1-5-自增长约束-auto-increment"><a href="#1-5-自增长约束-auto-increment" class="headerlink" title="1.5 自增长约束(auto_increment)"></a>1.5 自增长约束(auto_increment)</h3><pre><code>CREATE TABLE test2(
+    id INT  PRIMARY KEY AUTO_INCREMENT,-- 非空+唯一约束+自增长约束
+    NAME VARCHAR(20) ,
+    gender VARCHAR(2) ,
+);
+</code></pre><h3 id="1-6-外键约束-属于数据库中表的设计"><a href="#1-6-外键约束-属于数据库中表的设计" class="headerlink" title="1.6 外键约束(属于数据库中表的设计)"></a>1.6 外键约束(属于数据库中表的设计)</h3><h3 id="1-6-1-外键约束-约束两个或者两个以上的表的数据，一般情况有两种表-主表-副表"><a href="#1-6-1-外键约束-约束两个或者两个以上的表的数据，一般情况有两种表-主表-副表" class="headerlink" title="1.6.1 外键约束:约束两个或者两个以上的表的数据，一般情况有两种表(主表,副表)"></a>1.6.1 外键约束:约束两个或者两个以上的表的数据，一般情况有两种表(主表,副表)</h3><pre><code>DROP TABLE employee2
+DELETE FROM employee2
+
+SELECT * FROM employee2
+SELECT * FROM dept
+</code></pre><h3 id="1-6-2-员工表"><a href="#1-6-2-员工表" class="headerlink" title="1.6.2 员工表"></a>1.6.2 员工表</h3><pre><code>CREATE TABLE employee2(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    NAME VARCHAR(20),
+    deptId INT,
+    -- 添加外键约束
+    CONSTRAINT employee_dept_fk FOREIGN KEY (deptId) REFERENCES dept(id)
+--     声明         外键名称    外键    被约束的字段  关联     部门表中id的字段
+);
+
+INSERT INTO employee2 (NAME,deptId) VALUES(&apos;张三&apos;,1) ;
+INSERT INTO employee2 (NAME,deptId) VALUES(&apos;李四&apos;,2) ;
+INSERT INTO employee2 (NAME,deptId) VALUES(&apos;王五&apos;,1) ;
+INSERT INTO employee2 (NAME,deptId) VALUES(&apos;陈六&apos;,1) ;
+</code></pre><p>可以设计一个独立的表-部门表 专门用来存储部门名称,来解决数据冗余的问题</p>
+<h3 id="1-6-3-部门表-主表-约束别人的表"><a href="#1-6-3-部门表-主表-约束别人的表" class="headerlink" title="1.6.3 部门表(主表,约束别人的表)"></a>1.6.3 部门表(主表,约束别人的表)</h3><pre><code>CREATE TABLE dept(
+    id INT PRIMARY KEY AUTO_INCREMENT ,
+    NAME VARCHAR(20) -- 部门名称
+);
+</code></pre><h4 id="插入几个部门名称"><a href="#插入几个部门名称" class="headerlink" title="插入几个部门名称"></a>插入几个部门名称</h4><pre><code>INSERT INTO dept (NAME) VALUES (&apos;软件开发部&apos;) ;
+INSERT INTO dept (NAME) VALUES (&apos;软件维护部&apos;) ;
+</code></pre><h4 id="给员工表中插入数据"><a href="#给员工表中插入数据" class="headerlink" title="给员工表中插入数据"></a>给员工表中插入数据</h4><pre><code>INSERT INTO employee2 (NAME,deptId) VALUES(&apos;王五&apos;,1) ;
+INSERT INTO employee2 (NAME,deptId) VALUES(&apos;陈六&apos;,1) ;
+INSERT INTO employee2 (NAME,deptId) VALUES(&apos;李四&apos;,2) ;
+</code></pre><h4 id="给部门表添加数据"><a href="#给部门表添加数据" class="headerlink" title="给部门表添加数据"></a>给部门表添加数据</h4><pre><code>INSERT INTO dept (id,NAME) VALUES(3,&apos;硬件开发部&apos;);
+</code></pre><h4 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h4><pre><code>UPDATE employee2 SET deptId = 3 WHERE id = 3;
+</code></pre><h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4><pre><code>DELETE FROM employee2 WHERE id =2;
+</code></pre><h3 id="1-7-补充"><a href="#1-7-补充" class="headerlink" title="1.7 补充"></a>1.7 补充</h3><p> –常遇到字段类型:</p>
+<h4 id="1-char-20-vs-varchar-20"><a href="#1-char-20-vs-varchar-20" class="headerlink" title="1)char(20) vs varchar(20)"></a>1)char(20) vs varchar(20)</h4><blockquote>
+<p>char(20):是一个固定长度的字符串,存储字符串内容,一定是20个字符串。<br><br>varchar(20):可变的字符串长度,实际存储的时候是根据当前实际的字符串长度</p>
+</blockquote>
+<p>DROP TABLE test ;</p>
+<h4 id="2-int-和int-4"><a href="#2-int-和int-4" class="headerlink" title="2) int 和int(4)"></a>2) int 和int(4)</h4><blockquote>
+<p>int:默认的长度11位,再存储数值类型的时候,存储实际长度<br><br>int(4):固定长度</p>
+</blockquote>
 
       
 
@@ -289,7 +327,7 @@
   
   
     <a href="/2018/03/04/database_1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据库Mysql——1</div>
+      <div class="article-nav-title">数据库Mysql_3_4</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -421,15 +459,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -441,7 +479,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color1">Music</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -453,7 +495,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Music</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
             
             <div class="clearfix"></div>
