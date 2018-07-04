@@ -4,8 +4,8 @@ date: 2018-03-09 10:59:59
 tags: [Matlab, GUI]
 ---
 
-axes控件实现了展示图片，动态txt控件实现了展示或者输入参数。
 <!--more-->
+axes控件实现了展示图片，动态txt控件实现了展示或者输入参数。
 
 在gui界面右键点击“重置”pushbotton回到代码块callback，编写代码
 

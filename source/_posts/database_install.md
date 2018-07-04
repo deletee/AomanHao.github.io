@@ -1,25 +1,29 @@
 ---
 title: 安装mysql，和遇到的一些错误及解决方案
 date: 2018-03-28 10:59:59
-tags: [Mysql, Java]
+tags: [Mysql, Java] 
 ---
 
-1、下载：
+
 <!--more-->
+<h2>安装mysql</h2>
+
+
+<h2>1、下载</h2>
 mysql-5.7.20是解压版免安装的，mysql-5.7.20下载地址：http://dev.mysql.com/downloads/mysql/
 
 
 ----------
 
 
-2、安装
+<h2>2、安装</h2>
   解压在你喜欢的位置
 
 
 ----------
 
 
-3、配置
+<h2>3、配置</h2>
   新建一个ini文件，并命名为my.ini，放置到mysql根目录下，文件内容如下
 
 ```
@@ -52,8 +56,8 @@ default-storage-engine=INNODB
 ----------
 
 
-4、安装mysql服务
-4.1、管理员身份打开cmd.exe
+<h2>4、安装mysql服务</h2>
+</h3>4.1、管理员身份打开cmd.exe</h3>
 文件位置C:\Windows\System32\cmd.exe,找到右击选择管理员身份打开（重点），如果没有一管理员身份打开运行cmd.exe，会报错
 
 ```
@@ -70,7 +74,7 @@ mysqld install
 
 ![这里写图片描述](http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_succ_insta.png)
 
-4.2、创建data文件
+<h3>4.2、创建data文件</h3>
 将目录切换到你mysql安装目录的bin目录后，再输入
 
 ```
@@ -90,12 +94,12 @@ mysqld: Can't create/write to file
 ![这里写图片描述](http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_not_craet_direc.png)
 
 
-4.3 测试启动
+<h3>4.3 测试启动</h3>
 启动mysql服务：
 
 将目录切换到你mysql安装目录的bin目录，输入 net start mysql 启动服务，OK成功。
 
-4.3.1报错：
+*4.3.1 报错*
 
 ```
 Found option without preceding group in config file:XXX;
@@ -109,14 +113,14 @@ Fatal error in defaults handling.
 
 然后cmd窗口输入命令行启动mysql
 
-4.3.2报错
+*4.3.2 报错*
 
 ![这里写图片描述](http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_error5.png)
 
 解决：以管理员身份来运行cmd程序来启动mysql。
 
 
-4.3.3运行net start mysql
+*4.3.3运行 net start mysql*
 
 ![这里写图片描述](http://p3qhnc0eg.bkt.clouddn.com/blog/mysql_starting.png)
 

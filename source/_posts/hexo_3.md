@@ -4,8 +4,9 @@ date: 2018-02-08 18:44:45
 tags: [GitHub, Hexo, yilia]
 ---
 
-hexo博客yilia主题,左侧栏目有一个全部文章的按钮，刚开始开始报错缺失模块，如下图：
 <!--more-->
+hexo博客yilia主题,左侧栏目有一个全部文章的按钮，刚开始开始报错缺失模块，如下图：
+
 ![这里写图片描述](http://upload-images.jianshu.io/upload_images/6280966-d3fb28b5a1dcb69c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 我解决了这个问题着实不容易饶了弯路，但是跟着提示步骤，其实很简单，走起：
@@ -13,7 +14,7 @@ hexo博客yilia主题,左侧栏目有一个全部文章的按钮，刚开始开�
 -------------
 
 
-# 1、查看node版本
+## 1、查看node版本
 
 
 ```win键+R键``` 打开命令控制台，输入代码  ```node -v``` 查看node版本，如下图：
@@ -22,7 +23,7 @@ hexo博客yilia主题,左侧栏目有一个全部文章的按钮，刚开始开�
 
 只要node的版本高于6.2就行
 
-# 2、运行命令行
+## 2、运行命令行
 
 
 博客根目录下运行命令行 ```npm i  hexo-generator-json-content --save```
@@ -33,7 +34,7 @@ hexo博客yilia主题,左侧栏目有一个全部文章的按钮，刚开始开�
 
 ![这里写图片描述](http://upload-images.jianshu.io/upload_images/6280966-7bdc3639ca05cc64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-# 3、配置文件
+## 3、配置文件
 
 
 博客根目录下，找到_config.yml，打开找一个空白地方复制一下配置信息：
@@ -76,7 +77,7 @@ jsonContent:
     tags: true
 ```
 
-#### 注（重点）：细节处--复制的信息格式要调好
+### 注（重点）：细节处--复制的信息格式要调好
 
 
 1、配置文件内找空白处粘贴文件
@@ -96,4 +97,3 @@ jsonContent:
 
 应该是修复了缺失模块这个报错
 
-谢谢

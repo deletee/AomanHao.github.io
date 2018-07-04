@@ -3,10 +3,11 @@ title: Hexo博客添加背景音乐和音乐歌单(举例网易云音乐)
 date: 2018-03-08 10:59:59
 tags: [Hexo, yilia, Music]
 ---
-## 添加背景音乐
+添加背景音乐
+<!--more-->
 
 1、 打开网易云音乐首页，然后搜索你要添加的背景音乐
-<!--more-->
+
 		http://music.163.com/
 
 ![](http://p3qhnc0eg.bkt.clouddn.com/%E7%BD%91%E6%98%93%E4%BA%91_%E5%A4%96%E9%93%BE%E6%AD%8C%E6%9B%B2.png)
