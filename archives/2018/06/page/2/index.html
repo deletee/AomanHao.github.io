@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.haoloverongrong.top">
-  <title>数据库Mysql_3_4 | AomanHao</title>
+  <title>Archives: 2018/6 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、 mysql常用命令">
-<meta name="keywords" content="Mysql,Java">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据库Mysql_3_4">
-<meta property="og:url" content="http://www.haoloverongrong.top/2018/03/04/database_1/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="AomanHao">
+<meta property="og:url" content="http://www.haoloverongrong.top/archives/2018/06/page/2/index.html">
 <meta property="og:site_name" content="AomanHao">
-<meta property="og:description" content="一、 mysql常用命令">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-04T14:40:15.152Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库Mysql_3_4">
-<meta name="twitter:description" content="一、 mysql常用命令">
+<meta name="twitter:title" content="AomanHao">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -157,95 +152,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-database_1" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      数据库Mysql_3_4
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/06/04/database_3/" class="archive-article-date">
+  	<time datetime="2018-06-04T04:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-04</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/06/04/database_3/">解决连接MySQL，报错10061，系统错误5</a>
     </h1>
   
 
-        
-        <a href="/2018/03/04/database_1/" class="archive-article-date">
-  	<time datetime="2018-03-04T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、-mysql常用命令"><a href="#一、-mysql常用命令" class="headerlink" title="一、 mysql常用命令"></a>一、 mysql常用命令</h2><a id="more"></a>
-<h3 id="1-1-管理"><a href="#1-1-管理" class="headerlink" title="1.1 管理"></a>1.1 管理</h3><pre><code>CREATE DATABASE Aoman_OS -- 创建数据库
-USE  Aoman_OS -- 使用数据库
-DROP DATABASE Aoman_OS  -- 删除数据库
-</code></pre><h3 id="1-2-数据库内容"><a href="#1-2-数据库内容" class="headerlink" title="1.2 数据库内容"></a>1.2 数据库内容</h3><pre><code>CREATE TABLE employee(  -- 创建数据库表格
-id INT,NAME VARCHAR(20),gender VARCHAR(2),title VARCHAR(10),email VARCHAR(20)
-);
-SELECT * FROM employee -- 查看数据库表格
-</code></pre><h3 id="2-1-增加数据库内容"><a href="#2-1-增加数据库内容" class="headerlink" title="2.1 增加数据库内容"></a>2.1 增加数据库内容</h3><pre><code>INSERT INTO employee VALUES(1,&apos;依依&apos;,&apos;女&apos;,&apos;程序员鼓励师&apos;,&apos;123@163.com&apos;);
-INSERT INTO employee VALUES(2,&apos;尔尔&apos;,&apos;男&apos;,&apos;程序开发工程师&apos;,&apos;124@163.com&apos;);
-INSERT INTO employee VALUES(3,&apos;散散&apos;,&apos;男&apos;,&apos;程序维护工程师&apos;,&apos;125@163.com&apos;);
-</code></pre><h3 id="2-2-插入部分数据"><a href="#2-2-插入部分数据" class="headerlink" title="2.2 插入部分数据"></a>2.2 插入部分数据</h3><pre><code>INSERT INTO employee (id,NAME) VALUES (4,&apos;思思&apos;);
-</code></pre><h3 id="2-3-修改数据"><a href="#2-3-修改数据" class="headerlink" title="2.3 修改数据"></a>2.3 修改数据</h3><pre><code>UPDATE employee SET gender=&apos;女&apos;,title=&apos;文秘&apos; WHERE id =4;
-</code></pre><h3 id="2-4-删除表中所有数据"><a href="#2-4-删除表中所有数据" class="headerlink" title="2.4 删除表中所有数据"></a>2.4 删除表中所有数据</h3><pre><code>DELETE     * FROM employee
-</code></pre><h3 id="2-5-删除数据表"><a href="#2-5-删除数据表" class="headerlink" title="2.5 删除数据表"></a>2.5 删除数据表</h3><pre><code>DROP FROM employee
-</code></pre><h3 id="3-1-查询"><a href="#3-1-查询" class="headerlink" title="3.1 查询"></a>3.1 查询</h3><pre><code>SELECT id AS &apos;1&apos; FROM employee
-SELECT id AS &apos;1&apos; ，NAME AS &apos;尔尔&apos; FROM employee
-</code></pre><h3 id="3-2-不重复的查询"><a href="#3-2-不重复的查询" class="headerlink" title="3.2 不重复的查询"></a>3.2 不重复的查询</h3><pre><code>SELECT DISTINCT email FROM employee
-</code></pre><h3 id="3-3-条件查询"><a href="#3-3-条件查询" class="headerlink" title="3.3 条件查询"></a>3.3 条件查询</h3><pre><code>SELECT * FROM employee WHERE id=1 OR NAME = &apos;思思&apos; ; -- or 并集
-SELECT * FROM employee WHERE id=1 AND NAME = &apos;思思&apos; ; -- and 交集
-</code></pre><h3 id="3-4-判断查询"><a href="#3-4-判断查询" class="headerlink" title="3.4 判断查询"></a>3.4 判断查询</h3><pre><code>大于 &gt; ,小于 &lt; ,等于 = 
-不等于 ！= 或者 &lt;&gt;， 在什么之间 between 1 and 2，
-非空 isnot null 或者 不等于 &apos;&apos;
-</code></pre><h3 id="3-5-模糊查询"><a href="#3-5-模糊查询" class="headerlink" title="3.5 模糊查询"></a>3.5 模糊查询</h3><pre><code>SELECT * FROM studet WHERE NAME LIKE &apos;思%&apos;
-%代替任何字符，任何长度的字符
--仅仅代替一个字符
-</code></pre><h3 id="3-6-asc-升序-desc-降序"><a href="#3-6-asc-升序-desc-降序" class="headerlink" title="3.6 asc 升序 desc 降序"></a>3.6 asc 升序 desc 降序</h3><pre><code>默认情况下:是按照插入顺序进行排序
-SELECT * FROM student ORDER BY id ASC ;
-需求:servlet成绩是一个降序排序
-SELECT * FROM student ORDER BY servlet DESC ;
-</code></pre><h2 id="二、小练习"><a href="#二、小练习" class="headerlink" title="二、小练习"></a>二、小练习</h2><pre><code>CREATE TABLE student2(
-    id INT,
-    NAME VARCHAR(20),
-    chinese FLOAT,
-    english FLOAT,
-    math FLOAT
-);
-
-INSERT INTO student2(id,NAME,chinese,english,math) VALUES(1,&apos;张小明&apos;,89,78,90);
-INSERT INTO student2(id,NAME,chinese,english,math) VALUES(2,&apos;李进&apos;,67,53,95);
-INSERT INTO student2(id,NAME,chinese,english,math) VALUES(3,&apos;王五&apos;,87,78,77);
-INSERT INTO student2(id,NAME,chinese,english,math) VALUES(4,&apos;李一&apos;,88,98,92);
-INSERT INTO student2(id,NAME,chinese,english,math) VALUES(5,&apos;李来财&apos;,82,84,67);
-INSERT INTO student2(id,NAME,chinese,english,math) VALUES(6,&apos;张进宝&apos;,55,85,45);
-INSERT INTO student2(id,NAME,chinese,english,math) VALUES(7,&apos;黄蓉&apos;,75,65,30)
-</code></pre><h4 id="查询操作练习-在学生表数据基础上：student-sql"><a href="#查询操作练习-在学生表数据基础上：student-sql" class="headerlink" title="查询操作练习(在学生表数据基础上：student.sql)"></a>查询操作练习(在学生表数据基础上：student.sql)</h4><p>–     查询表中所有学生的信息。</p>
-<pre><code>SELECT * FROM student2 ;
-</code></pre><p>– 查询表中所有学生的姓名和对应的英语成绩。</p>
-<pre><code>SELECT  NAME ,english FROM student2
-</code></pre><p>–     使用别名表示学生分数。</p>
-<pre><code>SELECT id AS &apos;编号&apos;,NAME AS &apos;姓名&apos;,chinese AS &apos;语文&apos;,english AS &apos;英语&apos;,math AS &apos;数学&apos; FROM student2 ;
-</code></pre><p>–     查询姓名为李一的学生成绩</p>
-<pre><code>SELECT * FROM student2 WHERE NAME = &apos;李一&apos;;
-</code></pre><p>–     查询英语成绩大于等于90分的同学</p>
-<pre><code>SELECT * FROM student2 WHERE english &gt;=90
-</code></pre><p>–     查询总分大于200分的所有同学</p>
-<pre><code>SELECT * FROM student2 WHERE (chinese+english+math)&gt;200;
-</code></pre><p>–     查询所有姓李的学生英语成绩。</p>
-<pre><code>SELECT NAME,english FROM student2 WHERE NAME LIKE &apos;李%&apos;
-</code></pre><p>–     查询英语&gt;80或者总分&gt;200的同学</p>
-<pre><code>SELECT * FROM student2 WHERE english &gt;80 OR (chinese+english+math)&gt;200;
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -261,116 +197,29 @@ INSERT INTO student2(id,NAME,chinese,english,math) VALUES(7,&apos;黄蓉&apos;,7
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/03/04/database_1/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
+  
+  
+    </div></section>
+  
 
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/2018/06/">&laquo; Prev</a><a class="page-number" href="/archives/2018/06/">1</a><span class="page-number current">2</span>
+    </nav>
   
-<nav id="article-nav">
-  
-    <a href="/2018/03/04/database_2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数据库Mysql_3_4
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/02/08/hexo_3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo博客yilia主题_缺失模块_解决方案</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
 
 
 
-  
-  
-  
-
-  
-
-  
-
-  
-
+<!-- 目录内容 -->
+       
+       <!-- 目录内容结束 -->
 
           </div>
         </div>
@@ -396,8 +245,8 @@ INSERT INTO student2(id,NAME,chinese,english,math) VALUES(7,&apos;黄蓉&apos;,7
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

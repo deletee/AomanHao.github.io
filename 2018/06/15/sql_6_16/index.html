@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.haoloverongrong.top">
-  <title>数据库Mysql_3_4 | AomanHao</title>
+  <title>数据库相关_6_15 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、 mysql常用命令">
-<meta name="keywords" content="Mysql,Java">
+  <meta name="description" content="数据库系统达到了数据独立性是因为采用了三级模式结构">
+<meta name="keywords" content="GitHub,Mysql,Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库Mysql_3_4">
-<meta property="og:url" content="http://www.haoloverongrong.top/2018/03/04/database_1/index.html">
+<meta property="og:title" content="数据库相关_6_15">
+<meta property="og:url" content="http://www.haoloverongrong.top/2018/06/15/sql_6_16/index.html">
 <meta property="og:site_name" content="AomanHao">
-<meta property="og:description" content="一、 mysql常用命令">
+<meta property="og:description" content="数据库系统达到了数据独立性是因为采用了三级模式结构">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-04T14:40:15.152Z">
+<meta property="og:updated_time" content="2018-07-05T10:47:40.270Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库Mysql_3_4">
-<meta name="twitter:description" content="一、 mysql常用命令">
+<meta name="twitter:title" content="数据库相关_6_15">
+<meta name="twitter:description" content="数据库系统达到了数据独立性是因为采用了三级模式结构">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -157,88 +157,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-database_1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-sql_6_16" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数据库Mysql_3_4
+      数据库相关_6_15
     </h1>
   
 
         
-        <a href="/2018/03/04/database_1/" class="archive-article-date">
-  	<time datetime="2018-03-04T02:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-04</time>
+        <a href="/2018/06/15/sql_6_16/" class="archive-article-date">
+  	<time datetime="2018-06-15T04:35:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、-mysql常用命令"><a href="#一、-mysql常用命令" class="headerlink" title="一、 mysql常用命令"></a>一、 mysql常用命令</h2><a id="more"></a>
-<h3 id="1-1-管理"><a href="#1-1-管理" class="headerlink" title="1.1 管理"></a>1.1 管理</h3><pre><code>CREATE DATABASE Aoman_OS -- 创建数据库
-USE  Aoman_OS -- 使用数据库
-DROP DATABASE Aoman_OS  -- 删除数据库
-</code></pre><h3 id="1-2-数据库内容"><a href="#1-2-数据库内容" class="headerlink" title="1.2 数据库内容"></a>1.2 数据库内容</h3><pre><code>CREATE TABLE employee(  -- 创建数据库表格
-id INT,NAME VARCHAR(20),gender VARCHAR(2),title VARCHAR(10),email VARCHAR(20)
-);
-SELECT * FROM employee -- 查看数据库表格
-</code></pre><h3 id="2-1-增加数据库内容"><a href="#2-1-增加数据库内容" class="headerlink" title="2.1 增加数据库内容"></a>2.1 增加数据库内容</h3><pre><code>INSERT INTO employee VALUES(1,&apos;依依&apos;,&apos;女&apos;,&apos;程序员鼓励师&apos;,&apos;123@163.com&apos;);
-INSERT INTO employee VALUES(2,&apos;尔尔&apos;,&apos;男&apos;,&apos;程序开发工程师&apos;,&apos;124@163.com&apos;);
-INSERT INTO employee VALUES(3,&apos;散散&apos;,&apos;男&apos;,&apos;程序维护工程师&apos;,&apos;125@163.com&apos;);
-</code></pre><h3 id="2-2-插入部分数据"><a href="#2-2-插入部分数据" class="headerlink" title="2.2 插入部分数据"></a>2.2 插入部分数据</h3><pre><code>INSERT INTO employee (id,NAME) VALUES (4,&apos;思思&apos;);
-</code></pre><h3 id="2-3-修改数据"><a href="#2-3-修改数据" class="headerlink" title="2.3 修改数据"></a>2.3 修改数据</h3><pre><code>UPDATE employee SET gender=&apos;女&apos;,title=&apos;文秘&apos; WHERE id =4;
-</code></pre><h3 id="2-4-删除表中所有数据"><a href="#2-4-删除表中所有数据" class="headerlink" title="2.4 删除表中所有数据"></a>2.4 删除表中所有数据</h3><pre><code>DELETE     * FROM employee
-</code></pre><h3 id="2-5-删除数据表"><a href="#2-5-删除数据表" class="headerlink" title="2.5 删除数据表"></a>2.5 删除数据表</h3><pre><code>DROP FROM employee
-</code></pre><h3 id="3-1-查询"><a href="#3-1-查询" class="headerlink" title="3.1 查询"></a>3.1 查询</h3><pre><code>SELECT id AS &apos;1&apos; FROM employee
-SELECT id AS &apos;1&apos; ，NAME AS &apos;尔尔&apos; FROM employee
-</code></pre><h3 id="3-2-不重复的查询"><a href="#3-2-不重复的查询" class="headerlink" title="3.2 不重复的查询"></a>3.2 不重复的查询</h3><pre><code>SELECT DISTINCT email FROM employee
-</code></pre><h3 id="3-3-条件查询"><a href="#3-3-条件查询" class="headerlink" title="3.3 条件查询"></a>3.3 条件查询</h3><pre><code>SELECT * FROM employee WHERE id=1 OR NAME = &apos;思思&apos; ; -- or 并集
-SELECT * FROM employee WHERE id=1 AND NAME = &apos;思思&apos; ; -- and 交集
-</code></pre><h3 id="3-4-判断查询"><a href="#3-4-判断查询" class="headerlink" title="3.4 判断查询"></a>3.4 判断查询</h3><pre><code>大于 &gt; ,小于 &lt; ,等于 = 
-不等于 ！= 或者 &lt;&gt;， 在什么之间 between 1 and 2，
-非空 isnot null 或者 不等于 &apos;&apos;
-</code></pre><h3 id="3-5-模糊查询"><a href="#3-5-模糊查询" class="headerlink" title="3.5 模糊查询"></a>3.5 模糊查询</h3><pre><code>SELECT * FROM studet WHERE NAME LIKE &apos;思%&apos;
-%代替任何字符，任何长度的字符
--仅仅代替一个字符
-</code></pre><h3 id="3-6-asc-升序-desc-降序"><a href="#3-6-asc-升序-desc-降序" class="headerlink" title="3.6 asc 升序 desc 降序"></a>3.6 asc 升序 desc 降序</h3><pre><code>默认情况下:是按照插入顺序进行排序
-SELECT * FROM student ORDER BY id ASC ;
-需求:servlet成绩是一个降序排序
-SELECT * FROM student ORDER BY servlet DESC ;
-</code></pre><h2 id="二、小练习"><a href="#二、小练习" class="headerlink" title="二、小练习"></a>二、小练习</h2><pre><code>CREATE TABLE student2(
-    id INT,
-    NAME VARCHAR(20),
-    chinese FLOAT,
-    english FLOAT,
-    math FLOAT
-);
-
-INSERT INTO student2(id,NAME,chinese,english,math) VALUES(1,&apos;张小明&apos;,89,78,90);
-INSERT INTO student2(id,NAME,chinese,english,math) VALUES(2,&apos;李进&apos;,67,53,95);
-INSERT INTO student2(id,NAME,chinese,english,math) VALUES(3,&apos;王五&apos;,87,78,77);
-INSERT INTO student2(id,NAME,chinese,english,math) VALUES(4,&apos;李一&apos;,88,98,92);
-INSERT INTO student2(id,NAME,chinese,english,math) VALUES(5,&apos;李来财&apos;,82,84,67);
-INSERT INTO student2(id,NAME,chinese,english,math) VALUES(6,&apos;张进宝&apos;,55,85,45);
-INSERT INTO student2(id,NAME,chinese,english,math) VALUES(7,&apos;黄蓉&apos;,75,65,30)
-</code></pre><h4 id="查询操作练习-在学生表数据基础上：student-sql"><a href="#查询操作练习-在学生表数据基础上：student-sql" class="headerlink" title="查询操作练习(在学生表数据基础上：student.sql)"></a>查询操作练习(在学生表数据基础上：student.sql)</h4><p>–     查询表中所有学生的信息。</p>
-<pre><code>SELECT * FROM student2 ;
-</code></pre><p>– 查询表中所有学生的姓名和对应的英语成绩。</p>
-<pre><code>SELECT  NAME ,english FROM student2
-</code></pre><p>–     使用别名表示学生分数。</p>
-<pre><code>SELECT id AS &apos;编号&apos;,NAME AS &apos;姓名&apos;,chinese AS &apos;语文&apos;,english AS &apos;英语&apos;,math AS &apos;数学&apos; FROM student2 ;
-</code></pre><p>–     查询姓名为李一的学生成绩</p>
-<pre><code>SELECT * FROM student2 WHERE NAME = &apos;李一&apos;;
-</code></pre><p>–     查询英语成绩大于等于90分的同学</p>
-<pre><code>SELECT * FROM student2 WHERE english &gt;=90
-</code></pre><p>–     查询总分大于200分的所有同学</p>
-<pre><code>SELECT * FROM student2 WHERE (chinese+english+math)&gt;200;
-</code></pre><p>–     查询所有姓李的学生英语成绩。</p>
-<pre><code>SELECT NAME,english FROM student2 WHERE NAME LIKE &apos;李%&apos;
-</code></pre><p>–     查询英语&gt;80或者总分&gt;200的同学</p>
-<pre><code>SELECT * FROM student2 WHERE english &gt;80 OR (chinese+english+math)&gt;200;
-</code></pre>
+        <p>数据库系统达到了数据独立性是因为采用了<strong>三级模式结构</strong><br><a id="more"></a></p>
+<p>人们为数据库设计了一个严谨的体系结构，数据库领域公认的标准结构是三级模式结构，它包括<code>外模式、概念模式、内模式</code>，有效地组织、管理数据，提高了数据库的逻辑独立性和物理独立性。用户级对应外模式，概念级对应概念模式，物理级对应内模式，使不同级别的用户对数据库形成不同的视图。</p>
+<table>
+<thead>
+<tr>
+<th>级别</th>
+<th style="text-align:right">模式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>用户级</td>
+<td style="text-align:right">外模式</td>
+</tr>
+<tr>
+<td>概念级</td>
+<td style="text-align:right">概念模式</td>
+</tr>
+<tr>
+<td>物理级</td>
+<td style="text-align:right">内模式</td>
+</tr>
+</tbody>
+</table>
+<p>所谓视图，就是指观察、认识和理解数据的范围、角度和方法，是数据库在用户“眼中”的反映，很显然，不同层次（级别）用户所“看到”的数据库是不相同的。</p>
+<hr>
+<p>索引顺序查找又称为<code>分块查找</code>，是介于顺序查找和二分查找之间的一种查找方法</p>
+<hr>
+<p>MySQL有多种存储引擎，每种存储引擎有各自的优缺点，可以择优选择使用： </p>
+<p>MyISAM、InnoDB、MERGE、MEMORY(HEAP)、BDB(BerkeleyDB)、EXAMPLE、FEDERATED、ARCHIVE、CSV、BLACKHOLE。</p>
+<p><code>MySQL</code>支持数个存储引擎作为对不同表的类型的处理器。MySQL存储引擎包括处理事务安全表的引擎和处理非事务安全表的引擎： </p>
+<p><code>MyISAM</code>管理非事务表。它提供高速存储和检索，以及全文搜索能力。MyISAM在所有MySQL配置里被支持，它是默认的存储引擎，除非你配置MySQL默认使用另外一个引擎。 </p>
+<p><code>MEMORY</code>存储引擎提供“内存中”表。MERGE存储引擎允许集合将被处理同样的MyISAM表作为一个单独的表。就像MyISAM一样，MEMORY和MERGE存储引擎处理非事务表，这两个引擎也都被默认包含在MySQL中。 </p>
+<p>注释：MEMORY存储引擎正式地被确定为HEAP引擎。 </p>
+<p><code>InnoDB</code>和<code>BDB</code>存储引擎提供事务安全表。BDB被包含在为支持它的操作系统发布的MySQL-Max二进制分发版里。InnoDB也默认被包括在所 有MySQL 5.1二进制分发版里，你可以按照喜好通过配置MySQL来允许或禁止任一引擎。 </p>
+<p><code>EXAMPLE</code>存储引擎是一个“存根”引擎，它不做什么。你可以用这个引擎创建表，但没有数据被存储于其中或从其中检索。这个引擎的目的是服务，在 MySQL源代码中的一个例子，它演示说明如何开始编写新存储引擎。同样，它的主要兴趣是对开发者。 </p>
+<p><code>NDB Cluster</code>是被MySQL Cluster用来实现分割到多台计算机上的表的存储引擎。它在MySQL-Max 5.1二进制分发版里提供。这个存储引擎当前只被Linux, Solaris, 和Mac OS X 支持。在未来的MySQL分发版中，我们想要添加其它平台对这个引擎的支持，包括Windows。</p>
+<p><code>ARCHIVE</code>存储引擎被用来无索引地，非常小地覆盖存储的大量数据。 </p>
+<p><code>CSV</code>存储引擎把数据以逗号分隔的格式存储在文本文件中。 </p>
+<p><code>BLACKHOLE</code>存储引擎接受但不存储数据，并且检索总是返回一个空集。 </p>
+<p><code>FEDERATED</code>存储引擎把数据存在远程数据库中。在MySQL 5.1中，它只和MySQL一起工作，使用MySQL C Client API。在未来的分发版中，我们想要让它使用其它驱动器或客户端连接方法连接到另外的数据源。</p>
+<h2 id="比较常用的是MyISAM和InnoBD"><a href="#比较常用的是MyISAM和InnoBD" class="headerlink" title="比较常用的是MyISAM和InnoBD"></a>比较常用的是MyISAM和InnoBD</h2>
       
 
       
@@ -250,6 +230,10 @@ INSERT INTO student2(id,NAME,chinese,english,math) VALUES(7,&apos;黄蓉&apos;,7
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        		</li>
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
         		</li>
@@ -311,7 +295,7 @@ INSERT INTO student2(id,NAME,chinese,english,math) VALUES(7,&apos;黄蓉&apos;,7
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/03/04/database_1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/06/15/sql_6_16/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -325,18 +309,18 @@ INSERT INTO student2(id,NAME,chinese,english,math) VALUES(7,&apos;黄蓉&apos;,7
   
 <nav id="article-nav">
   
-    <a href="/2018/03/04/database_2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/06/15/Java_6_16/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          数据库Mysql_3_4
+          Java相关小知识_6_15
         
       </div>
     </a>
   
   
-    <a href="/2018/02/08/hexo_3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo博客yilia主题_缺失模块_解决方案</div>
+    <a href="/2018/06/08/sql_6_8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据库相关_6_8</div>
       <i class="icon-circle-right"></i>
     </a>
   
