@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="AomanHao">
 <meta property="og:description" content="实体完整性要求每个表都有唯一标识符，每一个表中的主键字段不能为空或者重复的值。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-05T10:23:23.205Z">
+<meta property="og:updated_time" content="2018-07-06T04:48:00.815Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java相关小知识_6_15">
 <meta name="twitter:description" content="实体完整性要求每个表都有唯一标识符，每一个表中的主键字段不能为空或者重复的值。">
@@ -179,11 +179,43 @@
       
         <p>实体完整性要求每个表都有唯一标识符，每一个表中的主键字段不能为空或者重复的值。<br><a id="more"></a></p>
 <p>参照完整性要求关系中不允许引用不存在的实体。设定相应的更新删除插入规则来更新参考表。</p>
-<p>Java语言使用的是<code>Unicode</code>字符集。而ASCII是国际上使用最广泛的字符编码；BCD是一种数字压缩存储编码方法。</p>
+<p>Java语言使用的是<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line">HashMap不能保证元素的顺序，HashMap能够将键设为null，也可以将值设为null，与之对应的是Hashtable，(注意大小写：不是HashTable)，Hashtable不能将键和值设为null，否则运行时会报空指针异常错误。&lt;br&gt;</span><br><span class="line">HashMap线程不安全，Hashtable线程安全</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">for循环的执行顺序：&lt;br&gt;</span><br><span class="line">for(条件1;条件2;条件3) &#123;</span><br><span class="line">    //语句</span><br><span class="line">&#125;</span><br><span class="line">执行顺序是条件1-&gt;条件2-&gt;语句-&gt;条件3-&gt;条件2-&gt;语句-&gt;条件3-&gt;条件2........</span><br><span class="line">如果条件2为true，则一直执行。如果条件2位false，则for循环结束</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">java1.8后，抽象类中的抽象方法和非抽象方法在不加修饰符的情况下，都是默认的default</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">substring    方法将返回一个包含从    start    到最后（不包含    end    ）的子字符串的字符串。（左闭右开）</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">### 在为传统面向对象语言的程序做单元测试的时候,经常用到mock对象。Mock对象通过反射数。请问反射最大程度破坏了面向对象的以下哪个特性？ ：封装性</span><br><span class="line"></span><br><span class="line">mock对象：也成为伪对象，在测试中的利用mock对象来代替真实对象，方便测试的进行。&lt;br&gt;</span><br><span class="line">java的封装性：指的是将对象的状态信息隐藏在对象内部，不允许外部程序直接访问对象内部信息，通过该类提供的方法实现对内部信息的操作访问。&lt;br&gt;</span><br><span class="line">反射机制：在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法;对于任意一个对象，都能够调用它的任意一个方法和属性。&lt;br&gt;</span><br><span class="line">反射破坏代码的封装性，破坏原有的访问修饰符访问限制  </span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">### try-catch-finally执行顺序&lt;br&gt;</span><br><span class="line">&gt;博文try-catch-finally执行顺序详解：http://qing0991.blog.51cto.com/1640542/1387200</span><br><span class="line">try块中抛出异常，try、catch和finally中都有return语句</span><br></pre></td></tr></table></figure></p>
+<p>public static int WithException(){</p>
+<p>int i=10;</p>
+<p>try{</p>
+<p>System.out.println(“i in try block is ： “+i);</p>
+<p>i = i/0;</p>
+<p>return –i;</p>
+<p>}</p>
+<p>catch(Exception e){</p>
+<p>System.out.println(“i in catch - form try block is ： “+i);</p>
+<p>–i;</p>
+<p>System.out.println(“i in catch block is ： “+i);</p>
+<p>return –i;</p>
+<p>}</p>
+<p>finally{</p>
+<p>System.out.println(“i in finally - from try or catch block is–”+i);</p>
+<p>–i;</p>
+<p>System.out.println(“i in finally block is–”+i);</p>
+<p>return –i;</p>
+<p>}</p>
+<p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">执行结果：</span><br></pre></td></tr></table></figure></p>
+<p>============WithException==================</p>
+<p>i in try block is ： 10</p>
+<p>i in catch - form try block is ： 10</p>
+<p>i in catch block is ： 9</p>
+<p>i in finally - from try or catch block is–8</p>
+<p>i in finally block is–7</p>
+<p>6<br>```<br>===============================<br><br>执行顺序：</p>
+<p>抛出异常后，执行catch块，在catch块的return的–i执行完后，并不直接返回而是执行finally，因finally中有return语句，所以，执行，返回结果6。</p>
+<p>结论：</p>
+<p>try块中抛出异常，try、catch和finally中都有return语句，返回值是finally中的return。</p>
+<p>总体结论：</p>
+<p>结论一：</p>
+<p>return语句并不是函数的最终出口，如果有finally语句，这在return之后还会执行finally（return的值会暂存在栈里面，等待finally执行后再返回）<br>结论二：</p>
+<p>finally里面不建议放return语句，根据需要，return语句可以放在try和catch里面和函数的最后。可行的做法有四：<br>（1）return语句只在函数最后出现一次。<br>（2）return语句仅在try和catch里面都出现。<br>（3）return语句仅在try和函数的最后都出现。<br>（4）return语句仅在catch和函数的最后都出现。<br>注意，除此之外的其他做法都是不可行的，编译器会报错</p>
 <hr>
-<p>HashMap不能保证元素的顺序，HashMap能够将键设为null，也可以将值设为null，与之对应的是Hashtable，(注意大小写：不是HashTable)，Hashtable不能将键和值设为null，否则运行时会报空指针异常错误。<br><br>HashMap线程不安全，Hashtable线程安全</p>
-<hr>
-<p>for循环的执行顺序：<br><br>for(条件1;条件2;条件3) {<br>    //语句<br>}<br>执行顺序是条件1-&gt;条件2-&gt;语句-&gt;条件3-&gt;条件2-&gt;语句-&gt;条件3-&gt;条件2……..<br>如果条件2为true，则一直执行。如果条件2位false，则for循环结束</p>
+<p>Statement在JDBC中相当于SQL语句的载体<br><br>Statement—是最基本的用法，采用字符串拼接的方式，存在注入漏洞<br><br>PreparedStatement—对Statement中的SQL语句进行预编译，同时检查合法性，效率高<br><br>CallableStatement–接口扩展 PreparedStatement，用来调用存储过程,它提供了对输出和输入/输出参数的支持。CallableStatement 接口还具有对 PreparedStatement 接口提供的输入参数的支持。<br><br>BatchedStatement–不是标准的Statement类</p>
 
       
 
@@ -275,17 +307,17 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/06/15/sql_6_15/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/06/16/d_struct_6_16/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          数据库相关_6_15
+          数据结构相关_6_16
         
       </div>
     </a>
   
   
-    <a href="/2018/06/15/sql_6_16/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/06/15/sql_6_15/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">数据库相关_6_15</div>
       <i class="icon-circle-right"></i>
     </a>
@@ -430,7 +462,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
