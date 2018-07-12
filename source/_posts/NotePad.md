@@ -6,6 +6,9 @@ tags: [GitHub, Mysql, Java]
 
 
 import java.awt.*;
+
+<!--more-->
+
  import java.awt.event.*;
  import java.text.*;
  import java.util.*;
