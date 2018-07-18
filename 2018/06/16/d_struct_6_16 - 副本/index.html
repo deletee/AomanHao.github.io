@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.haoloverongrong.top">
-  <title>数据库Mysql_3_4 | AomanHao</title>
+  <title>数据结构相关_6_16 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、数据库约束">
-<meta name="keywords" content="Mysql,Java">
+  <meta name="description" content="数据结构相关">
+<meta name="keywords" content="GitHub,Mysql,Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库Mysql_3_4">
-<meta property="og:url" content="http://www.haoloverongrong.top/2018/03/04/database_2/index.html">
+<meta property="og:title" content="数据结构相关_6_16">
+<meta property="og:url" content="http://www.haoloverongrong.top/2018/06/16/d_struct_6_16 - 副本/index.html">
 <meta property="og:site_name" content="AomanHao">
-<meta property="og:description" content="一、数据库约束">
+<meta property="og:description" content="数据结构相关">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-04T14:40:20.887Z">
+<meta property="og:updated_time" content="2018-07-04T06:39:16.837Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库Mysql_3_4">
-<meta name="twitter:description" content="一、数据库约束">
+<meta name="twitter:title" content="数据结构相关_6_16">
+<meta name="twitter:description" content="数据结构相关">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -157,76 +157,32 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-database_2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-d_struct_6_16 - 副本" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数据库Mysql_3_4
+      数据结构相关_6_16
     </h1>
   
 
         
-        <a href="/2018/03/04/database_2/" class="archive-article-date">
-  	<time datetime="2018-03-04T04:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-04</time>
+        <a href="/2018/06/16/d_struct_6_16 - 副本/" class="archive-article-date">
+  	<time datetime="2018-06-16T03:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p></p><h2> 一、数据库约束 </h2><br><a id="more"></a><p></p>
-<h3 id="1-1-默认值约束-default"><a href="#1-1-默认值约束-default" class="headerlink" title="1.1 默认值约束(default)"></a>1.1 默认值约束(default)</h3><h3 id="1-2-非空约束-not-null"><a href="#1-2-非空约束-not-null" class="headerlink" title="1.2 非空约束( not null )"></a>1.2 非空约束( not null )</h3><h3 id="1-3-唯一约束-unique"><a href="#1-3-唯一约束-unique" class="headerlink" title="1.3 唯一约束(unique)"></a>1.3 唯一约束(unique)</h3><pre><code>CREATE TABLE test(
-id INT  UNIQUE ,-- 唯一
-NAME VARCHAR(20) NOT NULL, -- 非空
-gender VARCHAR(2) DEFAULT &apos;男&apos; -- 默认值约束
-);
-</code></pre><h3 id="1-4-主键约束-primary-key-作用-非空-唯一约束"><a href="#1-4-主键约束-primary-key-作用-非空-唯一约束" class="headerlink" title="1.4 主键约束(primary key 作用:非空+唯一约束)"></a>1.4 主键约束(primary key 作用:非空+唯一约束)</h3><h3 id="1-5-自增长约束-auto-increment"><a href="#1-5-自增长约束-auto-increment" class="headerlink" title="1.5 自增长约束(auto_increment)"></a>1.5 自增长约束(auto_increment)</h3><pre><code>CREATE TABLE test2(
-    id INT  PRIMARY KEY AUTO_INCREMENT,-- 非空+唯一约束+自增长约束
-    NAME VARCHAR(20) ,
-    gender VARCHAR(2) ,
-);
-</code></pre><h3 id="1-6-外键约束-属于数据库中表的设计"><a href="#1-6-外键约束-属于数据库中表的设计" class="headerlink" title="1.6 外键约束(属于数据库中表的设计)"></a>1.6 外键约束(属于数据库中表的设计)</h3><h3 id="1-6-1-外键约束-约束两个或者两个以上的表的数据，一般情况有两种表-主表-副表"><a href="#1-6-1-外键约束-约束两个或者两个以上的表的数据，一般情况有两种表-主表-副表" class="headerlink" title="1.6.1 外键约束:约束两个或者两个以上的表的数据，一般情况有两种表(主表,副表)"></a>1.6.1 外键约束:约束两个或者两个以上的表的数据，一般情况有两种表(主表,副表)</h3><pre><code>DROP TABLE employee2
-DELETE FROM employee2
-
-SELECT * FROM employee2
-SELECT * FROM dept
-</code></pre><h3 id="1-6-2-员工表"><a href="#1-6-2-员工表" class="headerlink" title="1.6.2 员工表"></a>1.6.2 员工表</h3><pre><code>CREATE TABLE employee2(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    NAME VARCHAR(20),
-    deptId INT,
-    -- 添加外键约束
-    CONSTRAINT employee_dept_fk FOREIGN KEY (deptId) REFERENCES dept(id)
---     声明         外键名称    外键    被约束的字段  关联     部门表中id的字段
-);
-
-INSERT INTO employee2 (NAME,deptId) VALUES(&apos;张三&apos;,1) ;
-INSERT INTO employee2 (NAME,deptId) VALUES(&apos;李四&apos;,2) ;
-INSERT INTO employee2 (NAME,deptId) VALUES(&apos;王五&apos;,1) ;
-INSERT INTO employee2 (NAME,deptId) VALUES(&apos;陈六&apos;,1) ;
-</code></pre><p>可以设计一个独立的表-部门表 专门用来存储部门名称,来解决数据冗余的问题</p>
-<h3 id="1-6-3-部门表-主表-约束别人的表"><a href="#1-6-3-部门表-主表-约束别人的表" class="headerlink" title="1.6.3 部门表(主表,约束别人的表)"></a>1.6.3 部门表(主表,约束别人的表)</h3><pre><code>CREATE TABLE dept(
-    id INT PRIMARY KEY AUTO_INCREMENT ,
-    NAME VARCHAR(20) -- 部门名称
-);
-</code></pre><h4 id="插入几个部门名称"><a href="#插入几个部门名称" class="headerlink" title="插入几个部门名称"></a>插入几个部门名称</h4><pre><code>INSERT INTO dept (NAME) VALUES (&apos;软件开发部&apos;) ;
-INSERT INTO dept (NAME) VALUES (&apos;软件维护部&apos;) ;
-</code></pre><h4 id="给员工表中插入数据"><a href="#给员工表中插入数据" class="headerlink" title="给员工表中插入数据"></a>给员工表中插入数据</h4><pre><code>INSERT INTO employee2 (NAME,deptId) VALUES(&apos;王五&apos;,1) ;
-INSERT INTO employee2 (NAME,deptId) VALUES(&apos;陈六&apos;,1) ;
-INSERT INTO employee2 (NAME,deptId) VALUES(&apos;李四&apos;,2) ;
-</code></pre><h4 id="给部门表添加数据"><a href="#给部门表添加数据" class="headerlink" title="给部门表添加数据"></a>给部门表添加数据</h4><pre><code>INSERT INTO dept (id,NAME) VALUES(3,&apos;硬件开发部&apos;);
-</code></pre><h4 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h4><pre><code>UPDATE employee2 SET deptId = 3 WHERE id = 3;
-</code></pre><h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4><pre><code>DELETE FROM employee2 WHERE id =2;
-</code></pre><h3 id="1-7-补充"><a href="#1-7-补充" class="headerlink" title="1.7 补充"></a>1.7 补充</h3><p> –常遇到字段类型:</p>
-<h4 id="1-char-20-vs-varchar-20"><a href="#1-char-20-vs-varchar-20" class="headerlink" title="1)char(20) vs varchar(20)"></a>1)char(20) vs varchar(20)</h4><blockquote>
-<p>char(20):是一个固定长度的字符串,存储字符串内容,一定是20个字符串。<br><br>varchar(20):可变的字符串长度,实际存储的时候是根据当前实际的字符串长度</p>
-</blockquote>
-<p>DROP TABLE test ;</p>
-<h4 id="2-int-和int-4"><a href="#2-int-和int-4" class="headerlink" title="2) int 和int(4)"></a>2) int 和int(4)</h4><blockquote>
-<p>int:默认的长度11位,再存储数值类型的时候,存储实际长度<br><br>int(4):固定长度</p>
-</blockquote>
+        <p>数据结构相关</p>
+<a id="more"></a>
+<p>取数组中的元素复杂度o(1)</p>
+<p>数据的逻辑结构分为线性结构和非线性结构。<br>常用的线性结构有：线性表，栈，队列，双队列，数组，串。<br>常见的非线性结构有：二维数组，多维数组，广义表，树(二叉树等)，图。</p>
+<p>一个n*n的对称矩阵，如果以行主序存储，每一个元素占一个单元， 则其需要的最少需要的存储空间为（(n+1)×n/2），重点是对称矩阵</p>
+<p>非空的广义表中的元素或者是一个不可分割的原子,或者是一个非空的广义表</p>
 
       
 
@@ -239,6 +195,10 @@ INSERT INTO employee2 (NAME,deptId) VALUES(&apos;李四&apos;,2) ;
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        		</li>
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
         		</li>
@@ -300,7 +260,7 @@ INSERT INTO employee2 (NAME,deptId) VALUES(&apos;李四&apos;,2) ;
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/03/04/database_2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/06/16/d_struct_6_16 - 副本/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,18 +274,18 @@ INSERT INTO employee2 (NAME,deptId) VALUES(&apos;李四&apos;,2) ;
   
 <nav id="article-nav">
   
-    <a href="/2018/03/07/matlab_exe/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/01/git_git2github/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          解决方案matlab2014a破解不完全，报错Test checkout of feature &#39;Compiler&#39; failed
+          git上传文件到Github
         
       </div>
     </a>
   
   
-    <a href="/2018/03/04/database_1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据库Mysql_3_4</div>
+    <a href="/2018/06/16/d_struct_6_16/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构相关_6_16</div>
       <i class="icon-circle-right"></i>
     </a>
   
