@@ -6,24 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.haoloverongrong.top">
-  <title>hexo博客yilia主题_缺失模块_解决方案 | AomanHao</title>
+  <title>简历投递信息-持续更新 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo博客yilia主题">
-<meta name="keywords" content="GitHub,Hexo,yilia">
+  <meta name="description" content="简历投递信息-持续更新">
+<meta name="keywords" content="Resume">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo博客yilia主题_缺失模块_解决方案">
-<meta property="og:url" content="http://www.haoloverongrong.top/2018/02/08/hexo_3/index.html">
+<meta property="og:title" content="简历投递信息-持续更新">
+<meta property="og:url" content="http://www.haoloverongrong.top/2018/07/30/jianli_sum/index.html">
 <meta property="og:site_name" content="AomanHao">
-<meta property="og:description" content="hexo博客yilia主题">
+<meta property="og:description" content="简历投递信息-持续更新">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6280966-d3fb28b5a1dcb69c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6280966-7bdc3639ca05cc64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/6280966-30e468dd4732ea42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-07-04T14:22:08.788Z">
+<meta property="og:updated_time" content="2018-07-30T08:54:18.158Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo博客yilia主题_缺失模块_解决方案">
-<meta name="twitter:description" content="hexo博客yilia主题">
-<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/6280966-d3fb28b5a1dcb69c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="简历投递信息-持续更新">
+<meta name="twitter:description" content="简历投递信息-持续更新">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -157,50 +153,152 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo_3" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-jianli_sum" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      hexo博客yilia主题_缺失模块_解决方案
+      简历投递信息-持续更新
     </h1>
   
 
         
-        <a href="/2018/02/08/hexo_3/" class="archive-article-date">
-  	<time datetime="2018-02-08T10:44:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-08</time>
+        <a href="/2018/07/30/jianli_sum/" class="archive-article-date">
+  	<time datetime="2018-07-30T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>hexo博客yilia主题<br><a id="more"></a><br>左侧栏目有一个全部文章的按钮，刚开始开始报错缺失模块，如下图：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6280966-d3fb28b5a1dcb69c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<p>我解决了这个问题着实不容易饶了弯路，但是跟着提示步骤，其实很简单，走起：</p>
-<hr>
-<h2 id="1、查看node版本"><a href="#1、查看node版本" class="headerlink" title="1、查看node版本"></a>1、查看node版本</h2><figure class="highlight plain"><figcaption><span>打开命令控制台，输入代码  ```node -v``` 查看node版本，如下图：</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">![这里写图片描述](http://upload-images.jianshu.io/upload_images/6280966-e798155edf9d3c60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">只要node的版本高于6.2就行</span><br><span class="line"></span><br><span class="line">## 2、运行命令行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">博客根目录下运行命令行 ```npm i  hexo-generator-json-content --save</span><br></pre></td></tr></table></figure>
-<p>如果这个包已经存在，会报错，图忘了截了。</p>
-<p>但是你需要在theme文件夹的yilia主题文件夹下，找到node—modules文件夹。如果hexo-generator-json-content 这个包是存在的就OK，可以进行第三步了，见下图：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6280966-7bdc3639ca05cc64.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<h2 id="3、配置文件"><a href="#3、配置文件" class="headerlink" title="3、配置文件"></a>3、配置文件</h2><p>博客根目录下，找到_config.yml，打开找一个空白地方复制一下配置信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">jsonContent:</span><br><span class="line"></span><br><span class="line">  meta: false</span><br><span class="line"></span><br><span class="line">  pages: false</span><br><span class="line"></span><br><span class="line">  posts:</span><br><span class="line"></span><br><span class="line">    title: true</span><br><span class="line"></span><br><span class="line">    date: true</span><br><span class="line"></span><br><span class="line">    path: true</span><br><span class="line"></span><br><span class="line">    text: false</span><br><span class="line"></span><br><span class="line">    raw: false</span><br><span class="line"></span><br><span class="line">    content: false</span><br><span class="line"></span><br><span class="line">    slug: false</span><br><span class="line"></span><br><span class="line">    updated: false</span><br><span class="line"></span><br><span class="line">    comments: false</span><br><span class="line"></span><br><span class="line">    link: false</span><br><span class="line"></span><br><span class="line">    permalink: false</span><br><span class="line"></span><br><span class="line">    excerpt: false</span><br><span class="line"></span><br><span class="line">    categories: false</span><br><span class="line"></span><br><span class="line">    tags: true</span><br></pre></td></tr></table></figure>
-<h3 id="注（重点）：细节处–复制的信息格式要调好"><a href="#注（重点）：细节处–复制的信息格式要调好" class="headerlink" title="注（重点）：细节处–复制的信息格式要调好"></a>注（重点）：细节处–复制的信息格式要调好</h3><p>1、配置文件内找空白处粘贴文件</p>
-<p>2、第一行jsonContent: - 即下图46行前没有空格</p>
-<p>下图47、48、49行前有一个空格</p>
-<p>剩下的有两个空格</p>
-<p>具体格式如下图所示：</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/6280966-30e468dd4732ea42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="这里写图片描述"></p>
-<p>保存后同步文件在看你的博客，点全部文章按钮</p>
-<p>应该是修复了缺失模块这个报错</p>
-
+        <p>简历投递信息-持续更新</p>
+<a id="more"></a>
+<table>
+<thead>
+<tr>
+<th>公司</th>
+<th style="text-align:center">招聘类型</th>
+<th style="text-align:center">招聘职位</th>
+<th style="text-align:center">职位细节</th>
+<th style="text-align:center">工作地点</th>
+<th style="text-align:center">面试地点</th>
+<th style="text-align:center">简历截止日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>京东</td>
+<td style="text-align:center">校招</td>
+<td style="text-align:center">算法工程师</td>
+<td style="text-align:center">A</td>
+<td style="text-align:center">成都（北京,上海,深圳,武汉,南京）</td>
+<td style="text-align:center">西安</td>
+<td style="text-align:center">暂无</td>
+</tr>
+<tr>
+<td>vivo</td>
+<td style="text-align:center">校招内推</td>
+<td style="text-align:center">图像算法工程师</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">杭州</td>
+<td style="text-align:center">远程面试 8月9-15日</td>
+<td style="text-align:center">8月8日18:00</td>
+</tr>
+<tr>
+<td>ThoughtWorks</td>
+<td style="text-align:center">校招内推</td>
+<td style="text-align:center">算法工程师</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">西安（北京、上海、深圳、成都、武汉）</td>
+<td style="text-align:center">西安</td>
+<td style="text-align:center">10月</td>
+</tr>
+<tr>
+<td>虹软</td>
+<td style="text-align:center">内推校招</td>
+<td style="text-align:center">图像处理算法工程师</td>
+<td style="text-align:center">D</td>
+<td style="text-align:center">(杭州市,上海市,南京市)</td>
+<td style="text-align:center">暂无</td>
+<td style="text-align:center">7月31日</td>
+</tr>
+<tr>
+<td>海康威视</td>
+<td style="text-align:center">校招</td>
+<td style="text-align:center">算法工程师（图像处理）产品研发中心(J11423)</td>
+<td style="text-align:center">E</td>
+<td style="text-align:center">杭州</td>
+<td style="text-align:center">暂无</td>
+<td style="text-align:center">暂无</td>
+</tr>
+<tr>
+<td>大华</td>
+<td style="text-align:center">校招</td>
+<td style="text-align:center">智能算法工程师</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">西安（杭州，上海，北京）</td>
+<td style="text-align:center">暂无</td>
+<td style="text-align:center">暂无</td>
+</tr>
+<tr>
+<td>浦发银行</td>
+<td style="text-align:center">校招</td>
+<td style="text-align:center">信息科技岗（系统开发方向)</td>
+<td style="text-align:center">G</td>
+<td style="text-align:center">西安</td>
+<td style="text-align:center">西安</td>
+<td style="text-align:center">暂无</td>
+</tr>
+<tr>
+<td>腾讯</td>
+<td style="text-align:center">校招</td>
+<td style="text-align:center">计算机视觉方向</td>
+<td style="text-align:center">H</td>
+<td style="text-align:center">成都（深圳总部北京上海广州合肥）</td>
+<td style="text-align:center">西安</td>
+<td style="text-align:center">暂无</td>
+</tr>
+<tr>
+<td>汇顶科技</td>
+<td style="text-align:center">校招提前批</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">暂无</td>
+<td style="text-align:center">暂无</td>
+</tr>
+<tr>
+<td>阿里巴巴</td>
+<td style="text-align:center">校招</td>
+<td style="text-align:center">算法工程师-图像图形(应届生）</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">成都（上海,深圳,北京,广州,杭州）</td>
+<td style="text-align:center">远程</td>
+<td style="text-align:center">暂无</td>
+</tr>
+</tbody>
+</table>
+<h3 id="A-京东-算法工程师（数据与算法类）campus-jd-com"><a href="#A-京东-算法工程师（数据与算法类）campus-jd-com" class="headerlink" title="(A)京东 算法工程师（数据与算法类）campus.jd.com"></a>(A)京东 算法工程师（数据与算法类）campus.jd.com</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">工作地点：北京,上海,深圳,武汉,成都,南京</span><br><span class="line">职位方向：技术方向</span><br><span class="line">公司： 京东集团, 京东金融, 京东商城, 京东物流</span><br><span class="line">岗位描述：</span><br><span class="line">1-2019年毕业，本科及以上学历</span><br><span class="line">2-研究及应用前沿互联网技术，如机器学习、深度学习、数据挖掘、推荐、搜索、自然语言处理、分布式并行算法、复杂网络、图像识别、计算机视觉、语音等</span><br><span class="line">3-至少熟悉java, c++，python中的一种开发语言</span><br><span class="line">4-良好的逻辑思维能力，良好的沟通能力、团队合作精神和学习能力</span><br><span class="line"></span><br><span class="line">（Java工程师有西安工作）</span><br></pre></td></tr></table></figure>
+<h3 id="B-vivo-图像算法工程师-https-hr-vivo-com-wt-vivo-web-index-brandCode-vivo"><a href="#B-vivo-图像算法工程师-https-hr-vivo-com-wt-vivo-web-index-brandCode-vivo" class="headerlink" title="(B)vivo 图像算法工程师  https://hr.vivo.com/wt/vivo/web/index?brandCode=vivo"></a>(B)vivo 图像算法工程师  <a href="https://hr.vivo.com/wt/vivo/web/index?brandCode=vivo" target="_blank" rel="noopener">https://hr.vivo.com/wt/vivo/web/index?brandCode=vivo</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">岗位概况</span><br><span class="line">工作地点：杭州市</span><br><span class="line">学历要求：硕士研究生</span><br><span class="line">招聘人数：60</span><br><span class="line">职位类型：研发类</span><br><span class="line">岗位职责：</span><br><span class="line">1、根据公司对手机摄像头产品和技术的规划，设计并实现相应的图像处理、计算机视觉、机器学习和模式识别等算法； </span><br><span class="line">2、负责算法的实现效果和性能优化； </span><br><span class="line">3、对相关领域的最新学术论文、行业、竞争对手等使用的图像技术进行长期的跟踪和梳理。</span><br><span class="line">任职要求：</span><br><span class="line">1、硕士及以上学历，图像处理、计算机视觉、机器学习和模式识别等相关专业； </span><br><span class="line">2、熟悉图像处理、计算机视觉、机器学习和模式识别等相关知识，具有相关项目的开发经验； </span><br><span class="line">3、有深厚的数学功底和较强的算法实现能力，熟悉C/C++，具有良好的代码质量和风格； </span><br><span class="line">4、发表过高水平的图像、视觉、机器学习和模式识别等相关学术论文/专利； </span><br><span class="line">5、熟练的英文文献阅读能力； </span><br><span class="line">6、严谨踏实，责任心强，条理清楚，善于学习总结，有良好的团队精神和沟通协调能力。</span><br></pre></td></tr></table></figure>
+<h3 id="C-ThoughtWorks-算法工程师-https-join-thoughtworks-cn"><a href="#C-ThoughtWorks-算法工程师-https-join-thoughtworks-cn" class="headerlink" title="(C)ThoughtWorks 算法工程师 https://join.thoughtworks.cn/"></a>(C)ThoughtWorks 算法工程师 <a href="https://join.thoughtworks.cn/" target="_blank" rel="noopener">https://join.thoughtworks.cn/</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">工作地点: 北京、上海、深圳、西安、成都、武汉</span><br><span class="line">ThoughtWorks需要你：</span><br><span class="line">精通Python、Java、Scala、Matlab、SPSS、R、SAS等任意一种程序设计语言或工具；</span><br><span class="line">拥有应用数学、机器学习、模式识别、人工智能、数据挖掘、信号处理、自动化控制、系统工程、信息管理、数理统计等相关专业；</span><br><span class="line">有搜索引擎、精准营销、用户画像、推荐算法、异常检测、数据挖掘、图像识别、语音识别等相关项目经验；</span><br><span class="line">良好的业务理解能力和沟通技巧，具备很强的抗压能力和团队合作能力，可以出差；</span><br><span class="line">如果你愿意提交：已经发表过的论文，毕业论文、研究课题的成果，那就更好啦。</span><br><span class="line">ThoughtWorks期望你：</span><br><span class="line">参与过基于数据的统计、分析、挖掘，建模的课程与项目；</span><br><span class="line">参与过与机器学习相关的项目（课题研究或实习项目）。</span><br></pre></td></tr></table></figure>
+<h3 id="（D）虹软-图像处理算法工程师-http-job-arcsoft-com-cn-JobList-aspx-flag-2"><a href="#（D）虹软-图像处理算法工程师-http-job-arcsoft-com-cn-JobList-aspx-flag-2" class="headerlink" title="（D）虹软 图像处理算法工程师 http://job.arcsoft.com.cn/JobList.aspx?flag=2"></a>（D）虹软 图像处理算法工程师 <a href="http://job.arcsoft.com.cn/JobList.aspx?flag=2" target="_blank" rel="noopener">http://job.arcsoft.com.cn/JobList.aspx?flag=2</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">工作地点：杭州市,上海市,南京市</span><br><span class="line">招聘人数：若干</span><br><span class="line">薪资范围：面议</span><br><span class="line">发布时间：2018-07-30</span><br><span class="line">截止时间：-</span><br><span class="line">工作职责：图像处理算法研究</span><br><span class="line"></span><br><span class="line">任职资格：</span><br><span class="line">1、硕士及以上学历，图像处理、计算机视觉、模式识别相关专业研究方向； 2、熟悉当前流行的计算机视觉与模式分类理论以及常用的统计和学习方法：PCA、Boosting、SVM、Neural Net、Regression等； 3、熟悉常用特征提取方法：Haar、Gabor、LBP、SIFT、HOG等； 深厚的数学功底与算法理论研究能力； 4、精通C/C++； 有2年以上图像处理和增强方面的独立研发能力及项目经验者优先； 熟悉深度学习理论并有项目实践者优先； 或发表过图像算法相关学术论文/专利者优先；</span><br></pre></td></tr></table></figure>
+<h3 id="（E）海康威视-算法工程师（图像处理）产品研发中心-J11423-http-campus-hikvision-com"><a href="#（E）海康威视-算法工程师（图像处理）产品研发中心-J11423-http-campus-hikvision-com" class="headerlink" title="（E）海康威视 算法工程师（图像处理）产品研发中心(J11423) http://campus.hikvision.com/"></a>（E）海康威视 算法工程师（图像处理）产品研发中心(J11423) <a href="http://campus.hikvision.com/" target="_blank" rel="noopener">http://campus.hikvision.com/</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">工作性质： 全职  </span><br><span class="line">薪资范围： 面议  </span><br><span class="line">招聘人数： 若干  </span><br><span class="line">发布时间： 2018-07-16</span><br><span class="line">截止时间：  </span><br><span class="line">工作地点: 浙江省-杭州市</span><br><span class="line">工作职责:负责图像处理模块的算法设计，并在相关平台上实现。</span><br><span class="line">任职资格：</span><br><span class="line">1、计算机、电子信息、信号处理、图像处理类专业，硕士以上学历；</span><br><span class="line">2、精通C语言，掌握Matlab，熟悉OpenCV 等图像工具；</span><br><span class="line">3、熟悉图像处理或模式识别相关算法处理；</span><br><span class="line">4、对红外图像的非均匀性校正、细节增强、去噪、测温等相关算法有一定了解；</span><br><span class="line">5、具有较强的文献获取能力，英文文献检索和阅读能力；</span><br><span class="line">6、有红外图像算法处理经验者优先。</span><br></pre></td></tr></table></figure>
+<h3 id="（F）大华-2019届智能算法工程师-http-dahua-zhiye-com-Campus"><a href="#（F）大华-2019届智能算法工程师-http-dahua-zhiye-com-Campus" class="headerlink" title="（F）大华 2019届智能算法工程师  http://dahua.zhiye.com/Campus"></a>（F）大华 2019届智能算法工程师  <a href="http://dahua.zhiye.com/Campus" target="_blank" rel="noopener">http://dahua.zhiye.com/Campus</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">招聘类别： 校园招聘  </span><br><span class="line">工作性质： 全职  </span><br><span class="line">薪资范围： 面议  </span><br><span class="line">招聘人数： 若干</span><br><span class="line">发布时间： 2018-07-09  </span><br><span class="line">截止时间：  </span><br><span class="line">工作地点: 浙江省-杭州市,陕西省-西安市,上海市,北京市</span><br><span class="line">工作职责:负责视频和图像相关智能算法的调研、设计、开发和维护工作。</span><br><span class="line">任职资格：</span><br><span class="line">1、硕士及以上学历；</span><br><span class="line">2、熟悉计算机视觉、图像处理、模式识别和机器学习等领域相关知识；</span><br><span class="line">3、熟悉C或C++，Python开发语言，具有良好的英语阅读能力和数学功底，能够根据相关文献进行代码实现；</span><br><span class="line">4、至少了解目标检测、目标跟踪、目标识别、事件检测、图像检索等算法中的一种，有相关项目经验优先；</span><br><span class="line">5、熟悉至少一种深度学习框架，包括Caffe、TensorFlow等，对深度学习的底层实现有初步理解，有相关项目经验优先；</span><br><span class="line">6、有人脸识别/智能交通/结构化/行为分析/字符识别等相关项目经验者优先；有深度学习框架开发经验者优先；有X86/ARM/DSP/GPU等汇编优化经验者优先；获得国内/国际赛事重要奖项者优先；</span><br><span class="line">7、具备良好的沟通表达能力和团队合作意识，诚实守信，且积极主动，有责任心和事业心。</span><br></pre></td></tr></table></figure>
+<h3 id="G-浦发银行"><a href="#G-浦发银行" class="headerlink" title="(G) 浦发银行"></a>(G) 浦发银行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">信息科技岗（系统开发方向)</span><br><span class="line">若干 本科及以上</span><br><span class="line">计算机与信息技术、软件工程、信息与通信工程、电子科学与技术等相关专业</span><br></pre></td></tr></table></figure>
+<h3 id="（H）腾讯-计算机视觉方向-https-join-qq-com-post-php-fid-93-amp-pid-1"><a href="#（H）腾讯-计算机视觉方向-https-join-qq-com-post-php-fid-93-amp-pid-1" class="headerlink" title="（H）腾讯 计算机视觉方向 https://join.qq.com/post.php?fid=93&amp;pid=1"></a>（H）腾讯 计算机视觉方向 <a href="https://join.qq.com/post.php?fid=93&amp;pid=1" target="_blank" rel="noopener">https://join.qq.com/post.php?fid=93&amp;pid=1</a></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">计算机视觉方向</span><br><span class="line">岗位描述:</span><br><span class="line">腾讯拥有上亿量级的产品数据围、适宜年轻人的企业文化，、极其丰富的产品场景、超大规模的计算资源、全谱领域的深厚技术积累、追求极致的创新氛可为您提供充分的专业发挥空间，让您有可能做出影响整个互联网行业发展的优秀成果。</span><br><span class="line">该岗位主要职责包括但不限于：</span><br><span class="line">1、负责图像或见须相关算法的研究与开发，包括深度学习以及常用机器学习方法在机器视觉中的应用； </span><br><span class="line">2 、负责计算机视觉相关的技术研发工作，包括但不限于：图像检测、图像分类、图像分割、图像跟踪、视频语义分析、人压识别与分析、车辆与人员的检测识别与跟踪、图像 Z 视频搜索、页面分析与自动合成、 OCR 等算法与系统研发领域； </span><br><span class="line">3 、负责深度学习、图像理解、机器学习等前沿技术的研发储备和平台建设，结合未来实际应用场景，提供技术解决方案。</span><br><span class="line">岗位要求：</span><br><span class="line">1、计算机、应用数学、模式试别、人工智能、自控、统计学、运筹学、生物信息、物理学屋子计算、神经科学、社会学介臼理学等专业，图像处理、模式识别、机器学习相关研究方向，本科及以上，博士优先； </span><br><span class="line">2 、熟练掌握计算机视觉和图像处理泪关的基本算法及应用； </span><br><span class="line">3 、较强的算法实现能力，熟练掌握 c/c++编程，熟悉 shell/python/Matlab至少一种编程语言；</span><br><span class="line">4 、在计算机视觉、模式识别等学术会议或者期刊上发表论文、相关国际比赛获奖、及有相关专利者优先。</span><br><span class="line"></span><br><span class="line">注：该岗位“招聘城市”在简历投递截止日前会有部分调整，请密切关注，腾讯公司对招聘信息保留最终解释权</span><br><span class="line">工作地点:</span><br><span class="line">深圳总部北京上海广州成都合肥</span><br><span class="line">招聘城市：</span><br><span class="line">西安广州上海杭州北京南京深圳武汉合肥新加坡远程面试</span><br></pre></td></tr></table></figure>
+<h3 id="阿里巴巴-算法工程师-图像图形-应届生）"><a href="#阿里巴巴-算法工程师-图像图形-应届生）" class="headerlink" title="阿里巴巴 算法工程师-图像图形(应届生）"></a>阿里巴巴 算法工程师-图像图形(应届生）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">岗位描述Job Description</span><br><span class="line">阿里巴巴集团拥有海量的图像/视频数据，强大的计算能力和巨大的市场空间。我们需要你具有计算机视觉或图形学相关基础知识和视觉分析、诊断、搜索、合成等方面的实践经验。我们期待追求卓越、自我驱动、聪明、乐观、自省、皮实的优秀人士加入阿里巴巴，共同开创视觉技术的新格局。 </span><br><span class="line">具体职责包括但不限于： </span><br><span class="line">1、负责图像/视频的分析、诊断、搜索、合成等方面的算法研究和产品开发，包括图像检测、图像分类、图像分割、图像跟踪、视频语义分析、人脸识别与分析、车辆与人员的检测识别与跟踪、工业与医学诊断、图像/视频搜索、页面分析与自动合成、OCR等算法与系统研发 </span><br><span class="line">2、负责图像/视频相关算法的研究与开发，包括深度学习以及常用机器学习方法在机器视觉中的应用 </span><br><span class="line">3、负责虚拟现实与增强现实相关算法的研究与开发，包括图像匹配、视觉SLAM、实时SFM、真实感渲染等前沿技术的探索研发</span><br><span class="line">岗位要求Qualifications</span><br><span class="line">1、本科及以上学历，硕士博士优先，计算机、数学、通信等相关专业 </span><br><span class="line">2、熟悉深度学习、图像/视频分析与处理、三维重建与绘制、游戏开发等相关领域技术和应用，有大量实践经验者优先 </span><br><span class="line">3、有科研能力并有成果发表在国际顶级会议、期刊者优先 </span><br><span class="line">4、极佳的工程实现能力，熟练掌握C/C++、Java、Python等至少一门语言 </span><br><span class="line">5、良好的数据分析能力和逻辑分析能力 </span><br><span class="line">6、良好的团队合作精神，能够做到优秀、严谨、皮实、乐观</span><br><span class="line">工作地点Location</span><br><span class="line">上海市(Shanghai),深圳市(Shenzhen),成都市(Chengdu),北京市(Beijing),广州市(Guangzhou),杭州市(Hangzhou)</span><br><span class="line">参加面试的城市或地区Interview City or Region</span><br><span class="line">远程(Remote Interviews)</span><br></pre></td></tr></table></figure>
       
 
       
     </div>
     <div class="article-info article-info-index">
+      
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
       
       
 	<div class="article-tag tagcloud">
@@ -208,15 +306,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Resume</a>
         		</li>
       		
 		</ul>
@@ -272,7 +362,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/02/08/hexo_3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/07/30/jianli_sum/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -286,18 +376,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/03/04/database_1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数据库Mysql_3_4
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/02/08/hexo_2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo博客yilia主题_more截断文章_多标签添加</div>
+    <a href="/2018/07/12/NotePad/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">记事本</div>
       <i class="icon-circle-right"></i>
     </a>
   
