@@ -1,7 +1,7 @@
 ---
 title: 简历投递信息-7-31更新
 date: 2018-07-30 09:39:40
-tags: [Resume]
+tags: Resume
 top: true
 ---
 
