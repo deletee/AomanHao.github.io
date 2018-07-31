@@ -1,8 +1,8 @@
 ---
 title: 简历投递信息-7-31更新
 date: 2018-07-30 09:39:40
-tags: Resume
-# top: true
+tags: [Java, Resume]
+top: true
 ---
 
 简历投递信息-持续更新
