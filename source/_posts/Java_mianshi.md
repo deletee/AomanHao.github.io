@@ -8,7 +8,7 @@ tags: [GitHub, Java]
 Java面试相关
 
 <!--more-->
-
+ ```
 谈谈final, finally, finalize的区别： 
 final：：：修饰符（关键字）如果一个类被声明为final，意味着它不能再派生出新的子类，不能作为父类被继承。因此一个类不能既被声明为 abstract的，又被声明为final的。将变量或方法声明为final，可以保证它们在使用中不被改变。被声明为final的变量必须在声明时给定初值，而在以后的引用中只能读取，不可修改。被声明为final的方法也同样只能使用，不能重载 
 finally：：：再异常处理时提供 finally 块来执行任何清除操作。如果抛出一个异常，那么相匹配的 catch 子句就会执行，然后控制就会进入 finally 块（如果有的话）。 
@@ -60,9 +60,9 @@ Set里的元素是不能重复的，那么用iterator()方法来区分重复与�
 equals()和==方法决定引用值是否指向同一对象equals()在类中被覆盖，为的是当两个分离的对象的内容和类型相配的话，返回真值。
 
 给我一个你最常见到的runtime exception： 
-```
+ 
 ArithmeticException, ArrayStoreException, BufferOverflowException, BufferUnderflowException, CannotRedoException, CannotUndoException, ClassCastException, CMMException, ConcurrentModificationException, DOMException, EmptyStackException, IllegalArgumentException, IllegalMonitorStateException, IllegalPathStateException, IllegalStateException, ImagingOpException, IndexOutOfBoundsException, MissingResourceException, NegativeArraySizeException, NoSuchElementException, NullPointerException, ProfileDataException, ProviderException, RasterFormatException, SecurityException, SystemException, UndeclaredThrowableException, UnmodifiableSetException, UnsupportedOperationException。
-```
+ 
 error和exception有什么区别： 
 error 表示恢复不是不可能但很困难的情况下的一种严重问题。比如说内存溢出。不可能指望程序能处理这样的情况。 
 exception 表示一种设计或实现问题。也就是说，它表示如果程序运行正常，从不会发生的情况。
@@ -100,7 +100,7 @@ swtich是否能作用在byte上，是否能作用在long上，是否能作用在
 　　Singleton模式主要作用是保证在Java应用程序中，一个类Class只有一个实例存在。
 　　一般Singleton模式通常有几种种形式：
 　　第一种形式：定义一个类，它的构造函数为private的，它有一个static的private的该类变量，在类初始化时实例话，通过一个public的getInstance方法获取对它的引用,继而调用其中的方法。
-```
+ 
 public class Singleton { 
 　　private Singleton(){} 
 　　//在自己内部定义自己一个实例，是不是很奇怪？ 
@@ -111,9 +111,9 @@ public class Singleton {
 　　　　return instance; 　　 
 　　 } 
 } 
- ```
+  
 　　第二种形式：
-```
+ 
 public class Singleton { 
 　　private static Singleton instance = null; 
 　　public static synchronized Singleton getInstance() { 
@@ -123,7 +123,7 @@ public class Singleton {
 　　　　instance＝new Singleton(); 
 return instance; 　　} 
 } 
-```
+ 
 其他形式：
 　　定义一个类，它的构造函数为private的，所有方法为static的。
 　　一般认为第一种形式要更加安全些。
@@ -159,7 +159,7 @@ char型变量中能不能存贮一个中文汉字?为什么：
 
 介绍JAVA中的Collection FrameWork(包括如何写自己的数据结构)： 
 答：Collection FrameWork如下： 
-```
+ 
 Collection 
 ├List 
 │├LinkedList 
@@ -171,7 +171,7 @@ Map
 ├Hashtable 
 ├HashMap 
 └WeakHashMap 
-```
+ 
 Collection是最基本的集合接口，一个Collection代表一组Object，即Collection的元素（Elements） 
 Map提供key到value的映射。
 
@@ -198,20 +198,20 @@ jsp:plugin：根据浏览器类型为Java插件生成OBJECT或EMBED标记。
 
 JSP中动态INCLUDE与静态INCLUDE的区别： 
 答：动态INCLUDE用jsp:include动作实现 
-```
+ 
 <jsp:include page="included.jsp" flush="true" />
-```
+ 
 它总是会检查所含文件中的变化，适合用于包含动态页面，并且可以带参数 
 静态INCLUDE用include伪码实现,定不会检查所含文件的变化，适用于包含静态页面 
-```
+ 
 <%@ include file="included.htm" %>。
-```
+ 
 两种跳转方式分别是什么?有什么区别： 
 答：有两种，分别为： 
-```
+ 
 <jsp:include page="included.jsp" flush="true"> 
 <jsp:forward page= "nextpage.jsp"/> 
-```
+ 
 前者页面不会转向include所指的页面，只是显示该页的结果，主页面还是原来的页面。执行完后还会回来，相当于函数调用。并且可以带参数.后者完全转向新页面，不会再回来。相当于go to 语句。
 
 说一说Servlet的生命周期： 
@@ -221,7 +221,7 @@ JAVA SERVLET API中forward() 与redirect()的区别：
 答:前者仅是容器中控制权的转向，在客户端浏览器地址栏中不会显示出转向后的地址；后者则是完全的跳转，浏览器将会得到跳转的地址，并重新发送请求链接。这样，从浏览器的地址栏中可以看到跳转后的链接地址。所以，前者更加高效，在前者可以满足需要时，尽量使用forward()方法，并且，这样也有助于隐藏实际的链接。在有些情况下，比如，需要跳转到一个其它服务器上的资源，则必须使用sendRedirect()方法。
 
 Servlet的基本架构： 
-```
+ 
 public class ServletName extends HttpServlet { 
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws 
 ServletException, IOException { 
@@ -230,10 +230,10 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) thro
 ServletException, IOException { 
 } 
 }
-```
+ 
 可能会让你写一段Jdbc连Oracle的程序,并实现数据查询： 
 答:程序如下： 
-```
+ 
 package hello.ant; 
 import java.sql.*; 
 public class jdbc 
@@ -309,7 +309,7 @@ e.printStackTrace();
 } 
 } 
 }
-```
+ 
 Class.forName的作用?为什么要用： 
 答：调用该访问返回一个以字符串指定类名的类的对象。
 
@@ -326,7 +326,7 @@ STAX:Streaming API for XML (StAX)。
 
 用jdom解析xml文件时如何解决中文问题?如何解析： 
 答:看如下代码,用编码方式加以解决 
-```
+ 
 package test; 
 import java.io.*; 
 public class DOMTest 
@@ -370,7 +370,7 @@ System.out.println (e.getMessage());
 ``
 编程用JAVA解析XML的方式： 
 答:用SAX方式解析XML，XML文件如下： 
-```
+ 
 <?xml version="1.0" encoding="gb2312"?> 
 <person> 
 <name>王小明</name> 
@@ -378,9 +378,9 @@ System.out.println (e.getMessage());
 <telephone>6258113</telephone> 
 <notes>男,1955年生,博士，95年调入海南大学</notes> 
 </person> 
-```
+ 
 事件回调类SAXHandler.java 
-```
+ 
 import java.io.*; 
 import java.util.Hashtable; 
 import org.xml.sax.*; 
@@ -413,9 +413,9 @@ if (currentElement.equals(name))
 table.put(currentElement, currentValue); 
 } 
 } 
-```
+ 
 JSP内容显示源码,SaxXml.jsp: 
-```
+ 
 <HTML> 
 <HEAD> 
 <TITLE>剖析XML文件people.xml</TITLE> 
@@ -452,14 +452,14 @@ out.println("</TABLE>");
 %> 
 </BODY> 
 </HTML>
-```
+ 
 EJB与JAVA BEAN的区别： 
 答:Java Bean 是可复用的组件，对Java Bean并没有严格的规范，理论上讲，任何一个Java类都可以是一个Bean。但通常情况下，由于Java Bean是被容器所创建（如Tomcat）的，所以Java Bean应具有一个无参的构造器，另外，通常Java Bean还要实现Serializable接口用于实现Bean的持久性。Java Bean实际上相当于微软COM模型中的本地进程内COM组件，它是不能被跨进程访问的。Enterprise Java Bean 相当于DCOM，即分布式组件。它是基于Java的远程方法调用（RMI）技术的，所以EJB可以被远程访问（跨进程、跨计算机）。但EJB必须被布署在诸如Webspere、WebLogic这样的容器中，EJB客户从不直接访问真正的EJB组件，而是通过其容器访问。EJB容器是EJB组件的代理，EJB组件由容器所创建和管理。客户通过容器来访问真正的EJB组件。
 
 EJB的基本架构： 
 答:一个EJB包括三个部分: 
 Remote Interface 接口的代码 
-```
+ 
 package Beans; 
 import javax.ejb.EJBObject; 
 import java.rmi.RemoteException; 
@@ -467,8 +467,8 @@ public interface Add extends EJBObject
 { 
 //some method declare 
 } 
-```
-```
+ 
+ 
 Home Interface 接口的代码 
 package Beans; 
 import java.rmi.RemoteException; 
@@ -478,8 +478,8 @@ public interface AddHome extends EJBHome
 { 
 //some method declare 
 } 
-```
-```
+ 
+ 
 EJB类的代码 
 package Beans; 
 import java.rmi.RemoteException; 
@@ -489,7 +489,7 @@ public class AddBean Implements SessionBean
 { 
 //some method declare 
 }
-```
+ 
 MVC的各个部分都有那些技术来实现?如何实现： 
 答:MVC是Model－View－Controller的简写。"Model" 代表的是应用的业务逻辑（通过JavaBean，EJB组件实现）， "View" 是应用的表示面（由JSP页面产生），"Controller" 是提供应用的处理过程控制（一般是一个Servlet），通过这种设计模型把应用逻辑，处理过程和显示逻辑分成不同的组件实现。这些组件可以进行交互和重用。
 
@@ -623,9 +623,9 @@ session表示一个请求的javax.servlet.http.HttpSession对象。Session可以
 线程指在程序执行过程中，能够执行程序代码的一个执行单位，每个程序至少都有一个线程，也就是程序本身。Java中的线程有四种状态分别是：运行、就绪、挂起、结束。 
 
 JSP的常用指令：
-```
+ 
 <%@page language=”java” contenType=”text/html;charset=gb2312” session=”true” buffer=”64kb” autoFlush=”true” isThreadSafe=”true” info=”text” errorPage=”error.jsp” isErrorPage=”true” isELIgnored=”true” pageEncoding=”gb2312” import=”java.sql.*”%>
-```
+ 
 isErrorPage(是否能使用Exception对象)，isELIgnored(是否忽略表达式) <%@include file=”filename”%><%@taglib prefix=”c”uri=”http://……”%>
 
 四种会话跟踪技术：
@@ -934,7 +934,7 @@ CORBA是什么?用途是什么：
 应该对oracle有所了解，对一些数据库的名词，应该知道词的解释:
 
 分页一 前提  希望最新的纪录在开头给你的表建立查询： 表：mytable  
-```
+ 
 查询：create or replace view as mytable_view from mytable order by id desc 其中，最好使用序列号create sequence mytable_sequence 来自动增加你的纪录id号  二 源程序  <%String sConn="你的连接"  
 
 Class.forName("oracle.jdbc.driver.OracleDriver");  Connection conn=DriverManager.getConnection(sConn,"你的用户名","密码");  
@@ -960,22 +960,22 @@ int n=0;  rs.absolute(thepage+1);  while (n<(pageSize)&&!rs  %>  <%rs.close();  
 <%if(pageCount>1){%><a href="sbinfo_index.jsp?page=<%=pageCount%>&condition=<%=condition%>&type=<%=type%>">尾页</a><%}%>  跳到<input type="text" name="page" size="4" style="font-size:9px">页  
 
 <input type="submit" name="submit" size="4" value="GO" style="font-size:9px">  </form>  希望大家喜欢！！！！！！
-```
+ 
 Java 的通信编程，编程题(或问答)，用JAVA SOCKET编程，读服务器几个字符，再写入本地显示： 
 
 答:Server端程序:
-```
+ 
  package test; import java.net.*; import java.io.*; public class Server { private ServerSocket ss; private Socket socket; 
 
 private BufferedReader in; private PrintWriter out; public Server() { try { ss=new ServerSocket(10000); while(true) { socket = ss.accept(); 
 
 String RemoteIP = socket.getInetAddress().getHostAddress(); String RemotePort = ":"+socket.getLocalPort(); System.out.println("A client come in!IP:"+RemoteIP+RemotePort); in = new BufferedReader(new InputStreamReader(socket.getInputStream())); String line = in.readLine(); System.out.println("Cleint send is :" + line); out = new PrintWriter(socket.getOutputStream(),true); out.println("Your Message Received!"); out.close(); in.close(); socket.close(); } }catch (IOException e) { out.println("wrong"); } } public static void main(String[] args) { new Server(); } } 
-```
-```
+ 
+ 
 Client端程序: package test; import java.io.*; import java.net.*; public class Client { Socket socket; BufferedReader in; PrintWriter out; public Client() { try { System.out.println("Try to Connect to 127.0.0.1:10000"); socket = new Socket("127.0.0.1",10000); System.out.println("The Server Connected!"); System.out.println("Please enter some Character:"); BufferedReader line = new BufferedReader(new InputStreamReader(System.in)); out = new PrintWriter(socket.getOutputStream(),true); 
 
 Out
-```
+ 
 文件读写的基本类：
 
 答：File Reader 类和FileWriter类分别继承自Reader类和Writer类。FileReader类用于读取文件，File Writer类用于将数据写入文件，这两各类在使用前，都必须要调用其构造方法创建相应的对象，然后调用相应的read()或 write()方法。
@@ -1113,7 +1113,9 @@ FROM Custom
 OOP是Object_oriented Programming(面向对象编程)的缩写。这主要是为了区别于以前的面向过程的程序设计！指的是用对象的观点来组织与构建系统，它综合了功能抽象和数据抽象，这样可以减少数据之间的耦合性和代码的出错几率。使用面向对象编程技术可以使得软件开发者按照现实世界里人们思考问题的模式编写代码,可以让软件开发者更好地利用代码直接表达现实中存在的对象,将问题空间直接映射到解空间!类：即class 在面向对象的程序设计中，专门用“类”来表示用户定义的抽象数据类型（user_defined abstract type）。它将具有相同状态、操作和访问机制的多个对象进行了抽象。类具有继承、数据隐藏和多态三种主要特性。利用类的这三种特性可以更好地表示现实世界中事物。类是同一类对象实例的共性的抽象，对象是类的实例化。对象通常作为计算机模拟思维，表示真实世界的抽象，一个对象就像一个软件模块，可以为用户提供一系列的服务---可以改变对象的状态、测试、传递消息等。类定义了对象的实现细节或数据结构。类是静态的，对象是动态的，对象可以看作是运行中的类。类负责产生对象，可以将类当成生产对象的工厂（Object factory）.
 
 5. 有一组数字（3，10，6，8，98，22），请编程排序（升降序皆可），语言不限，算法不限，但须注明是何种算法。//下面使用简单的冒泡法进行排序！
-```
+
+ 
+
 #include "iostream.h"  template<class type>  class CBubble{
 
 private: type *pArray; int size;public:CBubble(type a[],int sizeArray);void sort();void display();};
@@ -1130,17 +1132,16 @@ void main(void){int a[]={3,10,6,8,98,22};CBubble<int> intData(a,sizeof(a));cout<
 
 }
 
-```
+ 
 
 SQLhttp://www.jactiongroup.net/reference/html/index.html  //书
 http://blog.csdn.net/hbuzhang/archive/2004/12/07/207202.aspx //书
 
 connection connconn.setAuto(false)//表示手动提交conn.commit// 提交conn.rollback();//事务回滚
 
+ 
 -内联接
-
 use pubsselect a.au_fname, a.au_lname, p.pub_name  from authors a inner join publishers p on a.city = p.city order by p.pub_name asc, a.au_lname asc,   a.au_fname asc
-
 --左外联接
 
 use pubs  select a.au_fname, a.au_lname, p.pub_name  from authors a left join publishers p
@@ -1178,7 +1179,8 @@ BEGIN
       CONTINUE
 
 END
-```
+ 
+ 
 
 ---如果平均价格少于 $30，WHILE 循环就将价格加倍，然后选择最高价。
 
@@ -1391,7 +1393,8 @@ begin
   end
 
 end
-```
+ 
+ 
 --delete from temptrigger
 
 --delete from temptrigger where id_temp='01'
@@ -1417,8 +1420,8 @@ use pubs  exec sp_addtype ssn , 'varchar(11)' , 'NOT NULL'
 --查看创建的数据类型--sp_help ssn
 
 --使用创建的数据类型create table mytable( myid varchar(2) primary key, myssn ssn)  
-
 4-删除创建的数据类型--drop table mytable--exec sp_droptype ssn
+ 
 
 ?批是包含一个或多个 Transact-SQL 语句的组，从应用程序一次性地发送到 Microsoft SQL Server 执行。批作为一个整体执行，以GO命令结束。批处理是客户端作为一个单元发出的一个或多个 SQL 语句的集合。每个批处理编译为一个执行计划。
 
@@ -1507,12 +1510,13 @@ use pubs  exec sp_addtype ssn , 'varchar(11)' , 'NOT NULL'
 
 如何编译java程序：
 
-单击开始|运行命令，在命令行上输入cmd，按回车键（在 window98中输入command，按回车键），即可打开一个命令窗口，将目录转换到编写java源程序所在的目录，输入javac filename.java
+单击开始|运行命令，在命令行上输入cmd，按回车键（在 window98中输入command，按回车键），即可打开一个命令窗口，将目录转换到编写java源程序所在的目录，输入`javac filename.java`
 
 如何执行java程序：
 
-同样在命令窗口中输入java filename，
+同样在命令窗口中输入`java filename，`
 
 基本数据类型：
 
 Java的数据类型可以划分为4大类：整数，浮点数，字符型，布尔型。其中整数可以划分为：byte,short,int,long.浮点数可以划分为float,double
+```
