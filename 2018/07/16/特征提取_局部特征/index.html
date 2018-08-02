@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="AomanHao">
 <meta property="og:description" content="特征提取——局部特征">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-02T03:14:23.901Z">
+<meta property="og:updated_time" content="2018-08-02T13:27:56.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="特征提取——局部特征">
 <meta name="twitter:description" content="特征提取——局部特征">
@@ -214,52 +214,6 @@
 <blockquote>
 <p>结论：1、增大α的值，将减小角点响应值R，降低角点检测的灵性，减少被检测角点的数量；减小α值，将增大角点响应值R，增加角点检测的灵敏性，增加被检测角点的数量。<br><br>2、Harris角点检测算子对亮度和对比度的变化不敏感<br><br>3、Harris角点检测算子具有旋转不变性<br><br>4、Harris角点检测算子不具有尺度不变性<br></p>
 </blockquote>
-<hr>
-<p>边缘检测：<br><a href="https://blog.csdn.net/tigerda/article/details/61192943" target="_blank" rel="noopener">https://blog.csdn.net/tigerda/article/details/61192943</a></p>
-<p>常见边缘检测算子：Roberts 、Sobel 、Prewitt、Laplacian、Log/Marr、Canny、Kirsch、Nevitia<br></p>
-<p>一阶微分算子：Roberts 、Sobel 、Prewitt<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">模板：</span><br><span class="line">Roberts  </span><br><span class="line">|1, 0|</span><br><span class="line">|0,-1|</span><br><span class="line"></span><br><span class="line">sobel算子</span><br><span class="line">|1, 0 , 1|</span><br><span class="line">|1, 0 , 1|</span><br><span class="line">|1, 0 , 1|</span><br><span class="line"></span><br><span class="line">prewitt算子</span><br><span class="line">|1, 0 , 1|</span><br><span class="line">|1, 0 , 1|</span><br><span class="line">|1, 0 , 1|</span><br><span class="line"></span><br><span class="line">Sobel各向同性算子:</span><br><span class="line"></span><br><span class="line">   |-1  ,0,  1|     |-1,-跟2,-1|</span><br><span class="line">Gx=|-跟2,0,跟2| ,Gx=| 0,   0, 0|</span><br><span class="line">   |-1  ,0,  1|     | 1, 跟2, 1|</span><br></pre></td></tr></table></figure></p>
-<p>Sobel各向同性算子的权值比普通Sobel算子的权值更准确。为什么？模板的权值是离中心位置越远则权值（看绝对值）影响越小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">计算边缘幅值与方向？以Sobel算子为例。3*3Sobel两个方向的算子在图像上滑动，模板与其覆盖的图像3*3区域9个像素进行卷积，求和后得到此方向的边缘检测幅值。</span><br><span class="line"></span><br><span class="line">   |-1,0,1|            |-1,-2,-1|</span><br><span class="line">Gx=|-2,0,2|*f(x,y) ,Gx=| 0, 0, 0|*f(x,y)</span><br><span class="line">   |-1,0,1|            | 1, 2, 1|</span><br><span class="line"></span><br><span class="line">G^2=Gx^2+Gy^2</span><br><span class="line"></span><br><span class="line">P=arctan(Gx/Gy)</span><br><span class="line"></span><br><span class="line">f(x,y)为图像，Gx和Gy分别是水平和竖直方向算子的卷积结果，G则是最终得到的边缘幅值，θ值则是边缘方向。当然G的计算有时简化为</span><br><span class="line">G=|Gx|+|Gy| 或者 G=max(|Gx|,|Gy|)</span><br></pre></td></tr></table></figure></p>
-<p>二阶微分算子：Laplacian、Log/Marr<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Laplacian算子</span><br><span class="line">   |-1,-1,-1|      </span><br><span class="line">Gx=|-1, 8,-1|</span><br><span class="line">   |-1,-1,-1|</span><br><span class="line"></span><br><span class="line">   | 0,-1, 0|      </span><br><span class="line">Gx=|-1, 4,-1|</span><br><span class="line">   | 0,-1, 0|</span><br><span class="line"></span><br><span class="line">   |-2,-4,-4,-4,-2|</span><br><span class="line">   |-4, 0, 8, 0,-4|      </span><br><span class="line">Gx=|-4, 8,24, 8,-4|</span><br><span class="line">   |-4, 0, 8, 0,-4|</span><br><span class="line">   |-2,-4,-4,-4,-2|</span><br><span class="line">Log边缘检测则是先进行高斯滤波再进行拉普拉斯算子检测</span><br></pre></td></tr></table></figure></p>
-<p>非微分边缘检测算子：Canny</p>
-<table>
-<thead>
-<tr>
-<th>算 子</th>
-<th>优缺点比较</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Roberts</td>
-<td>对具有陡峭的低噪声的图像处理效果较好，但利用 Roberts算子提取边缘的结果是边缘比较粗，因此边缘定位不是很准确。</td>
-</tr>
-<tr>
-<td>Sobel</td>
-<td>对灰度渐变和噪声较多的图像处理效果比较好， Sobel算子对边缘定位比较准确。</td>
-</tr>
-<tr>
-<td>Kirsch</td>
-<td>对灰度渐变和噪声较多的图像处理效果较好。</td>
-</tr>
-<tr>
-<td>Prewitt</td>
-<td>对灰度渐变和噪声较多的图像处理效果较好。</td>
-</tr>
-<tr>
-<td>aplacian</td>
-<td>对图像中的阶跃性边缘点定位准确，对噪声非常敏感，丢失一部分边缘的方向信息，造成一些不连续的检测边缘。</td>
-</tr>
-<tr>
-<td>LoG</td>
-<td>算 子 经 常 出 现 双 边 缘 像 素 边 界 ， 而 且 该 检 测 方 法 对 噪 声 比铰 敏 感 ， 所 以 很 少 用 LoG算 子 检 测 边 缘 ， 而 是 用 来 判 断 边 缘 像素是位于图像的明区还是暗区。</td>
-</tr>
-<tr>
-<td>Canny</td>
-<td>此方法不容易受噪声的干扰，能够检测到真正的弱边缘。在edge函数中，最有效的边缘检测方法是 Canny方法。该方法的优点在于使用两种不同的阈值分别检测强边缘和弱边缘，并且汉当弱边缘与强边缘相连时，才将弱边缘包含在输出图像中。因此，这种方法不容易被噪声“填充”，跟容易检测出真正的弱边缘。</td>
-</tr>
-</tbody>
-</table>
-<hr>
 
       
 
@@ -347,11 +301,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/特征提取_纹理特征/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/特征提取_颜色特征/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          特征提取——纹理特征
+          特征提取——颜色特征
         
       </div>
     </a>
