@@ -31,6 +31,72 @@ tags: [GitHub, Mysql]
 机器学习—GMM
 高斯混合模型（Gaussian Mixed Model）指的是多个高斯分布函数的线性组合，理论上GMM可以拟合出任意类型的分布，通常用于解决同一集合下的数据包含多个不同的分布的情况（或者是同一类分布但参数不一样，或者是不同类型的分布，比如正态分布和伯努利分布）
 
+```
+//  基于混合高斯模型的运动目标检测
+//  Author： http://blog.csdn.net/icvpr  
+ 
+ 
+#include <iostream>
+#include <string>
+ 
+#include <opencv2/opencv.hpp>
+ 
+ 
+int main(int argc, char** argv)
+{
+	std::string videoFile = "../test.avi";
+ 
+	cv::VideoCapture capture;
+	capture.open(videoFile);
+ 
+	if (!capture.isOpened())
+	{
+		std::cout<<"read video failure"<<std::endl;
+		return -1;
+	}
+ 
+ 
+	cv::BackgroundSubtractorMOG2 mog;
+ 
+	cv::Mat foreground;
+	cv::Mat background;
+ 
+	cv::Mat frame;
+	long frameNo = 0;
+	while (capture.read(frame))
+	{
+		++frameNo;
+ 
+		std::cout<<frameNo<<std::endl;
+ 
+		// 运动前景检测，并更新背景
+		mog(frame, foreground, 0.001);       
+		
+		// 腐蚀
+		cv::erode(foreground, foreground, cv::Mat());
+		
+		// 膨胀
+		cv::dilate(foreground, foreground, cv::Mat());
+ 
+		mog.getBackgroundImage(background);   // 返回当前背景图像
+ 
+		cv::imshow("video", foreground);
+		cv::imshow("background", background);
+ 
+ 
+		if (cv::waitKey(25) > 0)
+		{
+			break;
+		}
+	}
+	
+ 
+ 
+	return 0;
+}
+
+```
+
 ---
 EM算法：
 
