@@ -1,7 +1,7 @@
 ---
 title: 机器学习_分类_KNN
-date: 2018-07-16 09:39:40
-tags: [GitHub, Mysql]
+date: 2018-07-19 09:39:40
+tags: [机器学习]
 ---
 
 
