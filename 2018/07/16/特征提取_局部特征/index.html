@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="AomanHao">
 <meta property="og:description" content="特征提取——局部特征">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-03T00:29:27.304Z">
+<meta property="og:updated_time" content="2018-08-09T08:26:45.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="特征提取——局部特征">
 <meta name="twitter:description" content="特征提取——局部特征">
@@ -188,7 +188,7 @@
 <p>使用LoG虽然能较好的检测到图像中的特征点，但是其运算量过大，通常可使用DoG（差分高斯，Difference of Gaussina）来近似计算LoG</p>
 </blockquote>
 <hr>
-<h3 id="haar特征"><a href="#haar特征" class="headerlink" title="haar特征"></a>haar特征</h3><p>Haar特征分为三类：边缘特征、线性特征、中心特征和对角线特征，组合成特征模板。特征模板内有白色和黑色两种矩形，并定义该模板的特征值为</p><h3>白色矩形像素和减去黑色矩形像素和</h3><p></p>
+<h3 id="Haar特征"><a href="#Haar特征" class="headerlink" title="Haar特征"></a>Haar特征</h3><p>Haar特征分为三类：边缘特征、线性特征、中心特征和对角线特征，组合成特征模板。特征模板内有白色和黑色两种矩形，并定义该模板的特征值为</p><h3>白色矩形像素和减去黑色矩形像素和</h3><p></p>
 <h3 id="Haar-like特征"><a href="#Haar-like特征" class="headerlink" title="Haar-like特征"></a>Haar-like特征</h3><p><a href="https://blog.csdn.net/zouxy09/article/details/7929570" target="_blank" rel="noopener">https://blog.csdn.net/zouxy09/article/details/7929570</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">积分图就是只遍历一次图像就可以求出图像中所有区域像素和的快速算法，大大的提高了图像特征值计算的效率。</span><br><span class="line"></span><br><span class="line">       积分图主要的思想是将图像从起点开始到各个点所形成的矩形区域像素之和作为一个数组的元素保存在内存中，当要计算某个区域的像素和时可以直接索引数组的元素，不用重新计算这个区域的像素和，从而加快了计算（这有个相应的称呼，叫做动态规划算法）。积分图能够在多种尺度下，使用相同的时间（常数时间）来计算不同的特征，因此大大提高了检测速度。</span><br><span class="line"></span><br><span class="line">       我们来看看它是怎么做到的。</span><br><span class="line"></span><br><span class="line">       积分图是一种能够描述全局信息的矩阵表示方法。积分图的构造方式是位置（i,j）处的值ii(i,j)是原图像(i,j)左上角方向所有像素的和：</span><br></pre></td></tr></table></figure>
 <p>归一化图像<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">i¯(x,y)=(i(x,y)−μ)/cσ</span><br><span class="line">公式中i¯(x,y)表示归一化之后的图像，而i(x,y)表示原始的图像，其中μ表示图像的均值，而σ表示图像的标准差</span><br><span class="line">σ2=(1/N)∑x2−μ2   2是平方</span><br></pre></td></tr></table></figure></p>
@@ -303,18 +303,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/图像去雾/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/特征提取_纹理特征/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          图像去雾——
+          特征提取——纹理特征
         
       </div>
     </a>
   
   
-    <a href="/2018/07/15/Java_mianshi/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java面试之九阴真经</div>
+    <a href="/2018/07/16/opencv_斑点检测/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">opencv_斑点检测——</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -467,6 +467,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -479,19 +483,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,6 +516,30 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Resume</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">笔面试</a>
               </li>
             
             <div class="clearfix"></div>

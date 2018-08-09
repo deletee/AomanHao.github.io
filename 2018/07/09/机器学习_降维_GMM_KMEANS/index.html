@@ -9,14 +9,14 @@
   <title>机器学习—聚类降维 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="机器学习—聚类降维">
-<meta name="keywords" content="GitHub,Mysql">
+<meta name="keywords" content="机器学习,C++,Opencv">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习—聚类降维">
-<meta property="og:url" content="http://www.haoloverongrong.top/2018/07/16/机器学习_GMM/index.html">
+<meta property="og:url" content="http://www.haoloverongrong.top/2018/07/09/机器学习_降维_GMM_KMEANS/index.html">
 <meta property="og:site_name" content="AomanHao">
 <meta property="og:description" content="机器学习—聚类降维">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-03T03:31:33.145Z">
+<meta property="og:updated_time" content="2018-08-08T01:22:13.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习—聚类降维">
 <meta name="twitter:description" content="机器学习—聚类降维">
@@ -157,7 +157,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-机器学习_GMM" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-机器学习_降维_GMM_KMEANS" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -169,8 +169,8 @@
   
 
         
-        <a href="/2018/07/16/机器学习_GMM/" class="archive-article-date">
-  	<time datetime="2018-07-16T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
+        <a href="/2018/07/09/机器学习_降维_GMM_KMEANS/" class="archive-article-date">
+  	<time datetime="2018-07-09T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
 </a>
         
       </header>
@@ -183,6 +183,7 @@
 <p>机器学习—Kmeans</p>
 <p>聚类属于无监督学习，朴素贝叶斯、SVM等都是有类别标签y的，即已经给出了样本的分类</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、随机给K个聚类质心 v</span><br><span class="line">2、重复下面过程直到收敛</span><br><span class="line">2.1对于每一个样例i，计算其应该属于的类 </span><br><span class="line">隶属度 ：zi=argmin||xi−μj||^2</span><br><span class="line">求距离近的</span><br><span class="line">2.2 </span><br><span class="line">聚类中心 u=</span><br></pre></td></tr></table></figure>
+<p>其聚类精度明显优于传统的随机选择种子的方法，且计算速度也比较快。而对于更大型的数据集，kmeans++需要进一步扩展，才能获取更好的表现，即kmeans是高度可扩展的。</p>
 <hr>
 <p>机器学习—GMM<br>常用作聚类，可以运动目标检测。</p>
 <p>高斯混合模型（Gaussian Mixed Model）指的是多个高斯分布函数的线性组合，理论上GMM可以拟合出任意类型的分布，通常用于解决同一集合下的数据包含多个不同的分布的情况（或者是同一类分布但参数不一样，或者是不同类型的分布，比如正态分布和伯努利分布）</p>
@@ -203,11 +204,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Opencv</a>
         		</li>
       		
 		</ul>
@@ -263,7 +268,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/07/16/机器学习_GMM/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/07/09/机器学习_降维_GMM_KMEANS/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,18 +282,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/图像分割_大津法/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/10/MavenPeizhi/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          图像分割-大津法
+          数据结构相关_6_16
         
       </div>
     </a>
   
   
-    <a href="/2018/07/16/机器学习_分类_SVM/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">机器学习_分类_SVM</div>
+    <a href="/2018/07/05/model_danli_7_5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">单例模式_7_5</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -441,6 +446,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -453,19 +462,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -490,6 +495,30 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Resume</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">笔面试</a>
               </li>
             
             <div class="clearfix"></div>

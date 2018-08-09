@@ -6,24 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.haoloverongrong.top">
-  <title>机器学习_分类_SVM | AomanHao</title>
+  <title>Tag: 最优化 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="机器学习_分类_SVM">
-<meta name="keywords" content="GitHub,Mysql">
-<meta property="og:type" content="article">
-<meta property="og:title" content="机器学习_分类_SVM">
-<meta property="og:url" content="http://www.haoloverongrong.top/2018/07/16/机器学习_分类_SVM/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="AomanHao">
+<meta property="og:url" content="http://www.haoloverongrong.top/tags/最优化/index.html">
 <meta property="og:site_name" content="AomanHao">
-<meta property="og:description" content="机器学习_分类_SVM">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://pic2.zhimg.com/80/v2-d2b03cf98869849d1d6a4d91a05d6571_hd.jpg">
-<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_2.png">
-<meta property="og:image" content="http://img.blog.csdn.net/20141008160128583?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcHVxdXRvZ2V0aGVy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-08-03T07:26:54.796Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="机器学习_分类_SVM">
-<meta name="twitter:description" content="机器学习_分类_SVM">
-<meta name="twitter:image" content="https://pic2.zhimg.com/80/v2-d2b03cf98869849d1d6a4d91a05d6571_hd.jpg">
+<meta name="twitter:title" content="AomanHao">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -161,181 +152,154 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-机器学习_分类_SVM" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      机器学习_分类_SVM
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/07/22/机器学习_最优化_损失函数/" class="archive-article-date">
+  	<time datetime="2018-07-22T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/07/22/机器学习_最优化_损失函数/">机器学习_最优化_损失函数</a>
     </h1>
   
 
-        
-        <a href="/2018/07/16/机器学习_分类_SVM/" class="archive-article-date">
-  	<time datetime="2018-07-16T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>机器学习_分类_SVM</p>
-<a id="more"></a>
-<hr>
-<p>支持向量机（Support Vector Machine, SVM）的基本模型是在特征空间上找到最佳的<code>分离超平面</code>使得训练集上正负样本间隔最大。</p>
-<p>二分类问题的有监督学习算法，引入了核方法之后SVM也可以用来解决非线性问题<br>一般SVM有下面三种：</p>
-<blockquote>
-<p>1、硬间隔支持向量机（线性可分支持向量机）：当训练数据线性可分时，可通过硬间隔最大化学得一个线性可分支持向量机。<br><br>2、软间隔支持向量机：当训练数据近似线性可分时，可通过软间隔最大化学得一个线性支持向量机。<br><br>3、非线性支持向量机：当训练数据线性不可分时，可通过核方法以及软间隔最大化学得一个非线性支持向量机。</p>
-</blockquote>
-<p><img src="https://pic2.zhimg.com/80/v2-d2b03cf98869849d1d6a4d91a05d6571_hd.jpg" alt="SVM"></p>
-<p>SVM算法认为图1中的分类器A在性能上优于分类器B，其依据是A的分类间隔比B要大</p>
-<blockquote>
-<p>这两条平行虚线正中间的分界线就是在保持当前决策面方向不变的前提下的最优决策面。两条虚线之间的垂直距离就是这个最优决策面对应的<code>分类间隔</code>。<br></p>
-<p>那个具有“最大间隔”的决策面就是SVM要寻找的最优解,而这个真正的最优解对应的两侧虚线所穿过的样本点，就是SVM中的支持样本点，称为<code>支持向量</code>。<br></p>
-<p>对于图1中的数据，A决策面就是SVM寻找的最优解，而相应的三个位于虚线上的样本点在坐标系中对应的向量就叫做<code>支持向量</code>。</p>
-</blockquote>
-<h3 id="基于最大间隔分割数据"><a href="#基于最大间隔分割数据" class="headerlink" title="基于最大间隔分割数据"></a>基于最大间隔分割数据</h3><p>优点，错误率低，计算开销不大，结果容易解释<br>缺点，对参数调节敏感，原始分类器不加修改只能解决二类问题。</p>
-<p>输人数据给分类器会输出一个类别标签,单位阶跃函数）的函数对<script type="math/tex">w^{t}x+b</script>作用得到<script type="math/tex">f(w^{t}x+b)</script>,其中当u&lt;0时输出-1, 反之则输出+1。这是由于-1和+1仅仅相差一个符号，方便数学上的处理。</p>
-<p>如果数据点处于正方向（即+1类 ）并且离<code>分隔超平
-面</code>很远的位置时，<script type="math/tex">w^{t}x+b</script>会是一个很大的正数，同时<script type="math/tex">label*(w^{t}x+b)</script>也会是一个很大的正数。而如果数据点处于负方向（-1类 ）并且离<code>分隔超平面</code>很远的位置时，此时由于类别标签为-1，则<script type="math/tex">label*(w^{t}x+b)</script>仍然是一个很大的正数。</p>
-<p>目标：找到0分类器定义中的w和b。找到具有最小间隔的数据点即<code>支持向量</code>。找到支持向量，对间隔最大化</p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_2.png" alt="svm"></p>
-<p><img src="http://img.blog.csdn.net/20141008160128583?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcHVxdXRvZ2V0aGVy/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="svm"></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">最优化</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/07/16/机器学习_分类_SVM/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2018/07/16/机器学习_GMM/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          机器学习—聚类降维
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/07/16/图像去雾/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">图像去雾——</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/07/16/机器学习_最优化/" class="archive-article-date">
+  	<time datetime="2018-07-16T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
+</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
+    	 
   
-  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/07/16/机器学习_最优化/">机器学习_最优化</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">最优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/07/16/机器学习_最优化_数学基础/" class="archive-article-date">
+  	<time datetime="2018-07-16T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/07/16/机器学习_最优化_数学基础/">机器学习_最优化_数学</a>
+    </h1>
   
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">最优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
   
 
-  
+    
 
+
+
+<!-- 目录内容 -->
+       
+       <!-- 目录内容结束 -->
 
           </div>
         </div>
@@ -361,9 +325,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -454,6 +418,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -466,19 +434,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,6 +467,30 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Resume</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">笔面试</a>
               </li>
             
             <div class="clearfix"></div>
