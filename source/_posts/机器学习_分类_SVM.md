@@ -55,7 +55,7 @@ SVM的目标函数：
 ![svm](http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_3.png)
 
 
-求$$ 1/W$$的最大值相当于求$$0.5w^2$$的最小值，一个凸二次规划问题
+求$ 1/W$的最大值相当于求$0.5w^2$的最小值，一个凸二次规划问题
 ![svm](http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_4.png)
 
 ```
