@@ -132,18 +132,20 @@ public class Solution {
     }
 }
 ```
-Java代码
+C++代码
 ```
-import java.util.ArrayList;
-public class Solution {
-    public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
-        ArrayList<Integer> arr = new ArrayList<Integer>();
-        
-        while(listNode!=null){
-            arr.add(0,listNode.val);
-            listNode = listNode.next;
+class Solution {
+public:
+    vector<int> printListFromTailToHead(ListNode* head) {
+        vector<int> value;
+        if (head != NULL){
+            value.insert(value.begin(),head->val);
+            while (head->next !=NULL){
+                value.insert(value.begin(),head->next->val);
+                head = head ->next;
+            }
         }
-        return arr;
+        return value;
     }
-}
+};
 ```
