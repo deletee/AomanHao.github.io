@@ -1,10 +1,10 @@
 ---
-title: 算法Code_Java_C++
+title: 剑指Offer算法Code_Java_C++
 date: 2018-07-16 09:39:40
 tags: [Java, C++]
 ---
 
-算法Code_Java_C++
+剑指Offer算法Code_Java_C++
 
 <!--more-->
 
@@ -185,4 +185,90 @@ public class Solution {
         return root;
     }
 }
+```
+
+---
+大家都知道斐波那契数列，现在要求输入一个整数n，请你输出斐波那契数列的第n项（从0开始，第0项为0）。
+n<=39
+
+Java代码
+```
+public class Solution {
+    public int Fibonacci(int n) {
+        if(n<1){
+            return n;
+        }
+        int[] ints = new int[n+1];
+        ints[0] = 0;
+        ints[1] = 1;
+        
+        for(int i = 2; i <= n; i++ ){
+            ints[i] = ints[i-1] + ints[i-2];
+        }
+        return ints[n];
+    }
+}
+```
+C++代码：
+```
+class Solution {
+public:
+    int Fibonacci(int n) {
+    int pre = 0;
+        int last=1;
+            int result =0;
+        if(n<=1){
+            return n;
+        }
+        for(int i=2; i<=n; i++){
+            result=pre+last;
+            pre=last;
+            last=result;
+        }
+        return result;
+    }
+};
+```
+
+---
+
+一只青蛙一次可以跳上1级台阶，也可以跳上2级。求该青蛙跳上一个n级的台阶总共有多少种跳法（先后次序不同算不同的结果）。
+>思路：，f(1) = 1, f(2) = 2, f(3) = 3, f(4) = 5，  可以总结出f(n) = f(n-1) + f(n-2)的规律
+Java代码：
+```
+public class Solution {
+    public int JumpFloor(int target) {
+        int[] ints= new int[target+1];
+        if(target <=0 ){
+            return 0;
+        }else if(target==1 || target==2){
+            return target;
+        }
+        ints[0] = 1;ints[1] = 2;
+        for(int i =2; i<=target; i++){
+            ints[i] = ints[i-1] + ints[i-2];
+           }
+        return ints[target-1];
+    }
+}
+```
+C++代码
+```
+class Solution {
+public:
+    int jumpFloor(int number) {
+        int first = 1;int second = 2; int result = 0;
+        if (number<=0){
+            return 0;
+        }else if (number==1||number==2){
+            return number;
+        }
+        for (int i=3; i<=number; i++){
+            result = first + second;
+            first = second;
+            second = result;
+        }
+        return result;
+    }
+};
 ```
