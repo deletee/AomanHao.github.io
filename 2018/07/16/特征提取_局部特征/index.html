@@ -16,10 +16,13 @@
 <meta property="og:site_name" content="AomanHao">
 <meta property="og:description" content="特征提取——局部特征">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-09T08:26:45.475Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20160411162902180">
+<meta property="og:image" content="https://img-blog.csdn.net/20160413110610471">
+<meta property="og:updated_time" content="2018-08-10T08:17:06.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="特征提取——局部特征">
 <meta name="twitter:description" content="特征提取——局部特征">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20160411162902180">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -195,10 +198,15 @@
 <hr>
 <h3 id="SIFT特征"><a href="#SIFT特征" class="headerlink" title="SIFT特征"></a>SIFT特征</h3><p>SIFT的全称是Scale Invariant Feature Transform，尺度不变特征变换(物体怎么转，人都能识别)。SIFT特征对旋转、尺度缩放、亮度变化等保持不变性，是一种非常稳定的局部特征。</p>
 <p>有4个主要步骤</p>
-<p>1、尺度空间的极值检测 搜索所有尺度空间上的图像，通过高斯微分函数来识别潜在的对尺度和选择不变的兴趣点。</p>
-<p>2、特征点定位 在每个候选的位置上，通过一个拟合精细模型来确定位置尺度，关键点的选取依据他们的稳定程度。</p>
-<p>3、特征方向赋值 基于图像局部的梯度方向，分配给每个关键点位置一个或多个方向，后续的所有操作都是对于关键点的方向、尺度和位置进行变换，从而提供这些特征的不变性。</p>
-<p>4、特征点描述 在每个特征点周围的邻域内，在选定的尺度上测量图像的局部梯度，这些梯度被变换成一种表示，这种表示允许比较大的局部形状的变形和光照变换。</p>
+<p>1、尺度空间的极值检测 搜索所有尺度空间上的图像，通过高斯微分函数来识别潜在的对尺度和选择不变的兴趣点。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$$$L(x,y,σ)=G(x,y,σ)∗I(x,y)$</span><br><span class="line"></span><br><span class="line">为了有效的在尺度空间检测到稳定的关键点，提出了高斯差分尺度空间（DOG scale-space）。利用不同尺度的高斯差分核与图像卷积生成。构造高斯差分尺度空间(DOG scale-space): </span><br><span class="line">$$D(x,y,σ)=(G(x,y,kσ)−G(x,y,σ))∗I(x,y)=L(x,y,kσ)−L(x,y,σ)$$</span><br><span class="line"></span><br><span class="line">σ 是尺度坐标。σ大小决定图像的平滑程度，大尺度对应图像的概貌特征，小尺度对应图像的细节特征。大的σ值对应粗糙尺度(低分辨率)，反之，对应精细尺度(高分辨率)。</span><br><span class="line"></span><br><span class="line">对于一幅图像I，建立其在不同尺度(scale)的图像,后面每个采样都是原图的1/4倍。</span><br><span class="line"></span><br><span class="line">每个点都要与邻域的点，上下相邻尺度的点做比较（9+8+9）26个点作比较（以确保在尺度空间和二维图像空间都检测到极值点）。一个点如果在DOG尺度空间本层以及上下两层的26个领域中是最大或最小值时，就认为该点是图像在该尺度下的一个特征点</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://img-blog.csdn.net/20160411162902180" alt=""></p>
+<p>2、特征点定位 在每个候选的位置上，通过一个拟合精细模型来确定位置尺度，关键点的选取依据他们的稳定程度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">拟和三维二次函数以精确确定关键点的位置和尺度，同时去除低对比度的关键点和不稳定的边缘响应点(因为DoG算子会产生较强的边缘响应)，以增强匹配稳定性、提高抗噪声能力</span><br></pre></td></tr></table></figure></p>
+<p>用Harris Corner检测<br><a href="https://blog.csdn.net/ws_20100/article/details/51122322" target="_blank" rel="noopener">参考文章</a></p>
+<p>3、特征方向赋值 基于图像局部的梯度方向，分配给每个关键点位置一个或多个方向，后续的所有操作都是对于关键点的方向、尺度和位置进行变换，从而提供这些特征的不变性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">每个特征点计算一个方向，依照这个方向做进一步的计算， *利用关键点邻域像素的梯度方向分布特性为每个关键点指定方向参数，使算子具备旋转不变性。</span><br></pre></td></tr></table></figure></p>
+<script type="math/tex; mode=display">m(x,y)=(L(x+1,y)−L(x−1,y))2+(L(x,y+1)−L(x,y−1))2</script><script type="math/tex; mode=display">√θ(x,y)=atan2(L(x,y+1)−L(x,y−1)L(x+1,y)−L(x−1,y)</script><p>每个关键点有三个信息：位置、所处尺度、方向。由此可以确定一个SIFT特征区域。<br><img src="https://img-blog.csdn.net/20160413110610471" alt="直方图"><br>4、特征点描述 在每个特征点周围的邻域内，在选定的尺度上测量图像的局部梯度，这些梯度被变换成一种表示，这种表示允许比较大的局部形状的变形和光照变换。</p>
+<blockquote>
+<p>高斯函数是唯一可行的尺度空间核</p>
+</blockquote>
 <h3 id="尺度空间"><a href="#尺度空间" class="headerlink" title="尺度空间"></a>尺度空间</h3><p>多分辨率图像金字塔:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、对原始图像进行平滑</span><br><span class="line">2、对处理后的图像进行降采样（通常是水平、垂直方向的1/2）降采样后得到一系列不断尺寸缩小的图像。显然，一个传统的金字塔中，每一层的图像是其上一层图像长、高的各一半。多分辨率的图像金字塔虽然生成简单，但其本质是降采样，图像的局部特征则难以保持，也就是无法保持特征的尺度不变性。</span><br></pre></td></tr></table></figure></p>
 <p>高斯尺度空间：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">图像的模糊程度来模拟人在距离物体由远到近时物体在视网膜上成像过程，距离物体越近其尺寸越大图像也越模糊，这就是高斯尺度空间，使用不同的参数模糊图像（分辨率不变）</span><br><span class="line"></span><br><span class="line">图像和高斯函数进行卷积运算，图像模糊，使用不同的“高斯核”可得到不同模糊程度的图像</span><br><span class="line"></span><br><span class="line">L(x,y,σ)=G(x,y,σ)∗I(x,y)</span><br><span class="line"></span><br><span class="line">其中G(x,y,σ)是高斯核函数</span><br><span class="line">G(x,y,σ)=（1/2Πσ^2）e^((x^2+y^2)/(2σ^2))</span><br></pre></td></tr></table></figure></p>
 <p>构建尺度空间的目的是为了检测出在不同的尺度下都存在的特征点，而检测特征点较好的算子是Δ^2G(高斯拉普拉斯,LoG）</p>
@@ -303,18 +311,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/边缘检测/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/机器学习_分类_随机森林/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          边缘检测
+          机器学习_分类_随机森林
         
       </div>
     </a>
   
   
-    <a href="/2018/07/16/机器学习_最优化/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">机器学习_最优化</div>
+    <a href="/2018/07/16/边缘检测/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">边缘检测</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -503,14 +511,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Resume</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
@@ -519,11 +519,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Resume</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,11 +543,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
               </li>
              
               <li class="article-tag-list-item">

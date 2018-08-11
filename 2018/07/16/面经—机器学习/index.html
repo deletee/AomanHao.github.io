@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="AomanHao">
 <meta property="og:description" content="面经—机器学习">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-09T07:43:01.460Z">
+<meta property="og:updated_time" content="2018-08-10T08:23:50.549Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面经—机器学习">
 <meta name="twitter:description" content="面经—机器学习">
@@ -183,7 +183,7 @@
 <p>1.解释方差</p>
 <p>2.PCA的实现过程；推导PCA</p>
 <p>3.传统的图像特征有哪些</p>
-<p>4.Sift特征为什么能实现尺度不变性（讲sift原理到一半，我发现完全解释不了为啥尺度不变，就停了，尴尬）</p>
+<p>4.Sift特征为什么能实现尺度不变性（讲sift原理到一半，我发现完全解释不了为啥尺度不变，就停了，尴尬）<br>[参考](<a href="https://blog.csdn.net/u014485485/article/details/78681086?locationNum=1&amp;fps=1）" target="_blank" rel="noopener">https://blog.csdn.net/u014485485/article/details/78681086?locationNum=1&amp;fps=1）</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">尺度不变性：</span><br><span class="line">不管原图尺度是多少，在包含了所有尺度的尺度空间下都能找到那些稳定的极值点，这样就做到了尺度不变！</span><br><span class="line">高斯函数是唯一可行的尺度空间核</span><br></pre></td></tr></table></figure></p>
 <p>5.Hough直线检测的原理</p>
 <p>6.梯度下降和牛顿法的区别<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">牛顿法的优缺点</span><br><span class="line">优点：二阶收敛，收敛速度快；</span><br><span class="line">缺点：牛顿法是一种迭代算法，每一步都需要求解目标函数的Hessian矩阵的逆矩阵，计算比较复杂。</span><br><span class="line"></span><br><span class="line">梯度下降法的优化思想是用当前位置负梯度方向作为搜索方向，因为该方向为当前位置的最快下降方向，所以也被称为是”最速下降法“。最速下降法越接近目标值，步长越小，前进越慢</span><br><span class="line">梯度下降法的缺点：</span><br><span class="line">靠近极小值时收敛速度减慢，；</span><br><span class="line">直线搜索时可能会产生一些问题；</span><br><span class="line">可能会“之字形”地下降。</span><br><span class="line"></span><br><span class="line">牛顿法是二阶收敛，梯度下降是一阶收敛，所以牛顿法就更快</span><br></pre></td></tr></table></figure></p>
 <p>7.SVM和Lr的共同点和不同点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">LR和SVM都是分类算法</span><br><span class="line">LR和SVM都是线性分类算法</span><br><span class="line">LR和SVM都是监督学习算法</span><br><span class="line">LR和SVM都是判别模型</span><br><span class="line">LR和SVM在学术界和工业界都广为人知并且应用广泛</span><br><span class="line"></span><br><span class="line">不同：</span><br><span class="line">损失函数</span><br><span class="line">LR：逻辑回归方法基于概率理论</span><br><span class="line">逻辑回归考虑全局（远离的点对边界线的确定也起作用）</span><br><span class="line">对数据不做处理</span><br><span class="line">LR必须另外在损失函数上添加正则项</span><br><span class="line"></span><br><span class="line">SVM：几何间隔最大化原理</span><br><span class="line">支持向量机只考虑局部的边界线附近的点，线性SVM不直接依赖于数据分布</span><br><span class="line">线性SVM依赖数据表达的距离测度，所以需要对数据先做归一化</span><br><span class="line">SVM的损失函数就自带正则</span><br></pre></td></tr></table></figure></p>
@@ -196,7 +196,8 @@
 <p>如何最快的找出两个集合中的交集，提出用哈希表的方法，问了这种方法的复杂度，然后又问如果这两个集合都特别大，不能再内存中构建哈希表该如何做？可能是想让我回答多线程相关的内容，但是我不会。如何设计哈希表？期间也问过有编过多线程多进程的代码吗</p>
 <hr>
 <h3 id="深信服【机器学习】一面"><a href="#深信服【机器学习】一面" class="headerlink" title="深信服【机器学习】一面"></a>深信服【机器学习】一面</h3><p>作者：Rnanprince<br>链接：<a href="https://www.nowcoder.com/discuss/87283" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/87283</a><br>来源：牛客网</p>
-<p>【机器学习】一面：<br>1.项目介绍，研究的最成功的地方，我以写的文章为例，涉及到的知识点就问<br>2.笔试的数组求和100怎么做的？<br>没抽到这个题，但是做过；接着我说做了查找重复字符串最大长度，深搜，过了就没想别的方法<br>一个数组，求最长的连续子序列的起始下标，当时没理解明白，其实有歧义，简单说了一下<br>3.自己的哪些方面的优点没有涉及到，介绍一下<br>提到了SVM和决策树，介绍一下什么情况下使用？</p>
+<p>【机器学习】一面：<br>1.项目介绍，研究的最成功的地方，我以写的文章为例，涉及到的知识点就问<br>2.笔试的数组求和100怎么做的？<br>没抽到这个题，但是做过；接着我说做了查找重复字符串最大长度，深搜，过了就没想别的方法<br>一个数组，求最长的连续子序列的起始下标，当时没理解明白，其实有歧义，简单说了一下<br>3.自己的哪些方面的优点没有涉及到，介绍一下<br>提到了SVM和决策树，介绍一下什么情况下使用？<br>svm:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">这个模型的优势是什么？</span><br><span class="line"></span><br><span class="line">分类效果好；</span><br><span class="line">可以有效地处理高维空间的数据；</span><br><span class="line">可以有效地处理变量个数大于样本个数的数据；</span><br><span class="line">只是使用了一部分子集来进行训练模型，所以SVM模型不需要太大的内存；</span><br><span class="line">可以提高泛化能力；</span><br><span class="line">无局部极小值问题；</span><br><span class="line">他什么情况下表现最好？</span><br><span class="line"></span><br><span class="line">数据的维度较高；</span><br><span class="line">需要模型具有非常强的泛化能力；</span><br><span class="line">样本数据量较小时；</span><br><span class="line">解决非线性问题；</span><br><span class="line">这个模型的缺点是什么？</span><br><span class="line"></span><br><span class="line">无法处理大规模的数据集，因为该算法需要较长的训练时间；</span><br><span class="line">无法有效地处理包含噪声太多的数据集；</span><br><span class="line">SVM模型没有直接给出概率的估计值，而是利用交叉验证的方式估计，这种方式耗时较长；</span><br><span class="line">对缺失数据非常敏感；</span><br><span class="line">对于非线性问题，有时很难找到一个合适的核函数。</span><br><span class="line">什么条件下它表现很差？</span><br><span class="line"></span><br><span class="line">数据集的数据量过大；</span><br><span class="line">数据集中的含有噪声；</span><br><span class="line">数据集中的缺失较多的数据；</span><br><span class="line">对算法的训练效率要求较高；</span><br><span class="line">根据我们当前数据集的特点，为什么这个模型适合这个问题。 </span><br><span class="line">该项目所提供的样本数据相对较少；</span><br><span class="line">该问题是属于非线性问题；</span><br><span class="line">数据集经过“独热编码”后，维度较高</span><br></pre></td></tr></table></figure></p>
+<p>决策树：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">这个模型的优势是什么？</span><br><span class="line"></span><br><span class="line">决策树易于实现和理解；</span><br><span class="line">对于决策树，数据的准备工作一般比较简单；</span><br><span class="line">能够同时处理多种数据类型</span><br><span class="line">给定一个决策树模型，可以根据产生的决策树推出相应的逻辑表达式；</span><br><span class="line">通过静态测试来对模型的表现进行评价；</span><br><span class="line">在相对较短的时间内可以对大量的数据做出非常好的结果；</span><br><span class="line">决策树可以很好地扩展到大型数据中，同时决策树的大小独立于数据库的大小；</span><br><span class="line">计算复杂度相对较低，结果的输出易于理解，对部分的数据缺失不敏感。</span><br><span class="line">他什么情况下表现最好？</span><br><span class="line"></span><br><span class="line">实例是由“属性-值”对表示的；</span><br><span class="line">目标函数具有离散的输出值；</span><br><span class="line">训练数据集包含部分错误(决策树对错误有适应性)；</span><br><span class="line">训练数据缺少少量属性的实例。</span><br><span class="line">这个模型的缺点是什么？</span><br><span class="line"></span><br><span class="line">易于出现过拟合问题；</span><br><span class="line">忽略了数据集中属性之间的相关性；</span><br><span class="line">对于类比不一致的样本，决策树的信息增益倾向于那些数据值较多的特征</span><br><span class="line">什么条件下它表现很差？</span><br><span class="line"></span><br><span class="line">决策树匹配的数据过多时；</span><br><span class="line">分类的类别过于复杂；</span><br><span class="line">数据的属性之间具有非常强的关联。</span><br><span class="line">根据我们当前数据集的特点，为什么这个模型适合这个问题。</span><br><span class="line"></span><br><span class="line">不需要准备太多的训练数据，不需要对数据过多的处理如删除空白值等；</span><br><span class="line">易于编码；</span><br><span class="line">该问题是非线性问题，决策树能够很好地解决非线性问题；</span><br><span class="line">算法的执行效率高，对机器的要求较小。</span><br></pre></td></tr></table></figure></p>
 <hr>
 <h3 id="360浏览器事业部-推荐算法工程师"><a href="#360浏览器事业部-推荐算法工程师" class="headerlink" title="360浏览器事业部 推荐算法工程师"></a>360浏览器事业部 推荐算法工程师</h3><p>作者：泡了个泡<br>链接：<a href="https://www.nowcoder.com/discuss/77924" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/77924</a><br>来源：牛客网</p>
 <p>二面</p>
@@ -336,8 +337,8 @@
     </a>
   
   
-    <a href="/2018/07/16/阈值分割_大津法_分水岭/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">阈值分割_大津法_分水岭</div>
+    <a href="/2018/07/16/算法Code_Java_C++/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">剑指Offer算法Code_Java_C++</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -526,14 +527,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Resume</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
@@ -542,11 +535,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Resume</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,11 +559,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
               </li>
              
               <li class="article-tag-list-item">

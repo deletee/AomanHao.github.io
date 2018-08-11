@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/tree_1.png">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/tree_ID3.png">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/tree_C4.5.png">
-<meta property="og:updated_time" content="2018-08-09T06:39:53.918Z">
+<meta property="og:updated_time" content="2018-08-10T08:25:36.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习_分类_决策树">
 <meta name="twitter:description" content="机器学习_分类_决策树">
@@ -218,9 +218,8 @@
 </blockquote>
 <p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/tree_C4.5.png" alt=""></p>
 <hr>
-<p>Bagging + 决策树 = 随机森林</p>
-<p>2）AdaBoost + 决策树 = 提升树</p>
-<p>3）Gradient Boosting + 决策树 = GBDT</p>
+<p>svm:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">模型在真实世界中也应用场景 </span><br><span class="line">支撑向量机用于文本和超文本的分类；</span><br><span class="line">用于图像分类；</span><br><span class="line">用于手写体识别；</span><br><span class="line"></span><br><span class="line">这个模型的优势是什么？</span><br><span class="line"></span><br><span class="line">分类效果好；</span><br><span class="line">可以有效地处理高维空间的数据；</span><br><span class="line">可以有效地处理变量个数大于样本个数的数据；</span><br><span class="line">只是使用了一部分子集来进行训练模型，所以SVM模型不需要太大的内存；</span><br><span class="line">可以提高泛化能力；</span><br><span class="line">无局部极小值问题；</span><br><span class="line">他什么情况下表现最好？</span><br><span class="line"></span><br><span class="line">数据的维度较高；</span><br><span class="line">需要模型具有非常强的泛化能力；</span><br><span class="line">样本数据量较小时；</span><br><span class="line">解决非线性问题；</span><br><span class="line">这个模型的缺点是什么？</span><br><span class="line"></span><br><span class="line">无法处理大规模的数据集，因为该算法需要较长的训练时间；</span><br><span class="line">无法有效地处理包含噪声太多的数据集；</span><br><span class="line">SVM模型没有直接给出概率的估计值，而是利用交叉验证的方式估计，这种方式耗时较长；</span><br><span class="line">对缺失数据非常敏感；</span><br><span class="line">对于非线性问题，有时很难找到一个合适的核函数。</span><br><span class="line">什么条件下它表现很差？</span><br><span class="line"></span><br><span class="line">数据集的数据量过大；</span><br><span class="line">数据集中的含有噪声；</span><br><span class="line">数据集中的缺失较多的数据；</span><br><span class="line">对算法的训练效率要求较高；</span><br><span class="line">根据我们当前数据集的特点，为什么这个模型适合这个问题。 </span><br><span class="line">该项目所提供的样本数据相对较少；</span><br><span class="line">该问题是属于非线性问题；</span><br><span class="line">数据集经过“独热编码”后，维度较高</span><br></pre></td></tr></table></figure></p>
+<p>决策树：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">这个模型的优势是什么？</span><br><span class="line"></span><br><span class="line">决策树易于实现和理解；</span><br><span class="line">对于决策树，数据的准备工作一般比较简单；</span><br><span class="line">能够同时处理多种数据类型</span><br><span class="line">给定一个决策树模型，可以根据产生的决策树推出相应的逻辑表达式；</span><br><span class="line">通过静态测试来对模型的表现进行评价；</span><br><span class="line">在相对较短的时间内可以对大量的数据做出非常好的结果；</span><br><span class="line">决策树可以很好地扩展到大型数据中，同时决策树的大小独立于数据库的大小；</span><br><span class="line">计算复杂度相对较低，结果的输出易于理解，对部分的数据缺失不敏感。</span><br><span class="line">他什么情况下表现最好？</span><br><span class="line"></span><br><span class="line">实例是由“属性-值”对表示的；</span><br><span class="line">目标函数具有离散的输出值；</span><br><span class="line">训练数据集包含部分错误(决策树对错误有适应性)；</span><br><span class="line">训练数据缺少少量属性的实例。</span><br><span class="line">这个模型的缺点是什么？</span><br><span class="line"></span><br><span class="line">易于出现过拟合问题；</span><br><span class="line">忽略了数据集中属性之间的相关性；</span><br><span class="line">对于类比不一致的样本，决策树的信息增益倾向于那些数据值较多的特征</span><br><span class="line">什么条件下它表现很差？</span><br><span class="line"></span><br><span class="line">决策树匹配的数据过多时；</span><br><span class="line">分类的类别过于复杂；</span><br><span class="line">数据的属性之间具有非常强的关联。</span><br><span class="line">根据我们当前数据集的特点，为什么这个模型适合这个问题。</span><br><span class="line"></span><br><span class="line">不需要准备太多的训练数据，不需要对数据过多的处理如删除空白值等；</span><br><span class="line">易于编码；</span><br><span class="line">该问题是非线性问题，决策树能够很好地解决非线性问题；</span><br><span class="line">算法的执行效率高，对机器的要求较小。</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -304,18 +303,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/19/机器学习常见算法总结/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/19/机器学习_分类_KNN_EM/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          机器学习常见算法总结
+          机器学习_分类_KNN_EM
         
       </div>
     </a>
   
   
-    <a href="/2018/07/16/特征提取_纹理特征/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">特征提取——纹理特征</div>
+    <a href="/2018/07/16/机器学习_最优化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">机器学习_最优化</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -504,14 +503,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Resume</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
@@ -520,11 +511,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Resume</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,11 +535,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
               </li>
              
               <li class="article-tag-list-item">
