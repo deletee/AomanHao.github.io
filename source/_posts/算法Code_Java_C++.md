@@ -379,57 +379,134 @@ public:
 ```
 ---
 输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
->两两数值对比
+>两两数值对比,merge可以合并两个事物，链表也行，考点在取两个链表比较小的头节点
 
 Java代码：
+```
+public class Solution {
+    public ListNode Merge(ListNode list1,ListNode list2) {
+        if(list1 == null){
+            return list2;
+        }
+        if(list2 == null){
+            return list1;
+        }
+        if(list1.val <= list2.val){
+            list1.next = Merge(list1.next,list2);
+                return list1;
+              }else{
+            list2.next = Merge(list1,list2.next);
+            return list2;
+        }
+    }
+}
+```
 
 C++代码：
+```
+class Solution {
+public:
+    ListNode* Merge(ListNode* pHead1, ListNode* pHead2)
+    {
+     if(pHead1 == NULL){
+            return pHead2;
+        }
+        if(pHead2 == NULL){
+            return pHead1;
+        }
+        
+        ListNode* NewHead = NULL;
+        if(pHead1->val <= pHead2->val){
+            NewHead = pHead1;
+            NewHead->next = Merge(pHead1->next,pHead2);
+        }else{
+            NewHead = pHead2;
+            NewHead->next = Merge(pHead1,pHead2->next);
+        }
+        return NewHead;
+    }
+};
+```
+---
+
+
+Java代码：
+```
+```
+C++代码：
+```
+```
 
 ---
 
 
 Java代码：
+```
+```
 
 C++代码：
+```
+```
+
 ---
 
 
 Java代码：
+```
+```
 
 C++代码：
+```
+```
+
 ---
 
 
 Java代码：
+```
+```
 
 C++代码：
+```
+```
+
 ---
 
 
 Java代码：
-
+```
+```
 C++代码：
+```
+```
 ---
 
 
 Java代码：
+```
+```
 
 C++代码：
+```
+```
+
 ---
 
 
 Java代码：
+```
+```
 
 C++代码：
+```
+```
+
 ---
 
 
 Java代码：
-
+```
+```
 C++代码：
----
-
-
-Java代码：
-
-C++代码：
+```
+```
