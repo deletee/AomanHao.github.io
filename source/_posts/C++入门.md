@@ -94,5 +94,54 @@ main(){
 ```
 
 
+---
+### 输入输出流
+IO库：
+|头文件|类型|||
+|-|-|-|-|
+|iostream|istream,wistream 从流读取数据|ostream, wostream向流写入数据|iostream. wiostream读写流|
+|fstream|ifstream, wifstream从文件读取数据|ofstream, wofstream向文件写入数据|fstream, wfstream读写文件|
+|sstream|istringstream. wistringstream string 读取数据|ostringstream, wostringstream string 写入数据|stringstream, wstringstream string 读写string|
 
 
+```
+类型ifsream和istringstream都继承自istream;
+类型ofsream和ostringstream都继承自ostream;
+类型fsream和stringstream都继承自iostream;
+```
+
+1、创建使用文件流对象
+```
+ifstream in(ifile);//构造一个ifstream并打开给定文件
+ofstream out;//构造输出文件流，未关联任何文件
+
+in.close();//关闭文件
+in.open(ifile + "2");//打开另一个文件
+```
+ifstream,ofstream和fstream是实现文件读写操作的类型
+
+案例
+```
+#include <iostream>                                                                                                                                
+#include <fstream>
+#include <stdlib.h>
+#include <vector>
+using namespace std;
+int main(){
+   char buffer[256];
+   ifstream in("input.txt");//文件不存在会返回错误
+   if (! in.is_open()){
+       cout << "Error opening file"<<endl;
+       exit (1);
+   }
+   vector<string> a;
+   while (!in.eof()){
+       in.getline (buffer,100);
+       //cout << buffer << endl;
+       a.push_back(buffer);
+    }   
+   for(unsigned int i=0;i<a.size();i++)
+       cout<<a[i]<<endl;
+  return 0;
+}
+```
