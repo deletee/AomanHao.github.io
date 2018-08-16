@@ -347,7 +347,7 @@ int main()
 
 ### 随机数
 RAND_MAX是C中stdlib.h中宏定义的一个字符常量：
-#define RAND_MAX Ox7FFF
+`#define RAND_MAX Ox7FFF`
 其值最小为32767,最大为2147483647
 ```
 (double)rand() / RAND_MAX;//生成随机数
