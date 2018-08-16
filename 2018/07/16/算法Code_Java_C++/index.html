@@ -9,14 +9,14 @@
   <title>剑指Offer算法Code_Java_C++ | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="剑指Offer算法Code_Java_C++">
-<meta name="keywords" content="Java,C++">
+<meta name="keywords" content="C++,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑指Offer算法Code_Java_C++">
 <meta property="og:url" content="http://www.haoloverongrong.top/2018/07/16/算法Code_Java_C++/index.html">
 <meta property="og:site_name" content="AomanHao">
 <meta property="og:description" content="剑指Offer算法Code_Java_C++">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-11T02:57:22.530Z">
+<meta property="og:updated_time" content="2018-08-14T09:43:27.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指Offer算法Code_Java_C++">
 <meta name="twitter:description" content="剑指Offer算法Code_Java_C++">
@@ -208,6 +208,42 @@
 <p>思路：，f(1) = 1, f(2) = 2, f(3) = 3, f(4) = 5，  可以总结出f(n) = f(n-1) + f(n-2)的规律<br>Java代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int JumpFloor(int target) &#123;</span><br><span class="line">        int[] ints= new int[target+1];</span><br><span class="line">        if(target &lt;=0 )&#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;else if(target==1 || target==2)&#123;</span><br><span class="line">            return target;</span><br><span class="line">        &#125;</span><br><span class="line">        ints[0] = 1;ints[1] = 2;</span><br><span class="line">        for(int i =2; i&lt;=target; i++)&#123;</span><br><span class="line">            ints[i] = ints[i-1] + ints[i-2];</span><br><span class="line">           &#125;</span><br><span class="line">        return ints[target-1];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <p>C++代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    int jumpFloor(int number) &#123;</span><br><span class="line">        int first = 1;int second = 2; int result = 0;</span><br><span class="line">        if (number&lt;=0)&#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;else if (number==1||number==2)&#123;</span><br><span class="line">            return number;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i=3; i&lt;=number; i++)&#123;</span><br><span class="line">            result = first + second;</span><br><span class="line">            first = second;</span><br><span class="line">            second = result;</span><br><span class="line">        &#125;</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。</p>
+<blockquote>
+<p>思路：1自身左移动，然后跟原数字做<strong>与</strong>比较，如果对应相同输出为1，否则为0。<br>Java代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public int NumberOf1(int n) &#123;</span><br><span class="line">    int count = 0;</span><br><span class="line">        int flag = 1;</span><br><span class="line">        while(flag != 0)&#123;</span><br><span class="line">            if((n &amp; flag) !=0 )&#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">            flag = flag &lt;&lt; 1;</span><br><span class="line">        &#125;</span><br><span class="line">        return count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>C++代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">     int  NumberOf1(int n) &#123;</span><br><span class="line">         int count = 0;</span><br><span class="line">         int flag = 1;</span><br><span class="line">         while(flag != 0)&#123;</span><br><span class="line">             if((n &amp; flag)!=0)&#123;</span><br><span class="line">                 count++;    </span><br><span class="line">             &#125;</span><br><span class="line">             flag = flag &lt;&lt; 1;</span><br><span class="line">         &#125;</span><br><span class="line">        return count   ;  </span><br><span class="line">     &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>输入一个链表，反转链表后，输出新链表的表头:</p>
+<blockquote>
+<p>整体反转链表，但是要把断开的节点保存起来，才能继续反转链表<br>Java代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public ListNode ReverseList(ListNode head) &#123;</span><br><span class="line">       </span><br><span class="line">        if(head==null)</span><br><span class="line">            return null;</span><br><span class="line">        //head为当前节点，如果当前节点为空的话，那就什么也不做，直接返回null；</span><br><span class="line">        ListNode pre = null;</span><br><span class="line">        ListNode next = null;</span><br><span class="line">        //当前节点是head，pre为当前节点的前一节点，next为当前节点的下一节点</span><br><span class="line">        //需要pre和next的目的是让当前节点从pre-&gt;head-&gt;next1-&gt;next2变成pre&lt;-head next1-&gt;next2</span><br><span class="line">        //即pre让节点可以反转所指方向，但反转之后如果不用next节点保存next1节点的话，此单链表就此断开了</span><br><span class="line">        //所以需要用到pre和next两个节点</span><br><span class="line">        //1-&gt;2-&gt;3-&gt;4-&gt;5</span><br><span class="line">        //1&lt;-2&lt;-3 4-&gt;5</span><br><span class="line">        while(head!=null)&#123;</span><br><span class="line">            //做循环，如果当前节点不为空的话，始终执行此循环，此循环的目的就是让当前节点从指向next到指向pre</span><br><span class="line">            //如此就可以做到反转链表的效果</span><br><span class="line">            //先用next保存head的下一个节点的信息，保证单链表不会因为失去head节点的原next节点而就此断裂</span><br><span class="line">            next = head.next;</span><br><span class="line">            //保存完next，就可以让head从指向next变成指向pre了，代码如下</span><br><span class="line">            head.next = pre;</span><br><span class="line">            //head指向pre后，就继续依次反转下一个节点</span><br><span class="line">            //让pre，head，next依次向后移动一个节点，继续下一次的指针反转</span><br><span class="line">            pre = head;</span><br><span class="line">            head = next;</span><br><span class="line">        &#125;</span><br><span class="line">        //如果head为null的时候，pre就为最后一个节点了，但是链表已经反转完毕，pre就是反转后链表的第一个节点</span><br><span class="line">        //直接输出pre就是我们想要得到的反转后的链表</span><br><span class="line">        return pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>C++代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    ListNode* ReverseList(ListNode* pHead) &#123;</span><br><span class="line"></span><br><span class="line">        if(pHead == NULL)&#123;</span><br><span class="line">            return NULL;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        ListNode* pNode = pHead;//当前指针</span><br><span class="line">        ListNode* pPre = NULL;//链表的前一个指针</span><br><span class="line">        ListNode* pNewHead = NULL;</span><br><span class="line">        </span><br><span class="line">        while(pNode != NULL)&#123;</span><br><span class="line">           ListNode* pNext = pNode-&gt;next;</span><br><span class="line">            if(pNext == NULL)&#123; //尾节点</span><br><span class="line">                pNewHead = pNode;</span><br><span class="line">            &#125;</span><br><span class="line">            pNode-&gt;next = pPre;</span><br><span class="line">            pPre = pNode;</span><br><span class="line">            pNode = pNext;</span><br><span class="line">        &#125;</span><br><span class="line">        return pNewHead;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。</p>
+<blockquote>
+<p>两两数值对比,merge可以合并两个事物，链表也行，考点在取两个链表比较小的头节点</p>
+</blockquote>
+<p>Java代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public ListNode Merge(ListNode list1,ListNode list2) &#123;</span><br><span class="line">        if(list1 == null)&#123;</span><br><span class="line">            return list2;</span><br><span class="line">        &#125;</span><br><span class="line">        if(list2 == null)&#123;</span><br><span class="line">            return list1;</span><br><span class="line">        &#125;</span><br><span class="line">        if(list1.val &lt;= list2.val)&#123;</span><br><span class="line">            list1.next = Merge(list1.next,list2);</span><br><span class="line">                return list1;</span><br><span class="line">              &#125;else&#123;</span><br><span class="line">            list2.next = Merge(list1,list2.next);</span><br><span class="line">            return list2;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>C++代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    ListNode* Merge(ListNode* pHead1, ListNode* pHead2)</span><br><span class="line">    &#123;</span><br><span class="line">     if(pHead1 == NULL)&#123;</span><br><span class="line">            return pHead2;</span><br><span class="line">        &#125;</span><br><span class="line">        if(pHead2 == NULL)&#123;</span><br><span class="line">            return pHead1;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        ListNode* NewHead = NULL;</span><br><span class="line">        if(pHead1-&gt;val &lt;= pHead2-&gt;val)&#123;</span><br><span class="line">            NewHead = pHead1;</span><br><span class="line">            NewHead-&gt;next = Merge(pHead1-&gt;next,pHead2);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            NewHead = pHead2;</span><br><span class="line">            NewHead-&gt;next = Merge(pHead1,pHead2-&gt;next);</span><br><span class="line">        &#125;</span><br><span class="line">        return NewHead;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p>Java代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">C++代码：</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">C++代码：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">C++代码：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">C++代码：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C++代码：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">C++代码：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">C++代码：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C++代码：</span><br></pre></td></tr></table></figure>
+<p>```</p>
 
       
 
@@ -221,11 +257,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
         		</li>
       		
 		</ul>
@@ -295,18 +331,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/opencv_斑点检测/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/阈值分割_大津法_分水岭/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          opencv_斑点检测——
+          阈值分割_大津法_分水岭
         
       </div>
     </a>
   
   
-    <a href="/2018/07/16/特征提取_局部特征/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">特征提取——局部特征</div>
+    <a href="/2018/07/16/面经—机器学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面经—机器学习</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -459,6 +495,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -471,15 +511,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -491,14 +531,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GUI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Music</a>
               </li>
              
@@ -507,7 +539,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+                <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GUI</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,7 +555,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -536,10 +576,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Resume</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
