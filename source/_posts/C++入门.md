@@ -180,3 +180,27 @@ int main(){
   return 0;
 }
 ```
+
+### resize(),reserve()
+resize()，设置大小（size）;
+reserve()，设置容量（capacity）;
+size()是分配容器的内存大小，而capacity()只是设置容器容量大小，但并没有真正分配内存。
+
+###  ifstream
+```
+ifstream infile(fname,ios::in);
+```
+定义ifstream的对象infile,打开文件faname,ios::in是读取
+
+### sizeof
+sizeof 求对象或者类型的大小
+[cankao](https://blog.csdn.net/tao20dage/article/details/52372604)
+```
+特性0：sizeof是运算符，不是函数
+特性1：sizeof不能求得void类型的长度
+特性2：sizeof能求得void类型的指针的长度
+特性3：sizeof能求得静态分配内存的数组的长度!
+特性4：sizeof不能求得动态分配的内存的大小!
+特性5：sizeof不能对不完整的数组求长度！
+特性6：当表达式作为sizeof的操作数时，它返回表达式的计算结果的类型大小，但是它不对表达式求值！
+```
