@@ -187,11 +187,86 @@ reserve()，设置容量（capacity）;
 size()是分配容器的内存大小，而capacity()只是设置容器容量大小，但并没有真正分配内存。
 
 ###  ifstream
+[cankao](https://blog.csdn.net/kingstar158/article/details/6859379)<br>
+1、文件打开
 ```
 ifstream infile(fname,ios::in);
 ```
 定义ifstream的对象infile,打开文件faname,ios::in是读取
 
+|打开文件的方式在ios类(所以流式I/O的基类)中定义||
+|-|-|
+|IO流的定义|含义|
+|ios::in|为输入(读)而打开文件|
+|ios::out|为输出(写)而打开文件|
+|ios::ate|初始位置：文件尾|
+|ios::app|所有输出附加在文件末尾|
+|ios::trunc|如果文件已存在则先删除该文件|
+|ios::binary|二进制方式|
+	
+2、关闭文件：
+```
+infile.close	
+```
+3、文本文件的读写
+
+类ofstream, ifstream 和fstream 是分别从ostream, istream 和iostream 中引申而来的。这就是为什么 fstream 的对象可以使用其父类的成员来访问数据。
+```
+写入内容：
+#include <fiostream.h>
+    int main () {
+        ofstream out("out.txt");
+        if (out.is_open()) 
+       {
+            out << "This is a line.\n";
+            out << "This is another line.\n";
+            out.close();
+        }
+        return 0;
+    }
+   //结果: 在out.txt中写入：
+   This is a line.
+   This is another line
+
+读取内容：
+// reading a text file
+    #include <iostream.h>
+    #include <fstream.h>
+    #include <stdlib.h>
+    
+    int main () {
+        char buffer[256];
+        ifstream in("test.txt");
+        if (! in.is_open())
+        { cout << "Error opening file"; exit (1); }
+        while (!in.eof() )
+        {
+            in.getline (buffer,100);
+            cout << buffer << endl;
+        }
+        return 0;
+    }
+    //结果 在屏幕上输出
+     This is a line.
+     This is another line
+```	
+状态标识符
+```
+bad()
+如果在读写过程中出错，返回 true 。例如：当我们要对一个不是打开为写状态的文件进行写入时，或者我们要写入的设备没有剩余空间的时候。
+
+fail()
+除了与bad() 同样的情况下会返回 true 以外，加上格式错误时也返回true ，例如当想要读入一个整数，而获得了一个字母的时候。
+
+eof()
+如果读文件到达文件末尾，返回true。
+
+good()
+这是最通用的：如果调用以上任何一个函数返回true 的话，此函数返回 false 。
+```
+要想重置以上成员函数所检查的状态标志，你可以使用成员函数clear()，没有参数。
+
+---
 ### sizeof
 sizeof 求对象或者类型的大小
 [cankao](https://blog.csdn.net/tao20dage/article/details/52372604)
@@ -205,6 +280,67 @@ sizeof 求对象或者类型的大小
 特性6：当表达式作为sizeof的操作数时，它返回表达式的计算结果的类型大小，但是它不对表达式求值！
 ```
 
+---
 ### new(std::nothrow)
  顾名思义，即不抛出异常，当new一个对象失败时，默认设置该对象为NULL，这样可以方便的通过if(p == NULL) 来判断new操作是否成功
  建议在c++代码中，凡是涉及到new操作，都采用new(std::nothrow)，然后if(p==NULL)的方式进行判断
+
+ ---
+### vector
+[cankao](https://blog.csdn.net/duan19920101/article/details/50617190/)<br>
+在c++中，vector是一个十分有用的容器。
+作用：它能够像容器一样存放各种类型的对象，简单地说，vector是一个能够存放任意类型的动态数组，能够增加和压缩数据。<br>
+>1、如果你要表示的向量长度较长（需要为向量内部保存很多数），容易导致内存泄漏，而且效率会很低；<br>
+2、Vector作为函数的参数或者返回值时，需要注意它的写法：
+   double Distance(vector<int>&a, vector<int>&b) 其中的“&”绝对不能少！！！
+
+   c++基本操作
+   ```
+   1 、基本操作
+
+(1)头文件#include<vector>.
+(2)创建vector对象，vector<int> vec;
+(3)尾部插入数字：vec.push_back(a);
+(4)使用下标访问元素，cout<<vec[0]<<endl;记住下标是从0开始的。
+(5)使用迭代器访问元素.
+vector<int>::iterator it;
+for(it=vec.begin();it!=vec.end();it++)
+    cout<<*it<<endl;
+(6)插入元素：    vec.insert(vec.begin()+i,a);在第i+1个元素前面插入a;
+(7)删除元素：    vec.erase(vec.begin()+2);删除第3个元素
+vec.erase(vec.begin()+i,vec.end()+j);删除区间[i,j-1];区间从0开始
+(8)向量大小:vec.size();
+(9)清空:vec.clear();
+   ```
+
+---
+### 二维数组
+```
+#include "stdafx.h"
+#include <cv.h>
+#include <vector> 
+#include <iostream> 
+using namespace std;
+int main()
+{
+	using namespace std;
+	int out[3][2] = { 1, 2, 
+			 3, 4,
+			5, 6 };
+	vector <int*> v1;
+ 
+	v1.push_back(out[0]);
+	v1.push_back(out[1]);
+	v1.push_back(out[2]);
+ 
+	cout << v1[0][0] << endl;//1
+	cout << v1[0][1] << endl;//2
+	cout << v1[1][0] << endl;//3
+	cout << v1[1][1] << endl;//4
+	cout << v1[2][0] << endl;//5
+	cout << v1[2][1] << endl;//6
+ 
+	return 0;
+}
+
+```
