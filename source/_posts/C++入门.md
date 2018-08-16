@@ -207,3 +207,4 @@ sizeof 求对象或者类型的大小
 
 ### new(std::nothrow)
  顾名思义，即不抛出异常，当new一个对象失败时，默认设置该对象为NULL，这样可以方便的通过if(p == NULL) 来判断new操作是否成功
+ 建议在c++代码中，凡是涉及到new操作，都采用new(std::nothrow)，然后if(p==NULL)的方式进行判断
