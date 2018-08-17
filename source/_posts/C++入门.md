@@ -268,7 +268,7 @@ good()
 
 ---
 ### sizeof
-sizeof 求对象或者类型的大小
+sizeof 求对象或者类型的大小`sizeof(array)`<br>
 [cankao](https://blog.csdn.net/tao20dage/article/details/52372604)
 ```
 特性0：sizeof是运算符，不是函数
