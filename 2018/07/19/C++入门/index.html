@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://hi.csdn.net/attachment/201002/9/4758664_12657012034TT4.jpg">
 <meta property="og:image" content="http://hi.csdn.net/attachment/201002/9/4758664_1265703222WluB.jpg">
-<meta property="og:updated_time" content="2018-08-16T09:26:01.611Z">
+<meta property="og:updated_time" content="2018-08-17T01:32:19.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++入门">
 <meta name="twitter:description" content="C++入门">
@@ -209,10 +209,74 @@
 <p>ifstream,ofstream和fstream是实现文件读写操作的类型</p>
 <p>案例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;                                                                                                                                </span><br><span class="line">#include &lt;fstream&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">   char buffer[256];</span><br><span class="line">   ifstream in(&quot;input.txt&quot;);//文件不存在会返回错误</span><br><span class="line">   if (! in.is_open())&#123;</span><br><span class="line">       cout &lt;&lt; &quot;Error opening file&quot;&lt;&lt;endl;</span><br><span class="line">       exit (1);</span><br><span class="line">   &#125;</span><br><span class="line">   vector&lt;string&gt; a;</span><br><span class="line">   while (!in.eof())&#123;</span><br><span class="line">       in.getline (buffer,100);</span><br><span class="line">       //cout &lt;&lt; buffer &lt;&lt; endl;</span><br><span class="line">       a.push_back(buffer);</span><br><span class="line">    &#125;   </span><br><span class="line">   for(unsigned int i=0;i&lt;a.size();i++)</span><br><span class="line">       cout&lt;&lt;a[i]&lt;&lt;endl;</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="resize-reserve"><a href="#resize-reserve" class="headerlink" title="resize(),reserve()"></a>resize(),reserve()</h3><p>resize()，设置大小（size）;<br>reserve()，设置容量（capacity）;<br>size()是分配容器的内存大小，而capacity()只是设置容器容量大小，但并没有真正分配内存。</p>
-<h3 id="ifstream"><a href="#ifstream" class="headerlink" title="ifstream"></a>ifstream</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifstream infile(fname,ios::in);</span><br></pre></td></tr></table></figure>
+<h3 id="ifstream"><a href="#ifstream" class="headerlink" title="ifstream"></a>ifstream</h3><p><a href="https://blog.csdn.net/kingstar158/article/details/6859379" target="_blank" rel="noopener">cankao</a><br><br>1、文件打开<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifstream infile(fname,ios::in);</span><br></pre></td></tr></table></figure></p>
 <p>定义ifstream的对象infile,打开文件faname,ios::in是读取</p>
-<h3 id="sizeof"><a href="#sizeof" class="headerlink" title="sizeof"></a>sizeof</h3><p>sizeof 求对象或者类型的大小<br><a href="https://blog.csdn.net/tao20dage/article/details/52372604" target="_blank" rel="noopener">cankao</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">特性0：sizeof是运算符，不是函数</span><br><span class="line">特性1：sizeof不能求得void类型的长度</span><br><span class="line">特性2：sizeof能求得void类型的指针的长度</span><br><span class="line">特性3：sizeof能求得静态分配内存的数组的长度!</span><br><span class="line">特性4：sizeof不能求得动态分配的内存的大小!</span><br><span class="line">特性5：sizeof不能对不完整的数组求长度！</span><br><span class="line">特性6：当表达式作为sizeof的操作数时，它返回表达式的计算结果的类型大小，但是它不对表达式求值！</span><br></pre></td></tr></table></figure></p>
-<h3 id="new-std-nothrow"><a href="#new-std-nothrow" class="headerlink" title="new(std::nothrow)"></a>new(std::nothrow)</h3><p> 顾名思义，即不抛出异常，当new一个对象失败时，默认设置该对象为NULL，这样可以方便的通过if(p == NULL) 来判断new操作是否成功<br> 建议在c++代码中，凡是涉及到new操作，都采用new(std::nothrow)，然后if(p==NULL)的方式进行判断</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>打开文件的方式在ios类(所以流式I/O的基类)中定义</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IO流的定义</td>
+<td>含义</td>
+</tr>
+<tr>
+<td>ios::in</td>
+<td>为输入(读)而打开文件</td>
+</tr>
+<tr>
+<td>ios::out</td>
+<td>为输出(写)而打开文件</td>
+</tr>
+<tr>
+<td>ios::ate</td>
+<td>初始位置：文件尾</td>
+</tr>
+<tr>
+<td>ios::app</td>
+<td>所有输出附加在文件末尾</td>
+</tr>
+<tr>
+<td>ios::trunc</td>
+<td>如果文件已存在则先删除该文件</td>
+</tr>
+<tr>
+<td>ios::binary</td>
+<td>二进制方式</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>2、关闭文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">infile.close</span><br></pre></td></tr></table></figure></p>
+<p>3、文本文件的读写</p>
+<p>类ofstream, ifstream 和fstream 是分别从ostream, istream 和iostream 中引申而来的。这就是为什么 fstream 的对象可以使用其父类的成员来访问数据。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">写入内容：</span><br><span class="line">#include &lt;fiostream.h&gt;</span><br><span class="line">    int main () &#123;</span><br><span class="line">        ofstream out(&quot;out.txt&quot;);</span><br><span class="line">        if (out.is_open()) </span><br><span class="line">       &#123;</span><br><span class="line">            out &lt;&lt; &quot;This is a line.\n&quot;;</span><br><span class="line">            out &lt;&lt; &quot;This is another line.\n&quot;;</span><br><span class="line">            out.close();</span><br><span class="line">        &#125;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">   //结果: 在out.txt中写入：</span><br><span class="line">   This is a line.</span><br><span class="line">   This is another line</span><br><span class="line"></span><br><span class="line">读取内容：</span><br><span class="line">// reading a text file</span><br><span class="line">    #include &lt;iostream.h&gt;</span><br><span class="line">    #include &lt;fstream.h&gt;</span><br><span class="line">    #include &lt;stdlib.h&gt;</span><br><span class="line">    </span><br><span class="line">    int main () &#123;</span><br><span class="line">        char buffer[256];</span><br><span class="line">        ifstream in(&quot;test.txt&quot;);</span><br><span class="line">        if (! in.is_open())</span><br><span class="line">        &#123; cout &lt;&lt; &quot;Error opening file&quot;; exit (1); &#125;</span><br><span class="line">        while (!in.eof() )</span><br><span class="line">        &#123;</span><br><span class="line">            in.getline (buffer,100);</span><br><span class="line">            cout &lt;&lt; buffer &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    //结果 在屏幕上输出</span><br><span class="line">     This is a line.</span><br><span class="line">     This is another line</span><br><span class="line">```	</span><br><span class="line">状态标识符</span><br></pre></td></tr></table></figure></p>
+<p>bad()<br>如果在读写过程中出错，返回 true 。例如：当我们要对一个不是打开为写状态的文件进行写入时，或者我们要写入的设备没有剩余空间的时候。</p>
+<p>fail()<br>除了与bad() 同样的情况下会返回 true 以外，加上格式错误时也返回true ，例如当想要读入一个整数，而获得了一个字母的时候。</p>
+<p>eof()<br>如果读文件到达文件末尾，返回true。</p>
+<p>good()<br>这是最通用的：如果调用以上任何一个函数返回true 的话，此函数返回 false 。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">要想重置以上成员函数所检查的状态标志，你可以使用成员函数clear()，没有参数。</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">### sizeof</span><br><span class="line">sizeof 求对象或者类型的大小`sizeof(array)`&lt;br&gt;</span><br><span class="line">[cankao](https://blog.csdn.net/tao20dage/article/details/52372604)</span><br></pre></td></tr></table></figure></p>
+<p>特性0：sizeof是运算符，不是函数<br>特性1：sizeof不能求得void类型的长度<br>特性2：sizeof能求得void类型的指针的长度<br>特性3：sizeof能求得静态分配内存的数组的长度!<br>特性4：sizeof不能求得动态分配的内存的大小!<br>特性5：sizeof不能对不完整的数组求长度！<br>特性6：当表达式作为sizeof的操作数时，它返回表达式的计算结果的类型大小，但是它不对表达式求值！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line">### new(std::nothrow)</span><br><span class="line"> 顾名思义，即不抛出异常，当new一个对象失败时，默认设置该对象为NULL，这样可以方便的通过if(p == NULL) 来判断new操作是否成功</span><br><span class="line"> 建议在c++代码中，凡是涉及到new操作，都采用new(std::nothrow)，然后if(p==NULL)的方式进行判断</span><br><span class="line"></span><br><span class="line"> ---</span><br><span class="line">### vector</span><br><span class="line">[cankao](https://blog.csdn.net/duan19920101/article/details/50617190/)&lt;br&gt;</span><br><span class="line">在c++中，vector是一个十分有用的容器。</span><br><span class="line">作用：它能够像容器一样存放各种类型的对象，简单地说，vector是一个能够存放任意类型的动态数组，能够增加和压缩数据。&lt;br&gt;</span><br><span class="line">&gt;1、如果你要表示的向量长度较长（需要为向量内部保存很多数），容易导致内存泄漏，而且效率会很低；&lt;br&gt;</span><br><span class="line">2、Vector作为函数的参数或者返回值时，需要注意它的写法：</span><br><span class="line">   double Distance(vector&lt;int&gt;&amp;a, vector&lt;int&gt;&amp;b) 其中的“&amp;”绝对不能少！！！</span><br><span class="line"></span><br><span class="line">   c++基本操作</span><br></pre></td></tr></table></figure></p>
+<p>   1 、基本操作</p>
+<p>(1)头文件#include<vector>.<br>(2)创建vector对象，vector<int> vec;<br>(3)尾部插入数字：vec.push_back(a);<br>(4)使用下标访问元素，cout&lt;<vec[0]<<endl;记住下标是从0开始的。 (5)使用迭代器访问元素.="" vector<int="">::iterator it;<br>for(it=vec.begin();it!=vec.end();it++)<br>    cout&lt;&lt;*it&lt;<endl; (6)插入元素：="" vec.insert(vec.begin()+i,a);在第i+1个元素前面插入a;="" (7)删除元素：="" vec.erase(vec.begin()+2);删除第3个元素="" vec.erase(vec.begin()+i,vec.end()+j);删除区间[i,j-1];区间从0开始="" (8)向量大小:vec.size();="" (9)清空:vec.clear();="" <figure="" class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line">### 二维数组</span><br></pre></td></tr></table></endl;></vec[0]<<endl;记住下标是从0开始的。></int></vector></p>
+<h1 id="include-“stdafx-h”"><a href="#include-“stdafx-h”" class="headerlink" title="include “stdafx.h”"></a>include “stdafx.h”</h1><h1 id="include"><a href="#include" class="headerlink" title="include "></a>include <cv.h></cv.h></h1><h1 id="include-1"><a href="#include-1" class="headerlink" title="include "></a>include <vector></vector></h1><h1 id="include-2"><a href="#include-2" class="headerlink" title="include "></a>include <iostream></iostream></h1><p>using namespace std;<br>int main()<br>{<br>    using namespace std;<br>    int out[3][2] = { 1, 2,<br>             3, 4,<br>            5, 6 };<br>    vector <int*> v1;</int*></p>
+<pre><code>v1.push_back(out[0]);
+v1.push_back(out[1]);
+v1.push_back(out[2]);
+
+cout &lt;&lt; v1[0][0] &lt;&lt; endl;//1
+cout &lt;&lt; v1[0][1] &lt;&lt; endl;//2
+cout &lt;&lt; v1[1][0] &lt;&lt; endl;//3
+cout &lt;&lt; v1[1][1] &lt;&lt; endl;//4
+cout &lt;&lt; v1[2][0] &lt;&lt; endl;//5
+cout &lt;&lt; v1[2][1] &lt;&lt; endl;//6
+
+return 0;
+</code></pre><p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 随机数</span><br><span class="line">RAND_MAX是C中stdlib.h中宏定义的一个字符常量：</span><br><span class="line">`#define RAND_MAX Ox7FFF`</span><br><span class="line">其值最小为32767,最大为2147483647</span><br></pre></td></tr></table></figure>
+<p>(double)rand() / RAND_MAX;//生成随机数<br>```</p>
 
       
 
@@ -296,18 +360,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/19/机器学习-线性回归/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/19/机器学习常见算法总结/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          机器学习-线性回归
+          机器学习常见算法总结
         
       </div>
     </a>
   
   
-    <a href="/2018/07/19/大佬终极面经/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">大佬终极面经</div>
+    <a href="/2018/07/19/特征提取_图像矩阵变换/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">特征提取_图像矩阵变换</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -476,15 +540,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -500,15 +568,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,19 +588,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,6 +609,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">笔面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
               </li>
             
             <div class="clearfix"></div>
