@@ -7,6 +7,21 @@ tags: [C++]
 C++图像处理程序
 
 <!--more-->
+
+C++开源项目：
+>Boost.GIL：通用图像库
+CImg ：用于图像处理的小型开源C++工具包
+CxImage ：用于加载，保存，显示和转换的图像处理和转换库，可以处理的图片格式包括 BMP, JPEG, GIF, PNG, TIFF, MNG, ICO, PCX, TGA, WMF, WBMP, JBG, J2K。
+FreeImage ：开源库，支持现在多媒体应用所需的通用图片格式和其他格式。
+GDCM：Grassroots DICOM 库
+ITK：跨平台的开源图像分析系统
+Magick++：ImageMagick程序的C++接口
+MagickWnd：ImageMagick程序的C++接口
+OpenCV ： 开源计算机视觉类库
+tesseract-ocr：OCR引擎
+VIGRA ：用于图像分析通用C++计算机视觉库
+VTK ：用于3D计算机图形学，图像处理和可视化的开源免费软件系统。
+
 ```
 /*函数名称：MakegGray()                                        */
 /*函数类型：void                                               */
