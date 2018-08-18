@@ -432,6 +432,30 @@ public:
 
 Java代码：
 ```
+/**
+思路是用arraylist模拟一个队列来存储相应的TreeNode
+*/
+public class Solution {
+    public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        ArrayList<TreeNode> TN = new ArrayList<>();
+        if(root==null){
+            return arr;
+        }
+        TN.add(root);
+        while(TN.size()!=0){
+            TreeNode temp = TN.remove(0);
+            if(temp.left!= null){
+                TN.add(temp.left);
+            }
+            if(temp.right!= null){
+                TN.add(temp.right);
+            }
+            arr.add(temp.val);
+        }
+        return arr;
+    }
+}
 ```
 C++代码：
 ```
