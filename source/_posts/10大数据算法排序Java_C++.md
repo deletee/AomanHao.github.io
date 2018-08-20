@@ -7,6 +7,8 @@ tags: [Java, C++, 算法]
 10大数据算法排序Java_C++
 
 <!--more-->
+![](https://images0.cnblogs.com/blog2015/731178/201508/272007357503007.jpg)
+
 ### 冒泡排序
 >依次比较n与后面的数字，大的放右面，小的放左边
 Java代码
@@ -43,11 +45,44 @@ C++代码
 ```
 ```
 ---
-选择排序
+### 选择排序
+>选择n个数组成的数组arr里最大的一个数，放在arr[n-1]，<br>
+然后维数n-1<br>
+选择前n-1个数组成的数组，取最大数，放在arr
+
 
 
 Java代码：
 ```
+/**
+     * 选择排序算法
+     * 在未排序序列中找到最小元素，存放到排序序列的起始位置  
+     * 再从剩余未排序元素中继续寻找最小元素，然后放到排序序列末尾。 
+     * 以此类推，直到所有元素均排序完毕。 
+     * @param numbers
+     */
+    public static void selectSort(int[] numbers)
+    {
+    int size = numbers.length; //数组长度
+    int temp = 0 ; //中间变量
+    
+    for(int i = 0 ; i < size ; i++)
+    {
+        int k = i;   //待确定的位置
+        //选择出应该在第i个位置的数
+        for(int j = size -1 ; j > i ; j--)
+        {
+        if(numbers[j] < numbers[k])
+        {
+            k = j;
+        }
+        }
+        //交换两个数
+        temp = numbers[i];
+        numbers[i] = numbers[k];
+        numbers[k] = temp;
+    }
+    }
 ```
 
 C++代码：
@@ -280,7 +315,7 @@ C++代码：
 ```
 
 ---
-
+### 插入排序
 
 Java代码：
 ```
