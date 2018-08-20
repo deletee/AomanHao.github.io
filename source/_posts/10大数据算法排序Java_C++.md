@@ -7,9 +7,60 @@ tags: [Java, C++, 算法]
 10大数据算法排序Java_C++
 
 <!--more-->
-快速排序及其改进算法C++实现
+### 冒泡排序
+>依次比较n与后面的数字，大的放右面，小的放左边
+Java代码
+```
+/**
+     * 冒泡排序
+     * 比较相邻的元素。如果第一个比第二个大，就交换他们两个。  
+     * 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。  
+     * 针对所有的元素重复以上的步骤，除了最后一个。
+     * 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。 
+     * @param numbers 需要排序的整型数组
+     */
+    public static void bubbleSort(int[] numbers)
+    {
+        int temp = 0;
+        int size = numbers.length;
+        for(int i = 0 ; i < size-1; i ++)
+        {
+        for(int j = 0 ;j < size-1-i ; j++)
+        {
+            if(numbers[j] > numbers[j+1])  //交换两数位置
+            {
+            temp = numbers[j];
+            numbers[j] = numbers[j+1];
+            numbers[j+1] = temp;
+            }
+        }
+        }
+    }
+
+
+```
+C++代码
+```
+```
+---
+选择排序
+
+
+Java代码：
+```
+```
+
+C++代码：
+```
+```
+
+---
+
+### 快速排序及其改进算法C++实现
 
 >快速排序可以看成是插入排序的改进，它是一种分治的排序算法
+![一次快排](http://my.csdn.net/uploads/201207/20/1342782317_4426.jpg)
+![快排流程](http://my.csdn.net/uploads/201207/20/1342782329_8314.jpg)
 
 Java代码：
 ```
@@ -218,7 +269,7 @@ int main()
 ```
 
 ---
-
+### du
 
 Java代码：
 ```
