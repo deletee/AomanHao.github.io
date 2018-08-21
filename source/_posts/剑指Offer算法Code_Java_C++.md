@@ -545,10 +545,57 @@ public:
  ^=:逐位异或 
 
 ---
-
+### 最小的k个数
+输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4,。
 
 Java代码：
 ```
+public class Solution {
+    public ArrayList<Integer> GetLeastNumbers_Solution(int [] input, int k) {
+        int len = input.length;
+        if(len <= k){
+            return input;
+        }
+        
+        int low = 0;
+        int high = len - 1;
+        Numsort(input, low, high);
+        for(int i=0;i<=k;i++){
+            output[i] = input[i];
+        }
+        return output;
+    }
+    
+    public void Numsoft(int [] input, int low, int high){
+        int start = low; int end = high;
+        int key = input[low];
+        
+        while(end > start && input[end]>key){
+            end--;
+            //从后往前，比较比key小的数字
+            if(input[end]<=key){
+                int temp = intput[end];
+                intput[end] = intput[start];
+                intput[start] = temp;
+            }
+            //从前往后，比较比key大的数字
+            while(start < end && intput[start]<=key){
+                if(input[start]>=key){
+                    int temp = input[start];
+                input[start] = intput[end];
+                input[start] = temp;
+                }
+            }
+            }
+       //递归
+        if(start>low){ 
+            sort(input,low,start-1);//左边序列。第一个索引位置到关键值索引-1
+        }
+        if(end<high){ 
+            sort(input,end+1,high);//右边序列。从关键值索引+1到最后一个
+        }
+        }
+}
 ```
 
 C++代码：
