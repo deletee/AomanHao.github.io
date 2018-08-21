@@ -378,7 +378,7 @@ public:
 };
 ```
 ---
-输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
+### 输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。
 >两两数值对比,merge可以合并两个事物，链表也行，考点在取两个链表比较小的头节点
 
 Java代码：
@@ -428,7 +428,7 @@ public:
 };
 ```
 ---
-从上往下打印出二叉树的每个节点，同层节点从左至右打印。
+### 从上往下打印出二叉树的每个节点，同层节点从左至右打印。
 
 Java代码：
 ```
@@ -462,15 +462,87 @@ C++代码：
 ```
 
 ---
-
+### 一个整型数组里除了两个数字之外，其他的数字都出现了偶数次。请写程序找出这两个只出现一次的数字。
+>思路：两个相同数字异或=0，一个数和0异或还是它本身。<br>
+我们首先还是先异或，剩下的数字肯定是A、B异或的结果，这个结果的二进制中的1，表现的是A和B的不同的位。我们就取第一个1所在的位数，假设是第3位，接着把原数组分成两组，分组标准是第3位是否为1。如此，相同的数肯定在一个组，因为相同数字所有位都相同，而不同的数，肯定不在一组。然后把这两个组按照最开始的思路，依次异或，剩余的两个结果就是这两个只出现一次的数字。
 
 Java代码：
 ```
+public class Solution {
+    public void FindNumsAppearOnce(int[] array, int[] num1, int[] num2)    {
+        int length = array.length;
+        if(length == 2){
+            num1[0] = array[0];
+            num2[0] = array[1];
+            return;
+        }
+        int bitResult = 0;
+        for(int i = 0; i < length; ++i){
+            bitResult ^= array[i];
+        }
+        int index = findFirst1(bitResult);
+        for(int i = 0; i < length; ++i){
+            if(isBit1(array[i], index)){
+                num1[0] ^= array[i];
+            }else{
+                num2[0] ^= array[i];
+            }
+        }
+    }
+     
+    private int findFirst1(int bitResult){
+        int index = 0;
+        while(((bitResult & 1) == 0) && index < 32){
+            bitResult >>= 1;
+            index++;
+        }
+        return index;
+    }
+     
+    private boolean isBit1(int target, int index){
+        return ((target >> index) & 1) == 1;
+    }
+}
 ```
 
 C++代码：
 ```
+链接：https://www.nowcoder.com/questionTerminal/e02fdb54d7524710a7d664d082bb7811
+来源：牛客网
+
+class Solution {
+public:
+    void FindNumsAppearOnce(vector<int> data,int* num1,int *num2) {
+  if(data.size()<2)
+   return ;
+  int size=data.size();
+  int temp=data[0];
+  for(int i=1;i<size;i++)
+   temp=temp^data[i];
+  if(temp==0)
+   return ;
+  int index=0;
+  while((temp&1)==0){
+   temp=temp>>1;
+   ++index;
+  }
+  *num1=*num2=0;
+  for(int i=0;i<size;i++)
+  {
+   if(IsBit(data[i],index))
+    *num1^=data[i];
+   else
+    *num2^=data[i];
+  }
+    }
+ bool IsBit(int num,int index)
+ {
+  num=num>>index;
+  return (num&1);
+ }
+};
 ```
+ ^=:逐位异或 
 
 ---
 

@@ -304,10 +304,83 @@ int main()
 ```
 
 ---
-### du
+### 堆排序 http://www.cnblogs.com/MOBIN/p/5374217.html
+>堆排序主要在于理解堆的构造过程和在输出最大元素后如何对堆进行重新调整
+大顶堆：![大顶堆](https://images2015.cnblogs.com/blog/776259/201604/776259-20160410150915593-1435777167.png) 小顶堆：![](https://images2015.cnblogs.com/blog/776259/201604/776259-20160410150948406-1525110244.png)
+```
+算法思想(以大顶堆为例)：
+1.将长度为n的待排序的数组进行堆有序化构造成一个大顶堆
+ 
+2.将根节点与尾节点交换并输出此时的尾节点
+ 
+3.将剩余的n -1个节点重新进行堆有序化
+ 
+4.重复步骤2，步骤3直至构造成一个有序序列
+```
+构建有序堆：
+1、第一次for循环将节点3和它的子节点7 8的元素进行比较，最大者作为父节点（即元素60作为父节点）
+红色表示交换后的状态
+![](https://images2015.cnblogs.com/blog/776259/201604/776259-20160410151437250-974257904.png) 
+2、第二次for循环将节点2和它的子节点5 6的元素进行比较，最大者为父节点（元素80作为父节点）
+![](https://images2015.cnblogs.com/blog/776259/201604/776259-20160410151453015-690847102.png)
+3、第三次for循环将节点1和它的子节点3 4的元素进行比较，最大者为父节点（元素70作为父节点）
+![](https://images2015.cnblogs.com/blog/776259/201604/776259-20160410151523218-139482913.png)
+
+调整堆
+1、堆顶元素80和尾40交换后-->调整堆
+![](https://images2015.cnblogs.com/blog/776259/201604/776259-20160410151713156-328299797.png)
+2、堆顶元素70和尾30交换后-->调整堆
+![](https://images2015.cnblogs.com/blog/776259/201604/776259-20160410151728406-2042556892.png)
+。。。
+完成调整
+![](https://images2015.cnblogs.com/blog/776259/201604/776259-20160410151755062-2073568164.png)
 
 Java代码：
 ```
+public class HeapSort {
+    private static void heapSort(int[] arr) {
+        int len = arr.length -1;
+        for(int i = len/2 - 1; i >=0; i --){ //堆构造
+            heapAdjust(arr,i,len);
+        }
+        while (len >=0){
+            swap(arr,0,len--);    //将堆顶元素与尾节点交换后，长度减1，尾元素最大
+            heapAdjust(arr,0,len);    //再次对堆进行调整
+        }
+    }
+ 
+public static  void heapAdjust(int[] arr,int i,int len){
+    int left,right,j ;
+    while((left = 2*i+1) <= len){    //判断当前父节点有无左节点（即有无孩子节点，left为左节点）
+        right = left + 1;  //右节点
+        j = left;   //j"指针指向左节点"
+        if(j < len && arr[left] < arr[right])    //右节点大于左节点
+            j ++;     //当前把"指针"指向右节点
+        if(arr[i] < arr[j])    //将父节点与孩子节点交换（如果上面if为真，则arr[j]为右节点，如果为假arr[j]则为左节点）
+            swap(arr,i,j);
+        else         //说明比孩子节点都大，直接跳出循环语句
+            break;
+        i = j;
+    }
+}
+    public static  void swap(int[] arr,int i,int len){
+             int temp = arr[i];
+              arr[i] = arr[len];
+             arr[len] = temp;
+    }
+    public static void main(String[] args) {
+        int array[] = {20,50,20,40,70,10,80,30,60};
+        System.out.println("排序之前：");
+        for(int element : array){
+            System.out.print(element+" ");
+        }
+        heapSort(array);
+        System.out.println("\n排序之后：");
+        for(int element : array){
+            System.out.print(element+" ");
+        }
+    }
+}
 ```
 
 C++代码：
