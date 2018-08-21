@@ -548,53 +548,61 @@ public:
 ### 最小的k个数
 输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4,。
 
-Java代码：
+Java代码：(快排/最小堆)
 ```
+链接：https://www.nowcoder.com/questionTerminal/6a296eb82cf844ca8539b57c23e6e9bf
+来源：牛客网
+
+/*
+*基于堆排序算法，构建最大堆。时间复杂度为O(nlogk)
+*如果用快速排序，时间复杂度为O(nlogn)；
+*如果用冒泡排序，时间复杂度为O(n*k)
+*/
+import java.util.ArrayList;
 public class Solution {
     public ArrayList<Integer> GetLeastNumbers_Solution(int [] input, int k) {
-        int len = input.length;
-        if(len <= k){
-            return input;
+        ArrayList<Integer> list=new ArrayList<Integer>();
+        //检查输入的特殊情况
+        if(input==null || input.length<=0 || input.length<k){
+            return list;
         }
-        
-        int low = 0;
-        int high = len - 1;
-        Numsort(input, low, high);
-        for(int i=0;i<=k;i++){
-            output[i] = input[i];
+        //构建最大堆
+        for(int len=k/2-1; len>=0; len--){
+            adjustMaxHeapSort(input,len,k-1);
         }
-        return output;
+        //从第k个元素开始分别与最大堆的最大值做比较，如果比最大值小，则替换并调整堆。
+        //最终堆里的就是最小的K个数。
+        int tmp;
+        for(int i=k; i<input.length; i++){
+            if(input[i]<input[0]){
+                tmp=input[0];
+                input[0]=input[i];
+                input[i]=tmp;
+                adjustMaxHeapSort(input,0,k-1);
+            }
+        }
+        for(int j=0; j<k; j++){
+            list.add(input[j]);
+        }
+        return list;
     }
-    
-    public void Numsoft(int [] input, int low, int high){
-        int start = low; int end = high;
-        int key = input[low];
-        
-        while(end > start && input[end]>key){
-            end--;
-            //从后往前，比较比key小的数字
-            if(input[end]<=key){
-                int temp = intput[end];
-                intput[end] = intput[start];
-                intput[start] = temp;
+     
+    public void adjustMaxHeapSort(int[] input, int pos, int length){
+        int temp;
+        int child;
+        for(temp=input[pos]; 2*pos+1<=length; pos=child){
+            child=2*pos+1;
+            if(child<length && input[child]<input[child+1]){
+                child++;
             }
-            //从前往后，比较比key大的数字
-            while(start < end && intput[start]<=key){
-                if(input[start]>=key){
-                    int temp = input[start];
-                input[start] = intput[end];
-                input[start] = temp;
-                }
+            if(input[child]>temp){
+                input[pos]=input[child];
+            }else{
+                break;
             }
-            }
-       //递归
-        if(start>low){ 
-            sort(input,low,start-1);//左边序列。第一个索引位置到关键值索引-1
         }
-        if(end<high){ 
-            sort(input,end+1,high);//右边序列。从关键值索引+1到最后一个
-        }
-        }
+        input[pos]=temp;
+    }
 }
 ```
 
