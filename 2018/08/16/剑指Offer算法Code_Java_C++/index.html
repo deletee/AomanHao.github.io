@@ -5,18 +5,18 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://www.haoloverongrong.top">
+  <link rel="dns-prefetch" href="http://www.aomanhao.top">
   <title>剑指Offer算法Code_Java_C++(0820更新) | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="剑指Offer算法Code_Java_C++">
 <meta name="keywords" content="Java,C++,算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="剑指Offer算法Code_Java_C++(0820更新)">
-<meta property="og:url" content="http://www.haoloverongrong.top/2018/08/16/剑指Offer算法Code_Java_C++/index.html">
+<meta property="og:url" content="http://www.aomanhao.top/2018/08/16/剑指Offer算法Code_Java_C++/index.html">
 <meta property="og:site_name" content="AomanHao">
 <meta property="og:description" content="剑指Offer算法Code_Java_C++">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-20T15:32:24.471Z">
+<meta property="og:updated_time" content="2018-08-21T13:44:06.883Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指Offer算法Code_Java_C++(0820更新)">
 <meta name="twitter:description" content="剑指Offer算法Code_Java_C++">
@@ -97,17 +97,17 @@ var _hmt = _hmt || [];
 		        
 			</div>
 			<!-- 网易云音乐板块-->
-			<div style="position:absolute; bottom:120px left:auto; width:85%">
-			<!--韩语 电视剧-->
+			<div >
+			<!--韩语 电视剧style="position:absolute; bottom:120px left:auto; width:85%"-->
 			<!--<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=463754864&auto=1&height=66">
 			-->
 			<!--that girl 粤语-->
 			<!--<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=1297001123&auto=1&height=66">
 			-->
-			<!--Are You With Me-->
+			<!--Are You With Me
 			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=29794263&auto=1&height=66">
-			</iframe>
-			
+			</iframe>-->
+			<embed src="//music.163.com/style/swf/widget.swf?sid=29794263&type=2&auto=1&width=320&height=66" width="260" height="86"  allowNetworking="all"></embed>
 			</div>
 		</nav>
 
@@ -235,19 +235,52 @@ var _hmt = _hmt || [];
 </blockquote>
 <p>C++代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    ListNode* ReverseList(ListNode* pHead) &#123;</span><br><span class="line"></span><br><span class="line">        if(pHead == NULL)&#123;</span><br><span class="line">            return NULL;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        ListNode* pNode = pHead;//当前指针</span><br><span class="line">        ListNode* pPre = NULL;//链表的前一个指针</span><br><span class="line">        ListNode* pNewHead = NULL;</span><br><span class="line">        </span><br><span class="line">        while(pNode != NULL)&#123;</span><br><span class="line">           ListNode* pNext = pNode-&gt;next;</span><br><span class="line">            if(pNext == NULL)&#123; //尾节点</span><br><span class="line">                pNewHead = pNode;</span><br><span class="line">            &#125;</span><br><span class="line">            pNode-&gt;next = pPre;</span><br><span class="line">            pPre = pNode;</span><br><span class="line">            pNode = pNext;</span><br><span class="line">        &#125;</span><br><span class="line">        return pNewHead;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <hr>
-<p>输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。</p>
-<blockquote>
+<h3 id="输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。"><a href="#输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。" class="headerlink" title="输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。"></a>输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。</h3><blockquote>
 <p>两两数值对比,merge可以合并两个事物，链表也行，考点在取两个链表比较小的头节点</p>
 </blockquote>
 <p>Java代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class Solution &#123;</span><br><span class="line">    public ListNode Merge(ListNode list1,ListNode list2) &#123;</span><br><span class="line">        if(list1 == null)&#123;</span><br><span class="line">            return list2;</span><br><span class="line">        &#125;</span><br><span class="line">        if(list2 == null)&#123;</span><br><span class="line">            return list1;</span><br><span class="line">        &#125;</span><br><span class="line">        if(list1.val &lt;= list2.val)&#123;</span><br><span class="line">            list1.next = Merge(list1.next,list2);</span><br><span class="line">                return list1;</span><br><span class="line">              &#125;else&#123;</span><br><span class="line">            list2.next = Merge(list1,list2.next);</span><br><span class="line">            return list2;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>C++代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">public:</span><br><span class="line">    ListNode* Merge(ListNode* pHead1, ListNode* pHead2)</span><br><span class="line">    &#123;</span><br><span class="line">     if(pHead1 == NULL)&#123;</span><br><span class="line">            return pHead2;</span><br><span class="line">        &#125;</span><br><span class="line">        if(pHead2 == NULL)&#123;</span><br><span class="line">            return pHead1;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        ListNode* NewHead = NULL;</span><br><span class="line">        if(pHead1-&gt;val &lt;= pHead2-&gt;val)&#123;</span><br><span class="line">            NewHead = pHead1;</span><br><span class="line">            NewHead-&gt;next = Merge(pHead1-&gt;next,pHead2);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            NewHead = pHead2;</span><br><span class="line">            NewHead-&gt;next = Merge(pHead1,pHead2-&gt;next);</span><br><span class="line">        &#125;</span><br><span class="line">        return NewHead;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <hr>
-<p>从上往下打印出二叉树的每个节点，同层节点从左至右打印。</p>
-<p>Java代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">思路是用arraylist模拟一个队列来存储相应的TreeNode</span><br><span class="line">*/</span><br><span class="line">public class Solution &#123;</span><br><span class="line">    public ArrayList&lt;Integer&gt; PrintFromTopToBottom(TreeNode root) &#123;</span><br><span class="line">        ArrayList&lt;Integer&gt; arr = new ArrayList&lt;&gt;();</span><br><span class="line">        ArrayList&lt;TreeNode&gt; TN = new ArrayList&lt;&gt;();</span><br><span class="line">        if(root==null)&#123;</span><br><span class="line">            return arr;</span><br><span class="line">        &#125;</span><br><span class="line">        TN.add(root);</span><br><span class="line">        while(TN.size()!=0)&#123;</span><br><span class="line">            TreeNode temp = TN.remove(0);</span><br><span class="line">            if(temp.left!= null)&#123;</span><br><span class="line">                TN.add(temp.left);</span><br><span class="line">            &#125;</span><br><span class="line">            if(temp.right!= null)&#123;</span><br><span class="line">                TN.add(temp.right);</span><br><span class="line">            &#125;</span><br><span class="line">            arr.add(temp.val);</span><br><span class="line">        &#125;</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>C++代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">C++代码：</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">C++代码：</span><br></pre></td></tr></table></figure>
+<h3 id="从上往下打印出二叉树的每个节点，同层节点从左至右打印。"><a href="#从上往下打印出二叉树的每个节点，同层节点从左至右打印。" class="headerlink" title="从上往下打印出二叉树的每个节点，同层节点从左至右打印。"></a>从上往下打印出二叉树的每个节点，同层节点从左至右打印。</h3><p>Java代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">思路是用arraylist模拟一个队列来存储相应的TreeNode</span><br><span class="line">*/</span><br><span class="line">public class Solution &#123;</span><br><span class="line">    public ArrayList&lt;Integer&gt; PrintFromTopToBottom(TreeNode root) &#123;</span><br><span class="line">        ArrayList&lt;Integer&gt; arr = new ArrayList&lt;&gt;();</span><br><span class="line">        ArrayList&lt;TreeNode&gt; TN = new ArrayList&lt;&gt;();</span><br><span class="line">        if(root==null)&#123;</span><br><span class="line">            return arr;</span><br><span class="line">        &#125;</span><br><span class="line">        TN.add(root);</span><br><span class="line">        while(TN.size()!=0)&#123;</span><br><span class="line">            TreeNode temp = TN.remove(0);</span><br><span class="line">            if(temp.left!= null)&#123;</span><br><span class="line">                TN.add(temp.left);</span><br><span class="line">            &#125;</span><br><span class="line">            if(temp.right!= null)&#123;</span><br><span class="line">                TN.add(temp.right);</span><br><span class="line">            &#125;</span><br><span class="line">            arr.add(temp.val);</span><br><span class="line">        &#125;</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>C++代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">### 一个整型数组里除了两个数字之外，其他的数字都出现了偶数次。请写程序找出这两个只出现一次的数字。</span><br><span class="line">&gt;思路：两个相同数字异或=0，一个数和0异或还是它本身。&lt;br&gt;</span><br><span class="line">我们首先还是先异或，剩下的数字肯定是A、B异或的结果，这个结果的二进制中的1，表现的是A和B的不同的位。我们就取第一个1所在的位数，假设是第3位，接着把原数组分成两组，分组标准是第3位是否为1。如此，相同的数肯定在一个组，因为相同数字所有位都相同，而不同的数，肯定不在一组。然后把这两个组按照最开始的思路，依次异或，剩余的两个结果就是这两个只出现一次的数字。</span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure></p>
+<p>public class Solution {<br>    public void FindNumsAppearOnce(int[] array, int[] num1, int[] num2)    {<br>        int length = array.length;<br>        if(length == 2){<br>            num1[0] = array[0];<br>            num2[0] = array[1];<br>            return;<br>        }<br>        int bitResult = 0;<br>        for(int i = 0; i &lt; length; ++i){<br>            bitResult ^= array[i];<br>        }<br>        int index = findFirst1(bitResult);<br>        for(int i = 0; i &lt; length; ++i){<br>            if(isBit1(array[i], index)){<br>                num1[0] ^= array[i];<br>            }else{<br>                num2[0] ^= array[i];<br>            }<br>        }<br>    }</p>
+<pre><code>private int findFirst1(int bitResult){
+    int index = 0;
+    while(((bitResult &amp; 1) == 0) &amp;&amp; index &lt; 32){
+        bitResult &gt;&gt;= 1;
+        index++;
+    }
+    return index;
+}
+
+private boolean isBit1(int target, int index){
+    return ((target &gt;&gt; index) &amp; 1) == 1;
+}
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">C++代码：</span><br></pre></td></tr></table></figure></p>
+<p>链接：<a href="https://www.nowcoder.com/questionTerminal/e02fdb54d7524710a7d664d082bb7811" target="_blank" rel="noopener">https://www.nowcoder.com/questionTerminal/e02fdb54d7524710a7d664d082bb7811</a><br>来源：牛客网</p>
+<p>class Solution {<br>public:<br>    void FindNumsAppearOnce(vector<int> data,int<em> num1,int </em>num2) {<br>  if(data.size()<2) return="" ;="" int="" size="data.size();" temp="data[0];" for(int="" i="1;i<size;i++)" if(temp="=0)" index="0;" while((temp&1)="=0){">&gt;1;<br>   ++index;<br>  }<br>  <em>num1=</em>num2=0;<br>  for(int i=0;i<size;i++) {="" if(isbit(data[i],index))="" *num1^="data[i];" else="" *num2^="data[i];" }="" bool="" isbit(int="" num,int="" index)="" num="num">&gt;index;<br>  return (num&amp;1);<br> }<br>};<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> ^=:逐位异或 </span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">### 最小的k个数</span><br><span class="line">输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4,。</span><br><span class="line"></span><br><span class="line">Java代码：(快排/最小堆)</span><br></pre></td></tr></table></figure></size;i++)></2)></int></p>
+<p>链接：<a href="https://www.nowcoder.com/questionTerminal/6a296eb82cf844ca8539b57c23e6e9bf" target="_blank" rel="noopener">https://www.nowcoder.com/questionTerminal/6a296eb82cf844ca8539b57c23e6e9bf</a><br>来源：牛客网</p>
+<p>/<em>
+</em>基于堆排序算法，构建最大堆。时间复杂度为O(nlogk)<br><em>如果用快速排序，时间复杂度为O(nlogn)；
+</em>如果用冒泡排序，时间复杂度为O(n<em>k)
+</em>/<br>import java.util.ArrayList;<br>public class Solution {<br>    public ArrayList<integer> GetLeastNumbers_Solution(int [] input, int k) {<br>        ArrayList<integer> list=new ArrayList<integer>();<br>        //检查输入的特殊情况<br>        if(input==null || input.length&lt;=0 || input.length<k){ return="" list;="" }="" 构建最大堆="" for(int="" len="k/2-1;">=0; len—){<br>            adjustMaxHeapSort(input,len,k-1);<br>        }<br>        //从第k个元素开始分别与最大堆的最大值做比较，如果比最大值小，则替换并调整堆。<br>        //最终堆里的就是最小的K个数。<br>        int tmp;<br>        for(int i=k; i&lt;input.length; i++){<br>            if(input[i]&lt;input[0]){<br>                tmp=input[0];<br>                input[0]=input[i];<br>                input[i]=tmp;<br>                adjustMaxHeapSort(input,0,k-1);<br>            }<br>        }<br>        for(int j=0; j&lt;k; j++){<br>            list.add(input[j]);<br>        }<br>        return list;<br>    }</k){></integer></integer></integer></p>
+<pre><code>public void adjustMaxHeapSort(int[] input, int pos, int length){
+    int temp;
+    int child;
+    for(temp=input[pos]; 2*pos+1&lt;=length; pos=child){
+        child=2*pos+1;
+        if(child&lt;length &amp;&amp; input[child]&lt;input[child+1]){
+            child++;
+        }
+        if(input[child]&gt;temp){
+            input[pos]=input[child];
+        }else{
+            break;
+        }
+    }
+    input[pos]=temp;
+}
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">C++代码：</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">C++代码：</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure>
@@ -336,7 +369,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.haoloverongrong.top/2018/08/16/剑指Offer算法Code_Java_C++/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.aomanhao.top/2018/08/16/剑指Offer算法Code_Java_C++/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -350,9 +383,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
+    <a href="/2018/08/16/10大数据算法排序Java_C++/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          10大数据算法排序Java_C++
+        
+      </div>
+    </a>
   
-    <a href="/2018/08/16/10大数据算法排序Java_C++/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">10大数据算法排序Java_C++</div>
+  
+    <a href="/2018/08/15/面经—机器学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面经—机器学习</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -516,15 +558,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,11 +626,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+                <a href="javascript:void(0)" class="js-tag color2">Resume</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Resume</a>
+                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
               </li>
              
               <li class="article-tag-list-item">
