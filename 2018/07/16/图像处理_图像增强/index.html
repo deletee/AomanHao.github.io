@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-blog.csdn.net/20161229163907449?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRWJvd1Rhbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 <meta property="og:image" content="https://img-blog.csdn.net/20131014153326875?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdGhuaDE2OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-08-22T11:53:42.511Z">
+<meta property="og:updated_time" content="2018-08-22T13:06:15.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图像处理_图像增强">
 <meta name="twitter:description" content="图像处理_图像增强">
@@ -107,10 +107,9 @@ var _hmt = _hmt || [];
 			<!--that girl 粤语-->
 			<!--<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=1297001123&auto=1&height=66">
 			-->
-			<!--Are You With Me
+			<!--Are You With Me-->
 			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=86 src="//music.163.com/outchain/player?type=2&id=29794263&auto=1&height=66">
-			</iframe>-->
-			<embed src="//music.163.com/style/swf/widget.swf?sid=29794263&type=2&auto=1&width=320&height=66" width="260" height="86"  allowNetworking="all"></embed>
+			</iframe>
 			</div>
 		</nav>
 
@@ -192,6 +191,33 @@ var _hmt = _hmt || [];
         
       </header>
     
+    <!-- 目录内容 -->
+
+  <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+        </p>
+<div id="toc-article" class="toc-article">
+    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+  <strong class="toc-title">文章目录</strong>
+         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的方法分类："><span class="toc-number">1.</span> <span class="toc-text">图像增强的方法分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的方法之对比度增强"><span class="toc-number">2.</span> <span class="toc-text">图像增强的方法之对比度增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直方图均衡化"><span class="toc-number">3.</span> <span class="toc-text">直方图均衡化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指数变换"><span class="toc-number">4.</span> <span class="toc-text">指数变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对数变换"><span class="toc-number">5.</span> <span class="toc-text">对数变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#灰度拉伸"><span class="toc-number">6.</span> <span class="toc-text">灰度拉伸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性拉伸"><span class="toc-number">7.</span> <span class="toc-text">线性拉伸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#频率域图像增强"><span class="toc-number">8.</span> <span class="toc-text">频率域图像增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#曝光过度问题处理"><span class="toc-number">9.</span> <span class="toc-text">曝光过度问题处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加Masaic算法"><span class="toc-number">10.</span> <span class="toc-text">加Masaic算法</span></a></li></ol>
+       </div>
+ <script type="text/javascript">
+function showToc(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:block");
+  show_toc_btn.setAttribute("style","display:none");
+  };
+function showBtn(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:none");
+  show_toc_btn.setAttribute("style","display:block");
+  };
+ </script>
+    
+<!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
         <p>图像处理_图像增强</p>
@@ -493,18 +519,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/机器学习_最优化/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/机器学习_分类_数据聚类/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          机器学习_最优化
+          机器学习_分类_数据聚类
         
       </div>
     </a>
   
   
-    <a href="/2018/07/16/opencv_斑点检测/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">opencv_斑点检测——</div>
+    <a href="/2018/07/15/Java_mianshi/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java面试之九阴真经</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -523,6 +549,19 @@ var _hmt = _hmt || [];
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的方法分类："><span class="toc-number">1.</span> <span class="toc-text">图像增强的方法分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的方法之对比度增强"><span class="toc-number">2.</span> <span class="toc-text">图像增强的方法之对比度增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直方图均衡化"><span class="toc-number">3.</span> <span class="toc-text">直方图均衡化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指数变换"><span class="toc-number">4.</span> <span class="toc-text">指数变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对数变换"><span class="toc-number">5.</span> <span class="toc-text">对数变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#灰度拉伸"><span class="toc-number">6.</span> <span class="toc-text">灰度拉伸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性拉伸"><span class="toc-number">7.</span> <span class="toc-text">线性拉伸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#频率域图像增强"><span class="toc-number">8.</span> <span class="toc-text">频率域图像增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#曝光过度问题处理"><span class="toc-number">9.</span> <span class="toc-text">曝光过度问题处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加Masaic算法"><span class="toc-number">10.</span> <span class="toc-text">加Masaic算法</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -716,6 +755,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
@@ -736,11 +783,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Resume</a>
+                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+                <a href="javascript:void(0)" class="js-tag color2">Resume</a>
               </li>
              
               <li class="article-tag-list-item">
