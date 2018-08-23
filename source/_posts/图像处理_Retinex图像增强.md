@@ -48,9 +48,26 @@ $$w1=w2=w3=\frac13$$
 
 ### 带颜色恢复的MSR方法MSRCR
 (Multi-Scale Retinex with Color Restoration)
+SSR和MSR普遍都存在明显的偏色问题
+>MSRCR在MSR的基础上，加入了色彩恢复因子C来调节由于图像局部区域对比度增强而导致颜色失真的缺陷。
 
+改进公式：
+$$R_{MSRCR_i}(x,y)=C_i(x,y)R_{MSR_i}(x,y)$$
+其中
+$$C_i(x,y)=f[I_i^{'}(x,y)]=f[\frac{I_i(x,y)}{∑_{j=1}^{N}I_j(x,y)}]$$
+其中
+$$f[I_i^{'}(x,y)]=βlog[αI_i^{'}(x,y)]=β{log[αI_i^{'}i(x,y)]-log[∑_{j=1}^NI_j(x,y)]} $$
 
+参数说明
+```
+Ii(x, y)表示第i个通道的图像
+Ci表示第i个通道的彩色回复因子，用来调节3个通道颜色的比例；
+f(·)表示颜色空间的映射函数；
+β是增益常数；
+α是受控制的非线性强度；
+```
+MSRCR算法利用彩色恢复因子C，调节原始图像中3个颜色通道之间的比例关系，从而把相对较暗区域的信息凸显出来，达到了消除图像色彩失真的缺陷。
+处理后的图像局部对比度提高，亮度与真实场景相似，在人们视觉感知下，图像显得更加逼真。
 
 
 [参考文章](https://blog.csdn.net/ajianyingxiaoqinghan/article/details/71435098)
-
