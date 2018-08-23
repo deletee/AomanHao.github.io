@@ -16,10 +16,12 @@
 <meta property="og:site_name" content="AomanHao">
 <meta property="og:description" content="图像处理_Retinex图像增强">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-22T13:06:19.886Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20170508211020962?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYWppYW55aW5neGlhb3FpbmdoYW4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2018-08-23T00:41:53.995Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图像处理_Retinex图像增强">
 <meta name="twitter:description" content="图像处理_Retinex图像增强">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20170508211020962?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYWppYW55aW5neGlhb3FpbmdoYW4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -59,7 +61,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="" class="profilepic">
-			<img src="http://p3qhnc0eg.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180207204835.jpg" class="js-avatar">
+			<img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/haorong.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="">AomanHao</a></h1>
@@ -74,6 +76,8 @@ var _hmt = _hmt || [];
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/archives">全部文章</a></li>
+	        
+				<li><a href="/tags">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -94,6 +98,8 @@ var _hmt = _hmt || [];
 					<a class="github" target="_blank" href="https://github.com/AomanHao" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="https://weibo.com/u/2831714980" title="weibo"><i class="icon-weibo"></i></a>
+		        
+					<a class="mail" target="_blank" href="/1014325364@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 			<!-- 网易云音乐板块-->
@@ -123,7 +129,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://p3qhnc0eg.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180207204835.jpg" class="js-avatar">
+				<img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/haorong.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">AomanHao</h1>
@@ -132,6 +138,8 @@ var _hmt = _hmt || [];
 			<p class="header-subtitle"><i class="icon icon-quo-left"></i>唯有梦想与好姑娘不可辜负<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
 			
 				
 			
@@ -146,16 +154,20 @@ var _hmt = _hmt || [];
 			        
 						<a class="weibo" target="_blank" href="https://weibo.com/u/2831714980" title="weibo"><i class="icon-weibo"></i></a>
 			        
+						<a class="mail" target="_blank" href="/1014325364@qq.com" title="mail"><i class="icon-mail"></i></a>
+			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">全部文章</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives">全部文章</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -197,7 +209,7 @@ var _hmt = _hmt || [];
 <div id="toc-article" class="toc-article">
     <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
   <strong class="toc-title">文章目录</strong>
-         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#单尺度SSR"><span class="toc-number">1.</span> <span class="toc-text">单尺度SSR</span></a></li></ol>
+         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#单尺度SSR"><span class="toc-number">1.</span> <span class="toc-text">单尺度SSR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多尺度MSR"><span class="toc-number">2.</span> <span class="toc-text">多尺度MSR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#带颜色恢复的MSR方法MSRCR"><span class="toc-number">3.</span> <span class="toc-text">带颜色恢复的MSR方法MSRCR</span></a></li></ol>
        </div>
  <script type="text/javascript">
 function showToc(){
@@ -220,7 +232,36 @@ function showBtn(){
         <p>图像处理_Retinex图像增强</p>
 <a id="more"></a>
 <p>[TOC]</p>
-<h3 id="单尺度SSR"><a href="#单尺度SSR" class="headerlink" title="单尺度SSR"></a>单尺度SSR</h3>
+<h3 id="单尺度SSR"><a href="#单尺度SSR" class="headerlink" title="单尺度SSR"></a>单尺度SSR</h3><p>(Single Scale Retinex)</p>
+<p>图像$S(x,y)$分解为两个不同的图像：反射图像$R(x,y)$,入射图像$L(x,y)$<br><img src="https://img-blog.csdn.net/20170508211020962?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYWppYW55aW5neGlhb3FpbmdoYW4=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<p>图像可以看做是入射图像和反射图像构成，入射光照射在反射物体上，通过反射物体的反射，形成反射光进入人眼。最后形成的图像$r(x,y)$可以如下公式表示</p>
+<script type="math/tex; mode=display">r(x,y)=logR(x,y)=log\frac{S(x,y)}{L(x,y)}</script><p>R(x, y)表示了物体的反射性质，即图像内在属性，我们应该最大程度的保留；而L(x, y)表示入射光图像，决定了图像像素能达到的动态范围，我们应该尽量去除。 </p>
+<p>我们把照射图像假设估计为空间平滑图像，原始图像为S(x, y)，反射图像为R(x, y)，亮度图像为L(x, y)，使用公式</p>
+<script type="math/tex; mode=display">r(x,y)=logR(x,y)=log\frac{S(x,y)}{L(x,y)}</script><p>或者</p>
+<script type="math/tex; mode=display">r(x,y)=logS(x,y)-log[F(x,y)⨂S(x,y)]</script><p>其中r(x, y)是输出图像,卷积运算，$F(x, y)$是中心环绕函数</p>
+<script type="math/tex; mode=display">F(x,y)=\lambda*e^{-\frac{x^2+y^2}{c^2}}</script><p>其中C是高斯环绕尺度，λ是一个尺度，满足$∫∫F(x,y)dxdy=1$</p>
+<blockquote>
+<p>SSR算法中的卷积是对入射图像的计算，其物理意义是通过计算像素点与周围区域在加权平均的作用下，估计图像中照度的变化，并将L(x,y)去除，只保留S(x,y)属性。</p>
+</blockquote>
+<h3 id="多尺度MSR"><a href="#多尺度MSR" class="headerlink" title="多尺度MSR"></a>多尺度MSR</h3><p>(Multi-Scale Retinex)</p>
+<blockquote>
+<p>MSR是在SSR基础上发展来的，优点是可以同时保持图像高保真度与对图像的动态范围进行压缩的同时，MSR也可实现色彩增强、颜色恒常性、局部动态范围压缩、全局动态范围压缩，也可以用于X光图像增强。</p>
+</blockquote>
+<script type="math/tex; mode=display">r(x,y)=∑_k^Kw_klogS(x,y)-log[F_k(x,y)*S(x,y)]</script><p>K是高斯中心环绕函数的个数。当K=1时，MSR退化为SSR,K取值通常为3</p>
+<script type="math/tex; mode=display">w1=w2=w3=\frac13</script><blockquote>
+<p>缺点:边缘锐化不足，阴影边界突兀，部分颜色发生扭曲，纹理不清晰，高光区域细节没有得到明显改善，对高光区域敏感度小</p>
+</blockquote>
+<h3 id="带颜色恢复的MSR方法MSRCR"><a href="#带颜色恢复的MSR方法MSRCR" class="headerlink" title="带颜色恢复的MSR方法MSRCR"></a>带颜色恢复的MSR方法MSRCR</h3><p>(Multi-Scale Retinex with Color Restoration)<br>SSR和MSR普遍都存在明显的偏色问题</p>
+<blockquote>
+<p>MSRCR在MSR的基础上，加入了色彩恢复因子C来调节由于图像局部区域对比度增强而导致颜色失真的缺陷。</p>
+</blockquote>
+<p>改进公式：</p>
+<script type="math/tex; mode=display">R_{MSRCR_i}(x,y)=C_i(x,y)R_{MSR_i}(x,y)</script><p>其中</p>
+<script type="math/tex; mode=display">C_i(x,y)=f[I_i^{'}(x,y)]=f[\frac{I_i(x,y)}{∑_{j=1}^{N}I_j(x,y)}]</script><p>其中</p>
+<script type="math/tex; mode=display">f[I_i^{'}(x,y)]=βlog[αI_i^{'}(x,y)]=β{log[αI_i^{'}i(x,y)]-log[∑_{j=1}^NI_j(x,y)]}</script><p>参数说明<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Ii(x, y)表示第i个通道的图像</span><br><span class="line">Ci表示第i个通道的彩色回复因子，用来调节3个通道颜色的比例；</span><br><span class="line">f(·)表示颜色空间的映射函数；</span><br><span class="line">β是增益常数；</span><br><span class="line">α是受控制的非线性强度；</span><br></pre></td></tr></table></figure></p>
+<p>MSRCR算法利用彩色恢复因子C，调节原始图像中3个颜色通道之间的比例关系，从而把相对较暗区域的信息凸显出来，达到了消除图像色彩失真的缺陷。<br>处理后的图像局部对比度提高，亮度与真实场景相似，在人们视觉感知下，图像显得更加逼真。</p>
+<p><a href="https://blog.csdn.net/ajianyingxiaoqinghan/article/details/71435098" target="_blank" rel="noopener">参考文章</a></p>
+
       
 
       
@@ -312,8 +353,8 @@ function showBtn(){
 <nav id="article-nav">
   
   
-    <a href="/2018/08/16/10大数据算法排序Java_C++/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">10大数据算法排序Java_C++</div>
+    <a href="/2018/08/16/剑指Offer算法Code_Java_C++/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">剑指Offer算法Code_Java_C++(0820更新)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -340,7 +381,7 @@ function showBtn(){
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#单尺度SSR"><span class="toc-number">1.</span> <span class="toc-text">单尺度SSR</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#单尺度SSR"><span class="toc-number">1.</span> <span class="toc-text">单尺度SSR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多尺度MSR"><span class="toc-number">2.</span> <span class="toc-text">多尺度MSR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#带颜色恢复的MSR方法MSRCR"><span class="toc-number">3.</span> <span class="toc-text">带颜色恢复的MSR方法MSRCR</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -478,19 +519,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,6 +536,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,10 +587,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
@@ -559,6 +596,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">

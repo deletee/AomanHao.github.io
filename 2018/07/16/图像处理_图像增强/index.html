@@ -18,7 +18,8 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-blog.csdn.net/20161229163907449?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRWJvd1Rhbmc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 <meta property="og:image" content="https://img-blog.csdn.net/20131014153326875?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdGhuaDE2OQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
-<meta property="og:updated_time" content="2018-08-22T13:06:15.214Z">
+<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/img_fft.png">
+<meta property="og:updated_time" content="2018-08-23T02:01:31.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图像处理_图像增强">
 <meta name="twitter:description" content="图像处理_图像增强">
@@ -62,7 +63,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="" class="profilepic">
-			<img src="http://p3qhnc0eg.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180207204835.jpg" class="js-avatar">
+			<img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/haorong.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="">AomanHao</a></h1>
@@ -77,6 +78,8 @@ var _hmt = _hmt || [];
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/archives">全部文章</a></li>
+	        
+				<li><a href="/tags">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -97,6 +100,8 @@ var _hmt = _hmt || [];
 					<a class="github" target="_blank" href="https://github.com/AomanHao" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="weibo" target="_blank" href="https://weibo.com/u/2831714980" title="weibo"><i class="icon-weibo"></i></a>
+		        
+					<a class="mail" target="_blank" href="/1014325364@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 			<!-- 网易云音乐板块-->
@@ -126,7 +131,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://p3qhnc0eg.bkt.clouddn.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180207204835.jpg" class="js-avatar">
+				<img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/haorong.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">AomanHao</h1>
@@ -135,6 +140,8 @@ var _hmt = _hmt || [];
 			<p class="header-subtitle"><i class="icon icon-quo-left"></i>唯有梦想与好姑娘不可辜负<i class="icon icon-quo-right"></i></p>
 			
 			
+			
+				
 			
 				
 			
@@ -149,16 +156,20 @@ var _hmt = _hmt || [];
 			        
 						<a class="weibo" target="_blank" href="https://weibo.com/u/2831714980" title="weibo"><i class="icon-weibo"></i></a>
 			        
+						<a class="mail" target="_blank" href="/1014325364@qq.com" title="mail"><i class="icon-mail"></i></a>
+			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">全部文章</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives">全部文章</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -200,7 +211,7 @@ var _hmt = _hmt || [];
 <div id="toc-article" class="toc-article">
     <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
   <strong class="toc-title">文章目录</strong>
-         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的方法分类："><span class="toc-number">1.</span> <span class="toc-text">图像增强的方法分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的方法之对比度增强"><span class="toc-number">2.</span> <span class="toc-text">图像增强的方法之对比度增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直方图均衡化"><span class="toc-number">3.</span> <span class="toc-text">直方图均衡化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指数变换"><span class="toc-number">4.</span> <span class="toc-text">指数变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对数变换"><span class="toc-number">5.</span> <span class="toc-text">对数变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#灰度拉伸"><span class="toc-number">6.</span> <span class="toc-text">灰度拉伸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性拉伸"><span class="toc-number">7.</span> <span class="toc-text">线性拉伸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#频率域图像增强"><span class="toc-number">8.</span> <span class="toc-text">频率域图像增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#曝光过度问题处理"><span class="toc-number">9.</span> <span class="toc-text">曝光过度问题处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加Masaic算法"><span class="toc-number">10.</span> <span class="toc-text">加Masaic算法</span></a></li></ol>
+         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#图像增强前期知识"><span class="toc-number">1.</span> <span class="toc-text">图像增强前期知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的方法分类："><span class="toc-number">1.1.</span> <span class="toc-text">图像增强的方法分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的方法之对比度增强"><span class="toc-number">1.2.</span> <span class="toc-text">图像增强的方法之对比度增强</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用图像增强"><span class="toc-number">2.</span> <span class="toc-text">常用图像增强</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直方图均衡化"><span class="toc-number">2.1.</span> <span class="toc-text">直方图均衡化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指数变换"><span class="toc-number">2.2.</span> <span class="toc-text">指数变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对数变换"><span class="toc-number">2.3.</span> <span class="toc-text">对数变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#灰度拉伸"><span class="toc-number">2.4.</span> <span class="toc-text">灰度拉伸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性拉伸"><span class="toc-number">2.5.</span> <span class="toc-text">线性拉伸</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#频率域图像增强"><span class="toc-number">3.</span> <span class="toc-text">频率域图像增强</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分析频谱图"><span class="toc-number">3.0.1.</span> <span class="toc-text">分析频谱图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">4.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#曝光过度问题处理"><span class="toc-number">4.1.</span> <span class="toc-text">曝光过度问题处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加Masaic算法"><span class="toc-number">4.2.</span> <span class="toc-text">加Masaic算法</span></a></li></ol></li></ol>
        </div>
  <script type="text/javascript">
 function showToc(){
@@ -222,7 +233,10 @@ function showBtn(){
       
         <p>图像处理_图像增强</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">图像增强是图像模式识别中非常重要的图像预处理过程。</span><br><span class="line">图像增强的目的是通过对图像中的信息进行处理，使得有利于模式识别的信息得到增强，不利于模式识别的信息被抑制，扩大图像中不同物体特征之间的差别，为图像的信息提取及其识别奠定良好的基础。图像增强按实现方法不同可分为点增强、空域增强和频域增强。</span><br><span class="line"></span><br><span class="line">1、点增强</span><br><span class="line">点增强主要指图像灰度变换和几何变换。图像的灰度变换也称为点运算、对比度增强或对比度拉伸，它是图像数字化软件和图像显示软件的重要组成部分。灰度变换是一种既简单又重要的技术，它能让用户改变图像数据占据的灰度范围。一幅输入图像经过灰度变换后将产生一幅新的输出图像，由输入像素点的灰度值决定相应的输出像素点的灰度值。灰度变换不会改变图像内的空间关系。图像的几何变换是图像处理中的另一种基本变换。它通常包括图像的平移、图像的镜像变换、图像的缩放和图像的旋转。通过图像的几何变换可以实现图像的最基本的坐标变换及缩放功能。</span><br><span class="line"></span><br><span class="line">2、空域增强</span><br><span class="line">图像的空间信息可以反映图像中物体的位置 、形状、大小等特征，而这些特征可以通过一定的物理模式来描述。例如，物体的边缘轮廓由于灰度值变化剧烈一般出现高频率特征，而一个比较平滑的物体内部由于灰度值比较均一则呈现低频率特征。因此，根据需要可以分别增强图像的高频和低频特征。对图像的高频增强可以突出物体的边缘轮廓，从而起到锐化图像的作用。例如，对于人脸的比对查询，就需要通过高频增强技术来突出五宫的轮廓。相应地，对图像的低频部分进行增强可以对图像进行平滑处理，一般用于图像的噪声消除。</span><br><span class="line"></span><br><span class="line">3、频域增强</span><br><span class="line">图像的空域增强一般只是对数字图像进行局部增强，而图像的频域增强可以对图像进行全局增强。频域增强技术是在数字图像的频率域空间对图像进行滤波，因此需要将图像从空间域变换到频率域，一般通过傅里叶变换实现。在频率域空间的滤波与空域滤波一样可以通过卷积实现，因此傅里叶变换和和卷积理论是频域滤波技术的基础。</span><br></pre></td></tr></table></figure>
+<h2 id="图像增强前期知识"><a href="#图像增强前期知识" class="headerlink" title="图像增强前期知识"></a>图像增强前期知识</h2><p>图像增强是图像模式识别中非常重要的图像预处理过程。<br>图像增强的目的是通过对图像中的信息进行处理，使得有利于模式识别的信息得到增强，不利于模式识别的信息被抑制，扩大图像中不同物体特征之间的差别，为图像的信息提取及其识别奠定良好的基础。图像增强按实现方法不同可分为点增强、空域增强和频域增强。</p>
+<p>1、点增强<br>点增强主要指图像灰度变换和几何变换。图像的灰度变换也称为点运算、对比度增强或对比度拉伸，它是图像数字化软件和图像显示软件的重要组成部分。灰度变换是一种既简单又重要的技术，它能让用户改变图像数据占据的灰度范围。一幅输入图像经过灰度变换后将产生一幅新的输出图像，由输入像素点的灰度值决定相应的输出像素点的灰度值。灰度变换不会改变图像内的空间关系。图像的几何变换是图像处理中的另一种基本变换。它通常包括图像的平移、图像的镜像变换、图像的缩放和图像的旋转。通过图像的几何变换可以实现图像的最基本的坐标变换及缩放功能。</p>
+<p>2、空域增强<br>图像的空间信息可以反映图像中物体的位置 、形状、大小等特征，而这些特征可以通过一定的物理模式来描述。例如，物体的边缘轮廓由于灰度值变化剧烈一般出现高频率特征，而一个比较平滑的物体内部由于灰度值比较均一则呈现低频率特征。因此，根据需要可以分别增强图像的高频和低频特征。对图像的高频增强可以突出物体的边缘轮廓，从而起到锐化图像的作用。例如，对于人脸的比对查询，就需要通过高频增强技术来突出五宫的轮廓。相应地，对图像的低频部分进行增强可以对图像进行平滑处理，一般用于图像的噪声消除。</p>
+<p>3、频域增强<br>图像的空域增强一般只是对数字图像进行局部增强，而图像的频域增强可以对图像进行全局增强。频域增强技术是在数字图像的频率域空间对图像进行滤波，因此需要将图像从空间域变换到频率域，一般通过傅里叶变换实现。在频率域空间的滤波与空域滤波一样可以通过卷积实现，因此傅里叶变换和和卷积理论是频域滤波技术的基础。</p>
 <h3 id="图像增强的方法分类："><a href="#图像增强的方法分类：" class="headerlink" title="图像增强的方法分类："></a>图像增强的方法分类：</h3><div class="table-container">
 <table>
 <thead>
@@ -358,7 +372,7 @@ function showBtn(){
 </table>
 </div>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">直方图拉伸</span><br><span class="line">    是通过对比度拉伸对直方图进行调整，从而“扩大”前景和背景灰度的差别，以达到增强对比度的目的，这种方法可以利用线性或非线性的方法来实现;直方图均衡化则通过使用累积函数对灰度值进行“调整”以实现对比度的增强。</span><br><span class="line">直方图均衡化处理</span><br><span class="line">    “中心思想”是把原始图像的灰度直方图从比较集中的某个灰度区间变成在全部灰度范围内的均匀分布。直方图均衡化就是对图像进行非线性拉伸，重新分配图像像素值，使一定灰度范围内的像素数量大致相同。直方图均衡化就是把给定图像的直方图分布改变成“均匀”分布直方图分布。</span><br></pre></td></tr></table></figure>
-<h3 id="直方图均衡化"><a href="#直方图均衡化" class="headerlink" title="直方图均衡化"></a>直方图均衡化</h3><div class="table-container">
+<h2 id="常用图像增强"><a href="#常用图像增强" class="headerlink" title="常用图像增强"></a>常用图像增强</h2><h3 id="直方图均衡化"><a href="#直方图均衡化" class="headerlink" title="直方图均衡化"></a>直方图均衡化</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -408,7 +422,15 @@ function showBtn(){
 <p>突出感兴趣的目标或者灰度区间，相对抑制那些不感兴趣的灰度区域</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">范围吧</span><br><span class="line">%横轴</span><br><span class="line">fa=20; fb=80;</span><br><span class="line">%纵轴</span><br><span class="line">ga=50; gb=230;</span><br><span class="line"></span><br><span class="line">function dst_img=myLinearEnhance(src_img,fa,fb,ga,gb)  </span><br><span class="line"> </span><br><span class="line">[height,width] = size(src_img);</span><br><span class="line">dst_img=uint8(zeros(height,width));</span><br><span class="line"> </span><br><span class="line">src_img=double(src_img);</span><br><span class="line"> </span><br><span class="line">%三段斜率</span><br><span class="line">k1=ga/fa; </span><br><span class="line">k2=(gb- ga)/(fb- fa);</span><br><span class="line">k3=(255- gb)/(255- fb);</span><br><span class="line">for i=1:height</span><br><span class="line">    for j=1:width</span><br><span class="line">            if src_img(i,j) &lt;= fa</span><br><span class="line">                dst_img(i,j)= k1*src_img(i,j);</span><br><span class="line">            elseif fa &lt; src_img(i,j) &amp;&amp; src_img(i,j) &lt;= fb</span><br><span class="line">                dst_img(i,j)= k2*( src_img(i,j)- fa)+ ga;</span><br><span class="line">            else</span><br><span class="line">                dst_img(i,j)= k3*( src_img(i,j)- fb)+ gb;</span><br><span class="line">            end</span><br><span class="line">    end</span><br><span class="line">end</span><br><span class="line">dst_img=uint8(dst_img);</span><br></pre></td></tr></table></figure>
-<h3 id="频率域图像增强"><a href="#频率域图像增强" class="headerlink" title="频率域图像增强"></a>频率域图像增强</h3><div class="table-container">
+<h2 id="频率域图像增强"><a href="#频率域图像增强" class="headerlink" title="频率域图像增强"></a>频率域图像增强</h2><blockquote>
+<p>傅里叶变换提供了一种从空间域到频域的转换手段，且用傅里叶反变换可以实现从频域到空间域的无损转换，不丢失任何信息</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">clc;  %清空命令行</span><br><span class="line">clear;%清空变量</span><br><span class="line"> </span><br><span class="line">I1=imread(&apos;beauty.jpg&apos;);</span><br><span class="line">subplot(1,2,1);</span><br><span class="line">imshow(I1);</span><br><span class="line">title(&apos;beauty.jpg&apos;);</span><br><span class="line"> </span><br><span class="line">I2=fft2(I1);%计算二维FFT</span><br><span class="line">spectrum =fftshift(I2);%将零点移到中心</span><br><span class="line">temp= log(1+ abs(spectrum) ); %对幅值做 对数变换 以压缩动态范围</span><br><span class="line">subplot(1,2,2);</span><br><span class="line">imshow(temp,[]);</span><br><span class="line">title(&apos;FFT&apos;);</span><br></pre></td></tr></table></figure>
+<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/img_fft.png" alt=""></p>
+<h4 id="分析频谱图"><a href="#分析频谱图" class="headerlink" title="分析频谱图"></a>分析频谱图</h4><blockquote>
+<p>低频分量:主要对整副图像的强度的综合度量.<br>高频分量:主要是对图像边缘和轮廓的度量.</p>
+</blockquote>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -430,7 +452,7 @@ function showBtn(){
 </div>
 <p><a href="https://blog.csdn.net/ebowtang/article/details/38236441#" target="_blank" rel="noopener">cankao</a></p>
 <hr>
-<h3 id="曝光过度问题处理"><a href="#曝光过度问题处理" class="headerlink" title="曝光过度问题处理"></a>曝光过度问题处理</h3><p>计算当前图像的反相（255-image)，然后取当前图像和反相图像的较小者为当前像素位置的值。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="曝光过度问题处理"><a href="#曝光过度问题处理" class="headerlink" title="曝光过度问题处理"></a>曝光过度问题处理</h3><p>计算当前图像的反相（255-image)，然后取当前图像和反相图像的较小者为当前像素位置的值。</p>
 <script type="math/tex; mode=display">min(image,(255-image))</script><h3 id="加Masaic算法"><a href="#加Masaic算法" class="headerlink" title="加Masaic算法"></a>加Masaic算法</h3><p>原理：用中心像素来表示邻域像素<br>Opencv代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">uchar getPixel( IplImage* img, int row, int col, int k)</span><br><span class="line">&#123;</span><br><span class="line">	return ((uchar*)img-&gt;imageData + row* img-&gt;widthStep)[col*img-&gt;nChannels +k];</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void setPixel( IplImage* img, int row, int col, int k, uchar val)</span><br><span class="line">&#123;</span><br><span class="line">	((uchar*)img-&gt;imageData + row* img-&gt;widthStep)[col*img-&gt;nChannels +k] = val;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">--</span><br><span class="line"></span><br><span class="line">// nSize:为尺寸大小，奇数</span><br><span class="line">// 将邻域的值用中心像素的值替换</span><br><span class="line">void Masic(IplImage* img, IplImage* dst, int nSize)</span><br><span class="line">&#123;</span><br><span class="line">	int offset = (nSize-1)/2;</span><br><span class="line">	for ( int row = offset; row &lt;img-&gt;height - offset; row= row+offset)</span><br><span class="line">	&#123;</span><br><span class="line">		for( int col= offset; col&lt;img-&gt;width - offset; col = col+offset)</span><br><span class="line">		&#123;</span><br><span class="line">			int val0 = getPixel(img, row, col, 0);</span><br><span class="line">			int val1 = getPixel(img, row, col, 1);</span><br><span class="line">			int val2 = getPixel(img, row, col, 2);</span><br><span class="line">			for ( int m= -offset; m&lt;offset; m++)</span><br><span class="line">			&#123;</span><br><span class="line">				for ( int n=-offset; n&lt;offset; n++)</span><br><span class="line">				&#123;</span><br><span class="line">					setPixel(dst, row+m, col+n, 0, val0);</span><br><span class="line">					setPixel(dst, row+m, col+n, 1, val1);</span><br><span class="line">					setPixel(dst, row+m, col+n, 2, val2);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
@@ -519,18 +541,18 @@ function showBtn(){
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/机器学习_分类_数据聚类/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/特征提取_颜色特征/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          机器学习_分类_数据聚类
+          特征提取——颜色特征
         
       </div>
     </a>
   
   
-    <a href="/2018/07/15/Java_mianshi/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java面试之九阴真经</div>
+    <a href="/2018/07/16/机器学习_最优化/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">机器学习_最优化</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -557,7 +579,7 @@ function showBtn(){
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的方法分类："><span class="toc-number">1.</span> <span class="toc-text">图像增强的方法分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的方法之对比度增强"><span class="toc-number">2.</span> <span class="toc-text">图像增强的方法之对比度增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直方图均衡化"><span class="toc-number">3.</span> <span class="toc-text">直方图均衡化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指数变换"><span class="toc-number">4.</span> <span class="toc-text">指数变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对数变换"><span class="toc-number">5.</span> <span class="toc-text">对数变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#灰度拉伸"><span class="toc-number">6.</span> <span class="toc-text">灰度拉伸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性拉伸"><span class="toc-number">7.</span> <span class="toc-text">线性拉伸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#频率域图像增强"><span class="toc-number">8.</span> <span class="toc-text">频率域图像增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#曝光过度问题处理"><span class="toc-number">9.</span> <span class="toc-text">曝光过度问题处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加Masaic算法"><span class="toc-number">10.</span> <span class="toc-text">加Masaic算法</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#图像增强前期知识"><span class="toc-number">1.</span> <span class="toc-text">图像增强前期知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的方法分类："><span class="toc-number">1.1.</span> <span class="toc-text">图像增强的方法分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图像增强的方法之对比度增强"><span class="toc-number">1.2.</span> <span class="toc-text">图像增强的方法之对比度增强</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用图像增强"><span class="toc-number">2.</span> <span class="toc-text">常用图像增强</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#直方图均衡化"><span class="toc-number">2.1.</span> <span class="toc-text">直方图均衡化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指数变换"><span class="toc-number">2.2.</span> <span class="toc-text">指数变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对数变换"><span class="toc-number">2.3.</span> <span class="toc-text">对数变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#灰度拉伸"><span class="toc-number">2.4.</span> <span class="toc-text">灰度拉伸</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性拉伸"><span class="toc-number">2.5.</span> <span class="toc-text">线性拉伸</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#频率域图像增强"><span class="toc-number">3.</span> <span class="toc-text">频率域图像增强</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分析频谱图"><span class="toc-number">3.0.1.</span> <span class="toc-text">分析频谱图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">4.</span> <span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#曝光过度问题处理"><span class="toc-number">4.1.</span> <span class="toc-text">曝光过度问题处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加Masaic算法"><span class="toc-number">4.2.</span> <span class="toc-text">加Masaic算法</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -695,19 +717,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -716,6 +734,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -763,10 +785,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
@@ -776,6 +794,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
