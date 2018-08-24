@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="AomanHao">
 <meta property="og:description" content="剑指Offer算法Code_Java_C++">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-21T13:44:06.883Z">
+<meta property="og:updated_time" content="2018-08-24T09:39:46.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指Offer算法Code_Java_C++(0820更新)">
 <meta name="twitter:description" content="剑指Offer算法Code_Java_C++">
@@ -194,6 +194,30 @@ var _hmt = _hmt || [];
     
     <!-- 目录内容 -->
 
+  <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+        </p>
+<div id="toc-article" class="toc-article">
+    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+  <strong class="toc-title">文章目录</strong>
+         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。"><span class="toc-number">1.</span> <span class="toc-text">输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从上往下打印出二叉树的每个节点，同层节点从左至右打印。"><span class="toc-number">2.</span> <span class="toc-text">从上往下打印出二叉树的每个节点，同层节点从左至右打印。</span></a></li></ol>
+       </div>
+ <script type="text/javascript">
+function showToc(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:block");
+  show_toc_btn.setAttribute("style","display:none");
+  };
+function showBtn(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:none");
+  show_toc_btn.setAttribute("style","display:block");
+  };
+ </script>
+    
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
@@ -389,18 +413,18 @@ private boolean isBit1(int target, int index){
   
 <nav id="article-nav">
   
-    <a href="/2018/08/17/图像处理_Retinex图像增强/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/08/16/10大数据算法排序Java_C++/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          图像处理_Retinex图像增强
+          10大数据算法排序Java_C++
         
       </div>
     </a>
   
   
-    <a href="/2018/08/16/10大数据算法排序Java_C++/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">10大数据算法排序Java_C++</div>
+    <a href="/2018/08/15/面经—机器学习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面经—机器学习</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -419,6 +443,19 @@ private boolean isBit1(int target, int index){
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。"><span class="toc-number">1.</span> <span class="toc-text">输入两个单调递增的链表，输出两个链表合成后的链表，当然我们需要合成后的链表满足单调不减规则。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从上往下打印出二叉树的每个节点，同层节点从左至右打印。"><span class="toc-number">2.</span> <span class="toc-text">从上往下打印出二叉树的每个节点，同层节点从左至右打印。</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -588,15 +625,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GUI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -773,6 +810,11 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+
+  <link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
@@ -787,7 +829,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-</body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
