@@ -49,7 +49,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-  
+  {% aplayer "平凡之路" "朴树" "https://xxx.com/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF.mp3" "https://xxx.com/1.jpg" "autoplay" %}
 </head>
 
 <body>
@@ -199,7 +199,7 @@ var _hmt = _hmt || [];
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><a id="more"></a>
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><a id="more"></a>
 <p>报错情况： 目标是把<code>.m</code>文件转化为<code>exe</code>文件，先运行<br><code>mcc -m</code>你的文件<code>+.m</code>后缀<br>如果报错<code>Test checkout of feature &#39;Compiler&#39; failed</code> <br>是因为你的matlab2014a破解不完全。<br>前提是你的电脑已经安装好了VS编译器</p>
 <p>2014a的解决办法：<br><br>下载资源：ht链tps://pan.baidu.com/s/1KNZqVqxMx6f接IaxQULAIq_g <br>密码：cti0</p>
 <p>下载后解压，把install.jar以及相应位数的三个文件（compiler.dll，mcc.exe，libmwservices.dll）复制到对应位置替换即可。<br><br>在matlab安装目录下搜索到文件然后替换，保险起见先把要替换的文件剪切出来，实际上我的操作是成功的，万一万一万一不成功还能复原回去</p>
@@ -677,10 +677,7 @@ MathJax.Hub.Queue(function() {
 </div>
   </div>
 
-  <link rel="stylesheet" href="/dist/APlayer.min.css">
-<div id="aplayer"></div>
-<script type="text/javascript" src="/dist/APlayer.min.js"></script>
-<script type="text/javascript" src="/dist/music.js"></script>
+  
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {

@@ -50,7 +50,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-  
+  {% aplayer "平凡之路" "朴树" "https://xxx.com/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF.mp3" "https://xxx.com/1.jpg" "autoplay" %}
 </head>
 
 <body>
@@ -200,7 +200,7 @@ var _hmt = _hmt || [];
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><a id="more"></a>
+        <script src="/assets/js/APlayer.min.js"> </script><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><a id="more"></a>
 <p>前提：<br>电脑已经安装<br>1、Matlab版本2014a<br>2、VS版本2015</p>
 <p>目标：<br>结合Matlab和VS2015，实现Matlab的GUI文件和.m文件转化为.exe文件，然后可以单独运行.exe文件</p>
 <p>首先在Matlab命令行输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mbuild -setup</span><br></pre></td></tr></table></figure></p>
@@ -685,10 +685,7 @@ MathJax.Hub.Queue(function() {
 </div>
   </div>
 
-  <link rel="stylesheet" href="/dist/APlayer.min.css">
-<div id="aplayer"></div>
-<script type="text/javascript" src="/dist/APlayer.min.js"></script>
-<script type="text/javascript" src="/dist/music.js"></script>
+  
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {

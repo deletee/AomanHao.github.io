@@ -47,7 +47,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-  
+  {% aplayer "平凡之路" "朴树" "https://xxx.com/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF.mp3" "https://xxx.com/1.jpg" "autoplay" %}
 </head>
 
 <body>
@@ -197,7 +197,7 @@ var _hmt = _hmt || [];
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>图像去雾</p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>图像去雾</p>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">雾图模型</span><br><span class="line">I(x)=J(x)t(x)+A(1-t(x))</span><br><span class="line">I(x) ——待去雾的图像</span><br><span class="line">J(x)——无雾图像</span><br><span class="line">A——全球大气光成分</span><br><span class="line">t——折射率（大气传递系数）</span><br><span class="line"></span><br><span class="line">暗通道先验</span><br><span class="line"></span><br><span class="line">在无雾图像中，每一个局部区域都很有可能会有阴影，或者是纯颜色的东西，又或者是黑色的东西。因此，每一个局部区域都很有可能有至少一个颜色通道会有很低的值。把这个统计规律叫做Dark Channel Prior。</span><br><span class="line"></span><br><span class="line">首先求出每个像素RGB分量中的最小值，存入一副和原始图像大小相同的灰度图中，然后再对这幅灰度图进行最小值滤波(林宇中取最小值)</span><br><span class="line"></span><br><span class="line">计算折射率</span><br><span class="line">t(x)=1-wmin(minI(y)/A)</span><br><span class="line"></span><br><span class="line">估计大气光 </span><br><span class="line">1.选取暗通道图像暗通道最亮的0.1%的像素（一般来说，这些像素表示雾浓度最大的地方）</span><br><span class="line">2.取输入图像里面这些像素对应的像素里面最亮的作为大气光</span><br><span class="line">（暗图像最亮的0.1%的像素对应的原图最亮的为大气光）</span><br></pre></td></tr></table></figure>
 <p>注：选中的像素未必是全图最亮的，而且要比选取全图最亮的方式鲁棒性更好。</p>
@@ -678,10 +678,7 @@ MathJax.Hub.Queue(function() {
 </div>
   </div>
 
-  <link rel="stylesheet" href="/dist/APlayer.min.css">
-<div id="aplayer"></div>
-<script type="text/javascript" src="/dist/APlayer.min.js"></script>
-<script type="text/javascript" src="/dist/music.js"></script>
+  
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {

@@ -47,7 +47,7 @@ var _hmt = _hmt || [];
 </script>
 
 
-  
+  {% aplayer "平凡之路" "朴树" "https://xxx.com/%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF.mp3" "https://xxx.com/1.jpg" "autoplay" %}
 </head>
 
 <body>
@@ -197,7 +197,7 @@ var _hmt = _hmt || [];
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>import java.awt.*;</p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>import java.awt.*;</p>
 <a id="more"></a>
 <p> import java.awt.event.<em>;<br> import java.text.</em>;<br> import java.util.<em>;<br> import java.io.</em>;<br> import javax.swing.undo.<em>;<br> import javax.swing.border.</em>;<br> import javax.swing.<em>;<br> import javax.swing.text.</em>;<br> import javax.swing.event.<em>;<br>import java.awt.datatransfer.</em>;</p>
 <p>public class Notepad extends JFrame implements ActionListener,DocumentListener<br>{    //菜单<br>    JMenu fileMenu,editMenu,formatMenu,viewMenu,helpMenu;<br>    //右键弹出菜单项<br>    JPopupMenu popupMenu;<br>    JMenuItem popupMenu_Undo,popupMenu_Cut,popupMenu_Copy,popupMenu_Paste,popupMenu_Delete,popupMenu_SelectAll;<br>    //“文件”的菜单项<br>    JMenuItem fileMenu_New,fileMenu_Open,fileMenu_Save,fileMenu_SaveAs,fileMenu_PageSetUp,fileMenu_Print,fileMenu_Exit;<br>    //“编辑”的菜单项<br>    JMenuItem editMenu_Undo,editMenu_Cut,editMenu_Copy,editMenu_Paste,editMenu_Delete,editMenu_Find,editMenu_FindNext,editMenu_Replace,editMenu_GoTo,editMenu_SelectAll,editMenu_TimeDate;<br>    //“格式”的菜单项<br>    JCheckBoxMenuItem formatMenu_LineWrap;<br>    JMenuItem formatMenu_Font;<br>    //“查看”的菜单项<br>    JCheckBoxMenuItem viewMenu_Status;<br>    //“帮助”的菜单项<br>    JMenuItem helpMenu_HelpTopics,helpMenu_AboutNotepad;<br>    //“文本”编辑区域<br>    JTextArea editArea;<br>    //状态栏标签<br>    JLabel statusLabel;<br>    //系统剪贴板<br>    Toolkit toolkit=Toolkit.getDefaultToolkit();<br>    Clipboard clipBoard=toolkit.getSystemClipboard();<br>    //创建撤销操作管理器(与撤销操作有关)<br>    protected UndoManager undo=new UndoManager();<br>    protected UndoableEditListener undoHandler=new UndoHandler();<br>    //其他变量<br>    String oldValue;//存放编辑区原来的内容，用于比较文本是否有改动<br>    boolean isNewFile=true;//是否新文件(未保存过的)<br>    File currentFile;//当前文件名<br>    //构造函数开始<br>    public Notepad()<br>    {<br>        super(“Java记事本”);<br>        //改变系统默认字体<br>        Font font = new Font(“Dialog”, Font.PLAIN, 12);<br>        java.util.Enumeration keys = UIManager.getDefaults().keys();<br>        while (keys.hasMoreElements()) {<br>            Object key = keys.nextElement();<br>            Object value = UIManager.get(key);<br>            if (value instanceof javax.swing.plaf.FontUIResource) {<br>                UIManager.put(key, font);<br>            }<br>        }<br>        //创建菜单条<br>        JMenuBar menuBar=new JMenuBar();<br>        //创建文件菜单及菜单项并注册事件监听<br>        fileMenu=new JMenu(“文件(F)”);<br>        fileMenu.setMnemonic(‘F’);//设置快捷键ALT+F</p>
@@ -1922,10 +1922,7 @@ MathJax.Hub.Queue(function() {
 </div>
   </div>
 
-  <link rel="stylesheet" href="/dist/APlayer.min.css">
-<div id="aplayer"></div>
-<script type="text/javascript" src="/dist/APlayer.min.js"></script>
-<script type="text/javascript" src="/dist/music.js"></script>
+  
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
