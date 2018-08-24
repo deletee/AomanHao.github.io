@@ -197,7 +197,7 @@ var _hmt = _hmt || [];
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>机器学习<em>分类</em>数据聚类</p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>机器学习<em>分类</em>数据聚类</p>
 <a id="more"></a>
 <h3 id="K-Means（k-平均或k-均值）"><a href="#K-Means（k-平均或k-均值）" class="headerlink" title="K-Means（k-平均或k-均值）"></a>K-Means（k-平均或k-均值）</h3><p>可以称的上是知名度最高的一种聚类算法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">首先，我们确定要几个的聚类（cluster，也称簇），并为它们随机初始化一个各自的聚类质心点（cluster centroids），它在上图中被表示为“X”。要确定聚类的数量，我们可以先快速看一看已有的数据点，并从中分辨出一些独特的数据。</span><br><span class="line">其次，我们计算每个数据点到质心的距离来进行分类，它跟哪个聚类的质心更近，它就被分类到该聚类。</span><br><span class="line">需要注意的是，初始质心并不是真正的质心，质心应满足聚类里每个点到它的欧式距离平方和最小这个条件。因此根据这些被初步分类完毕的数据点，我们再重新计算每一聚类中所有向量的平均值，并确定出新的质心。</span><br><span class="line">最后，重复上述步骤，进行一定次数的迭代，直到质心的位置不再发生太大变化。当然你也可以在第一步时多初始化几次，然后选取一个看起来更合理的点节约时间。</span><br><span class="line">K-Means的优点是速度非常快，因为我们所做的只是计算数据点和质心点之间的距离，涉及到的计算量非常少！因此它的算法时间复杂度只有O(n)。</span><br><span class="line"></span><br><span class="line">另一方面，K-Means有两个缺点。一是你必须一开始就决定数据集中包含多少个聚类。这个缺点并不总是微不足道的，理想情况下，我们的目标其实是用一种算法来分类这些数据，并从结果中观察出一些规律，而不是限制几个条件强行聚类。二是一开始质心点的选取是随机的，算法可能会初始化出差异巨大的点。这个缺点导致的结果是质心点的位置不可重复且缺乏一致性。</span><br><span class="line"></span><br><span class="line">K-Medians是与K-Means相关的另一种聚类算法，不同之处在于它使用簇的中值向量来重新计算质心点。该方法对异常值不敏感（因为使用中值），但在较大数据集上运行时速度会慢很多，因为每次计算中值向量，我们都要重新排序。</span><br></pre></td></tr></table></figure>
@@ -285,18 +285,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/特征提取_纹理特征/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/特征提取_局部特征/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          特征提取——纹理特征
+          特征提取——局部特征
         
       </div>
     </a>
   
   
-    <a href="/2018/07/16/特征提取_局部特征_SIFT/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">特征提取——局部特征-SIFT算法尺度不变性的理解</div>
+    <a href="/2018/07/16/特征提取_纹理特征/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">特征提取——纹理特征</div>
       <i class="icon-circle-right"></i>
     </a>
   
