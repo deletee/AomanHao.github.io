@@ -120,8 +120,10 @@ live2d:
     #use: live2d-widget-model-wanko
     use: live2d-widget-model-koharu
   display:
-    position: left
+    position: right
     width: 75
     height: 150
+    hOffset: 0
+    vOffset: 20
   mobile:
     show: true

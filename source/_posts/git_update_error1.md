@@ -2,6 +2,7 @@
 title: git_update_error1
 date: 2018-08-01 11:58:40
 tags: [GitHub, Git]
+toc: true
 ---
 
 github上传文件报错failed to push some refs解决

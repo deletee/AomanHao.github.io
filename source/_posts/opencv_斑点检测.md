@@ -1,10 +1,11 @@
 ---
-title: opencv_斑点检测——
+title: Opencv_斑点检测
 date: 2018-07-16 09:39:40
-tags: [GitHub, Mysql]
+tags: [图像处理, Opencv]
+toc: true
 ---
 
-opencv_斑点检测
+Opencv_斑点检测
 
 <!--more-->
 ### opencv中检测Blobs的类为SimpleBlobDetector

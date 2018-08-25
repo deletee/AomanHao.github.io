@@ -35,6 +35,7 @@ npm install --save hexo-helper-live2d
 ```npm 模块名``` 的方法
 
 作者提供以下模型的模型包，模型包预览地址见下面的链接，选择你想用的模型，记住名字，选择对应的后缀模型包
+
 [作者各种模型包展示](https://huaji8.top/post/live2d-plugin-2.0/)
 
 ```
@@ -61,11 +62,13 @@ live2d-widget-model-unitychan
 live2d-widget-model-wanko
 live2d-widget-model-z16
 ```
+
 选择好对应的模型，使用 ```npm install 模型的包名 ```来安装，比如我选择的的是`live2d-widget-model-koharu` 模型包
 ####操作：
 在hexo博客根目录选择`cmd`命令窗口或者`git bash` 输入以下代码
+
 ```
-$ npm install live2d-widget-model-koharu
+npm install live2d-widget-model-koharu
 ```
 执行安装就完事了
 

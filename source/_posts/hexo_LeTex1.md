@@ -2,6 +2,7 @@
 title: 使用LaTex添加公式到Hexo博客里
 date: 2018-07-23 09:39:40
 tags: [GitHub, Hexo]
+toc: true
 ---
 
 使用LaTex添加公式到Hexo博客里
