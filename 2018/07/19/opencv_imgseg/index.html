@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.aomanhao.top">
-  <title>Tag: 算法 | AomanHao</title>
+  <title>Opencv图像分割 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AomanHao">
-<meta property="og:url" content="http://www.aomanhao.top/tags/算法/index.html">
+  <meta name="description" content="Opencv图像分割">
+<meta name="keywords" content="Opencv,图像处理,图像分割">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Opencv图像分割">
+<meta property="og:url" content="http://www.aomanhao.top/2018/07/19/opencv_imgseg/index.html">
 <meta property="og:site_name" content="AomanHao">
+<meta property="og:description" content="Opencv图像分割">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-25T13:58:52.164Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AomanHao">
+<meta name="twitter:title" content="Opencv图像分割">
+<meta name="twitter:description" content="Opencv图像分割">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -169,120 +174,205 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-opencv_imgseg" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/16/10大数据算法排序Java_C++/" class="archive-article-date">
-  	<time datetime="2018-08-16T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/16/10大数据算法排序Java_C++/">10大数据算法排序Java_C++</a>
+    <h1 class="article-title" itemprop="name">
+      Opencv图像分割
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/07/19/opencv_imgseg/" class="archive-article-date">
+  	<time datetime="2018-07-19T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-19</time>
+</a>
+        
+      </header>
+    
+    <!-- 目录内容 -->
+
+  <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+        </p>
+<div id="toc-article" class="toc-article">
+    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+  <strong class="toc-title">文章目录</strong>
+         
+       </div>
+ <script type="text/javascript">
+function showToc(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:block");
+  show_toc_btn.setAttribute("style","display:none");
+  };
+function showBtn(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:none");
+  show_toc_btn.setAttribute("style","display:block");
+  };
+ </script>
+    
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <script src="/assets/js/APlayer.min.js"> </script><p>Opencv图像分割</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> *</span><br><span class="line"> * 功能：通过灰度图做简单的图像分割,再使用findContours去掉多余的轮廓</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line"> </span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line"> </span><br><span class="line">#include &lt;opencv2/core/core.hpp&gt;</span><br><span class="line">#include &lt;opencv2/highgui/highgui.hpp&gt;</span><br><span class="line">#include &lt;opencv2/imgproc/imgproc.hpp&gt;</span><br><span class="line"> </span><br><span class="line">using namespace cv;</span><br><span class="line">using namespace std;</span><br><span class="line"> </span><br><span class="line">void contours();</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    contours();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void contours()</span><br><span class="line">&#123;</span><br><span class="line">    //--1.读入图片</span><br><span class="line">    Mat image = imread(&quot;horse_hw.jpg&quot;);</span><br><span class="line"> </span><br><span class="line">    Mat gray;//mat类型数据存放图片，opencv特有</span><br><span class="line">  </span><br><span class="line">    cvtColor(image,gray,CV_RGB2GRAY);</span><br><span class="line"> </span><br><span class="line">    Mat binary;</span><br><span class="line">    threshold(gray,binary,60,255,THRESH_BINARY_INV);</span><br><span class="line"> </span><br><span class="line">    vector&lt;vector&lt;Point&gt; &gt; contours;</span><br><span class="line">    Mat binary_copy; //因为findcontours函数会改变输入的图像，所以复制一个图像作为函数的输入</span><br><span class="line">    binary.copyTo(binary_copy);</span><br><span class="line">    findContours(binary_copy,contours,CV_RETR_EXTERNAL/*获取外轮廓*/,CV_CHAIN_APPROX_NONE/*获取每个轮廓的每个像素*/);</span><br><span class="line"> </span><br><span class="line">    //遍历每一个轮廓，把多余的轮廓去掉</span><br><span class="line">    vector&lt;vector&lt;Point&gt; &gt;::const_iterator it=contours.begin();</span><br><span class="line">    while(it!=contours.end())</span><br><span class="line">    &#123;</span><br><span class="line">        if(it-&gt;size()&lt;500)</span><br><span class="line">            it = contours.erase(it);</span><br><span class="line">        else</span><br><span class="line">            ++it;</span><br><span class="line">    &#125;</span><br><span class="line">    Mat dst(image.size(),CV_8U,Scalar(0));</span><br><span class="line">    drawContours(dst,contours,-1/*绘制所有轮廓*/,Scalar(255)/*绘制为白色*/,CV_FILLED/*轮廓全部填充*/);</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    //--4.显示结果(原图和结果图显示在一起)</span><br><span class="line">    const int width  = image.cols;</span><br><span class="line">    const int height = image.rows;</span><br><span class="line">    Mat show_image(Size(3*width,height),CV_8UC3);</span><br><span class="line">    //将image拷贝到显示图片指定位置</span><br><span class="line">    image.copyTo(show_image(Rect(0,0,width,height)));</span><br><span class="line">    //将binary,dst转换为3通道，使得show_image和dst通道数一致，或者使用convertTo()函数做操作</span><br><span class="line">    cvtColor(binary,binary,CV_GRAY2RGB);</span><br><span class="line">    cvtColor(dst,dst,CV_GRAY2RGB);</span><br><span class="line">    //将binary,dst拷贝image指定位置</span><br><span class="line">    binary.copyTo(show_image(Rect(width,0,width,height)));</span><br><span class="line">    dst.copyTo(show_image(Rect(2*width,0,width,height)));</span><br><span class="line">    //显示</span><br><span class="line">    imshow(&quot;show&quot;,show_image);</span><br><span class="line">    waitKey(0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Opencv</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图像处理</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图像分割</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.aomanhao.top/2018/07/19/opencv_imgseg/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/16/剑指Offer算法Code_Java_C++/" class="archive-article-date">
-  	<time datetime="2018-08-16T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-16</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/07/19/大佬终极面经/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          大佬终极面经
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/19/特征提取_图像矩阵变换/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">特征提取_图像矩阵变换</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/16/剑指Offer算法Code_Java_C++/">剑指Offer算法Code_Java_C++(0820更新)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
 
+  
 
+  
 
-<!-- 目录内容 -->
-       
-       <!-- 目录内容结束 -->
 
           </div>
         </div>
@@ -308,9 +398,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
