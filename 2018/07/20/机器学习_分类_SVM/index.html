@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_he_tu3.jpg">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_he_tu4.jpg">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_he_tu5.jpg">
-<meta property="og:updated_time" content="2018-08-09T07:45:24.987Z">
+<meta property="og:updated_time" content="2018-08-25T07:50:09.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习_分类_SVM">
 <meta name="twitter:description" content="机器学习_分类_SVM">
@@ -205,13 +205,37 @@ var _hmt = _hmt || [];
     
     <!-- 目录内容 -->
 
+  <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+        </p>
+<div id="toc-article" class="toc-article">
+    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+  <strong class="toc-title">文章目录</strong>
+         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#支持向量机"><span class="toc-number">1.</span> <span class="toc-text">支持向量机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于最大间隔分割数据"><span class="toc-number">2.</span> <span class="toc-text">基于最大间隔分割数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#核函数："><span class="toc-number">3.</span> <span class="toc-text">核函数：</span></a></li></ol>
+       </div>
+ <script type="text/javascript">
+function showToc(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:block");
+  show_toc_btn.setAttribute("style","display:none");
+  };
+function showBtn(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:none");
+  show_toc_btn.setAttribute("style","display:block");
+  };
+ </script>
+    
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
         <script src="/assets/js/APlayer.min.js"> </script><p>机器学习_分类_SVM</p>
 <a id="more"></a>
 <hr>
-<p>支持向量机（Support Vector Machine, SVM）的基本模型是在特征空间上找到最佳的<code>分离超平面</code>使得训练集上正负样本间隔最大。</p>
+<h3 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h3><p>（Support Vector Machine, SVM）的基本模型是在特征空间上找到最佳的<code>分离超平面</code>使得训练集上正负样本间隔最大。</p>
 <p>二分类问题的有监督学习算法，引入了核方法之后SVM也可以用来解决非线性问题<br>一般SVM有下面三种：</p>
 <blockquote>
 <p>1、硬间隔支持向量机（线性可分支持向量机）：当训练数据线性可分时，可通过硬间隔最大化学得一个线性可分支持向量机。<br><br>2、软间隔支持向量机：当训练数据近似线性可分时，可通过软间隔最大化学得一个线性支持向量机。<br><br>3、非线性支持向量机：当训练数据线性不可分时，可通过核方法以及软间隔最大化学得一个非线性支持向量机。</p>
@@ -336,8 +360,8 @@ var _hmt = _hmt || [];
     </a>
   
   
-    <a href="/2018/07/19/C++入门/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C++入门</div>
+    <a href="/2018/07/19/机器学习常见算法总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">机器学习常见算法总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -356,6 +380,19 @@ var _hmt = _hmt || [];
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#支持向量机"><span class="toc-number">1.</span> <span class="toc-text">支持向量机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于最大间隔分割数据"><span class="toc-number">2.</span> <span class="toc-text">基于最大间隔分割数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#核函数："><span class="toc-number">3.</span> <span class="toc-text">核函数：</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -489,6 +526,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -498,10 +539,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,19 +562,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Music</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,7 +586,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color1">Music</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -577,15 +610,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">笔面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -731,5 +764,5 @@ MathJax.Hub.Queue(function() {
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":75,"height":150},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":75,"height":150,"hOffset":0,"vOffset":20},"mobile":{"show":true},"log":false});</script></body>
 </html>

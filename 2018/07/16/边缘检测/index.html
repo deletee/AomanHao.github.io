@@ -9,14 +9,14 @@
   <title>边缘检测 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="边缘检测">
-<meta name="keywords" content="GitHub,Mysql">
+<meta name="keywords" content="图像处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="边缘检测">
 <meta property="og:url" content="http://www.aomanhao.top/2018/07/16/边缘检测/index.html">
 <meta property="og:site_name" content="AomanHao">
 <meta property="og:description" content="边缘检测">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-02T03:15:12.213Z">
+<meta property="og:updated_time" content="2018-08-25T07:48:46.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="边缘检测">
 <meta name="twitter:description" content="边缘检测">
@@ -194,6 +194,30 @@ var _hmt = _hmt || [];
     
     <!-- 目录内容 -->
 
+  <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+        </p>
+<div id="toc-article" class="toc-article">
+    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+  <strong class="toc-title">文章目录</strong>
+         
+       </div>
+ <script type="text/javascript">
+function showToc(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:block");
+  show_toc_btn.setAttribute("style","display:none");
+  };
+function showBtn(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:none");
+  show_toc_btn.setAttribute("style","display:block");
+  };
+ </script>
+    
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
@@ -259,11 +283,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图像处理</a>
         		</li>
       		
 		</ul>
@@ -333,18 +353,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/阈值分割_大津法_分水岭/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/图像去雾/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          阈值分割_大津法_分水岭
+          图像去雾
         
       </div>
     </a>
   
   
-    <a href="/2018/07/16/图像处理_图像增强/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">图像处理_图像增强</div>
+    <a href="/2018/07/16/特征提取_局部特征/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">特征提取——局部特征</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -363,6 +383,19 @@ var _hmt = _hmt || [];
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -496,6 +529,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -505,10 +542,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -532,19 +565,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Music</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -560,7 +589,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color1">Music</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,15 +613,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">笔面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -738,5 +767,5 @@ MathJax.Hub.Queue(function() {
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":75,"height":150},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":75,"height":150,"hOffset":0,"vOffset":20},"mobile":{"show":true},"log":false});</script></body>
 </html>

@@ -17,7 +17,7 @@
 <meta property="og:description" content="机器学习常见算法总结">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1996593-3c55ea30ea545a2f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/678">
-<meta property="og:updated_time" content="2018-08-09T08:15:10.262Z">
+<meta property="og:updated_time" content="2018-08-25T07:51:34.546Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习常见算法总结">
 <meta name="twitter:description" content="机器学习常见算法总结">
@@ -196,6 +196,30 @@ var _hmt = _hmt || [];
     
     <!-- 目录内容 -->
 
+  <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+        </p>
+<div id="toc-article" class="toc-article">
+    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+  <strong class="toc-title">文章目录</strong>
+         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#机器学习算法分类"><span class="toc-number">1.</span> <span class="toc-text">机器学习算法分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SVM"><span class="toc-number">2.</span> <span class="toc-text">SVM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#朴素贝叶斯"><span class="toc-number">3.</span> <span class="toc-text">朴素贝叶斯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性回归"><span class="toc-number">4.</span> <span class="toc-text">线性回归</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#机器学习算法选择"><span class="toc-number"></span> <span class="toc-text">机器学习算法选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、K近邻"><span class="toc-number">1.</span> <span class="toc-text">1、K近邻</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、贝叶斯"><span class="toc-number">2.</span> <span class="toc-text">2、贝叶斯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、决策树-Decision-tree"><span class="toc-number">3.</span> <span class="toc-text">3、决策树 (Decision tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#随机森林-Random-forest"><span class="toc-number">3.1.</span> <span class="toc-text">随机森林 (Random forest)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化问题的求解方法"><span class="toc-number">4.</span> <span class="toc-text">优化问题的求解方法</span></a></li></ol>
+       </div>
+ <script type="text/javascript">
+function showToc(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:block");
+  show_toc_btn.setAttribute("style","display:none");
+  };
+function showBtn(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:none");
+  show_toc_btn.setAttribute("style","display:block");
+  };
+ </script>
+    
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
@@ -367,18 +391,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/19/机器学习-正则化-L1L2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/20/机器学习_分类_SVM/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          机器学习-正则化-L1L2
+          机器学习_分类_SVM
         
       </div>
     </a>
   
   
-    <a href="/2018/07/19/C++图像处理程序/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C++图像处理程序</div>
+    <a href="/2018/07/19/机器学习_分类_KNN_EM/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">机器学习_分类_KNN_EM</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -397,6 +421,19 @@ var _hmt = _hmt || [];
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#机器学习算法分类"><span class="toc-number">1.</span> <span class="toc-text">机器学习算法分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SVM"><span class="toc-number">2.</span> <span class="toc-text">SVM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#朴素贝叶斯"><span class="toc-number">3.</span> <span class="toc-text">朴素贝叶斯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性回归"><span class="toc-number">4.</span> <span class="toc-text">线性回归</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#机器学习算法选择"><span class="toc-number"></span> <span class="toc-text">机器学习算法选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、K近邻"><span class="toc-number">1.</span> <span class="toc-text">1、K近邻</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、贝叶斯"><span class="toc-number">2.</span> <span class="toc-text">2、贝叶斯</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、决策树-Decision-tree"><span class="toc-number">3.</span> <span class="toc-text">3、决策树 (Decision tree)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#随机森林-Random-forest"><span class="toc-number">3.1.</span> <span class="toc-text">随机森林 (Random forest)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优化问题的求解方法"><span class="toc-number">4.</span> <span class="toc-text">优化问题的求解方法</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -530,6 +567,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -539,10 +580,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,19 +603,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Music</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -594,7 +627,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color1">Music</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -618,15 +651,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">笔面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -772,5 +805,5 @@ MathJax.Hub.Queue(function() {
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":75,"height":150},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":75,"height":150,"hOffset":0,"vOffset":20},"mobile":{"show":true},"log":false});</script></body>
 </html>

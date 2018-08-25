@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.aomanhao.top">
-  <title>opencv_斑点检测—— | AomanHao</title>
+  <title>Opencv_斑点检测 | AomanHao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="opencv_斑点检测">
-<meta name="keywords" content="GitHub,Mysql">
+  <meta name="description" content="Opencv_斑点检测">
+<meta name="keywords" content="Opencv,图像处理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="opencv_斑点检测——">
+<meta property="og:title" content="Opencv_斑点检测">
 <meta property="og:url" content="http://www.aomanhao.top/2018/07/16/opencv_斑点检测/index.html">
 <meta property="og:site_name" content="AomanHao">
-<meta property="og:description" content="opencv_斑点检测">
+<meta property="og:description" content="Opencv_斑点检测">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-02T03:08:53.656Z">
+<meta property="og:updated_time" content="2018-08-25T07:47:11.674Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="opencv_斑点检测——">
-<meta name="twitter:description" content="opencv_斑点检测">
+<meta name="twitter:title" content="Opencv_斑点检测">
+<meta name="twitter:description" content="Opencv_斑点检测">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao" type="application/atom+xml">
   
@@ -181,7 +181,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      opencv_斑点检测——
+      Opencv_斑点检测
     </h1>
   
 
@@ -194,10 +194,34 @@ var _hmt = _hmt || [];
     
     <!-- 目录内容 -->
 
+  <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+        <span class="btn-bg"></span>
+        <span class="btn-text">文章导航</span>
+        </p>
+<div id="toc-article" class="toc-article">
+    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+  <strong class="toc-title">文章目录</strong>
+         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#opencv中检测Blobs的类为SimpleBlobDetector"><span class="toc-number">1.</span> <span class="toc-text">opencv中检测Blobs的类为SimpleBlobDetector</span></a></li></ol>
+       </div>
+ <script type="text/javascript">
+function showToc(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:block");
+  show_toc_btn.setAttribute("style","display:none");
+  };
+function showBtn(){
+  var toc_article = document.getElementById("toc-article");
+  var show_toc_btn = document.getElementById("show-toc-btn");
+  toc_article.setAttribute("style","display:none");
+  show_toc_btn.setAttribute("style","display:block");
+  };
+ </script>
+    
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <script src="/assets/js/APlayer.min.js"> </script><p>opencv_斑点检测</p>
+        <script src="/assets/js/APlayer.min.js"> </script><p>Opencv_斑点检测</p>
 <a id="more"></a>
 <h3 id="opencv中检测Blobs的类为SimpleBlobDetector"><a href="#opencv中检测Blobs的类为SimpleBlobDetector" class="headerlink" title="opencv中检测Blobs的类为SimpleBlobDetector"></a>opencv中检测Blobs的类为SimpleBlobDetector</h3><p>这个类在opencv中的定义如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">class SimpleBlobDetector : public FeatureDetector</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">struct Params</span><br><span class="line">&#123;</span><br><span class="line">    Params();</span><br><span class="line">    float thresholdStep;</span><br><span class="line">    float minThreshold;</span><br><span class="line">    float maxThreshold;</span><br><span class="line">    size_t minRepeatability;</span><br><span class="line">    float minDistBetweenBlobs;</span><br><span class="line"></span><br><span class="line">    bool filterByColor;</span><br><span class="line">    uchar blobColor;</span><br><span class="line"></span><br><span class="line">    bool filterByArea;</span><br><span class="line">    float minArea, maxArea;</span><br><span class="line"></span><br><span class="line">    bool filterByCircularity;</span><br><span class="line">    float minCircularity, maxCircularity;</span><br><span class="line"></span><br><span class="line">    bool filterByInertia;</span><br><span class="line">    float minInertiaRatio, maxInertiaRatio;</span><br><span class="line"></span><br><span class="line">    bool filterByConvexity;</span><br><span class="line">    float minConvexity, maxConvexity;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">SimpleBlobDetector(const SimpleBlobDetector::Params &amp;parameters = SimpleBlobDetector::Params());</span><br><span class="line"></span><br><span class="line">protected:</span><br><span class="line">    ...</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>算法的大致步骤如下：</p>
@@ -216,11 +240,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Opencv</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图像处理</a>
         		</li>
       		
 		</ul>
@@ -290,18 +314,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/机器学习_最优化/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/特征提取_局部特征/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          机器学习_最优化
+          特征提取——局部特征
         
       </div>
     </a>
   
   
-    <a href="/2018/07/16/Linux_commnd/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Linux_常用命令</div>
+    <a href="/2018/07/16/阈值分割_大津法_分水岭/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">阈值分割_大津法_分水岭</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -320,6 +344,19 @@ var _hmt = _hmt || [];
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#opencv中检测Blobs的类为SimpleBlobDetector"><span class="toc-number">1.</span> <span class="toc-text">opencv中检测Blobs的类为SimpleBlobDetector</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -453,6 +490,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -462,10 +503,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,19 +526,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Music</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -517,7 +550,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color1">Music</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -541,15 +574,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">笔面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -695,5 +728,5 @@ MathJax.Hub.Queue(function() {
     });
 </script>
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":75,"height":150},"mobile":{"show":true},"log":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":75,"height":150,"hOffset":0,"vOffset":20},"mobile":{"show":true},"log":false});</script></body>
 </html>
