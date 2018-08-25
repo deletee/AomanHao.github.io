@@ -123,7 +123,7 @@ live2d:
     position: right
     width: 75
     height: 150
-    hOffset: 0
-    vOffset: 20
+    #hOffset: 0
+    #vOffset: 20
   mobile:
     show: true
