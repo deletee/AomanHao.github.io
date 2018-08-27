@@ -124,6 +124,6 @@ live2d:
     width: 75
     height: 150
     hOffset: 0
-    vOffset: 20
+    vOffset: 40
   mobile:
     show: true
