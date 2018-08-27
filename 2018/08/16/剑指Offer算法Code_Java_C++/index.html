@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="AomanHao">
 <meta property="og:description" content="剑指Offer算法Code_Java_C++">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-24T09:39:46.987Z">
+<meta property="og:updated_time" content="2018-08-27T01:54:18.969Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="剑指Offer算法Code_Java_C++(0820更新)">
 <meta name="twitter:description" content="剑指Offer算法Code_Java_C++">
@@ -310,9 +310,24 @@ private boolean isBit1(int target, int index){
     }
     input[pos]=temp;
 }
-</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">C++代码：</span><br></pre></td></tr></table></figure></p>
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### 二叉树的景象</span><br></pre></td></tr></table></figure></p>
+<p>题目描述<br>操作给定的二叉树，将其变换为源二叉树的镜像。<br>输入描述:<br>二叉树的镜像定义：源二叉树<br>            8<br>           /  \<br>          6   10<br>         / \  / \<br>        5  7 9 11<br>        镜像二叉树<br>            8<br>           /  \<br>          10   6<br>         / \  / \<br>        11 9 7  5<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C++代码：</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">C++代码：</span><br></pre></td></tr></table></figure>
+<p>public class Solution {<br>    public void Mirror(TreeNode root) {<br>        if(root == null){<br>            return;<br>        }</p>
+<pre><code>    TreeNode temp;
+    if(root!=null){
+        temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+    }
+    if(root.left!=null){
+        Mirror(root.left);
+        }
+    if(root.right!=null){
+        Mirror(root.right);
+    }
+}
+</code></pre><p>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">C++代码：</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C++代码：</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Java代码：</span><br></pre></td></tr></table></figure>
@@ -413,18 +428,18 @@ private boolean isBit1(int target, int index){
   
 <nav id="article-nav">
   
-    <a href="/2018/08/16/10大数据算法排序Java_C++/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/08/17/图像处理_Retinex图像增强/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          10大数据算法排序Java_C++
+          图像处理_Retinex图像增强
         
       </div>
     </a>
   
   
-    <a href="/2018/08/15/面经—机器学习/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">面经—机器学习</div>
+    <a href="/2018/08/16/10大数据算法排序Java_C++/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">10大数据算法排序Java_C++</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -589,6 +604,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -601,7 +620,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -609,15 +628,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -625,11 +636,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Music</a>
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color1">Music</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -641,7 +652,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -653,11 +672,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -666,10 +685,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
