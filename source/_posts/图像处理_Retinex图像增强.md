@@ -9,7 +9,7 @@ toc: true
 
 <!--more-->
 
-[TOC]
+
 ###单尺度SSR
 (Single Scale Retinex)
 
