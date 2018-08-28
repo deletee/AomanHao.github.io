@@ -12,8 +12,8 @@ timezone: Asia/Shanghai  #时区
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.aomanhao.top
-root: 
+url: https://www.aomanhao.top
+root: AomanHao.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
@@ -96,7 +96,7 @@ theme: yilia
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy:
+deploy:deploy:
   type: git
   repository: https://github.com/AomanHao/AomanHao.github.io
   branch: master
