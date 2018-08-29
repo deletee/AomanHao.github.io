@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: AomanHao
+title: AomanHao的个人博客
 subtitle: 唯有梦想与好姑娘不可辜负
 description: #唯有梦想与好姑娘不可辜负
 author: AomanHao
@@ -13,7 +13,7 @@ timezone: Asia/Shanghai  #时区
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://www.aomanhao.top
-root: AomanHao.github.io
+root: aomanhao.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
