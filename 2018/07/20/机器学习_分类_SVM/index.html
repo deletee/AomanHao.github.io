@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_he_tu3.jpg">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_he_tu4.jpg">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_he_tu5.jpg">
-<meta property="og:updated_time" content="2018-08-25T07:50:09.338Z">
+<meta property="og:updated_time" content="2018-08-29T08:11:56.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习_分类_SVM">
 <meta name="twitter:description" content="机器学习_分类_SVM">
@@ -234,7 +234,6 @@ var _hmt = _hmt || [];
       
         <p>机器学习_分类_SVM</p>
 <a id="more"></a>
-<hr>
 <h3 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h3><p>（Support Vector Machine, SVM）的基本模型是在特征空间上找到最佳的<code>分离超平面</code>使得训练集上正负样本间隔最大。</p>
 <p>二分类问题的有监督学习算法，引入了核方法之后SVM也可以用来解决非线性问题<br>一般SVM有下面三种：</p>
 <blockquote>
@@ -250,7 +249,6 @@ var _hmt = _hmt || [];
 <h3 id="基于最大间隔分割数据"><a href="#基于最大间隔分割数据" class="headerlink" title="基于最大间隔分割数据"></a>基于最大间隔分割数据</h3><p>优点，错误率低，计算开销不大，结果容易解释<br>缺点，对参数调节敏感，原始分类器不加修改只能解决二类问题。</p>
 <p><script type="math/tex">w^{t}x+b</script>为分类函数<br><br>输人数据给分类器会输出一个类别标签,单位阶跃函数）的函数对<script type="math/tex">w^{t}x+b</script>作用得到<script type="math/tex">f(w^{t}x+b)</script>,其中当u&lt;0时输出-1, 反之则输出+1。这是由于-1和+1仅仅相差一个符号，方便数学上的处理。</p>
 <p>如果数据点处于正方向（即+1类 ）并且离<strong>分隔超平面</strong>很远的位置时，<script type="math/tex">w^{t}x+b</script>会是一个很大的正数，同时<script type="math/tex">label*(w^{t}x+b)</script>也会是一个很大的正数。而如果数据点处于负方向（-1类 ）并且离<strong>分隔超平面</strong>远的位置时，此时由于类别标签为-1，则<script type="math/tex">label*(w^{t}x+b)</script>仍然是一个很大的正数。</p>
-<hr>
 <p>目标：找到分类器定义中的w和b。找到具有最小间隔的数据点即<strong>支持向量</strong>。找到支持向量，对间隔最大化。</p>
 <p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_1.png" alt="svm"></p>
 <p>SVM的目标函数：<br><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_2.png" alt="svm"><br>分离超平面分类函数为0，支持向量的分类函数为+-1,为了优化目标函数，固定一个优化另外一个，该问题是一个带约束条件的优化问题。这里的约束条件就是<script type="math/tex">label*(w^{t}x+b)=1</script>。<br><br>注：<script type="math/tex">label*(w^{t}x+b)</script>被称为点到分隔面的函数间隔，<script type="math/tex">label*(w^{t}x+b)*(1/w)</script>称为点到分隔面的几何间隔。<br><br>求解这个问题需要经过一系列的转换。具体如下：<br><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_3.png" alt="svm"></p>
@@ -260,7 +258,6 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>SMO的工作原理是：每次循环中选择两个alpha进行优化处理，一旦找到一对合适的alpha，那么就增大其中一个，同时减小另一个。选择的alpha要满足在间隔边界之外的条件，而且还没有进行过区间化处理或者不再边界上。</p>
 </blockquote>
-<hr>
 <h3 id="核函数："><a href="#核函数：" class="headerlink" title="核函数："></a>核函数：</h3><p>大部分时候数据并不是线性可分的，这个时候满足这样条件的超平面就根本不存在。在上文中，我们已经了解到了SVM处理线性可分的情况，那对于非线性的数据SVM咋处理呢？对于非线性的情况，SVM 的处理方法是选择一个核函数，通过将数据映射到高维空间，来解决在原始空间中线性不可分的问题。</p>
 <p>这是原始数据和原始空间，明显有红蓝两类：<br><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_he_tu1.jpg" alt=""><br>通过核函数，将样本数据映射到更高维的空间（在这里，是二维映射到三维）：<br><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_he_tu2.jpg" alt=""><br>而后进行分离超平面：<br><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_he_tu3.jpg" alt=""><br>再将分割的超平面映射回去：<br><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_he_tu4.jpg" alt=""><br>效果图：<br><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/svm_he_tu5.jpg" alt=""></p>
 <blockquote>
@@ -360,8 +357,8 @@ var _hmt = _hmt || [];
     </a>
   
   
-    <a href="/2018/07/19/机器学习常见算法总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">机器学习常见算法总结</div>
+    <a href="/2018/07/19/机器学习推荐书/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">机器学习推荐书</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -513,6 +510,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -522,10 +523,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,6 +566,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
               </li>
              
@@ -577,11 +578,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -593,10 +594,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
@@ -605,11 +602,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">

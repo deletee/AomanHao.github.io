@@ -17,7 +17,7 @@
 <meta property="og:description" content="机器学习-正则化-L1L2">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/L1L21.png">
-<meta property="og:updated_time" content="2018-08-25T07:41:47.929Z">
+<meta property="og:updated_time" content="2018-08-29T08:16:22.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-正则化-L1L2">
 <meta name="twitter:description" content="机器学习-正则化-L1L2">
@@ -225,19 +225,15 @@ var _hmt = _hmt || [];
       
         <p>机器学习-正则化-L1L2</p>
 <a id="more"></a>
-<hr>
 <p>样本数据量大：经验⻛风险最⼩小化</p>
 <p>样本数据量小：结构⻛风险最⼩小化==正则化</p>
-<hr>
 <p>经验风险最⼩小化（empirical risk minimization）认为经验⻛风险最⼩小的模型是最优的模型，即求解最优化问题</p>
 <script type="math/tex; mode=display">minf ∈ F(1/N)\sum_{i=1}^NL(y_i,f(x_i))</script><p>样本容量量⾜足够⼤大的时候，经验⻛风险最⼩小化学习效果良好</p>
-<hr>
 <p>结构⻛风险=经验⻛风险+模型复杂度的正则化项（regularizer）或罚项（penalty term）</p>
 <script type="math/tex; mode=display">minf ∈ F(1/N)\sum_{i=1}^NL(y_i,f(x_i))+\lambda{J(f)}</script><p>$J(f)$是模型的复杂度，模型$f$越复杂，复杂度$J(f)$越大。<br>$\lambda ≥ 0$是系数，⽤用以权衡经验⻛风险和模型复杂度。</p>
 <blockquote>
 <p>结构风险⼩需要1、经验风险和2、模型复杂度同时⼩</p>
 </blockquote>
-<hr>
 <h3 id="范数"><a href="#范数" class="headerlink" title="范数"></a>范数</h3><p>因为非负性：可以做损失函数，正则项</p>
 <blockquote>
 <p>损失函数通常是⼀个有下确界的函数</p>
@@ -248,7 +244,6 @@ var _hmt = _hmt || [];
 <script type="math/tex; mode=display">||x||_2=(\sum_{i=1}^{d}{|x_i^2|})^{1/2}</script><p>Lp</p>
 <script type="math/tex; mode=display">||x||_2=(\sum_{i=1}^{d}{|x_i^p|})^{1/p}</script><p>p=1,曼哈顿距离，L1范数，表示某个向量量中所有元素绝对值的和<br><br>p=2,欧式距离，L2范数</p>
 <p>使用L1正则项，倾向于使参数稀疏化，使用L2正则项，使参数稠密的接近于0。<br><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/L1L21.png" alt=""><br>L1正则是菱形，参数的交点都落在坐标轴上，实现稀疏化。<br>L2是圆形，</p>
-<hr>
 <blockquote>
 <p>正则项是为了降低模型的复杂度，从而避免模型区过分拟合训练数据，包括噪声与异常点（outliers）。从另一个角度上来讲，正则化即是假设模型参数服从先验概率，即为模型参数添加先验，只是不同的正则化方式的先验分布是不一样的。这样就规定了参数的分布，使得模型的复杂度降低（试想一下，限定条件多了，是不是模型的复杂度降低了呢），这样模型对于噪声与异常点的抗干扰性的能力增强，从而提高模型的泛化能力。还有个解释便是，从贝叶斯学派来看：加了先验，在数据少的时候，先验知识可以防止过拟合；从频率学派来看：正则项限定了参数的取值，从而提高了模型的稳定性，而稳定性强的模型不会过拟合，即控制模型空间。</p>
 </blockquote>
@@ -335,18 +330,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/19/机器学习_分类_KNN_EM/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/19/机器学习常见算法总结/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          机器学习_分类_KNN_EM
+          机器学习常见算法总结
         
       </div>
     </a>
   
   
-    <a href="/2018/07/19/C++入门/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">C++入门</div>
+    <a href="/2018/07/19/大佬终极面经/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">大佬终极面经</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -498,6 +493,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -507,10 +506,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,6 +549,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
               </li>
              
@@ -562,11 +561,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,10 +577,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
@@ -590,11 +585,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">

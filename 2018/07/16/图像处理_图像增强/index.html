@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20180515114758843?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTI2Nzk3MDc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180515114917692?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTI2Nzk3MDc=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20171029101506855?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcGlhb3h1ZXpob25n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2018-08-28T00:35:53.056Z">
+<meta property="og:updated_time" content="2018-08-29T08:05:28.139Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图像处理_图像增强">
 <meta name="twitter:description" content="图像处理_图像增强">
@@ -335,7 +335,6 @@ var _hmt = _hmt || [];
 </tbody>
 </table>
 </div>
-<hr>
 <p>图像对比度增强</p>
 <div class="table-container">
 <table>
@@ -467,7 +466,6 @@ var _hmt = _hmt || [];
 <p>1、高斯高通滤波器可以较好的提取边缘信息；<br>2、sigma越小，Gauss高通的截止频率越低，通过的低频成分越多，边缘提取越不精确，会包含更多的非边缘信息；（要求太低，多了浑水摸鱼者）<br>3、sigma越大，边缘提取越精确，但可能包含不完整的边缘信息。（要求太高，有了漏网之鱼）</p>
 </blockquote>
 <h3 id="拉普拉斯滤波器"><a href="#拉普拉斯滤波器" class="headerlink" title="拉普拉斯滤波器"></a>拉普拉斯滤波器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">%laplace滤波器滤镜 imlapf.m</span><br><span class="line">%&#123;</span><br><span class="line">函数： function ff=imlapf(I)</span><br><span class="line">函数说明：构造laplace滤镜</span><br><span class="line">参数说明：I：输入图像</span><br><span class="line">       </span><br><span class="line">返回值：与原图像等大的laplace滤镜</span><br><span class="line"> </span><br><span class="line">%&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">function ff=imlapf(I)</span><br><span class="line">[M,N]=size(I);</span><br><span class="line"> ff=ones(M,N);</span><br><span class="line"> for i=1:M</span><br><span class="line">     for j=1:N</span><br><span class="line">         ff(i,j)= -((i-M/2)^2+(j-N/2)^2)  % </span><br><span class="line">        </span><br><span class="line">     end</span><br><span class="line"> end</span><br></pre></td></tr></table></figure>
-<hr>
 <h2 id="图像处理评价指标"><a href="#图像处理评价指标" class="headerlink" title="图像处理评价指标"></a>图像处理评价指标</h2><h3 id="基于误差灵敏度评价算法："><a href="#基于误差灵敏度评价算法：" class="headerlink" title="基于误差灵敏度评价算法："></a>基于误差灵敏度评价算法：</h3><p>最简单的质量评价算法就是均方差(Mean Squared Error, MSE)和峰值信噪比(Peak Signal- Noise Ratio, PSNR)。MSE 和 PSNR 计算复杂度小，易于实现，在图像处理领域中广泛应用。但缺点是它们给出的数值与图像的感知质量之间没有必然联系。</p>
 <h4 id="峰值信噪比-PSNR"><a href="#峰值信噪比-PSNR" class="headerlink" title="峰值信噪比-PSNR"></a>峰值信噪比-PSNR</h4><p>图像压缩等领域信号重建质量的评价</p>
 <p><img src="https://img-blog.csdn.net/20171029101506855?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcGlhb3h1ZXpob25n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""></p>
@@ -475,8 +473,7 @@ var _hmt = _hmt || [];
 <p>matlab代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function pnsr_result = psnr(img_ref,img_in)       </span><br><span class="line">    %   img_ref is a high reference quality image   </span><br><span class="line">    %   img_in is the denoise image    </span><br><span class="line">    %   pnsr_result is the PSNR of the denoise image    </span><br><span class="line">    width = size(img_ref,2);    </span><br><span class="line">    heigh = size(img_ref,1);    </span><br><span class="line">    if( width ~= size(img_in,2) || heigh ~= size(img_in,1) )    </span><br><span class="line">        disp(&apos;Please check whether the input image and reference image have same size&apos;);    </span><br><span class="line">        return    </span><br><span class="line">    end    </span><br><span class="line">    [a,b]=size(img_ref);      </span><br><span class="line">    XX=double(img_ref) - double(img_in);      </span><br><span class="line">    mse_value = sum(sum( XX.^2 ))/(a*b);      </span><br><span class="line">    pnsr_result = 10*log10( 255*255 / mse_value );   </span><br><span class="line">end</span><br></pre></td></tr></table></figure></p>
 <h4 id="SSIM"><a href="#SSIM" class="headerlink" title="SSIM"></a>SSIM</h4><h4 id="信噪比（SNR）"><a href="#信噪比（SNR）" class="headerlink" title="信噪比（SNR）"></a>信噪比（SNR）</h4><p>信噪比就是有用信号与噪声信号的比值</p>
 <script type="math/tex; mode=display">snr=10*log_{10}\frac{sigma(I2)}{sigma(I2-I1)}</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">function snr=SNR2(I,In)</span><br><span class="line">% 计算噪声比</span><br><span class="line">% I :original signal</span><br><span class="line">% In:noisy signal</span><br><span class="line">% snr=10*log10(sigma2(I2)/sigma2(I2-I1))</span><br><span class="line"> </span><br><span class="line">[~,~,nchannel]=size(I);</span><br><span class="line">snr=0;</span><br><span class="line">I=double(I);</span><br><span class="line">In=double(In);</span><br><span class="line">if nchannel==1</span><br><span class="line">    Ps=sum(sum((I-mean(mean(I))).^2));%signal power</span><br><span class="line">    Pn=sum(sum((I-In).^2));%noise power</span><br><span class="line">    snr=10*log10(Ps/Pn);</span><br><span class="line">elseif nchannel==3</span><br><span class="line">    for i=1:3</span><br><span class="line">        Ps=sum(sum((I(:,:,i)-mean(mean(I(:,:,i)))).^2));%signal power</span><br><span class="line">        Pn=sum(sum((I(:,:,i)-In(:,:,i)).^2));%noise power</span><br><span class="line">        snr=snr+10*log10(Ps/Pn);</span><br><span class="line">    end</span><br><span class="line">    snr=snr/3;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-<h3 id="基于结构相似度评价算法"><a href="#基于结构相似度评价算法" class="headerlink" title="基于结构相似度评价算法"></a>基于结构相似度评价算法</h3><hr>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="曝光过度问题处理"><a href="#曝光过度问题处理" class="headerlink" title="曝光过度问题处理"></a>曝光过度问题处理</h3><p>计算当前图像的反相（255-image)，然后取当前图像和反相图像的较小者为当前像素位置的值。</p>
+<h3 id="基于结构相似度评价算法"><a href="#基于结构相似度评价算法" class="headerlink" title="基于结构相似度评价算法"></a>基于结构相似度评价算法</h3><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="曝光过度问题处理"><a href="#曝光过度问题处理" class="headerlink" title="曝光过度问题处理"></a>曝光过度问题处理</h3><p>计算当前图像的反相（255-image)，然后取当前图像和反相图像的较小者为当前像素位置的值。</p>
 <script type="math/tex; mode=display">min(image,(255-image))</script><h3 id="加Masaic算法"><a href="#加Masaic算法" class="headerlink" title="加Masaic算法"></a>加Masaic算法</h3><p>原理：用中心像素来表示邻域像素<br>Opencv代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">uchar getPixel( IplImage* img, int row, int col, int k)</span><br><span class="line">&#123;</span><br><span class="line">	return ((uchar*)img-&gt;imageData + row* img-&gt;widthStep)[col*img-&gt;nChannels +k];</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void setPixel( IplImage* img, int row, int col, int k, uchar val)</span><br><span class="line">&#123;</span><br><span class="line">	((uchar*)img-&gt;imageData + row* img-&gt;widthStep)[col*img-&gt;nChannels +k] = val;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">--</span><br><span class="line"></span><br><span class="line">// nSize:为尺寸大小，奇数</span><br><span class="line">// 将邻域的值用中心像素的值替换</span><br><span class="line">void Masic(IplImage* img, IplImage* dst, int nSize)</span><br><span class="line">&#123;</span><br><span class="line">	int offset = (nSize-1)/2;</span><br><span class="line">	for ( int row = offset; row &lt;img-&gt;height - offset; row= row+offset)</span><br><span class="line">	&#123;</span><br><span class="line">		for( int col= offset; col&lt;img-&gt;width - offset; col = col+offset)</span><br><span class="line">		&#123;</span><br><span class="line">			int val0 = getPixel(img, row, col, 0);</span><br><span class="line">			int val1 = getPixel(img, row, col, 1);</span><br><span class="line">			int val2 = getPixel(img, row, col, 2);</span><br><span class="line">			for ( int m= -offset; m&lt;offset; m++)</span><br><span class="line">			&#123;</span><br><span class="line">				for ( int n=-offset; n&lt;offset; n++)</span><br><span class="line">				&#123;</span><br><span class="line">					setPixel(dst, row+m, col+n, 0, val0);</span><br><span class="line">					setPixel(dst, row+m, col+n, 1, val1);</span><br><span class="line">					setPixel(dst, row+m, col+n, 2, val2);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
@@ -561,18 +558,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/opencv_ocr/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/Linux_commnd/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          opencv_ocr
+          Linux_常用命令
         
       </div>
     </a>
   
   
-    <a href="/2018/07/16/机器学习_最优化_数学基础/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">机器学习_最优化_数学</div>
+    <a href="/2018/07/16/边缘检测/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">图像处理_边缘检测</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -724,6 +721,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -733,10 +734,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -780,6 +777,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
               </li>
              
@@ -788,11 +789,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -804,10 +805,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
@@ -816,11 +813,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/imgkoharu1.png">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/imgkoharu3.png">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/imgkoharu2.png">
-<meta property="og:updated_time" content="2018-08-27T06:57:17.532Z">
+<meta property="og:updated_time" content="2018-08-29T08:06:04.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客yilia主题首页添加helper-live2d模型插件">
 <meta name="twitter:description" content="Hexo博客yilia主题首页添加helper-live2d模型插件">
@@ -230,12 +230,10 @@ var _hmt = _hmt || [];
 <a id="more"></a>
 <p>插件效果<br><a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">插件的github地址</a><br>插件作者提供了较为详细的安装步骤，我结合自己操作和图示，提供大家。</p>
 <p>效果展示：红框内为2d模型，可以随鼠标移动而变化<br><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/imgkoharu4.png" alt=""></p>
-<hr>
 <p>Hexo</p>
 <h3 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块:"></a>安装模块:</h3><p>hexo博客根目录选择<code>cmd</code>命令窗口或者<code>git bash</code> 输入以下代码，安装插件</p>
 <h4 id="操作："><a href="#操作：" class="headerlink" title="操作："></a>操作：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
 <p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/imgkoharu1.png" alt=""></p>
-<hr>
 <h3 id="下载模型"><a href="#下载模型" class="headerlink" title="下载模型"></a>下载模型</h3><p>作者提供了三个下载模型的办法，我选择操作比较简单的一种<br><code>npm 模块名</code> 的方法</p>
 <p>作者提供以下模型的模型包，模型包预览地址见下面的链接，选择你想用的模型，记住名字，选择对应的后缀模型包</p>
 <p><a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">作者各种模型包展示</a></p>
@@ -245,13 +243,11 @@ var _hmt = _hmt || [];
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install live2d-widget-model-koharu</span><br></pre></td></tr></table></figure>
 <p>执行安装就完事了</p>
 <p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/imgkoharu3.png" alt=""></p>
-<hr>
 <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>请向<code>Hexo</code>的 <code>_config.yml</code> 文件添加配置.</p>
 <h4 id="操作：-2"><a href="#操作：-2" class="headerlink" title="操作："></a>操作：</h4><p>打开个人Hexo博客文件根目录下的 <code>_config.yml</code> 文件，在最后添加一下代码<br>示例:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  scriptFrom: local</span><br><span class="line">  pluginRootPath: live2dw/</span><br><span class="line">  pluginJsPath: lib/</span><br><span class="line">  pluginModelPath: assets/</span><br><span class="line">  tagMode: false</span><br><span class="line">  debug: false</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-koharu</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 150</span><br><span class="line">    height: 300</span><br><span class="line">  mobile:</span><br><span class="line">    show: true</span><br></pre></td></tr></table></figure>
 <p>你需要配置的是<code>use: live2d-widget-model-koharu</code><br><code>use</code>后为你选择的安装包的全称</p>
 <p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/imgkoharu2.png" alt=""></p>
-<hr>
 <p>插件部署与应用就完成了，接下来就是部署hexo博客和个人主页</p>
 
       
@@ -507,6 +503,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -516,10 +516,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -563,6 +559,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
               </li>
              
@@ -571,11 +571,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,10 +587,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
@@ -599,11 +595,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">

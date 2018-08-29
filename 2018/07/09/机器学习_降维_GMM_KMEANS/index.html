@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="AomanHao的个人博客">
 <meta property="og:description" content="机器学习—聚类降维">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-25T07:48:56.762Z">
+<meta property="og:updated_time" content="2018-08-29T08:11:43.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习—聚类降维">
 <meta name="twitter:description" content="机器学习—聚类降维">
@@ -201,7 +201,7 @@ var _hmt = _hmt || [];
       <div id="toc-article" class="toc-article">
           <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
           <strong class="toc-title">文章目录</strong>
-          
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#机器学习—Kmeans"><span class="toc-number">1.</span> <span class="toc-text">机器学习—Kmeans</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#机器学习—GMM"><span class="toc-number">2.</span> <span class="toc-text">机器学习—GMM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EM算法："><span class="toc-number">3.</span> <span class="toc-text">EM算法：</span></a></li></ol>
      </div>
      <script type="text/javascript">
       function showToc(){
@@ -223,18 +223,13 @@ var _hmt = _hmt || [];
       
         <p>机器学习—聚类降维</p>
 <a id="more"></a>
-<hr>
-<p>机器学习—Kmeans</p>
-<p>聚类属于无监督学习，朴素贝叶斯、SVM等都是有类别标签y的，即已经给出了样本的分类</p>
+<h3 id="机器学习—Kmeans"><a href="#机器学习—Kmeans" class="headerlink" title="机器学习—Kmeans"></a>机器学习—Kmeans</h3><p>聚类属于无监督学习，朴素贝叶斯、SVM等都是有类别标签y的，即已经给出了样本的分类</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1、随机给K个聚类质心 v</span><br><span class="line">2、重复下面过程直到收敛</span><br><span class="line">2.1对于每一个样例i，计算其应该属于的类 </span><br><span class="line">隶属度 ：zi=argmin||xi−μj||^2</span><br><span class="line">求距离近的</span><br><span class="line">2.2 </span><br><span class="line">聚类中心 u=</span><br></pre></td></tr></table></figure>
 <p>其聚类精度明显优于传统的随机选择种子的方法，且计算速度也比较快。而对于更大型的数据集，kmeans++需要进一步扩展，才能获取更好的表现，即kmeans是高度可扩展的。</p>
-<hr>
-<p>机器学习—GMM<br>常用作聚类，可以运动目标检测。</p>
+<h3 id="机器学习—GMM"><a href="#机器学习—GMM" class="headerlink" title="机器学习—GMM"></a>机器学习—GMM</h3><p>常用作聚类，可以运动目标检测。</p>
 <p>高斯混合模型（Gaussian Mixed Model）指的是多个高斯分布函数的线性组合，理论上GMM可以拟合出任意类型的分布，通常用于解决同一集合下的数据包含多个不同的分布的情况（或者是同一类分布但参数不一样，或者是不同类型的分布，比如正态分布和伯努利分布）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">//  基于混合高斯模型的运动目标检测</span><br><span class="line">//  Author： http://blog.csdn.net/icvpr  </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line"> </span><br><span class="line">#include &lt;opencv2/opencv.hpp&gt;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">int main(int argc, char** argv)</span><br><span class="line">&#123;</span><br><span class="line">	std::string videoFile = &quot;../test.avi&quot;;</span><br><span class="line"> </span><br><span class="line">	cv::VideoCapture capture;</span><br><span class="line">	capture.open(videoFile);</span><br><span class="line"> </span><br><span class="line">	if (!capture.isOpened())</span><br><span class="line">	&#123;</span><br><span class="line">		std::cout&lt;&lt;&quot;read video failure&quot;&lt;&lt;std::endl;</span><br><span class="line">		return -1;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">	cv::BackgroundSubtractorMOG2 mog;</span><br><span class="line"> </span><br><span class="line">	cv::Mat foreground;</span><br><span class="line">	cv::Mat background;</span><br><span class="line"> </span><br><span class="line">	cv::Mat frame;</span><br><span class="line">	long frameNo = 0;</span><br><span class="line">	while (capture.read(frame))</span><br><span class="line">	&#123;</span><br><span class="line">		++frameNo;</span><br><span class="line"> </span><br><span class="line">		std::cout&lt;&lt;frameNo&lt;&lt;std::endl;</span><br><span class="line"> </span><br><span class="line">		// 运动前景检测，并更新背景</span><br><span class="line">		mog(frame, foreground, 0.001);       </span><br><span class="line">		</span><br><span class="line">		// 腐蚀</span><br><span class="line">		cv::erode(foreground, foreground, cv::Mat());</span><br><span class="line">		</span><br><span class="line">		// 膨胀</span><br><span class="line">		cv::dilate(foreground, foreground, cv::Mat());</span><br><span class="line"> </span><br><span class="line">		mog.getBackgroundImage(background);   // 返回当前背景图像</span><br><span class="line"> </span><br><span class="line">		cv::imshow(&quot;video&quot;, foreground);</span><br><span class="line">		cv::imshow(&quot;background&quot;, background);</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">		if (cv::waitKey(25) &gt; 0)</span><br><span class="line">		&#123;</span><br><span class="line">			break;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>EM算法：</p>
-<p>第一步先求出要估计参数的粗略值。<br>第二步使用第一步的值最大化似然函数。因此要先求出GMM的似然函数。</p>
+<h3 id="EM算法："><a href="#EM算法：" class="headerlink" title="EM算法："></a>EM算法：</h3><p>第一步先求出要估计参数的粗略值。<br>第二步使用第一步的值最大化似然函数。因此要先求出GMM的似然函数。</p>
 
       
 
@@ -489,6 +484,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -498,10 +497,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -545,6 +540,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
               </li>
              
@@ -553,11 +552,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,10 +568,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
@@ -581,11 +576,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">

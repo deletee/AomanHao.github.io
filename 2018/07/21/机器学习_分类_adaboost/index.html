@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/adaboost_liucheng1.png">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/adaboost_liucheng2.png">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/adaboost_liucheng3.png">
-<meta property="og:updated_time" content="2018-08-25T07:51:28.601Z">
+<meta property="og:updated_time" content="2018-08-29T08:12:59.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习_分类_adaboost">
 <meta name="twitter:description" content="机器学习_分类_adaboost">
@@ -231,20 +231,16 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>AdaBoost是英文”Adaptive Boosting”（自适应增强）的缩写</p>
 </blockquote>
-<hr>
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1）首先，是初始化训练数据的权值分布D1。假设有N个训练样本数据，则每一个训练样本最开始时，都被赋予相同的权值：w1=1/N。</span><br><span class="line">2）然后，训练弱分类器hi。具体训练过程中是：如果某个训练样本点，被弱分类器hi准确地分类，那么在构造下一个训练集中，它对应的权值要减小；相反，如果某个训练样本点被错误分类，那么它的权值就应该增大。权值更新过的样本集被用于训练下一个分类器，整个训练过程如此迭代地进行下去。</span><br><span class="line">3）最后，将各个训练得到的弱分类器组合成一个强分类器。各个弱分类器的训练过程结束后，加大分类误差率小的弱分类器的权重，使其在最终的分类函数中起着较大的决定作用，而降低分类误差率大的弱分类器的权重，使其在最终的分类函数中起着较小的决定作用。</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>误差率低的弱分类器在最终分类器中占的权重较大，否则较小。</p>
 </blockquote>
 <p>alpha值是基于每个弱分类器的错误率进行计算,计算出alpha值之后，可以对权重向量进行更新，以使得那些正确分类的样本的权重降低而错分样本的权重升高，直到错误率为0或者弱分类器的数目达到用户的指定值为止</p>
-<hr>
 <h3 id="算法过程"><a href="#算法过程" class="headerlink" title="算法过程"></a>算法过程</h3><p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/adaboost_liucheng1.png" alt=""></p>
 <p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/adaboost_liucheng2.png" alt=""></p>
 <p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/adaboost_liucheng3.png" alt=""></p>
-<hr>
 <p><a href="https://blog.csdn.net/guyuealian/article/details/70995333" target="_blank" rel="noopener">参考文章地址</a></p>
 <p><a href="https://blog.csdn.net/v_july_v/article/details/40718799" target="_blank" rel="noopener">参考文章</a></p>
-<hr>
 <p>数据分类模型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;opencv2/core/core.hpp&quot;  </span><br><span class="line">#include &quot;opencv2/highgui/highgui.hpp&quot;  </span><br><span class="line">#include &quot;opencv2/imgproc/imgproc.hpp&quot;  </span><br><span class="line">#include &quot;opencv2/ml/ml.hpp&quot;  </span><br><span class="line">  </span><br><span class="line">#include &lt;iostream&gt;  </span><br><span class="line">using namespace cv;  </span><br><span class="line">using namespace std;  </span><br><span class="line">  </span><br><span class="line">int main( int argc, char** argv )  </span><br><span class="line">&#123;     </span><br><span class="line">    //训练样本  </span><br><span class="line">    float trainingData[42][2]=&#123; &#123;40, 55&#125;,&#123;35, 35&#125;,&#123;55, 15&#125;,&#123;45, 25&#125;,&#123;10, 10&#125;,&#123;15, 15&#125;,&#123;40, 10&#125;,  </span><br><span class="line">                            &#123;30, 15&#125;,&#123;30, 50&#125;,&#123;100, 20&#125;,&#123;45, 65&#125;,&#123;20, 35&#125;,&#123;80, 20&#125;,&#123;90, 5&#125;,  </span><br><span class="line">                            &#123;95, 35&#125;,&#123;80, 65&#125;,&#123;15, 55&#125;,&#123;25, 65&#125;,&#123;85, 35&#125;,&#123;85, 55&#125;,&#123;95, 70&#125;,  </span><br><span class="line">                            &#123;105, 50&#125;,&#123;115, 65&#125;,&#123;110, 25&#125;,&#123;120, 45&#125;,&#123;15, 45&#125;,  </span><br><span class="line">                            &#123;55, 30&#125;,&#123;60, 65&#125;,&#123;95, 60&#125;,&#123;25, 40&#125;,&#123;75, 45&#125;,&#123;105, 35&#125;,&#123;65, 10&#125;,  </span><br><span class="line">                            &#123;50, 50&#125;,&#123;40, 35&#125;,&#123;70, 55&#125;,&#123;80, 30&#125;,&#123;95, 45&#125;,&#123;60, 20&#125;,&#123;70, 30&#125;,  </span><br><span class="line">                            &#123;65, 45&#125;,&#123;85, 40&#125;   &#125;;  </span><br><span class="line">    Mat trainingDataMat(42, 2, CV_32FC1, trainingData);   </span><br><span class="line">    //训练样本的响应值  </span><br><span class="line">    float responses[42] = &#123;&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,  </span><br><span class="line">                            &apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,&apos;R&apos;,  </span><br><span class="line">                        &apos;B&apos;,&apos;B&apos;,&apos;B&apos;,&apos;B&apos;,&apos;B&apos;,&apos;B&apos;,&apos;B&apos;,&apos;B&apos;,&apos;B&apos;,&apos;B&apos;,&apos;B&apos;,&apos;B&apos;,&apos;B&apos;,&apos;B&apos;,&apos;B&apos;,&apos;B&apos; &#125;;  </span><br><span class="line">    Mat responsesMat(42, 1, CV_32FC1, responses);  </span><br><span class="line">  </span><br><span class="line">    float priors[2] = &#123;1, 1&#125;;    //先验概率  </span><br><span class="line">  </span><br><span class="line">    CvBoostParams params( CvBoost::REAL, // boost_type    </span><br><span class="line">                          10, // weak_count    </span><br><span class="line">                          0.95, // weight_trim_rate    </span><br><span class="line">                          15, // max_depth    </span><br><span class="line">                          false, // use_surrogates    </span><br><span class="line">                          priors // priors   </span><br><span class="line">                          );    </span><br><span class="line">  </span><br><span class="line">    CvBoost boost;  </span><br><span class="line">    boost.train (   trainingDataMat,   </span><br><span class="line">                    CV_ROW_SAMPLE,   </span><br><span class="line">                    responsesMat,  </span><br><span class="line">                    Mat(),    </span><br><span class="line">                    Mat(),  </span><br><span class="line">                    Mat(),  </span><br><span class="line">                    Mat(),    </span><br><span class="line">                    params  </span><br><span class="line">                    );    </span><br><span class="line">    //预测样本  </span><br><span class="line">    float myData[2] = &#123;55, 25&#125;;  </span><br><span class="line">    Mat myDataMat(2, 1, CV_32FC1, myData);  </span><br><span class="line">    double r = boost.predict( myDataMat );  </span><br><span class="line">  </span><br><span class="line">    cout&lt;&lt;endl&lt;&lt;&quot;result:  &quot;&lt;&lt;(char)r&lt;&lt;endl;  </span><br><span class="line">  </span><br><span class="line">    return 0;  </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
 <p>基于的OpenCV的检测Demo</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;opencv/highgui.h&gt;</span><br><span class="line">#include &lt;opencv/cv.h&gt;</span><br><span class="line">#include &lt;opencv2/imgproc/imgproc_c.h&gt;</span><br><span class="line">#include &lt;opencv2/objdetect/objdetect.hpp&gt;</span><br><span class="line"></span><br><span class="line">using namespace cv;</span><br><span class="line"></span><br><span class="line">int main(int argc, char** argv)</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    CascadeClassifier stFaceCascade;</span><br><span class="line">    IplImage *pstImage = NULL;</span><br><span class="line">    std::vector&lt;Rect&gt; faceRects;</span><br><span class="line"></span><br><span class="line">    if( !stFaceCascade.load(&quot;D:\\ProgramFiles\\develop\\opencv2.4.8\\sources\\data\\lbpcascades\\lbpcascade_frontalface.xml&quot;) )</span><br><span class="line">    &#123; </span><br><span class="line">        printf(&quot;Loading cascade error\n&quot;); </span><br><span class="line">        return -1; </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    pstImage = cvLoadImage(&quot;D:\\test.jpg&quot;, CV_LOAD_IMAGE_COLOR);</span><br><span class="line"></span><br><span class="line">    stFaceCascade.detectMultiScale(pstImage, </span><br><span class="line">        faceRects,            //检出结果</span><br><span class="line">        1.1,                  //缩放步长</span><br><span class="line">        2,                    //框融合时的最小检出个数</span><br><span class="line">        0|CV_HAAR_SCALE_IMAGE,//标志 |CV_HAAR_FIND_BIGGEST_OBJECT|CV_HAAR_DO_ROUGH_SEARCH|CV_HAAR_DO_CANNY_PRUNING</span><br><span class="line">        Size(30, 30),         //最小人脸尺寸</span><br><span class="line">        Size(300, 300) );     //最大人脸尺寸</span><br><span class="line">    printf(&quot;Face Num[%d]\n&quot;, faceRects.size());</span><br><span class="line"></span><br><span class="line">    for( unsigned int j = 0; j &lt; faceRects.size(); j++ )</span><br><span class="line">    &#123;</span><br><span class="line">        cvRectangle(pstImage, </span><br><span class="line">            cvPoint(faceRects[j].x, faceRects[j].y), </span><br><span class="line">            cvPoint(faceRects[j].x + faceRects[j].width, faceRects[j].y + faceRects[j].height),</span><br><span class="line">            cvScalar(0,255,0),</span><br><span class="line">            2,8,0);</span><br><span class="line">    &#125;</span><br><span class="line">    cvShowImage(&quot;FDWin&quot;, pstImage);</span><br><span class="line">    cvWaitKey(0);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    cvReleaseImage(&amp;pstImage);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -497,6 +493,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -506,10 +506,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,6 +549,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
               </li>
              
@@ -561,11 +561,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -577,10 +577,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
@@ -589,11 +585,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">

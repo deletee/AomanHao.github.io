@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="AomanHao的个人博客">
 <meta property="og:description" content="特征提取——纹理特征">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-27T06:33:59.500Z">
+<meta property="og:updated_time" content="2018-08-29T08:10:13.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="特征提取——纹理特征">
 <meta name="twitter:description" content="特征提取——纹理特征">
@@ -222,11 +222,9 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <p>特征提取——纹理特征<br><a id="more"></a></p>
-<hr>
 <h3 id="LBP图像特征"><a href="#LBP图像特征" class="headerlink" title="LBP图像特征"></a>LBP图像特征</h3><p>图像处理之特征提取（二）之LBP特征简单梳理<br><br><a href="https://blog.csdn.net/coming_is_winter/article/details/72859957" target="_blank" rel="noopener">https://blog.csdn.net/coming_is_winter/article/details/72859957</a><br><br><a href="https://blog.csdn.net/zouxy09/article/details/7929531" target="_blank" rel="noopener">https://blog.csdn.net/zouxy09/article/details/7929531</a><br><br>LBP特征理解。<br><br><a href="http://blog.csdn.net/hqh45/article/details/24501097" target="_blank" rel="noopener">http://blog.csdn.net/hqh45/article/details/24501097</a><br>LBP（Local Binary Pattern，局部二值模式）是一种用来描述图像局部纹理特征的算子；它具有旋转不变性和灰度不变性等显著的优点。它是首先由T. Ojala, M.Pietikäinen, 和 D. Harwood 在1994年提出，用于纹理特征提取。而且，提取的特征是图像的局部的纹理特征；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lbp理论：</span><br><span class="line">原始的LBP算子定义为在3*3的窗口内，以窗口中心像素为阈值，将相邻的8个像素的灰度值与其进行比较，若周围像素值大于中心像素值，则该像素点的位置被标记为1，否则为0。这样，3*3邻域内的8个点经比较可产生8位二进制数（通常转换为十进制数即LBP码，共256种），即得到该窗口中心像素点的LBP值，并用这个值来反映该区域的纹理信息。</span><br></pre></td></tr></table></figure></p>
 <p>圆形LBP算子： 半径为R<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">基本的 LBP算子的最大缺陷在于它只覆盖了一个固定半径范围内的小区域，这显然不能满足不同尺寸和频率纹理的需要。为了适应不同尺度的纹理特征，并达到灰度和旋转不变性的要求，Ojala等对 LBP 算子进行了改进，将 3×3邻域扩展到任意邻域，并用圆形邻域代替了正方形邻域，改进后的 LBP 算子允许在半径为 R 的圆形邻域内有任意多个像素点。从而得到了诸如半径为R的圆形区域内含有P个采样点的LBP算子；</span><br></pre></td></tr></table></figure></p>
 <p>即不断旋转圆形邻域得到一系列初始定义的 LBP值，取其最小值作为该邻域的 LBP 值。</p>
-<hr>
 <h3 id="灰度共生矩阵（GLCM，Gray-Level-Co-occurrence-Matrix）"><a href="#灰度共生矩阵（GLCM，Gray-Level-Co-occurrence-Matrix）" class="headerlink" title="灰度共生矩阵（GLCM，Gray-Level Co-occurrence Matrix）"></a>灰度共生矩阵（GLCM，Gray-Level Co-occurrence Matrix）</h3><p>概念：</p>
 <blockquote>
 <p>灰度共生矩阵是涉及像素距离和角度的矩阵函数，它通过计算图像中一定距离和一定方向的两点灰度之间的相关性，来反映图像在<font color="red">方向、间隔、变化幅度及快慢</font>上的综合信息。<br><br>灰度直方图是对图像上单个像素具有某个灰度进行统计的结果，而<font color="red">灰度共生矩阵是对图像上保持某距离的两像素分别具有某灰度的状况进行统计得到的。</font></p>
@@ -243,10 +241,10 @@ var _hmt = _hmt || [];
 <p>3) 反差分矩阵（Inverse Differential Moment, IDM)<br>公式：$IDM=sum[p(i,j)/(1+(i-j)^2)]$<br>意义：反映了纹理的清晰程度和规则程度，纹理清晰、规律性较强、易于描述的，值较大；杂乱无章的，难于描述的，值较小。</p>
 <font color="red">结论：值大，纹理清晰、规律性较强</font>
 
-<hr>
+
+
 <h3 id="Gabor小波"><a href="#Gabor小波" class="headerlink" title="Gabor小波"></a>Gabor小波</h3><p>Gabor函数是一个用于边缘提取的线性滤波器</p>
 <p>作用：<br>Gabor小波可以方便的提取图像在<font color="red">各个尺度和方向上的纹理信息</font>，同时在一定程度上降低了图像中光照变化和噪声的影响。<br>提取目标的<font color="red">局部空间和频率域信息</font>方面具有良好的特性。<br><br>特点：<br>1、Gabor小波对于图像的边缘敏感<br>2、对光照不敏感<br>3、对图像旋转有一定适应性</p>
-<hr>
 <h5 id="灰度共生矩阵opencv代码："><a href="#灰度共生矩阵opencv代码：" class="headerlink" title="灰度共生矩阵opencv代码："></a>灰度共生矩阵opencv代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br></pre></td><td class="code"><pre><span class="line">// 0°灰度共生矩阵</span><br><span class="line">void getGLCM0(Mat&amp; src, Mat&amp; dst, int gray_level)// 0度灰度共生矩阵</span><br><span class="line">&#123;</span><br><span class="line">	CV_Assert(1 == src.channels());</span><br><span class="line"> </span><br><span class="line">	int height = src.rows;</span><br><span class="line">	int width = src.cols;</span><br><span class="line"> </span><br><span class="line">	dst.create(gray_level, gray_level, CV_32SC1);</span><br><span class="line">	dst = Scalar::all(0);</span><br><span class="line"> </span><br><span class="line">	for (int i = 0; i &lt; height; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int*srcdata = src.ptr&lt;int&gt;(i);</span><br><span class="line">		for (int j = 0; j &lt; width - 1; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			// 同样的像素对，水平相邻</span><br><span class="line">			int rows = srcdata[j];</span><br><span class="line">			int cols = srcdata[j + 1];</span><br><span class="line">			dst.ptr&lt;int&gt;(rows)[cols]++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 90°灰度共生矩阵</span><br><span class="line">void getGLCM90(Mat&amp; src, Mat&amp; dst, int gray_level)</span><br><span class="line">&#123;</span><br><span class="line">	CV_Assert(1 == src.channels());</span><br><span class="line"> </span><br><span class="line">	int height = src.rows;</span><br><span class="line">	int width = src.cols;</span><br><span class="line"> </span><br><span class="line">	dst = Mat(gray_level, gray_level, CV_32SC1, Scalar(0));</span><br><span class="line"> </span><br><span class="line">	for (int i = 0; i &lt; height - 1; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int*srcdata = src.ptr&lt;int&gt;(i);</span><br><span class="line">		int*srcdata1 = src.ptr&lt;int&gt;(i + 1);</span><br><span class="line">		for (int j = 0; j &lt; width; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			// 同样的像素对，垂直相邻</span><br><span class="line">			int rows = srcdata[j];</span><br><span class="line">			int cols = srcdata1[j];</span><br><span class="line">			dst.ptr&lt;int&gt;(rows)[cols]++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 45°灰度共生矩阵</span><br><span class="line">void getGLCM45(Mat&amp; src, Mat&amp; dst, int gray_level)</span><br><span class="line">&#123;</span><br><span class="line">	CV_Assert(1 == src.channels());</span><br><span class="line"> </span><br><span class="line">	int height = src.rows;</span><br><span class="line">	int width = src.cols;</span><br><span class="line"> </span><br><span class="line">	dst = Mat(gray_level, gray_level, CV_32SC1, Scalar(0));</span><br><span class="line"> </span><br><span class="line">	for (int i = 0; i &lt; height - 1; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int*srcdata = src.ptr&lt;int&gt;(i);</span><br><span class="line">		int*srcdata1 = src.ptr&lt;int&gt;(i + 1);</span><br><span class="line">		for (int j = 0; j &lt; width - 1; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			// 同样的像素对，45°相邻</span><br><span class="line">			int rows = srcdata[j];</span><br><span class="line">			int cols = srcdata1[j + 1];</span><br><span class="line">			dst.ptr&lt;int&gt;(rows)[cols]++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 135°灰度共生矩阵</span><br><span class="line">void getGLCM135(Mat&amp; src, Mat&amp; dst, int gray_level)</span><br><span class="line">&#123;</span><br><span class="line">	CV_Assert(1 == src.channels());</span><br><span class="line"> </span><br><span class="line">	int height = src.rows;</span><br><span class="line">	int width = src.cols;</span><br><span class="line"> </span><br><span class="line">	dst = Mat(gray_level, gray_level, CV_32SC1, Scalar(0));</span><br><span class="line"> </span><br><span class="line">	for (int i = 0; i &lt; height - 1; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int*srcdata = src.ptr&lt;int&gt;(i);</span><br><span class="line">		int*srcdata1 = src.ptr&lt;int&gt;(i + 1);</span><br><span class="line">		for (int j = 1; j &lt; width; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			// 同样的像素对，135°相邻</span><br><span class="line">			int rows = srcdata[j];</span><br><span class="line">			int cols = srcdata1[j - 1];</span><br><span class="line">			dst.ptr&lt;int&gt;(rows)[cols]++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// 计算特征值</span><br><span class="line">void featureGLCM(Mat&amp;src, double&amp; Asm, double&amp; Ent, double&amp; Con, double&amp; Idm)</span><br><span class="line">&#123;</span><br><span class="line">	</span><br><span class="line">	CV_Assert(src.channels() == 1);</span><br><span class="line">	</span><br><span class="line">	int height = src.rows;</span><br><span class="line">	int width = src.cols;</span><br><span class="line">	int total = 0;</span><br><span class="line"> </span><br><span class="line">	//求图像所有像素的灰度值的和</span><br><span class="line">	for (int i = 0; i &lt; height; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int*srcdata = src.ptr&lt;int&gt;(i);</span><br><span class="line">		for (int j = 0; j &lt; width; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			total += srcdata[j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	//图像每一个像素的的值除以像素总和</span><br><span class="line">	Mat mean;</span><br><span class="line">	mean.create(height, width, CV_64FC1);</span><br><span class="line">	for (int i = 0; i &lt; height; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int*srcdata = src.ptr&lt;int&gt;(i);</span><br><span class="line">		double*copydata = mean.ptr&lt;double&gt;(i);</span><br><span class="line">		for (int j = 0; j &lt; width; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			copydata[j] = (double)srcdata[j] / (double)total;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	for (int i = 0; i &lt; height; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		double*srcdata = mean.ptr&lt;double&gt;(i);</span><br><span class="line">		for (int j = 0; j &lt; width; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			// 能量</span><br><span class="line">			Asm += srcdata[j] * srcdata[j];</span><br><span class="line"> </span><br><span class="line">			// 熵(Entropy) </span><br><span class="line">			if (srcdata[j]&gt;0)</span><br><span class="line">				Ent -= srcdata[j] * log(srcdata[j]);</span><br><span class="line"> </span><br><span class="line">			// 对比度</span><br><span class="line">			Con += (double)(i - j)*(double)(i - j)*srcdata[j];</span><br><span class="line"> </span><br><span class="line">			// 逆差矩</span><br><span class="line">			Idm += srcdata[j] / (1 + (double)(i - j)*(double)(i - j));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
@@ -334,18 +332,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/特征提取_局部特征/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/图像去雾/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          特征提取——局部特征
+          图像处理-图像去雾
         
       </div>
     </a>
   
   
-    <a href="/2018/07/16/机器学习_分类_数据聚类/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">机器学习_分类_数据聚类</div>
+    <a href="/2018/07/16/图像处理_图像滤波/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">图像处理_图像滤波</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -497,6 +495,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -506,10 +508,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,6 +551,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
               </li>
              
@@ -561,11 +563,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -577,10 +579,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
@@ -589,11 +587,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">

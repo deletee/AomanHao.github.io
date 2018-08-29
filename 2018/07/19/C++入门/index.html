@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://hi.csdn.net/attachment/201002/9/4758664_12657012034TT4.jpg">
 <meta property="og:image" content="http://hi.csdn.net/attachment/201002/9/4758664_1265703222WluB.jpg">
-<meta property="og:updated_time" content="2018-08-25T07:41:42.225Z">
+<meta property="og:updated_time" content="2018-08-29T08:16:52.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++入门">
 <meta name="twitter:description" content="C++入门">
@@ -230,12 +230,11 @@ var _hmt = _hmt || [];
 <p>指针作用：  引用类型，传递地址，减少内存消耗<br>案例<br>int p &gt;定义变量p<br>int* p &gt;定义指针变量p<br>使用指针，先要定义指针变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main() &#123;</span><br><span class="line">    int *p;     //int* p &gt;定义指针变量p</span><br><span class="line">    int a=3; </span><br><span class="line">    p=&amp;a;   //&amp;a是把a的地址赋给指针p，&amp;：取址符a</span><br><span class="line">    printf(&quot;%d\n&quot;,*p)   //输出为3</span><br><span class="line">    return 0; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&amp; 取变量的地址 &amp;(变量名)</span><br><span class="line">* 指针运算符（取值运算） *(变量名)</span><br><span class="line">&amp; *互为逆运算 *(&amp;(int i =6))=6</span><br></pre></td></tr></table></figure>
-<p>指针变量是存储地址的变量，随机分配<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int *p1;</span><br><span class="line">char *name</span><br><span class="line">---</span><br><span class="line">int x;int *p; p=&amp;x;</span><br><span class="line">答：*P=3;</span><br><span class="line">p是x的地址，*p是x的值</span><br></pre></td></tr></table></figure></p>
+<p>指针变量是存储地址的变量，随机分配<br>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int *p1;</span><br><span class="line">char *name</span><br><span class="line"></span><br><span class="line">int x;int *p; p=&amp;x;</span><br><span class="line">答：*P=3;</span><br><span class="line">p是x的地址，*p是x的值</span><br></pre></td></tr></table></figure></p>
 <p>常用错误：<br>1、指针不能直接复制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">错误：</span><br><span class="line">int *p; </span><br><span class="line">p =100;//错误</span><br><span class="line"></span><br><span class="line">正确：</span><br><span class="line">int i, *p, *t;</span><br><span class="line">p=&amp;i;</span><br><span class="line">t=p;</span><br><span class="line">*p *t是指针，把i的地址赋给pt指针（元素地址）</span><br></pre></td></tr></table></figure></p>
 <p>2、不能直接给指针赋值(不能直接变量取值)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int x= 20;</span><br><span class="line">printf(&quot;%d,&amp;(*x));</span><br></pre></td></tr></table></figure></p>
 <p>Scanf函数:函数后的参数应该传入指针，不应该是值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int score;</span><br><span class="line">printf(&quot;shuru :\n&quot;);</span><br><span class="line">scanf(&quot;%d&quot;,score);</span><br></pre></td></tr></table></figure></p>
 <p>Swap函数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">void swap(int *x, int *y)</span><br><span class="line">&#123;</span><br><span class="line">    int temp;//中间变量</span><br><span class="line">    temp=*x;</span><br><span class="line">    *x = *y;</span><br><span class="line">    *y = temp;</span><br><span class="line"></span><br><span class="line">    printf(&quot;x=%d, y=%d \n&quot;, *x, *y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main()&#123;</span><br><span class="line">    int i =13, j =45;</span><br><span class="line">    swap(&amp;i, &amp;j);</span><br><span class="line">    printf(&quot;i=%d, j=%d\n&quot;,i ,j);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//输出： x=45,y=13    i=45,j=13</span><br></pre></td></tr></table></figure></p>
-<hr>
 <h3 id="二级指针"><a href="#二级指针" class="headerlink" title="二级指针"></a>二级指针</h3><blockquote>
 <p>C语言的参数传递都是值传递，当传传递一个指针给函数的时，其实质上还是值传递，除非使用双指针。<br>只有一个<em>号的时候，我们叫它一级指针。*</em> 两个星号的叫二级指针。</p>
 </blockquote>
@@ -246,7 +245,6 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>双指针主要用在但我们想向一个A函数传递参数的时候，但是我们希望在A内部对参数做任何修改都能保存起来，那么就是用双指针吧。</p>
 </blockquote>
-<hr>
 <h3 id="输入输出流"><a href="#输入输出流" class="headerlink" title="输入输出流"></a>输入输出流</h3><p>IO库：<br>|头文件|类型|||<br>|-|-|-|-|<br>|iostream|istream,wistream 从流读取数据|ostream, wostream向流写入数据|iostream. wiostream读写流|<br>|fstream|ifstream, wifstream从文件读取数据|ofstream, wofstream向文件写入数据|fstream, wfstream读写文件|<br>|sstream|istringstream. wistringstream string 读取数据|ostringstream, wostringstream string 写入数据|stringstream, wstringstream string 读写string|</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">类型ifsream和istringstream都继承自istream;</span><br><span class="line">类型ofsream和ostringstream都继承自ostream;</span><br><span class="line">类型fsream和stringstream都继承自iostream;</span><br></pre></td></tr></table></figure>
 <p>1、创建使用文件流对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ifstream in(ifile);//构造一个ifstream并打开给定文件</span><br><span class="line">ofstream out;//构造输出文件流，未关联任何文件</span><br><span class="line"></span><br><span class="line">in.close();//关闭文件</span><br><span class="line">in.open(ifile + &quot;2&quot;);//打开另一个文件</span><br></pre></td></tr></table></figure></p>
@@ -301,10 +299,10 @@ var _hmt = _hmt || [];
 <p>bad()<br>如果在读写过程中出错，返回 true 。例如：当我们要对一个不是打开为写状态的文件进行写入时，或者我们要写入的设备没有剩余空间的时候。</p>
 <p>fail()<br>除了与bad() 同样的情况下会返回 true 以外，加上格式错误时也返回true ，例如当想要读入一个整数，而获得了一个字母的时候。</p>
 <p>eof()<br>如果读文件到达文件末尾，返回true。</p>
-<p>good()<br>这是最通用的：如果调用以上任何一个函数返回true 的话，此函数返回 false 。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">要想重置以上成员函数所检查的状态标志，你可以使用成员函数clear()，没有参数。</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">### sizeof</span><br><span class="line">sizeof 求对象或者类型的大小`sizeof(array)`&lt;br&gt;</span><br><span class="line">[cankao](https://blog.csdn.net/tao20dage/article/details/52372604)</span><br></pre></td></tr></table></figure></p>
-<p>特性0：sizeof是运算符，不是函数<br>特性1：sizeof不能求得void类型的长度<br>特性2：sizeof能求得void类型的指针的长度<br>特性3：sizeof能求得静态分配内存的数组的长度!<br>特性4：sizeof不能求得动态分配的内存的大小!<br>特性5：sizeof不能对不完整的数组求长度！<br>特性6：当表达式作为sizeof的操作数时，它返回表达式的计算结果的类型大小，但是它不对表达式求值！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line">### new(std::nothrow)</span><br><span class="line"> 顾名思义，即不抛出异常，当new一个对象失败时，默认设置该对象为NULL，这样可以方便的通过if(p == NULL) 来判断new操作是否成功</span><br><span class="line"> 建议在c++代码中，凡是涉及到new操作，都采用new(std::nothrow)，然后if(p==NULL)的方式进行判断</span><br><span class="line"></span><br><span class="line"> ---</span><br><span class="line">### vector</span><br><span class="line">[cankao](https://blog.csdn.net/duan19920101/article/details/50617190/)&lt;br&gt;</span><br><span class="line">在c++中，vector是一个十分有用的容器。</span><br><span class="line">作用：它能够像容器一样存放各种类型的对象，简单地说，vector是一个能够存放任意类型的动态数组，能够增加和压缩数据。&lt;br&gt;</span><br><span class="line">&gt;1、如果你要表示的向量长度较长（需要为向量内部保存很多数），容易导致内存泄漏，而且效率会很低；&lt;br&gt;</span><br><span class="line">2、Vector作为函数的参数或者返回值时，需要注意它的写法：</span><br><span class="line">   double Distance(vector&lt;int&gt;&amp;a, vector&lt;int&gt;&amp;b) 其中的“&amp;”绝对不能少！！！</span><br><span class="line"></span><br><span class="line">   c++基本操作</span><br></pre></td></tr></table></figure></p>
+<p>good()<br>这是最通用的：如果调用以上任何一个函数返回true 的话，此函数返回 false 。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">要想重置以上成员函数所检查的状态标志，你可以使用成员函数clear()，没有参数。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### sizeof</span><br><span class="line">sizeof 求对象或者类型的大小`sizeof(array)`&lt;br&gt;</span><br><span class="line">[cankao](https://blog.csdn.net/tao20dage/article/details/52372604)</span><br></pre></td></tr></table></figure></p>
+<p>特性0：sizeof是运算符，不是函数<br>特性1：sizeof不能求得void类型的长度<br>特性2：sizeof能求得void类型的指针的长度<br>特性3：sizeof能求得静态分配内存的数组的长度!<br>特性4：sizeof不能求得动态分配的内存的大小!<br>特性5：sizeof不能对不完整的数组求长度！<br>特性6：当表达式作为sizeof的操作数时，它返回表达式的计算结果的类型大小，但是它不对表达式求值！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">### new(std::nothrow)</span><br><span class="line"> 顾名思义，即不抛出异常，当new一个对象失败时，默认设置该对象为NULL，这样可以方便的通过if(p == NULL) 来判断new操作是否成功</span><br><span class="line"> 建议在c++代码中，凡是涉及到new操作，都采用new(std::nothrow)，然后if(p==NULL)的方式进行判断</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">### vector</span><br><span class="line">[cankao](https://blog.csdn.net/duan19920101/article/details/50617190/)&lt;br&gt;</span><br><span class="line">在c++中，vector是一个十分有用的容器。</span><br><span class="line">作用：它能够像容器一样存放各种类型的对象，简单地说，vector是一个能够存放任意类型的动态数组，能够增加和压缩数据。&lt;br&gt;</span><br><span class="line">&gt;1、如果你要表示的向量长度较长（需要为向量内部保存很多数），容易导致内存泄漏，而且效率会很低；&lt;br&gt;</span><br><span class="line">2、Vector作为函数的参数或者返回值时，需要注意它的写法：</span><br><span class="line">   double Distance(vector&lt;int&gt;&amp;a, vector&lt;int&gt;&amp;b) 其中的“&amp;”绝对不能少！！！</span><br><span class="line"></span><br><span class="line">   c++基本操作</span><br></pre></td></tr></table></figure></p>
 <p>   1 、基本操作</p>
-<p>(1)头文件#include<vector>.<br>(2)创建vector对象，vector<int> vec;<br>(3)尾部插入数字：vec.push_back(a);<br>(4)使用下标访问元素，cout&lt;<vec[0]<<endl;记住下标是从0开始的。 (5)使用迭代器访问元素.="" vector<int="">::iterator it;<br>for(it=vec.begin();it!=vec.end();it++)<br>    cout&lt;&lt;*it&lt;<endl; (6)插入元素：="" vec.insert(vec.begin()+i,a);在第i+1个元素前面插入a;="" (7)删除元素：="" vec.erase(vec.begin()+2);删除第3个元素="" vec.erase(vec.begin()+i,vec.end()+j);删除区间[i,j-1];区间从0开始="" (8)向量大小:vec.size();="" (9)清空:vec.clear();="" <figure="" class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">---</span><br><span class="line">### 二维数组</span><br></pre></td></tr></table></endl;></vec[0]<<endl;记住下标是从0开始的。></int></vector></p>
+<p>(1)头文件#include<vector>.<br>(2)创建vector对象，vector<int> vec;<br>(3)尾部插入数字：vec.push_back(a);<br>(4)使用下标访问元素，cout&lt;<vec[0]<<endl;记住下标是从0开始的。 (5)使用迭代器访问元素.="" vector<int="">::iterator it;<br>for(it=vec.begin();it!=vec.end();it++)<br>    cout&lt;&lt;*it&lt;<endl; (6)插入元素：="" vec.insert(vec.begin()+i,a);在第i+1个元素前面插入a;="" (7)删除元素：="" vec.erase(vec.begin()+2);删除第3个元素="" vec.erase(vec.begin()+i,vec.end()+j);删除区间[i,j-1];区间从0开始="" (8)向量大小:vec.size();="" (9)清空:vec.clear();="" <figure="" class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">### 二维数组</span><br></pre></td></tr></table></endl;></vec[0]<<endl;记住下标是从0开始的。></int></vector></p>
 <h1 id="include-“stdafx-h”"><a href="#include-“stdafx-h”" class="headerlink" title="include “stdafx.h”"></a>include “stdafx.h”</h1><h1 id="include"><a href="#include" class="headerlink" title="include "></a>include <cv.h></cv.h></h1><h1 id="include-1"><a href="#include-1" class="headerlink" title="include "></a>include <vector></vector></h1><h1 id="include-2"><a href="#include-2" class="headerlink" title="include "></a>include <iostream></iostream></h1><p>using namespace std;<br>int main()<br>{<br>    using namespace std;<br>    int out[3][2] = { 1, 2,<br>             3, 4,<br>            5, 6 };<br>    vector <int*> v1;</int*></p>
 <pre><code>v1.push_back(out[0]);
 v1.push_back(out[1]);
@@ -404,18 +402,18 @@ return 0;
   
 <nav id="article-nav">
   
-    <a href="/2018/07/19/机器学习-正则化-L1L2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/19/机器学习-线性回归/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          机器学习-正则化-L1L2
+          机器学习-线性回归
         
       </div>
     </a>
   
   
-    <a href="/2018/07/19/机器学习-线性回归/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">机器学习-线性回归</div>
+    <a href="/2018/07/19/机器学习常见算法总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">机器学习常见算法总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -567,6 +565,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -576,10 +578,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -623,6 +621,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
               </li>
              
@@ -631,11 +633,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -647,10 +649,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
@@ -659,11 +657,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">

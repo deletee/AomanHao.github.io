@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="AomanHao的个人博客">
 <meta property="og:description" content="机器学习分类随机森林">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-25T07:49:54.503Z">
+<meta property="og:updated_time" content="2018-08-29T08:12:16.042Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习_分类_随机森林">
 <meta name="twitter:description" content="机器学习分类随机森林">
@@ -201,7 +201,7 @@ var _hmt = _hmt || [];
       <div id="toc-article" class="toc-article">
           <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
           <strong class="toc-title">文章目录</strong>
-          
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#随机森林和Adaboost，以及区别："><span class="toc-number">1.</span> <span class="toc-text">随机森林和Adaboost，以及区别：</span></a></li></ol>
      </div>
      <script type="text/javascript">
       function showToc(){
@@ -225,8 +225,7 @@ var _hmt = _hmt || [];
 <a id="more"></a>
 <p>它也是最常用的算法之一，随机森林建立了多个决策树，并将它们合并在一起以获得更准确和稳定的预测。随机森林的一大优势在于它既可用于分类，也可用于回归问题</p>
 <p>随机森林的主要限制在于使用大量的树会使算法变得很慢，并且无法做到实时预测。一般而言，这些算法训练速度很快，预测十分缓慢。越准确的预测需要越多的树，这将导致模型越慢。在大多数现实世界的应用中，随机森林算法已经足够快，但肯定会遇到实时性要求很高的情况，那就只能首选其他方法。</p>
-<hr>
-<p>随机森林和Adaboost，以及区别<br>bagging 随机森林，不同的分类器是通过串行训练而获得的，每个新分<br>类器都根据已训练出的分类器的性能来进行训练<br>分类器权重相等.</p>
+<h3 id="随机森林和Adaboost，以及区别："><a href="#随机森林和Adaboost，以及区别：" class="headerlink" title="随机森林和Adaboost，以及区别："></a>随机森林和Adaboost，以及区别：</h3><p>bagging 随机森林，不同的分类器是通过串行训练而获得的，每个新分<br>类器都根据已训练出的分类器的性能来进行训练<br>分类器权重相等.</p>
 <p>boost ：— §是通过集中关注被已有分类器错分的那些数据来获得新的分类器。<br>匕0081丨明分类的结果是基于所有分类器的加权求和结果的，分类器权重并不相等，每个权重代表的是其对应分类器在上一轮迭代中的成功度</p>
 <p>说一下GBDT和Adaboost，以及区别</p>
 <p>Bagging + 决策树 = 随机森林</p>
@@ -315,18 +314,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/机器学习_分类_数据聚类/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/opencv_斑点检测/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          机器学习_分类_数据聚类
+          Opencv_斑点检测
         
       </div>
     </a>
   
   
-    <a href="/2018/07/16/opencv_斑点检测/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Opencv_斑点检测</div>
+    <a href="/2018/07/16/机器学习_最优化_数学基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">机器学习_最优化_数学</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -478,6 +477,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -487,10 +490,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,6 +533,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
               </li>
              
@@ -542,11 +545,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,10 +561,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
@@ -570,11 +569,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">

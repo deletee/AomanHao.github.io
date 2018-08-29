@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="AomanHao的个人博客">
 <meta property="og:description" content="机器学习最优化损失函数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-25T07:41:03.127Z">
+<meta property="og:updated_time" content="2018-08-29T08:17:27.606Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习_最优化_损失函数">
 <meta name="twitter:description" content="机器学习最优化损失函数">
@@ -248,24 +248,18 @@ var _hmt = _hmt || [];
 </tbody>
 </table>
 </div>
-<script type="math/tex; mode=display">θ^∗=argmin(1/N)\sum_i=1^n\L(y_i,f(x_i;θ_i))\+λ\phi(\theta)</script><hr>
-<h3 id="0-1损失函数和绝对值损失函数"><a href="#0-1损失函数和绝对值损失函数" class="headerlink" title="0-1损失函数和绝对值损失函数"></a>0-1损失函数和绝对值损失函数</h3><p>原理：预测值和目标值不相等为1，否则为0。<br>绝对值损失函数为：<br></p>
+<script type="math/tex; mode=display">θ^∗=argmin(1/N)\sum_i=1^n\L(y_i,f(x_i;θ_i))\+λ\phi(\theta)</script><h3 id="0-1损失函数和绝对值损失函数"><a href="#0-1损失函数和绝对值损失函数" class="headerlink" title="0-1损失函数和绝对值损失函数"></a>0-1损失函数和绝对值损失函数</h3><p>原理：预测值和目标值不相等为1，否则为0。<br>绝对值损失函数为：<br></p>
 <script type="math/tex; mode=display">L(Y,f(X))=1, if Y≠f(X)</script><script type="math/tex; mode=display">L(Y,f(X))=0, if Y=f(X)</script><p>感知机就是用的这种损失函数<br><br>改进：Y-f(X)&lt;阈值T判断相等<br>绝对值损失函数为： </p>
-<script type="math/tex; mode=display">L(Y,f(X)=|Y−f(X)|</script><hr>
-<h3 id="log对数损失函数"><a href="#log对数损失函数" class="headerlink" title="log对数损失函数"></a>log对数损失函数</h3><p>原理：假设样本服从伯努利分布（0-1）分布，然后求得满足该分布的似然函数，接着用对数求极值。<br><br>log损失函数的标准形式： <br></p>
-<script type="math/tex; mode=display">L(Y,P(Y|X))=−logP(Y|X)</script><hr>
-<h3 id="平方损失函数"><a href="#平方损失函数" class="headerlink" title="平方损失函数"></a>平方损失函数</h3><p>最小二乘法是线性回归的一种方法，它将回归的问题转化为了凸优化的问题。最小二乘法的基本原则是：最优拟合曲线应该使得所有点到回归直线的距离和最小。通常用欧几里得距离进行距离的度量。<br>平方损失的损失函数为： <br></p>
-<script type="math/tex; mode=display">L(Y|f(X))=∑N(Y−f(X))^2</script><hr>
-<h3 id="指数损失函数"><a href="#指数损失函数" class="headerlink" title="指数损失函数"></a>指数损失函数</h3><p>AdaBoost就是一指数损失函数为损失函数的。<br>指数损失函数的标准形式： <br></p>
-<script type="math/tex; mode=display">L(Y|f(X))=exp[−yf(x)]</script><hr>
-<h3 id="Hinge损失函数"><a href="#Hinge损失函数" class="headerlink" title="Hinge损失函数"></a>Hinge损失函数</h3><p>Hinge损失函数和SVM是息息相关的。在线性支持向量机中，最优化问题可以等价于<br> </p>
+<script type="math/tex; mode=display">L(Y,f(X)=|Y−f(X)|</script><h3 id="log对数损失函数"><a href="#log对数损失函数" class="headerlink" title="log对数损失函数"></a>log对数损失函数</h3><p>原理：假设样本服从伯努利分布（0-1）分布，然后求得满足该分布的似然函数，接着用对数求极值。<br><br>log损失函数的标准形式： <br></p>
+<script type="math/tex; mode=display">L(Y,P(Y|X))=−logP(Y|X)</script><h3 id="平方损失函数"><a href="#平方损失函数" class="headerlink" title="平方损失函数"></a>平方损失函数</h3><p>最小二乘法是线性回归的一种方法，它将回归的问题转化为了凸优化的问题。最小二乘法的基本原则是：最优拟合曲线应该使得所有点到回归直线的距离和最小。通常用欧几里得距离进行距离的度量。<br>平方损失的损失函数为： <br></p>
+<script type="math/tex; mode=display">L(Y|f(X))=∑N(Y−f(X))^2</script><h3 id="指数损失函数"><a href="#指数损失函数" class="headerlink" title="指数损失函数"></a>指数损失函数</h3><p>AdaBoost就是一指数损失函数为损失函数的。<br>指数损失函数的标准形式： <br></p>
+<script type="math/tex; mode=display">L(Y|f(X))=exp[−yf(x)]</script><h3 id="Hinge损失函数"><a href="#Hinge损失函数" class="headerlink" title="Hinge损失函数"></a>Hinge损失函数</h3><p>Hinge损失函数和SVM是息息相关的。在线性支持向量机中，最优化问题可以等价于<br> </p>
 <p><script type="math/tex">1/m\sum_i=1^m\l(wx_i+by_i)+||w||^2</script><br><br>其中<script type="math/tex">l(wx_i+by_i)</script> 就是hinge损失函数，后面相当于L2正则项。 </p>
 <p>Hinge函数的标准形式： <br></p>
 <p><script type="math/tex">L(y)=max(0,1−ty)</script><br></p>
 <blockquote>
 <p>y的值在-1和+1之间就可以了,使分类器可以更专注于整体的分类误差</p>
 </blockquote>
-<hr>
 <p><a href="https://blog.csdn.net/weixin_37933986/article/details/68488339" target="_blank" rel="noopener">参考文章</a></p>
 
       
@@ -517,6 +511,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -526,10 +524,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -573,6 +567,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
               </li>
              
@@ -581,11 +579,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,10 +595,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
@@ -609,11 +603,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">

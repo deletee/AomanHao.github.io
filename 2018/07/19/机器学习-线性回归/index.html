@@ -17,7 +17,7 @@
 <meta property="og:description" content="机器学习-线性回归">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/min2cheng.png">
-<meta property="og:updated_time" content="2018-08-25T07:42:42.094Z">
+<meta property="og:updated_time" content="2018-08-29T08:17:52.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习-线性回归">
 <meta name="twitter:description" content="机器学习-线性回归">
@@ -228,7 +228,6 @@ var _hmt = _hmt || [];
 <h3 id="LR模型"><a href="#LR模型" class="headerlink" title="LR模型"></a>LR模型</h3><p>每个特征变量量可以⾸首先映射到⼀一个函数，然后再参与线性计算,模型如下：</p>
 <script type="math/tex; mode=display">y = \theta_0 + \theta_1x_1 + \theta_2x_2 + · · · + \theta_nx_n</script><p>其中$ x_1,x_2,…,x_n$表示自变量（特征分量），$y$表示因变量，$\theta$是权重，$\theta_0$是偏移项（截距）;$\theta_i$越大，说明$x_i$对$y$结果的影响越⼤<br>输入空间映射到特征空间(映射函数$\phi(x)$)，建模.为</p>
 <script type="math/tex; mode=display">h_\theta(x)=\theta^T\phi(x)</script><p>特征映射相关技术，包括特征哈希、特征学习、Kernel等</p>
-<hr>
 <h3 id="目标函数"><a href="#目标函数" class="headerlink" title="目标函数"></a>目标函数</h3><p>预测值$ h_\theta(x)$与真实值$y$之差越小越好，加入损失函数:</p>
 <script type="math/tex; mode=display">J(\theta)={0.5}\sum_{i=1}^{n}{(h_\theta(x^i)-y^i)^2}</script><p>求$min{J(\theta)}$<br>损失函数就是$x^i$的预测值$h_\theta(x^i)$与真实值$y^i$之差的平方和</p>
 <blockquote>
@@ -242,11 +241,8 @@ var _hmt = _hmt || [];
 <script type="math/tex; mode=display">y^i=\theta^Tx^i+\epsilon^{i}</script><p>根据中心极限定理，认为变量之和服从高斯分布,即</p>
 <script type="math/tex; mode=display">\epsilon^{i} = y^i-\theta^Tx^i</script><p>则，x,y的条件概率为</p>
 <script type="math/tex; mode=display">p(y^i|x^i;\theta) = \frac{1}{\sqrt{2\pi}\sigma}exp(-\frac{(y^i-\theta^Tx^i)^2}{2\sigma^2})</script><p>$p(y^i|x^i;\theta)$越大，证明越接近真实值，还要考虑拟合过度以及模型的泛化能力问题</p>
-<hr>
 <p>优化目标函数：使目标函数最小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">最小二乘法</span><br><span class="line">梯度下降法</span><br><span class="line">    批量梯度下降法</span><br><span class="line">    随机梯度下降法</span><br><span class="line">拉格朗日乘子法</span><br></pre></td></tr></table></figure></p>
 <p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/min2cheng.png" alt=""></p>
-<hr>
-<hr>
 <p>例子</p>
 <script type="math/tex; mode=display">\begin{bmatrix}
 {a_{11}}&{a_{12}}&{\cdots}&{a_{1n}}\\
@@ -336,18 +332,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/19/C++入门/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/19/特征提取_图像矩阵变换/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          C++入门
+          特征提取_图像矩阵变换
         
       </div>
     </a>
   
   
-    <a href="/2018/07/19/数据结构_二叉树/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构_二叉树</div>
+    <a href="/2018/07/19/C++入门/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++入门</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -499,6 +495,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -508,10 +508,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -555,6 +551,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
               </li>
              
@@ -563,11 +563,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,10 +579,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
@@ -591,11 +587,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">
