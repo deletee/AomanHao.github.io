@@ -38,3 +38,6 @@ permalink_defaults:
 ```
 
 root，url属性配置正确，填写自己对应的
+
+
+[cankao](https://www.jianshu.com/p/449accb044b4)
