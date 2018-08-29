@@ -10,7 +10,7 @@ toc: true
 <!--more-->
 <font color = blue>代码编辑器，强烈推荐使用微软的 VS code，相比Atom开启迅速，使用方便，扩展丰富</font>
 
----
+
 ##第一步： 安装Kramed
 hexo 默认的渲染引擎是 marked，但是 marked 不支持 mathjax。，所以需要更换Hexo的markdown渲染引擎为hexo-renderer-kramed引擎，后者支持mathjax公式输出。
 ```
@@ -20,7 +20,7 @@ npm install hexo-renderer-kramed --save
 
 ![](http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math1.png)
 
----
+
 
 
 ##第二步：更改文件配置
@@ -42,7 +42,7 @@ function formatText(text) {
 ```
 ![这里写图片描述](http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math4.png)
 
----
+
 
 ##第三步: 停止使用 hexo-math，并安装mathjax包
 
@@ -58,7 +58,7 @@ npm install hexo-renderer-mathjax --save
 ![这里写图片描述](http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math2.png)
 ![这里写图片描述](http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math3.png)
 
----
+
 
 ##第四步: 更新 Mathjax 的 配置文件
 
@@ -71,7 +71,7 @@ npm install hexo-renderer-mathjax --save
 
 ![这里写图片描述](http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math5.png)
 
----
+
 
 ##第五步: 更改默认转义规则
 因为LaTeX与markdown语法有语义冲突，所以 hexo 默认的转义规则会将一些字符进行转义，所以我们需要对默认的规则进行修改. 
@@ -95,7 +95,7 @@ em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
 
 ![这里写图片描述](http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math6.png)
 
----
+
 
 ##第六步: 开启mathjax
 
@@ -140,7 +140,7 @@ mathjax: true
 
 ![这里写图片描述](http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math7.5.png)
 
----
+
 
 通过以上步骤，我们就可以在 hexo 中使用 Mathjax 来书写数学公式。
 

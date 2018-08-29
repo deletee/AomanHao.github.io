@@ -17,7 +17,7 @@ Hexo博客yilia主题首页添加helper-live2d模型插件
 ![](http://p3qhnc0eg.bkt.clouddn.com/blog/imgkoharu4.png)
 
 
----
+
 Hexo
 ###安装模块:
 
@@ -29,7 +29,7 @@ npm install --save hexo-helper-live2d
 
 ![](http://p3qhnc0eg.bkt.clouddn.com/blog/imgkoharu1.png)
 
----
+
 
 ### 下载模型
 作者提供了三个下载模型的办法，我选择操作比较简单的一种
@@ -76,7 +76,7 @@ npm install live2d-widget-model-koharu
 ![](http://p3qhnc0eg.bkt.clouddn.com/blog/imgkoharu3.png)
 
 
----
+
 
 ### 配置
 请向`Hexo`的 `_config.yml` 文件添加配置.
@@ -108,6 +108,6 @@ live2d:
 
 ![](http://p3qhnc0eg.bkt.clouddn.com/blog/imgkoharu2.png)
 
----
+
 
 插件部署与应用就完成了，接下来就是部署hexo博客和个人主页

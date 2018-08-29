@@ -12,7 +12,7 @@ toc: true
 Boosting, 也称为增强学习或提升法，是一种重要的集成学习技术， 能够将预测精度仅比随机猜度略高的弱学习器增强为预测精度高的强学习器。
 >AdaBoost是英文"Adaptive Boosting"（自适应增强）的缩写
 
----
+
 
 ### 步骤
 ```
@@ -24,7 +24,7 @@ Boosting, 也称为增强学习或提升法，是一种重要的集成学习技�
 
 alpha值是基于每个弱分类器的错误率进行计算,计算出alpha值之后，可以对权重向量进行更新，以使得那些正确分类的样本的权重降低而错分样本的权重升高，直到错误率为0或者弱分类器的数目达到用户的指定值为止
 
----
+
 
 ### 算法过程
 
@@ -35,7 +35,7 @@ alpha值是基于每个弱分类器的错误率进行计算,计算出alpha值之
 ![](http://p3qhnc0eg.bkt.clouddn.com/blog/img/adaboost_liucheng3.png)
 
 
----
+
 
 [参考文章地址](https://blog.csdn.net/guyuealian/article/details/70995333)
 
@@ -43,7 +43,7 @@ alpha值是基于每个弱分类器的错误率进行计算,计算出alpha值之
 
 
 
----
+
 
 数据分类模型
 ```

@@ -38,7 +38,7 @@ int main() {
 ```
 int *p1;
 char *name
----
+
 int x;int *p; p=&x;
 答：*P=3;
 p是x的地址，*p是x的值
@@ -93,7 +93,7 @@ main(){
 
 //输出： x=45,y=13    i=45,j=13
 ```
----
+
 ### 二级指针
 >C语言的参数传递都是值传递，当传传递一个指针给函数的时，其实质上还是值传递，除非使用双指针。
 只有一个*号的时候，我们叫它一级指针。** 两个星号的叫二级指针。
@@ -130,7 +130,7 @@ p中放的是中间桥梁bridge的地址&bridge
 ```
 >双指针主要用在但我们想向一个A函数传递参数的时候，但是我们希望在A内部对参数做任何修改都能保存起来，那么就是用双指针吧。
 
----
+
 ### 输入输出流
 IO库：
 |头文件|类型|||
@@ -267,7 +267,7 @@ good()
 ```
 要想重置以上成员函数所检查的状态标志，你可以使用成员函数clear()，没有参数。
 
----
+
 ### sizeof
 sizeof 求对象或者类型的大小`sizeof(array)`<br>
 [cankao](https://blog.csdn.net/tao20dage/article/details/52372604)
@@ -281,12 +281,12 @@ sizeof 求对象或者类型的大小`sizeof(array)`<br>
 特性6：当表达式作为sizeof的操作数时，它返回表达式的计算结果的类型大小，但是它不对表达式求值！
 ```
 
----
+
 ### new(std::nothrow)
  顾名思义，即不抛出异常，当new一个对象失败时，默认设置该对象为NULL，这样可以方便的通过if(p == NULL) 来判断new操作是否成功
  建议在c++代码中，凡是涉及到new操作，都采用new(std::nothrow)，然后if(p==NULL)的方式进行判断
 
- ---
+ 
 ### vector
 [cankao](https://blog.csdn.net/duan19920101/article/details/50617190/)<br>
 在c++中，vector是一个十分有用的容器。
@@ -314,7 +314,7 @@ vec.erase(vec.begin()+i,vec.end()+j);删除区间[i,j-1];区间从0开始
 (9)清空:vec.clear();
    ```
 
----
+
 ### 二维数组
 ```
 #include "stdafx.h"
