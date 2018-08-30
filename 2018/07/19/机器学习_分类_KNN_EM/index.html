@@ -75,6 +75,8 @@ var _hmt = _hmt || [];
 	        
 				<li><a href="/archives">全部文章</a></li>
 	        
+				<li><a href="/archives/index.html">归档</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -139,6 +141,8 @@ var _hmt = _hmt || [];
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -154,12 +158,14 @@ var _hmt = _hmt || [];
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">全部文章</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives">全部文章</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -239,7 +245,19 @@ var _hmt = _hmt || [];
 <p>opencv3代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">#include &quot;stdafx.h&quot;</span><br><span class="line">#include &quot;opencv2\opencv.hpp&quot;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">using namespace cv;</span><br><span class="line">using namespace cv::ml;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    Mat img = imread(&quot;E:/opencv/opencv/sources/samples/data/digits.png&quot;);</span><br><span class="line">    Mat gray;</span><br><span class="line">    cvtColor(img, gray, CV_BGR2GRAY);</span><br><span class="line">    int b = 20;</span><br><span class="line">    int m = gray.rows / b;   //原图为1000*2000</span><br><span class="line">    int n = gray.cols / b;   //裁剪为5000个20*20的小图块</span><br><span class="line">    Mat data,labels;   //特征矩阵</span><br><span class="line">    for (int i = 0; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        int offsetCol = i*b; //列上的偏移量</span><br><span class="line">        for (int j = 0; j &lt; m; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            int offsetRow = j*b;  //行上的偏移量</span><br><span class="line">            //截取20*20的小块</span><br><span class="line">            Mat tmp;</span><br><span class="line">            gray(Range(offsetRow, offsetRow + b), Range(offsetCol, offsetCol + b)).copyTo(tmp);</span><br><span class="line">            data.push_back(tmp.reshape(0,1));  //序列化后放入特征矩阵</span><br><span class="line">            labels.push_back((int)j / 5);  //对应的标注</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    data.convertTo(data, CV_32F); //uchar型转换为cv_32f</span><br><span class="line">    int samplesNum = data.rows;</span><br><span class="line">    int trainNum = 3000;</span><br><span class="line">    Mat trainData, trainLabels;</span><br><span class="line">    trainData = data(Range(0, trainNum), Range::all());   //前3000个样本为训练数据</span><br><span class="line">    trainLabels = labels(Range(0, trainNum), Range::all());</span><br><span class="line"></span><br><span class="line">    //使用KNN算法</span><br><span class="line">    int K = 5;</span><br><span class="line">    Ptr&lt;TrainData&gt; tData = TrainData::create(trainData, ROW_SAMPLE, trainLabels);</span><br><span class="line">    Ptr&lt;KNearest&gt; model = KNearest::create();</span><br><span class="line">    model-&gt;setDefaultK(K);</span><br><span class="line">    model-&gt;setIsClassifier(true);</span><br><span class="line">    model-&gt;train(tData);</span><br><span class="line"></span><br><span class="line">    //预测分类</span><br><span class="line">    double train_hr = 0, test_hr = 0;</span><br><span class="line">    Mat response;</span><br><span class="line">    // compute prediction error on train and test data</span><br><span class="line">    for (int i = 0; i &lt; samplesNum; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        Mat sample = data.row(i);</span><br><span class="line">        float r = model-&gt;predict(sample);   //对所有行进行预测</span><br><span class="line">        //预测结果与原结果相比，相等为1，不等为0</span><br><span class="line">        r = std::abs(r - labels.at&lt;int&gt;(i)) &lt;= FLT_EPSILON ? 1.f : 0.f;          </span><br><span class="line"></span><br><span class="line">        if (i &lt; trainNum)</span><br><span class="line">            train_hr += r;  //累积正确数</span><br><span class="line">        else</span><br><span class="line">            test_hr += r;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    test_hr /= samplesNum - trainNum;</span><br><span class="line">    train_hr = trainNum &gt; 0 ? train_hr / trainNum : 1.;</span><br><span class="line"></span><br><span class="line">    printf(&quot;accuracy: train = %.1f%%, test = %.1f%%\n&quot;,</span><br><span class="line">        train_hr*100., test_hr*100.);</span><br><span class="line">    waitKey(0);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
-
+    <!--文章内版权说明开始-->
+    
+  
+    <div class="declare">
+    <strong>本文链接：</strong>
+    http://www.aomanhao.top/2018/07/19/机器学习_分类_KNN_EM/
+    <br>
+    <strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。转载请注明出处！
+    <br>
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+    </div>
+  
+    <!--文章内版权说明结束--> 
       
     </div>
     <div class="article-info article-info-index">
@@ -320,18 +338,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/19/C++图像处理程序/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/19/特征提取_图像矩阵变换/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          C++图像处理程序
+          特征提取_图像矩阵变换
         
       </div>
     </a>
   
   
-    <a href="/2018/07/19/特征提取_图像矩阵变换/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">特征提取_图像矩阵变换</div>
+    <a href="/2018/07/19/C++入门/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++入门</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -483,10 +501,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -500,6 +514,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -523,10 +541,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
@@ -535,11 +549,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,11 +565,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,11 +589,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
+                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,10 +602,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">

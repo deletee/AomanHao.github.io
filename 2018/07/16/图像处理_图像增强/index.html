@@ -83,6 +83,8 @@ var _hmt = _hmt || [];
 	        
 				<li><a href="/archives">全部文章</a></li>
 	        
+				<li><a href="/archives/index.html">归档</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -147,6 +149,8 @@ var _hmt = _hmt || [];
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -162,12 +166,14 @@ var _hmt = _hmt || [];
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">全部文章</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives">全部文章</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -477,7 +483,19 @@ var _hmt = _hmt || [];
 <script type="math/tex; mode=display">min(image,(255-image))</script><h3 id="加Masaic算法"><a href="#加Masaic算法" class="headerlink" title="加Masaic算法"></a>加Masaic算法</h3><p>原理：用中心像素来表示邻域像素<br>Opencv代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">uchar getPixel( IplImage* img, int row, int col, int k)</span><br><span class="line">&#123;</span><br><span class="line">	return ((uchar*)img-&gt;imageData + row* img-&gt;widthStep)[col*img-&gt;nChannels +k];</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void setPixel( IplImage* img, int row, int col, int k, uchar val)</span><br><span class="line">&#123;</span><br><span class="line">	((uchar*)img-&gt;imageData + row* img-&gt;widthStep)[col*img-&gt;nChannels +k] = val;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">--</span><br><span class="line"></span><br><span class="line">// nSize:为尺寸大小，奇数</span><br><span class="line">// 将邻域的值用中心像素的值替换</span><br><span class="line">void Masic(IplImage* img, IplImage* dst, int nSize)</span><br><span class="line">&#123;</span><br><span class="line">	int offset = (nSize-1)/2;</span><br><span class="line">	for ( int row = offset; row &lt;img-&gt;height - offset; row= row+offset)</span><br><span class="line">	&#123;</span><br><span class="line">		for( int col= offset; col&lt;img-&gt;width - offset; col = col+offset)</span><br><span class="line">		&#123;</span><br><span class="line">			int val0 = getPixel(img, row, col, 0);</span><br><span class="line">			int val1 = getPixel(img, row, col, 1);</span><br><span class="line">			int val2 = getPixel(img, row, col, 2);</span><br><span class="line">			for ( int m= -offset; m&lt;offset; m++)</span><br><span class="line">			&#123;</span><br><span class="line">				for ( int n=-offset; n&lt;offset; n++)</span><br><span class="line">				&#123;</span><br><span class="line">					setPixel(dst, row+m, col+n, 0, val0);</span><br><span class="line">					setPixel(dst, row+m, col+n, 1, val1);</span><br><span class="line">					setPixel(dst, row+m, col+n, 2, val2);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
-
+    <!--文章内版权说明开始-->
+    
+  
+    <div class="declare">
+    <strong>本文链接：</strong>
+    http://www.aomanhao.top/2018/07/16/图像处理_图像增强/
+    <br>
+    <strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。转载请注明出处！
+    <br>
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+    </div>
+  
+    <!--文章内版权说明结束--> 
       
     </div>
     <div class="article-info article-info-index">
@@ -558,18 +576,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/Linux_commnd/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/机器学习_最优化_数学基础/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Linux_常用命令
+          机器学习_最优化_数学
         
       </div>
     </a>
   
   
-    <a href="/2018/07/16/边缘检测/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">图像处理_边缘检测</div>
+    <a href="/2018/07/16/机器学习_概率论_数学基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">机器学习_概率论_数学基础</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -721,10 +739,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -738,6 +752,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -761,10 +779,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
@@ -773,11 +787,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -789,11 +803,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -805,11 +827,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
+                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -818,10 +840,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">

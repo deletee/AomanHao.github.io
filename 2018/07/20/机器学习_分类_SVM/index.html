@@ -86,6 +86,8 @@ var _hmt = _hmt || [];
 	        
 				<li><a href="/archives">全部文章</a></li>
 	        
+				<li><a href="/archives/index.html">归档</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -150,6 +152,8 @@ var _hmt = _hmt || [];
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -165,12 +169,14 @@ var _hmt = _hmt || [];
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">全部文章</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives">全部文章</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -266,7 +272,19 @@ var _hmt = _hmt || [];
 <p>Opencv代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;opencv2/core/core.hpp&gt;  </span><br><span class="line">#include &lt;opencv2/highgui/highgui.hpp&gt;  </span><br><span class="line">#include &lt;opencv2/ml/ml.hpp&gt;  </span><br><span class="line">  </span><br><span class="line">using namespace cv;  </span><br><span class="line">  </span><br><span class="line">int main()  </span><br><span class="line">&#123;  </span><br><span class="line">    // Data for visual representation  </span><br><span class="line">    int width = 512, height = 512;  </span><br><span class="line">    Mat image = Mat::zeros(height, width, CV_8UC3);  </span><br><span class="line">  </span><br><span class="line">    // Set up training data  </span><br><span class="line">    float labels[5] = &#123;1.0, -1.0, -1.0, -1.0,1.0&#125;;  </span><br><span class="line">    Mat labelsMat(5, 1, CV_32FC1, labels);  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">    float trainingData[5][2] = &#123; &#123;501, 10&#125;, &#123;255, 10&#125;, &#123;501, 255&#125;, &#123;10, 501&#125;,&#123;501,128&#125; &#125;;  </span><br><span class="line">    Mat trainingDataMat(5, 2, CV_32FC1, trainingData);  </span><br><span class="line">  </span><br><span class="line">    //设置支持向量机的参数  </span><br><span class="line">    CvSVMParams params;  </span><br><span class="line">    params.svm_type    = CvSVM::C_SVC;//SVM类型：使用C支持向量机  </span><br><span class="line">    params.kernel_type = CvSVM::LINEAR;//核函数类型：线性  </span><br><span class="line">    params.term_crit   = cvTermCriteria(CV_TERMCRIT_ITER, 100, 1e-6);//终止准则函数：当迭代次数达到最大值时终止  </span><br><span class="line">  </span><br><span class="line">    //训练SVM  </span><br><span class="line">    //建立一个SVM类的实例  </span><br><span class="line">    CvSVM SVM;  </span><br><span class="line">    //训练模型，参数为：输入数据、响应、XX、XX、参数（前面设置过）  </span><br><span class="line">    SVM.train(trainingDataMat, labelsMat, Mat(), Mat(), params);  </span><br><span class="line">      </span><br><span class="line">    Vec3b green(0,255,0), blue (255,0,0);  </span><br><span class="line">    //显示判决域  </span><br><span class="line">    for (int i = 0; i &lt; image.rows; ++i)  </span><br><span class="line">        for (int j = 0; j &lt; image.cols; ++j)  </span><br><span class="line">        &#123;  </span><br><span class="line">                        Mat sampleMat = (Mat_&lt;float&gt;(1,2) &lt;&lt; i,j);  </span><br><span class="line">            //predict是用来预测的，参数为：样本、返回值类型（如果值为ture而且是一个2类问题则返回判决函数值，否则返回类标签）、  </span><br><span class="line">            float response = SVM.predict(sampleMat);  </span><br><span class="line">  </span><br><span class="line">            if (response == 1)  </span><br><span class="line">                image.at&lt;Vec3b&gt;(j, i)  = green;  </span><br><span class="line">            else if (response == -1)   </span><br><span class="line">                 image.at&lt;Vec3b&gt;(j, i)  = blue;  </span><br><span class="line">        &#125;  </span><br><span class="line">  </span><br><span class="line">    //画出训练数据  </span><br><span class="line">    int thickness = -1;  </span><br><span class="line">    int lineType = 8;  </span><br><span class="line">    circle( image, Point(501,  10), 5, Scalar(  0,   0,   0), thickness, lineType);//画圆  </span><br><span class="line">    circle( image, Point(255,  10), 5, Scalar(255, 255, 255), thickness, lineType);  </span><br><span class="line">    circle( image, Point(501, 255), 5, Scalar(255, 255, 255), thickness, lineType);  </span><br><span class="line">    circle( image, Point( 10, 501), 5, Scalar(255, 255, 255), thickness, lineType);  </span><br><span class="line">    circle(image, Point( 501, 128), 5, Scalar(0, 0, 0), thickness, lineType);  </span><br><span class="line">  </span><br><span class="line">    //显示支持向量  </span><br><span class="line">    thickness = 2;  </span><br><span class="line">    lineType  = 8;  </span><br><span class="line">    //获取支持向量的个数  </span><br><span class="line">    int c     = SVM.get_support_vector_count();  </span><br><span class="line">  </span><br><span class="line">    for (int i = 0; i &lt; c; ++i)  </span><br><span class="line">    &#123;  </span><br><span class="line">        //获取第i个支持向量  </span><br><span class="line">        const float* v = SVM.get_support_vector(i);  </span><br><span class="line">        //支持向量用到的样本点，用灰色进行标注  </span><br><span class="line">        circle( image,  Point( (int) v[0], (int) v[1]),   6,  Scalar(128, 128, 128), thickness, lineType);  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    imwrite(&quot;result.png&quot;, image);        // save the image   </span><br><span class="line">  </span><br><span class="line">    imshow(&quot;SVM Simple Example&quot;, image); // show it to the user  </span><br><span class="line">    waitKey(0);  </span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
-
+    <!--文章内版权说明开始-->
+    
+  
+    <div class="declare">
+    <strong>本文链接：</strong>
+    http://www.aomanhao.top/2018/07/20/机器学习_分类_SVM/
+    <br>
+    <strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。转载请注明出处！
+    <br>
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+    </div>
+  
+    <!--文章内版权说明结束--> 
       
     </div>
     <div class="article-info article-info-index">
@@ -357,8 +375,8 @@ var _hmt = _hmt || [];
     </a>
   
   
-    <a href="/2018/07/19/机器学习推荐书/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">机器学习推荐书</div>
+    <a href="/2018/07/19/C++图像处理程序/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++图像处理程序</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -510,10 +528,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -527,6 +541,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -550,10 +568,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
@@ -562,11 +576,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -578,11 +592,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -594,11 +616,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
+                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -607,10 +629,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">

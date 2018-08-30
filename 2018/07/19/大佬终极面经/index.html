@@ -75,6 +75,8 @@ var _hmt = _hmt || [];
 	        
 				<li><a href="/archives">全部文章</a></li>
 	        
+				<li><a href="/archives/index.html">归档</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -139,6 +141,8 @@ var _hmt = _hmt || [];
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -154,12 +158,14 @@ var _hmt = _hmt || [];
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">全部文章</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives">全部文章</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -226,7 +232,19 @@ var _hmt = _hmt || [];
 <h3 id="hadoop"><a href="#hadoop" class="headerlink" title="hadoop"></a>hadoop</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">简单介绍 MapReduce 原理，有没有看过源码，说说 Map 阶段怎么实现的,</span><br><span class="line">MapReduce 实现统计出现次数最多的前 100 个访问 IP.</span><br><span class="line">MapReduce 实现统计不重复用户 ID,MapReduce 实现两个数据集求交集。</span><br><span class="line">HBase 行健怎么设计,spark 性能一般优化方法,spark streaming 和 storm 区别.给了一张笔试题， 10 道选择，一道大题。选择题是 java 基础知识，大题一个有三问：根据场景写出 Hive 建表语句； Hsql 从表中查询；</span><br><span class="line">用MapReduce写好友推荐，在一堆单词里面找出现次数最多的k个</span><br><span class="line">用分布式的方法做采样怎么保证采样结果完全符合预期？</span><br><span class="line">后面又问了Hadoop,Spark,storm下面的产品，原理，适用场景，</span><br><span class="line">写一个 Hadoop 版本的 wordcount。</span><br></pre></td></tr></table></figure>
 <h3 id="HMM"><a href="#HMM" class="headerlink" title="HMM"></a>HMM</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">实现 hmm 的状态转移代码；</span><br><span class="line">机器学习理论</span><br><span class="line">讲机器学习中常用的损失函数有哪些？交叉熵有什么好处？（凸优化问题）</span><br><span class="line">判别模型与生成模型的本质区别是什么</span><br><span class="line">分类模型和回归模型的区别，分类模型可以做回归分析吗？反过来可以吗？（我回答是分类不可以做回归，回归倒是可以做分类，不知道对不对）</span><br><span class="line">k折交叉验证 中k取值多少有什么关系 （我不知道，随便答，然后面试官后面问我知道bias和variance吗？估计是和这两个东西有关， 知乎上有个问题讨论了k值大小与bias和variance的关系）</span><br><span class="line">解释局部相关性</span><br><span class="line">特征选择的方法；</span><br><span class="line">在模型的训练迭代中，怎么评估效果；</span><br><span class="line">特征选择方法有哪些(能说出来10种以上加分)，之后和面试官仔细聊了一下特征选择的问题，我介绍了了解的几种基本的特征选择思路（错误率选择、基于熵的选择、类内类间距离的选择）；</span><br><span class="line">有没有接触过机器学习的前沿，深度学习看过paper没有？（并没有）</span><br><span class="line">如何用尽可能少的样本训练模型同时又保证模型的性能；</span><br><span class="line">你读哪些期刊会议的论文？你遇到的比较有意思的算法？</span><br><span class="line">生成模型，判别模型</span><br><span class="line">线性分类和非线性分类各有哪些模型</span><br><span class="line">比较各个模型的Loss function，</span><br><span class="line">设计一个结构存取稀疏矩阵 （面试官最后告诉我了一个极度压缩的存法，相同行或列存偏差，我当时没听懂，还不懂装懂，最后还是没记住）</span><br><span class="line">PageRank原理，怎么用模型来查找异常用户，我讲了一大堆我的理解，然后面试官一句你怎么不用规则把我噎到了……</span><br><span class="line">无监督和有监督算法的区别？</span><br><span class="line">经典算法推导(加分项)，原理，各个损失函数之间区别，使用场景，如何并行化，有哪些关键参数</span><br><span class="line">什么叫判别模型什么叫生成模型。</span><br><span class="line">先针对项目十分细致地询问了各种细节，然后就问我如何处理数据中的噪声点、数据清洗算法（正好自己做了一个算法）、如何选择特征等。</span><br><span class="line">校招TST内推，面过了2面，还是跟之前那个有点类似的游戏开发的安全部门，因为我也玩LOL，又问到怎么来判断玩家有没有作弊之类的问题，这次我小心翼翼的说用模型怎么做，用规则怎么做，感觉这次聊的都挺开心的。</span><br><span class="line">是否了解A/B Test以及A/B Test结果的置信度特征工程经验是否了解mutual infomation、chi-square、LR前后向、树模型等特征选择方式</span><br><span class="line">深刻理解各种算法对应采用的数据结构和对应的搜索方法。比如KNN对应的KD树、如何给图结构设计数据结构？如何将算法map-red化</span><br><span class="line">矩阵的各种变换，尤其是特征值相关的知识。分布式的矩阵向量乘的算法</span><br><span class="line">线性分类器与非线性分类器的区别及优劣；特征比数据量还大时，选择什么样的分类器？对于维度很高的特征，你是选择线性还是非线性分类器？对于维度极低的特征，你是选择线性还是非线性分类器？如何解决过拟合问题？L1和L2正则的区别，如何选择L1和L2正则？</span><br><span class="line">项目中的数据是否会归一化处理，哪个机器学习算法不需要归一化处理</span><br><span class="line">并行计算、压缩算法LDA http://www.doc88.com/p-1621945750499.html</span><br></pre></td></tr></table></figure>
       
-
+    <!--文章内版权说明开始-->
+    
+  
+    <div class="declare">
+    <strong>本文链接：</strong>
+    http://www.aomanhao.top/2018/07/19/大佬终极面经/
+    <br>
+    <strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。转载请注明出处！
+    <br>
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+    </div>
+  
+    <!--文章内版权说明结束--> 
       
     </div>
     <div class="article-info article-info-index">
@@ -307,18 +325,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/19/机器学习-正则化-L1L2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/19/机器学习-线性回归/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          机器学习-正则化-L1L2
+          机器学习-线性回归
         
       </div>
     </a>
   
   
-    <a href="/2018/07/19/数据结构_二叉树/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构_二叉树</div>
+    <a href="/2018/07/19/opencv_imgseg/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Opencv图像分割</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -470,10 +488,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -487,6 +501,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,10 +528,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
@@ -522,11 +536,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,11 +552,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,11 +576,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
+                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,10 +589,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">

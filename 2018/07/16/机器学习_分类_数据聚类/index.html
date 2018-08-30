@@ -75,6 +75,8 @@ var _hmt = _hmt || [];
 	        
 				<li><a href="/archives">全部文章</a></li>
 	        
+				<li><a href="/archives/index.html">归档</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -139,6 +141,8 @@ var _hmt = _hmt || [];
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -154,12 +158,14 @@ var _hmt = _hmt || [];
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/archives">全部文章</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives">全部文章</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -228,7 +234,19 @@ var _hmt = _hmt || [];
 <h3 id="Mean-Shift聚类"><a href="#Mean-Shift聚类" class="headerlink" title="Mean-Shift聚类"></a>Mean-Shift聚类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Mean shift算法，又称均值漂移算法，这是一种基于核密度估计的爬山算法，可用于聚类、图像分割、跟踪等。它的工作原理基于质心，这意味着它的目标是定位每个簇/类的质心，即先算出当前点的偏移均值，将该点移动到此偏移均值，然后以此为新的起始点，继续移动，直到满足最终的条件（找出最密集的区域）。</span><br><span class="line"></span><br><span class="line">1、为了理解均值漂移，我们可以像上图一样想象二维空间中的一组数据点，然后先随机选择一个点C，以它为圆心画一个半径为r的圆开始移动。之前提到了，这是个爬山算法，它的核函数会随着迭代次数增加逐渐向高密度区域靠近。</span><br><span class="line">2、在每轮迭代中，算法会不断计算圆心到质心的偏移均值，然后整体向质心靠近。漂移圆圈内的密度与数据点数成正比。到达质心后，算法会更新质心位置，并继续让圆圈向更高密度的区域靠近。</span><br><span class="line">3、当圆圈到达目标质心后，它发现自己无论朝哪个方向漂移都找不到更多的数据点，这时我们就认为它已经处于最密集的区域。</span><br><span class="line">4、这时，算法满足了最终的条件，即退出。</span><br><span class="line"></span><br><span class="line">Mean-Shift不需要实现定义聚类数量，因为这些都可以在计算偏移均值时得出。这是一个巨大的优势。同时，算法推动聚类中心在向密度最大区域靠近的效果也非常令人满意，这一过程符合数据驱动型任务的需要，而且十分自然直观。如果要说Mean-Shift有什么缺点，那就是对高维球区域的半径r的定义，不同选择可能会产生高度不同的影响。</span><br></pre></td></tr></table></figure>
 <h3 id="EM聚类"><a href="#EM聚类" class="headerlink" title="EM聚类"></a>EM聚类</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">均值→质心，方差→椭圆聚类，权重→聚类大小。</span><br><span class="line">K-Means算法的主要缺点之一是它直接用了距离质心的平均值。</span><br><span class="line"></span><br><span class="line">1、首先，我们确定聚类的数量（如K-Means），并随机初始化每个聚类的高斯分布参数。你也可以尝试通过快速查看数据来为初始参数提供更好的猜测，但从上图可以看出，这其实不是很必要，因为算法会很快进行优化。</span><br><span class="line">2、其次，根据每个聚类的高斯分布，计算数据点属于特定聚类的概率。如果数据点越接近高斯质心，那它属于该聚类的概率就越高。这很直观，因为对于高斯分布，我们一般假设大部分数据更靠近聚类质心。</span><br><span class="line">3、在这些概率的基础上，我们为高斯分布计算一组新的参数，使聚类内数据点的概率最大化。我们用数据点位置的加权和来计算这些新参数，其中权重就是数据点属于聚类的概率。为了可视化这个过程，我们可以看看上面的图片，特别是黄色的聚类。第一次迭代中，它是随机的，大多数黄点都集中在该聚类的右侧。当我们按概率计算加权和后，虽然聚类的中部出现一些点，但右侧的比重依然很高。随着迭代次数增加，黄点在聚类中的位置也完成了“右下→左下”的移动。因此，标准差的变化调整着聚类的形状，以使它能更适合数据点的分布。</span><br><span class="line">4、迭代步骤2和步骤3，直至收敛。</span><br><span class="line"></span><br><span class="line">GMM有两个关键优势。首先它比K-Means更灵活，由于标准差的引入，最后聚类的形状不再局限于圆形，它还可以是大小形状不一的椭圆形——K均值实际上是GMM的一个特例，其中每个聚类的协方差在所有维上都接近0。其次，权重的引入为同一点属于多个聚类找到了解决方案。如果一个数据点位于两个聚类的重叠区域，那我们就可以简单为它定义一个聚类，或者计算它属于X聚类的百分比是多少，属于Y聚类的百分比是多少。简而言之，GMM支持混合“成员”。</span><br><span class="line"></span><br><span class="line">谈及缺点，和K-Means相比，GMM每一步迭代的计算量比较大。另外，它的求解办法基于EM算法，因此有可能陷入局部极值，需要经过多次迭代。</span><br></pre></td></tr></table></figure>
       
-
+    <!--文章内版权说明开始-->
+    
+  
+    <div class="declare">
+    <strong>本文链接：</strong>
+    http://www.aomanhao.top/2018/07/16/机器学习_分类_数据聚类/
+    <br>
+    <strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。转载请注明出处！
+    <br>
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+    </div>
+  
+    <!--文章内版权说明结束--> 
       
     </div>
     <div class="article-info article-info-index">
@@ -309,18 +327,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/opencv_ocr/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/特征提取_纹理特征/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          opencv_ocr
+          特征提取——纹理特征
         
       </div>
     </a>
   
   
-    <a href="/2018/07/16/特征提取_局部特征_SIFT/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">特征提取——局部特征-SIFT算法尺度不变性的理解</div>
+    <a href="/2018/07/16/Linux_commnd/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Linux_常用命令</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -472,10 +490,6 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
@@ -489,6 +503,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,10 +530,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
@@ -524,11 +538,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color2">Opencv</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,11 +554,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,11 +578,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
+                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -569,10 +591,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Pad</a>
               </li>
              
               <li class="article-tag-list-item">
