@@ -415,11 +415,50 @@ C++代码：
 ```
 
 
+### 桶排序
+需要求数组中的最大数
+1、桶排序不在是一种基于比较的排序方法，而是需要待排序列满足以下两个条件：
+>1、待排序列的值处于一个可枚举的范围内<br>
+2、待排序列所在可枚举范围不应太大，不然开销会很大。
 
+原理：
+>假设待排序的数组a中共有N个整数，并且已知数组a中数据的范围[0, MAX)。在桶排序时，创建容量为MAX的桶数组r，并将桶数组元素都初始化为0；将容量为MAX的桶数组中的每一个单元都看作一个"桶"。
+在排序时，逐个遍历数组a，将数组a的值，作为"桶数组r"的下标。当a中数据被读取时，就将桶的值加1。例如，读取到数组a[3]=5，则将r[5]的值+1。
+
+桶排序适用场景:<br>
+根据桶排序的特点，桶排序一般适用于一些特定的环境，比如数据范围较为局限或者有一些特定的要求，比如需要通过哈希映射快速获取某些值，需要统计每个数的数量。但是这一切都以确认数据的范围为前提，如果范围跨度过大，则考虑用其他算法。
 
 Java代码：
 ```
-待补充
+/// <summary>
+/// 桶排序
+///
+///如果有重复的数字,则需要 List<int>数组,这里举的例子没有重复的数字
+/// </summary>
+/// <param name="unsorted">待排数组</param>
+/// <param name="maxNumber">待排数组中的最大数,如果可以提供的话</param>
+/// <returns></returns>
+static int[] bucket_sort(int[] unsorted, int maxNumber = 97)
+{
+ int[] sorted = new int[maxNumber + 1];
+ for (int i = 0; i < unsorted.Length; i++)
+ {
+  sorted[unsorted[i]] = unsorted[i];
+ }
+ return sorted;
+}
+static void Main(string[] args)
+{
+ int[] x = {49、 38 、 35、 97 、 76、 73 、 27、 49 };
+ var sorted = bucket_sort(x, 97);
+ for (int i = 0; i < sorted.Length; i++)
+ {
+  if (sorted[i] > 0)
+   Console.WriteLine(sorted[i]);
+ }
+ Console.ReadLine();
+}
+
 ```
 C++代码：
 ```
