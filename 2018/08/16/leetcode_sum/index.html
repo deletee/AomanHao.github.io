@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.aomanhao.top">
-  <title>Archives | AomanHao的个人博客</title>
+  <title>leetcode题解 | AomanHao的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AomanHao的个人博客">
-<meta property="og:url" content="http://www.aomanhao.top/archives/page/7/index.html">
+  <meta name="description" content="leetcode 高频">
+<meta name="keywords" content="笔面经">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode题解">
+<meta property="og:url" content="http://www.aomanhao.top/2018/08/16/leetcode_sum/index.html">
 <meta property="og:site_name" content="AomanHao的个人博客">
+<meta property="og:description" content="leetcode 高频">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-31T02:10:36.375Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AomanHao的个人博客">
+<meta name="twitter:title" content="leetcode题解">
+<meta name="twitter:description" content="leetcode 高频">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao的个人博客" type="application/atom+xml">
   
@@ -175,388 +180,202 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-leetcode_sum" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      leetcode题解
+    </h1>
+  
+
+        
+        <a href="/2018/08/16/leetcode_sum/" class="archive-article-date">
+  	<time datetime="2018-08-16T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-16</time>
+</a>
+        
+      </header>
     
+    <!-- 目录内容 -->
+    
+      <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+      <span class="btn-bg"></span>
+      <span class="btn-text">文章导航</span>
+      </p>
+      <div id="toc-article" class="toc-article">
+          <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#三数之和"><span class="toc-number">1.</span> <span class="toc-text">三数之和</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Two-Sum"><span class="toc-number">2.</span> <span class="toc-text">1    Two Sum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-String-to-Integer-atoi-5-string-Math"><span class="toc-number">3.</span> <span class="toc-text">8    String to Integer (atoi)    5    string    Math</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-3Sum-5-array-Two-Pointers"><span class="toc-number">4.</span> <span class="toc-text">15    3Sum    5    array    Two Pointers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#20-Valid-Parentheses-5-string-Stack"><span class="toc-number">5.</span> <span class="toc-text">20    Valid Parentheses    5    string    Stack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#21-Merge-Two-Sorted-Lists-5-linked-list-sort、Two-Pointers、merge"><span class="toc-number">6.</span> <span class="toc-text">21    Merge Two Sorted Lists    5    linked list    sort、Two Pointers、merge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#28-Implement-strStr-5-string-Two-Pointers、KMP、rolling-hash"><span class="toc-number">7.</span> <span class="toc-text">28    Implement strStr()    5    string    Two Pointers、KMP、rolling hash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#50-Pow-x-n-5-Binary-Search、Math"><span class="toc-number">8.</span> <span class="toc-text">50    Pow(x, n)    5         Binary Search、Math</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#56-Merge-Intervals-5-array、linked-list、red-black-tree-sort、merge"><span class="toc-number">9.</span> <span class="toc-text">56    Merge Intervals    5    array、linked list、red-black tree    sort、merge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#57-Insert-Interval-5-array-sort"><span class="toc-number">10.</span> <span class="toc-text">57    Insert Interval    5    array    sort</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#65-Valid-Number-5-string-Math"><span class="toc-number">11.</span> <span class="toc-text">65    Valid Number    5    string    Math</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#70-Climbing-Stairs-5-DP"><span class="toc-number">12.</span> <span class="toc-text">70    Climbing Stairs    5         DP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#73-Set-Matrix-Zeroes-5-array"><span class="toc-number">13.</span> <span class="toc-text">73    Set Matrix Zeroes    5    array</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#88-Merge-Sorted-Array-5-array-Two-Pointers、merge"><span class="toc-number">14.</span> <span class="toc-text">88    Merge Sorted Array    5    array    Two Pointers、merge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#98-Validate-Binary-Search-Tree-5-tree-DFS"><span class="toc-number">15.</span> <span class="toc-text">98    Validate Binary Search Tree    5    tree    DFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#125-Valid-Palindrome-5-string-Two-Pointers"><span class="toc-number">16.</span> <span class="toc-text">125    Valid Palindrome    5    string    Two Pointers</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#127-Word-Ladder-5-graph-BFS、path"><span class="toc-number">17.</span> <span class="toc-text">127    Word Ladder    5    graph    BFS、path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Add-Two-Numbers-4-linked-list-Two-Pointers、Math"><span class="toc-number">18.</span> <span class="toc-text">2    Add Two Numbers    4    linked list    Two Pointers、Math</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-Integer-to-Roman-4-Math"><span class="toc-number">19.</span> <span class="toc-text">12    Integer to Roman    4         Math</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-Roman-to-Integer-4-Math"><span class="toc-number">20.</span> <span class="toc-text">13    Roman to Integer    4         Math</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#22-Generate-Parentheses-4-string-DFS"><span class="toc-number">21.</span> <span class="toc-text">22    Generate Parentheses    4    string    DFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#23-Merge-k-Sorted-Lists-4-linked-list、heap-sort、Two-Pointersmerge"><span class="toc-number">22.</span> <span class="toc-text">23    Merge k Sorted Lists    4    linked list、heap    sort、Two Pointersmerge</span></a></li></ol>
+     </div>
+     <script type="text/javascript">
+      function showToc(){
+          var toc_article = document.getElementById("toc-article");
+          var show_toc_btn = document.getElementById("show-toc-btn");
+          toc_article.setAttribute("style","display:block");
+          show_toc_btn.setAttribute("style","display:none");
+          };
+      function showBtn(){
+          var toc_article = document.getElementById("toc-article");
+          var show_toc_btn = document.getElementById("show-toc-btn");
+          toc_article.setAttribute("style","display:none");
+          show_toc_btn.setAttribute("style","display:block");
+          };
+     </script>
+  
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>leetcode 高频</p>
+<a id="more"></a>
+<h3 id="三数之和"><a href="#三数之和" class="headerlink" title="三数之和"></a>三数之和</h3><p>给定一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？找出所有满足条件且不重复的三元组。</p>
+<p>注意：答案中不可以包含重复的三元组。</p>
+<p>例如, 给定数组 nums = [-1, 0, 1, 2, -1, -4]，</p>
+<p>满足要求的三元组集合为：<br>[<br>  [-1, 0, 1],<br>  [-1, -1, 2]<br>]</p>
+<h3 id="1-Two-Sum"><a href="#1-Two-Sum" class="headerlink" title="1    Two Sum"></a>1    Two Sum</h3><p>5    array、set    sort、Two Pointers</p>
+<h3 id="8-String-to-Integer-atoi-5-string-Math"><a href="#8-String-to-Integer-atoi-5-string-Math" class="headerlink" title="8    String to Integer (atoi)    5    string    Math"></a>8    String to Integer (atoi)    5    string    Math</h3><h3 id="15-3Sum-5-array-Two-Pointers"><a href="#15-3Sum-5-array-Two-Pointers" class="headerlink" title="15    3Sum    5    array    Two Pointers"></a>15    3Sum    5    array    Two Pointers</h3><h3 id="20-Valid-Parentheses-5-string-Stack"><a href="#20-Valid-Parentheses-5-string-Stack" class="headerlink" title="20    Valid Parentheses    5    string    Stack"></a>20    Valid Parentheses    5    string    Stack</h3><h3 id="21-Merge-Two-Sorted-Lists-5-linked-list-sort、Two-Pointers、merge"><a href="#21-Merge-Two-Sorted-Lists-5-linked-list-sort、Two-Pointers、merge" class="headerlink" title="21    Merge Two Sorted Lists    5    linked list    sort、Two Pointers、merge"></a>21    Merge Two Sorted Lists    5    linked list    sort、Two Pointers、merge</h3><h3 id="28-Implement-strStr-5-string-Two-Pointers、KMP、rolling-hash"><a href="#28-Implement-strStr-5-string-Two-Pointers、KMP、rolling-hash" class="headerlink" title="28    Implement strStr()    5    string    Two Pointers、KMP、rolling hash"></a>28    Implement strStr()    5    string    Two Pointers、KMP、rolling hash</h3><h3 id="50-Pow-x-n-5-Binary-Search、Math"><a href="#50-Pow-x-n-5-Binary-Search、Math" class="headerlink" title="50    Pow(x, n)    5         Binary Search、Math"></a>50    Pow(x, n)    5         Binary Search、Math</h3><h3 id="56-Merge-Intervals-5-array、linked-list、red-black-tree-sort、merge"><a href="#56-Merge-Intervals-5-array、linked-list、red-black-tree-sort、merge" class="headerlink" title="56    Merge Intervals    5    array、linked list、red-black tree    sort、merge"></a>56    Merge Intervals    5    array、linked list、red-black tree    sort、merge</h3><h3 id="57-Insert-Interval-5-array-sort"><a href="#57-Insert-Interval-5-array-sort" class="headerlink" title="57    Insert Interval    5    array    sort"></a>57    Insert Interval    5    array    sort</h3><h3 id="65-Valid-Number-5-string-Math"><a href="#65-Valid-Number-5-string-Math" class="headerlink" title="65    Valid Number    5    string    Math"></a>65    Valid Number    5    string    Math</h3><h3 id="70-Climbing-Stairs-5-DP"><a href="#70-Climbing-Stairs-5-DP" class="headerlink" title="70    Climbing Stairs    5         DP"></a>70    Climbing Stairs    5         DP</h3><h3 id="73-Set-Matrix-Zeroes-5-array"><a href="#73-Set-Matrix-Zeroes-5-array" class="headerlink" title="73    Set Matrix Zeroes    5    array"></a>73    Set Matrix Zeroes    5    array</h3><h3 id="88-Merge-Sorted-Array-5-array-Two-Pointers、merge"><a href="#88-Merge-Sorted-Array-5-array-Two-Pointers、merge" class="headerlink" title="88    Merge Sorted Array    5    array    Two Pointers、merge"></a>88    Merge Sorted Array    5    array    Two Pointers、merge</h3><h3 id="98-Validate-Binary-Search-Tree-5-tree-DFS"><a href="#98-Validate-Binary-Search-Tree-5-tree-DFS" class="headerlink" title="98    Validate Binary Search Tree    5    tree    DFS"></a>98    Validate Binary Search Tree    5    tree    DFS</h3><h3 id="125-Valid-Palindrome-5-string-Two-Pointers"><a href="#125-Valid-Palindrome-5-string-Two-Pointers" class="headerlink" title="125    Valid Palindrome    5    string    Two Pointers"></a>125    Valid Palindrome    5    string    Two Pointers</h3><h3 id="127-Word-Ladder-5-graph-BFS、path"><a href="#127-Word-Ladder-5-graph-BFS、path" class="headerlink" title="127    Word Ladder    5    graph    BFS、path"></a>127    Word Ladder    5    graph    BFS、path</h3><h3 id="2-Add-Two-Numbers-4-linked-list-Two-Pointers、Math"><a href="#2-Add-Two-Numbers-4-linked-list-Two-Pointers、Math" class="headerlink" title="2    Add Two Numbers    4    linked list    Two Pointers、Math"></a>2    Add Two Numbers    4    linked list    Two Pointers、Math</h3><h3 id="12-Integer-to-Roman-4-Math"><a href="#12-Integer-to-Roman-4-Math" class="headerlink" title="12    Integer to Roman    4         Math"></a>12    Integer to Roman    4         Math</h3><h3 id="13-Roman-to-Integer-4-Math"><a href="#13-Roman-to-Integer-4-Math" class="headerlink" title="13    Roman to Integer    4         Math"></a>13    Roman to Integer    4         Math</h3><h3 id="22-Generate-Parentheses-4-string-DFS"><a href="#22-Generate-Parentheses-4-string-DFS" class="headerlink" title="22    Generate Parentheses    4    string    DFS"></a>22    Generate Parentheses    4    string    DFS</h3><h3 id="23-Merge-k-Sorted-Lists-4-linked-list、heap-sort、Two-Pointersmerge"><a href="#23-Merge-k-Sorted-Lists-4-linked-list、heap-sort、Two-Pointersmerge" class="headerlink" title="23    Merge k Sorted Lists    4    linked list、heap    sort、Two Pointersmerge"></a>23    Merge k Sorted Lists    4    linked list、heap    sort、Two Pointersmerge</h3><p>24    Swap Nodes in Pairs    4    linked list<br>27    Remove Element    4    array    Two Pointers<br>46    Permutations    4    array    permutation<br>49    Anagrams    4    string、hashtable<br>67    Add Binary    4    string    Two Pointers、Math<br>69    Sqrt(x)    4         Binary Search<br>77    Combinations    4         combination<br>78    Subsets    4    array    Recursion、combination<br>79    Word Search    4    array    DFS<br>91    Decode Ways    4    string    Recursion、DP<br>102    Binary Tree Level Order Traversal    4    tree    BFS<br>129    Sum Root to Leaf Numbers    4    tree    DFS<br>131    Palindrome Partitioning    4    string    DFS<br>4    Median of Two Sorted Arrays    3    array    Binary Search<br>7    Reverse Integer    3         Math<br>10    Regular Expression Matching    3    string    Recursion、DP<br>17    Letter Combinations of a Phone Number    3    string    DFS<br>19    Remove Nth Node From End of List    3    linked list    Two Pointers<br>26    Remove Duplicates from Sorted Array    3    array    Two Pointers<br>29    Divide Two Integers    3         Binary Search<br>33    Search in Rotated Sorted Array    3    array    Binary Search<br>34    Search for a Range    3    array    Binary Search<br>39    Combination Sum    3    array    combination<br>43    Multiply Strings    3    string    Two Pointers、Math<br>44    Wildcard Matching    3    string    Recursion、DP、greedy<br>51    N-Queens    3    array    DFS<br>52    N-Queens II    3    array    DFS<br>53    Maximum Subarray    3    array    DP<br>62    Unique Paths    3    array    DP<br>63    Unique Paths II    3    array    DP<br>64    Minimum Path Sum    3    array    DP<br>72    Edit Distance    3    string    DP<br>74    Search a 2D Matrix    3    array    Binary Search<br>81    Search in Rotated Sorted Array II    3    array    Binary Search<br>82    Remove Duplicates from Sorted List II    3    linked list    Recursion、Two Pointers<br>83    Remove Duplicates from Sorted List    3    linked list<br>86    Partition List    3    linked list    Two Pointers<br>93    Restore IP Addresses    3    string    DFS<br>94    Binary Tree Inorder Traversal    3    tree、hashtable    Recursion、morris、Stack<br>103    Binary Tree Zigzag Level Order Traversal    3    queue、tree    BFS、Stack<br>105    Construct Binary Tree from Preorder and Inorder Tr    3    array、tree    DFS<br>106    Construct Binary Tree from Inorder and Postorder T    3    array、tree    DFS<br>108    Convert Sorted Array to Binary Search Tree    3    tree    DFS<br>109    Convert Sorted List to Binary Search Tree    3    linked list    Recursion、Two Pointers<br>112    Path Sum    3    tree    DFS<br>114    Flatten Binary Tree to Linked List    3    tree    Recursion、Stack<br>116    Populating Next Right Pointers in Each Node    3    tree    DFS<br>128    Longest Consecutive Sequence    3    array<br>130    Surrounded Regions    3    array    BFS、DFS<br>132    Palindrome Partitioning II    3    string    DP<br>3    Longest Substring Without Repeating Characters    2    string、hashtable    Two Pointers<br>5    Longest Palindromic Substring    2    string<br>9    Palindrome Number    2         Math<br>11    Container With Most Water    2    array    Two Pointers<br>18    4Sum    2    array<br>25    Reverse Nodes in k-Group    2    linked list    Recursion、Two Pointers<br>31    Next Permutation    2    array    permutation<br>35    Search Insert Position    2    array<br>36    Valid Sudoku    2    array<br>37    Sudoku Solver    2    array    DFS<br>38    Count and Say    2    string    Two Pointers<br>40    Combination Sum II    2    array    combination<br>41    First Missing Positive    2    array    sort<br>42    Trapping Rain Water    2    array    Two Pointers、Stack<br>45    Jump Game II    2    array<br>47    Permutations II    2    array    permutation<br>48    Rotate Image    2    array<br>54    Spiral Matrix    2    array<br>55    Jump Game    2    array<br>59    Spiral Matrix II    2    array<br>61    Rotate List    2    linked list    Two Pointers<br>66    Plus One    2    array    Math<br>68    Text Justification    2    string<br>75    Sort Colors    2    array    sort、Two Pointers<br>76    Minimum Window Substring    2    string    Two Pointers<br>80    Remove Duplicates from Sorted Array II    2    array    Two Pointers<br>84    Largest Rectangle in Histogram    2    array    Stack<br>87    Scramble String    2    string    Recursion、DP<br>89    Gray Code    2         combination<br>90    Subsets II    2    array    Recursion、combination<br>92    Reverse Linked List II    2    linked list    Two Pointers<br>97    Interleaving String    2    string    Recursion、DP<br>99    Recover Binary Search Tree    2    tree    DFS<br>101    Symmetric Tree    2    tree    DFS<br>110    Balanced Binary Tree    2    tree    DFS<br>113    Path Sum II    2    tree    DFS<br>115    Distinct Subsequences    2    string    DP<br>117    Populating Next Right Pointers in Each Node II    2    tree    DFS<br>124    Binary Tree Maximum Path Sum    2    tree    DFS<br>6    ZigZag Conversion    1    string<br>14    Longest Common Prefix    1    string<br>16    3Sum Closest    1    array    Two Pointers<br>30    Substring with Concatenation of All Words    1    string    Two Pointers<br>32    Longest Valid Parentheses    1    string    DP<br>58    Length of Last Word    1    string<br>60    Permutation Sequence    1         permutation、Math<br>71    Simplify Path    1    string    Stack<br>85    Maximal Rectangle    1    array    DP、Stack<br>95    Unique Binary Search Trees II    1    tree    DP、DFS<br>96    Unique Binary Search Trees    1    tree    DP<br>100    Same Tree    1    tree    DFS<br>104    Maximum Depth of Binary Tree    1    tree    DFS<br>107    Binary Tree Level Order Traversal II    1    tree    BFS<br>111    Minimum Depth of Binary Tree    1    tree    DFS<br>118    Pascal’s Triangle    1    array<br>119    Pascal’s Triangle II    1    array<br>120    Triangle    1    array    DP<br>121    Best Time to Buy and Sell Stock    1    array    DP<br>122    Best Time to Buy and Sell Stock II    1    array    greedy<br>123    Best Time to Buy and Sell Stock III    1    array    DP<br>126    Word Ladder II    1</p>
+
+      
+    <!--文章内版权说明开始-->
+    
+  
+    <div class="declare">
+    <strong>本文链接：</strong>
+    http://www.aomanhao.top/2018/08/16/leetcode_sum/
+    <br>
+    <strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。转载请注明出处！
+    <br>
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src=""/></a>
+    </div>
+  
+    <!--文章内版权说明结束--> 
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/NotePad/" class="archive-article-date">
-  	<time datetime="2018-07-12T03:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/NotePad/">记事本</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">笔面经</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.aomanhao.top/2018/08/16/leetcode_sum/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/10/MavenPeizhi/" class="archive-article-date">
-  	<time datetime="2018-07-10T13:48:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/08/16/机器学习-梯度消失爆炸/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          机器学习-梯度消失爆炸
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/16/面经-概率论算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面经-概率论算法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/10/MavenPeizhi/">数据结构相关_6_16</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Maven</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/09/机器学习_降维_GMM_KMEANS/" class="archive-article-date">
-  	<time datetime="2018-07-09T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/09/机器学习_降维_GMM_KMEANS/">机器学习—聚类降维</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Opencv</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/05/计算机视觉/" class="archive-article-date">
-  	<time datetime="2018-07-05T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/05/计算机视觉/">计算机视觉——</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/05/model_danli_7_5/" class="archive-article-date">
-  	<time datetime="2018-07-05T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/05/model_danli_7_5/">单例模式_7_5</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/01/markdown/" class="archive-article-date">
-  	<time datetime="2018-07-01T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/01/markdown/">markdown 基本用法(常用)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/01/git_git2github/" class="archive-article-date">
-  	<time datetime="2018-07-01T04:35:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/01/git_git2github/">git上传文件到Github</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/25/git入门/" class="archive-article-date">
-  	<time datetime="2018-06-25T04:35:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/25/git入门/">git入门</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/6/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><a class="extend next" rel="next" href="/archives/page/8/">Next &raquo;</a>
-    </nav>
   
 
+  
 
+  
 
-<!-- 目录内容 -->
-       
-       <!-- 目录内容结束 -->
 
           </div>
         </div>
@@ -582,8 +401,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

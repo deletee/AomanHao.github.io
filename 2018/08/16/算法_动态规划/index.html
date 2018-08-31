@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.aomanhao.top">
-  <title>Archives | AomanHao的个人博客</title>
+  <title>算法_动态规划 | AomanHao的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="AomanHao的个人博客">
-<meta property="og:url" content="http://www.aomanhao.top/archives/page/7/index.html">
+  <meta name="description" content="算法_动态规划">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法_动态规划">
+<meta property="og:url" content="http://www.aomanhao.top/2018/08/16/算法_动态规划/index.html">
 <meta property="og:site_name" content="AomanHao的个人博客">
+<meta property="og:description" content="算法_动态规划">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-31T07:28:02.476Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="AomanHao的个人博客">
+<meta name="twitter:title" content="算法_动态规划">
+<meta name="twitter:description" content="算法_动态规划">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao的个人博客" type="application/atom+xml">
   
@@ -175,388 +180,203 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-算法_动态规划" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      算法_动态规划
+    </h1>
+  
+
+        
+        <a href="/2018/08/16/算法_动态规划/" class="archive-article-date">
+  	<time datetime="2018-08-16T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-16</time>
+</a>
+        
+      </header>
     
+    <!-- 目录内容 -->
+    
+      <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+      <span class="btn-bg"></span>
+      <span class="btn-text">文章导航</span>
+      </p>
+      <div id="toc-article" class="toc-article">
+          <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#背包问题1"><span class="toc-number">1.</span> <span class="toc-text">背包问题1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#背包问题2"><span class="toc-number">2.</span> <span class="toc-text">背包问题2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归，dp，分治的区别"><span class="toc-number">3.</span> <span class="toc-text">递归，dp，分治的区别</span></a></li></ol>
+     </div>
+     <script type="text/javascript">
+      function showToc(){
+          var toc_article = document.getElementById("toc-article");
+          var show_toc_btn = document.getElementById("show-toc-btn");
+          toc_article.setAttribute("style","display:block");
+          show_toc_btn.setAttribute("style","display:none");
+          };
+      function showBtn(){
+          var toc_article = document.getElementById("toc-article");
+          var show_toc_btn = document.getElementById("show-toc-btn");
+          toc_article.setAttribute("style","display:none");
+          show_toc_btn.setAttribute("style","display:block");
+          };
+     </script>
+  
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>算法_动态规划</p>
+<a id="more"></a>
+<p>求解最优化问题</p>
+<h3 id="背包问题1"><a href="#背包问题1" class="headerlink" title="背包问题1"></a>背包问题1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">Problem Description:</span><br><span class="line">   有 n 个重量和价值分别为Wi,Vi的物品，现从这些物品中挑选出总量不超过 W 的物品，求所有方案中价值总和的最大值。</span><br><span class="line">Input:</span><br><span class="line">输入包含多组测试用例，每一例的开头为两位整数 n、W（1&lt;=n&lt;=10000,1&lt;=W&lt;=1000）</span><br><span class="line">，接下来有 n 行，每一行有两位整数 Wi、Vi（1&lt;=Wi&lt;=10000,1&lt;=Vi&lt;=100）。</span><br><span class="line">Output:</span><br><span class="line">输出为一行，即所有方案中价值总和的最大值。</span><br><span class="line">Sample Input:</span><br><span class="line">3 4</span><br><span class="line">1 2</span><br><span class="line">2 5</span><br><span class="line">3 7</span><br><span class="line">Sample Output:</span><br><span class="line">9</span><br><span class="line"></span><br><span class="line">Java代码：</span><br><span class="line">import java.util.Arrays;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line"> </span><br><span class="line">public class Main &#123;</span><br><span class="line">	static Scanner scan = new Scanner(System.in);</span><br><span class="line">	static int[] v = new int[10001];</span><br><span class="line">	static int[] w = new int[10001];</span><br><span class="line">	static int[] dp = new int[10001];</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		while(scan.hasNext())&#123;</span><br><span class="line">			int n = scan.nextInt();</span><br><span class="line">			int W = scan.nextInt();</span><br><span class="line">			v = new int[n+1];</span><br><span class="line">			w = new int[n+1];</span><br><span class="line">			for(int i=1;i&lt;=n;i++)&#123;</span><br><span class="line">				w[i] = scan.nextInt();</span><br><span class="line">				v[i] = scan.nextInt();</span><br><span class="line">			&#125;</span><br><span class="line">			for(int i = 1; i &lt;= n; i++)</span><br><span class="line">	                    for(int j = W; j &gt;= 0; j--)&#123;      //每次更新容量为j，所能放下最大价值的物品</span><br><span class="line">	                        if(j &gt;= w[i])&#123;        //j一定要大于w[i],要不最大容量为j的背包放不下第i件物品</span><br><span class="line">	                            dp[j] = Math.max(dp[j], dp[j-w[i]] + v[i]);    //dp[j] 表示最大容量为j的背包所装下物品最大的价值，         这里求的是第i件物品放和不放的价值的最大的价值</span><br><span class="line">	                    &#125;</span><br><span class="line">	                &#125;</span><br><span class="line">			System.out.println(dp[W]);</span><br><span class="line">	       	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="背包问题2"><a href="#背包问题2" class="headerlink" title="背包问题2"></a>背包问题2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @author miracle</span><br><span class="line"> *切割钢条问题：</span><br><span class="line"> *长度：1	2	3	4	5	6	7	8	9	10</span><br><span class="line"> *价格：1	5	8	9	10	17	17	20	24	30</span><br><span class="line"> *问长度为n的钢条的最多卖多少钱</span><br><span class="line"> */</span><br><span class="line">public class Solution &#123;</span><br><span class="line"> </span><br><span class="line">	int[] prices = &#123;0, 1, 5, 8, 9, 10, 17, 17, 20, 24, 30&#125;;</span><br><span class="line">	int[] dp = new int[prices.length];</span><br><span class="line">	public int solve(int[] prices, int n)&#123;</span><br><span class="line">		if(n == 0) return 0;</span><br><span class="line">		int max = Integer.MIN_VALUE;</span><br><span class="line">		for(int i = 1; i &lt;= n; i++)&#123;</span><br><span class="line">			max = Math.max(max, prices[i] + solve(prices, n - i));</span><br><span class="line">		&#125;</span><br><span class="line">		return max;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public int solveWithMemoUpToBottom(int[] prices, int n)&#123;</span><br><span class="line">		if(n == 0 || dp[n] &gt; 0) return dp[n];</span><br><span class="line">		int max = Integer.MIN_VALUE;</span><br><span class="line">		for(int i = 1; i &lt;= n; i++)&#123;</span><br><span class="line">			max = Math.max(max, prices[i] + solve(prices, n - i));</span><br><span class="line">		&#125;</span><br><span class="line">		dp[n] = max;</span><br><span class="line">		return max;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public int solveBottomToUp(int[] prices, int n)&#123;</span><br><span class="line">		int[] dp = new int[prices.length];</span><br><span class="line">		for(int i = 1; i &lt;= n; i++)&#123;</span><br><span class="line">			int max = Integer.MIN_VALUE;</span><br><span class="line">			for(int j = 1; j &lt;= i; j++)&#123;</span><br><span class="line">				max = Math.max(max, prices[j] + prices[i - j]);</span><br><span class="line">			&#125;</span><br><span class="line">			dp[i] = max;</span><br><span class="line">		&#125;</span><br><span class="line">		return dp[n];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	public static void main(String args[])&#123;</span><br><span class="line">		Solution s = new Solution();</span><br><span class="line">//		System.out.println(s.solve(s.prices, 1));</span><br><span class="line">//		System.out.println(s.solve(s.prices, 2));</span><br><span class="line">//		System.out.println(s.solve(s.prices, 3));</span><br><span class="line">//		System.out.println(s.solve(s.prices, 4));</span><br><span class="line">//		System.out.println(s.solve(s.prices, 5));</span><br><span class="line">		System.out.println(s.solveBottomToUp(s.prices, 1));</span><br><span class="line">		System.out.println(s.solveBottomToUp(s.prices, 2));</span><br><span class="line">		System.out.println(s.solveBottomToUp(s.prices, 3));</span><br><span class="line">		System.out.println(s.solveBottomToUp(s.prices, 4));</span><br><span class="line">		System.out.println(s.solveBottomToUp(s.prices, 5));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>递归 运算量比较大 O(2^N)</p>
+<h3 id="递归，dp，分治的区别"><a href="#递归，dp，分治的区别" class="headerlink" title="递归，dp，分治的区别"></a>递归，dp，分治的区别</h3><p>递归只是一种编程的思想，只要自己调用自己，就算是递归。</p>
+<p>分治，有三步，先分，再各自处理，最后整合。这里也涉及了子问题，这里的子问题是不重叠的，每一个只被处理一次，因此不需要memo。</p>
+<p>dp，可以使用递归，而且dp的子问题是重复的。</p>
+
+      
+    <!--文章内版权说明开始-->
+    
+  
+    <div class="declare">
+    <strong>本文链接：</strong>
+    http://www.aomanhao.top/2018/08/16/算法_动态规划/
+    <br>
+    <strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。转载请注明出处！
+    <br>
+    <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src=""/></a>
+    </div>
+  
+    <!--文章内版权说明结束--> 
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/NotePad/" class="archive-article-date">
-  	<time datetime="2018-07-12T03:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/NotePad/">记事本</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.aomanhao.top/2018/08/16/算法_动态规划/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/10/MavenPeizhi/" class="archive-article-date">
-  	<time datetime="2018-07-10T13:48:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2018/08/17/图像处理_Retinex图像增强/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          图像处理_Retinex图像增强
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/08/16/剑指Offer算法Code_Java_C++/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">剑指Offer算法Code_Java_C++(0820更新)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/10/MavenPeizhi/">数据结构相关_6_16</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Maven</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/09/机器学习_降维_GMM_KMEANS/" class="archive-article-date">
-  	<time datetime="2018-07-09T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/09/机器学习_降维_GMM_KMEANS/">机器学习—聚类降维</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Opencv</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/05/计算机视觉/" class="archive-article-date">
-  	<time datetime="2018-07-05T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/05/计算机视觉/">计算机视觉——</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/05/model_danli_7_5/" class="archive-article-date">
-  	<time datetime="2018-07-05T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/05/model_danli_7_5/">单例模式_7_5</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/01/markdown/" class="archive-article-date">
-  	<time datetime="2018-07-01T08:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/01/markdown/">markdown 基本用法(常用)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/01/git_git2github/" class="archive-article-date">
-  	<time datetime="2018-07-01T04:35:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/01/git_git2github/">git上传文件到Github</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/25/git入门/" class="archive-article-date">
-  	<time datetime="2018-06-25T04:35:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/25/git入门/">git入门</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/6/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/page/8/">8</a><a class="page-number" href="/archives/page/9/">9</a><a class="page-number" href="/archives/page/10/">10</a><a class="extend next" rel="next" href="/archives/page/8/">Next &raquo;</a>
-    </nav>
   
 
+  
 
+  
 
-<!-- 目录内容 -->
-       
-       <!-- 目录内容结束 -->
 
           </div>
         </div>
@@ -582,8 +402,8 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

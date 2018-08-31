@@ -30,7 +30,7 @@
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/776259/201604/776259-20160410151713156-328299797.png">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/776259/201604/776259-20160410151728406-2042556892.png">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/776259/201604/776259-20160410151755062-2073568164.png">
-<meta property="og:updated_time" content="2018-08-29T08:04:33.174Z">
+<meta property="og:updated_time" content="2018-08-31T09:39:57.256Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="10大数据算法排序Java_C++">
 <meta name="twitter:description" content="10大数据算法排序Java_C++">
@@ -222,7 +222,7 @@ var _hmt = _hmt || [];
       <div id="toc-article" class="toc-article">
           <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#冒泡排序"><span class="toc-number">1.</span> <span class="toc-text">冒泡排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择排序"><span class="toc-number">2.</span> <span class="toc-text">选择排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快速排序及其改进算法C-实现"><span class="toc-number">3.</span> <span class="toc-text">快速排序及其改进算法C++实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#归并排序"><span class="toc-number">4.</span> <span class="toc-text">归并排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#堆排序"><span class="toc-number">5.</span> <span class="toc-text">堆排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插入排序"><span class="toc-number">6.</span> <span class="toc-text">插入排序</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#冒泡排序"><span class="toc-number">1.</span> <span class="toc-text">冒泡排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择排序"><span class="toc-number">2.</span> <span class="toc-text">选择排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快速排序及其改进算法C-实现"><span class="toc-number">3.</span> <span class="toc-text">快速排序及其改进算法C++实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#归并排序"><span class="toc-number">4.</span> <span class="toc-text">归并排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#堆排序"><span class="toc-number">5.</span> <span class="toc-text">堆排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#插入排序"><span class="toc-number">6.</span> <span class="toc-text">插入排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#桶排序"><span class="toc-number">7.</span> <span class="toc-text">桶排序</span></a></li></ol>
      </div>
      <script type="text/javascript">
       function showToc(){
@@ -278,7 +278,16 @@ var _hmt = _hmt || [];
 <p>C++代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">待补充</span><br></pre></td></tr></table></figure></p>
 <h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>Java代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">待补充</span><br></pre></td></tr></table></figure></p>
 <p>C++代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">待补充</span><br></pre></td></tr></table></figure></p>
-<p>Java代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">待补充</span><br></pre></td></tr></table></figure></p>
+<h3 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h3><p>需要求数组中的最大数<br>1、桶排序不在是一种基于比较的排序方法，而是需要待排序列满足以下两个条件：</p>
+<blockquote>
+<p>1、待排序列的值处于一个可枚举的范围内<br><br>2、待排序列所在可枚举范围不应太大，不然开销会很大。</p>
+</blockquote>
+<p>原理：</p>
+<blockquote>
+<p>假设待排序的数组a中共有N个整数，并且已知数组a中数据的范围[0, MAX)。在桶排序时，创建容量为MAX的桶数组r，并将桶数组元素都初始化为0；将容量为MAX的桶数组中的每一个单元都看作一个”桶”。<br>在排序时，逐个遍历数组a，将数组a的值，作为”桶数组r”的下标。当a中数据被读取时，就将桶的值加1。例如，读取到数组a[3]=5，则将r[5]的值+1。</p>
+</blockquote>
+<p>桶排序适用场景:<br><br>根据桶排序的特点，桶排序一般适用于一些特定的环境，比如数据范围较为局限或者有一些特定的要求，比如需要通过哈希映射快速获取某些值，需要统计每个数的数量。但是这一切都以确认数据的范围为前提，如果范围跨度过大，则考虑用其他算法。</p>
+<p>Java代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 桶排序</span><br><span class="line">///</span><br><span class="line">///如果有重复的数字,则需要 List&lt;int&gt;数组,这里举的例子没有重复的数字</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">/// &lt;param name=&quot;unsorted&quot;&gt;待排数组&lt;/param&gt;</span><br><span class="line">/// &lt;param name=&quot;maxNumber&quot;&gt;待排数组中的最大数,如果可以提供的话&lt;/param&gt;</span><br><span class="line">/// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">static int[] bucket_sort(int[] unsorted, int maxNumber = 97)</span><br><span class="line">&#123;</span><br><span class="line"> int[] sorted = new int[maxNumber + 1];</span><br><span class="line"> for (int i = 0; i &lt; unsorted.Length; i++)</span><br><span class="line"> &#123;</span><br><span class="line">  sorted[unsorted[i]] = unsorted[i];</span><br><span class="line"> &#125;</span><br><span class="line"> return sorted;</span><br><span class="line">&#125;</span><br><span class="line">static void Main(string[] args)</span><br><span class="line">&#123;</span><br><span class="line"> int[] x = &#123;49、 38 、 35、 97 、 76、 73 、 27、 49 &#125;;</span><br><span class="line"> var sorted = bucket_sort(x, 97);</span><br><span class="line"> for (int i = 0; i &lt; sorted.Length; i++)</span><br><span class="line"> &#123;</span><br><span class="line">  if (sorted[i] &gt; 0)</span><br><span class="line">   Console.WriteLine(sorted[i]);</span><br><span class="line"> &#125;</span><br><span class="line"> Console.ReadLine();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>C++代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">待补充</span><br></pre></td></tr></table></figure></p>
 <p>Java代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">待补充</span><br></pre></td></tr></table></figure></p>
 <p>C++代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">待补充</span><br></pre></td></tr></table></figure></p>
@@ -389,11 +398,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/08/16/机器学习-梯度消失爆炸/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/08/16/面经-概率论算法/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          机器学习-梯度消失爆炸
+          面经-概率论算法
         
       </div>
     </a>
@@ -584,11 +593,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Music</a>
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Github</a>
+                <a href="javascript:void(0)" class="js-tag color1">Music</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -601,6 +610,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -644,15 +657,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Pad</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -711,7 +720,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">音乐是我生命中的彩虹&lt;br&gt;蓉蓉是我生命中的太阳</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">西安邮电大学图像处理小硕&lt;br&gt;&lt;br&gt;&lt;br&gt;音乐是我生命中的彩虹&lt;br&gt;蓉蓉是我生命中的太阳</div>
   	  	
     	</section>
     
