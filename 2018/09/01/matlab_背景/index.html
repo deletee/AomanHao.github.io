@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.aomanhao.top">
-  <title>数据库相关_6_8 | AomanHao的个人博客</title>
+  <title>Matlab背景颜色修改 | AomanHao的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据库的设计总体上分为6个阶段：">
-<meta name="keywords" content="GitHub,Mysql,Java">
+  <meta name="description" content="Matlab背景颜色修改">
+<meta name="keywords" content="Matlab">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库相关_6_8">
-<meta property="og:url" content="http://www.aomanhao.top/2018/06/08/sql_6_8/index.html">
+<meta property="og:title" content="Matlab背景颜色修改">
+<meta property="og:url" content="http://www.aomanhao.top/2018/09/01/matlab_背景/index.html">
 <meta property="og:site_name" content="AomanHao的个人博客">
-<meta property="og:description" content="数据库的设计总体上分为6个阶段：">
+<meta property="og:description" content="Matlab背景颜色修改">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-04T08:16:38.554Z">
+<meta property="og:updated_time" content="2018-09-01T13:50:30.121Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据库相关_6_8">
-<meta name="twitter:description" content="数据库的设计总体上分为6个阶段：">
+<meta name="twitter:title" content="Matlab背景颜色修改">
+<meta name="twitter:description" content="Matlab背景颜色修改">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao的个人博客" type="application/atom+xml">
   
@@ -180,20 +180,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-sql_6_8" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-matlab_背景" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数据库相关_6_8
+      Matlab背景颜色修改
     </h1>
   
 
         
-        <a href="/2018/06/08/sql_6_8/" class="archive-article-date">
-  	<time datetime="2018-06-08T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-08</time>
+        <a href="/2018/09/01/matlab_背景/" class="archive-article-date">
+  	<time datetime="2018-09-01T03:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-01</time>
 </a>
         
       </header>
@@ -203,92 +203,19 @@ var _hmt = _hmt || [];
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>数据库的设计总体上分为6个阶段：</p>
+        <p>Matlab背景颜色修改</p>
 <a id="more"></a>
-<p></p><h2>1、 需求分析阶段</h2><br>    准确了解用户的需求，撰写需求说明<p></p>
-<p></p><h2>2、概念设计阶段</h2><br>    它是整个数据库设计的关键，通过对用户需求进行综合，归纳与抽象，形成一个独立于具体DBMS的概念模型。E-R图的设计在此阶段。<p></p>
-<p></p><h2>3、逻辑结构设计阶段</h2><br>   将概念结果转换为某个DBMS所支持的数据模型。也就是指E-R图和关系模型的转换，具体为将实体，实体的属性和实体之间的联系转换为关系模式。<p></p>
-<p></p><h2>4、数据库物理设计阶段</h2><br>   为逻辑结果选取一个最适合应用环境的物理结构，包括存储结构和存取方法。<p></p>
-<p></p><h2>5、数据库实施阶段</h2><br>  此阶段利用SQL语句实现逻辑结构设计和物理设计阶段的内容，包括建立数据库，编制与调试应用程序等。<p></p>
-<p></p><h2>6、数据库运行和维护阶段</h2><br>  运行过程中不断的调整，修改和优化数据库系统。<p></p>
-<hr>
-<p></p><h2>聚集索引</h2><br>　　一种索引，该索引中键值的逻辑顺序决定了表中相应行的物理顺序。<br>　　聚集索引确定表中数据的物理顺序。聚集索引类似于电话簿，后者按姓氏排列数据。由于聚集索引规定数据在表中的物理存储顺序，因此一个表只能包含一个聚集索引。但该索引可以包含多个列（组合索引），就像电话簿按姓氏和名字进行组织一样。　　<br>　　聚集索引对于那些经常要搜索范围值的列特别有效。使用聚集索引找到包含第一个值的行后，便可以确保包含后续索引值的行在物理相邻。聚簇索引的顺序就是数据的物理存储的顺序，叶子节点就是数据节点。物理排序只有一种，所以聚簇索引只有一种,当索引值唯一时，使用聚集索引查找特定的行也很有效率。<p></p>
-<p></p><h2>非聚集索引</h2><br>　　一种索引，该索引中索引的逻辑顺序与磁盘上行的物理存储顺序不同。<p></p>
-<pre><code>索引是通过二叉树的数据结构来描述的，我们可以这么理解聚簇索引：索引的叶节点就是数据节点。而非聚簇索引的叶节点仍然是索引节点，只不过有一个指针指向对应的数据块
-</code></pre><h3>下面的表总结了何时使用聚集索引或非聚集索引（很重要）：</h3>
-
-
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>动作描述</th>
-<th style="text-align:right">使用聚集索引</th>
-<th style="text-align:center">使用非聚集索引</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>列经常被分组排序</td>
-<td style="text-align:right">应</td>
-<td style="text-align:center">应</td>
-</tr>
-<tr>
-<td>返回某范围内的数据</td>
-<td style="text-align:right">应</td>
-<td style="text-align:center">不应</td>
-</tr>
-<tr>
-<td>一个或极少不同值</td>
-<td style="text-align:right">不应</td>
-<td style="text-align:center">不应</td>
-</tr>
-<tr>
-<td>小数目的不同值</td>
-<td style="text-align:right">应</td>
-<td style="text-align:center">不应</td>
-</tr>
-<tr>
-<td>大数目的不同值</td>
-<td style="text-align:right">不应</td>
-<td style="text-align:center">应</td>
-<td></td>
-</tr>
-<tr>
-<td>频繁更新的列</td>
-<td style="text-align:right">不应</td>
-<td style="text-align:center">应</td>
-</tr>
-<tr>
-<td>外键列</td>
-<td style="text-align:right">应</td>
-<td style="text-align:center">应</td>
-</tr>
-<tr>
-<td>主键列</td>
-<td style="text-align:right">应</td>
-<td style="text-align:center">应</td>
-</tr>
-<tr>
-<td>频繁修改索引列</td>
-<td style="text-align:right">不应</td>
-<td style="text-align:center">应</td>
-</tr>
-</tbody>
-</table>
-</div>
-<hr>
-<p>对数据库的操作都是在事务中进行的。 </p>
-<p></p><h2>事务</h2><br>事务是指一组相互依赖的操作行为。事务中的操作是不可分割的工作单元，由一组在业务逻辑上相互依赖的SQL语句组成，有ACID特征。 <p></p>
-<p>Atomic（原子性）：事务中包含的操作被看做一个逻辑单元，这个逻辑单元中的操作要么全部成功，要么全部失败。 </p>
-<p>Consistency（一致性）：只有合法的数据可以被写入数据库，否则事务应该将其回滚到最初状态。</p>
-<p>Isolation（隔离性）：事务允许多个用户对同一个数据进行并发访问，而不破坏数据的正确性和完整性。同时，并行事务的修改必须与其他并行事务的修改相互独立。 </p>
-<p>Durability（持久性）：事务结束后，事务处理的结果必须能够得到固化。 </p>
-<p>数据库中有多个事务同时存在，就是事务并发，此时就不能保证事务隔离性，SQL-92定义了事务隔离级别，描述了给定事务的行为对其它并发执行事务的暴露程度，或者说是一个事务必须与其它事务进行隔离的程度。隔离级别由低到高为： </p>
-<p>Read Uncommitted，Read Committed，Repeatable Read， Serializable<br>隔离级别越高，越能保证数据的完整性和一致性，但对并发性能的影响也越大</p>
-<p></p><h2>DML（data manipulation language）</h2><br>       它们是SELECT、UPDATE、INSERT、DELETE，就象它的名字一样，这4条命令是用来对数据库里的数据进行操作的语言<p></p>
-<p></p><h2>DDL（data definition language）</h2><br>       DDL比DML要多，主要的命令有CREATE、ALTER、DROP等，DDL主要是用在定义或改变表（TABLE）的结构，数据类型，表之间的链接和约束等初始化工作上，他们大多在建立表时使用<p></p>
-<p></p><h2>DCL（Data Control Language）</h2><br>       是数据库控制功能。是用来设置或更改数据库用户或角色权限的语句，包括（grant,deny,revoke等）语句。在默认状态下，只有sysadmin,dbcreator,db_owner或db_securityadmin等人员才有权力执行DCL<p></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>将<code>修改内容</code>添加到matlab的matlab.prf文件中，文件路径为在matlab中运行prefdir的结果,直接添加这些内容保存就好。 </p>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><p>1， 在<code>matlab</code>命令行中运行<code>prefdir</code>， 获取<code>matlab.prf</code>文件所在路径</p>
+<p>2， 打开<code>matlab.prf</code>所在路径， 找到<code>matlab.prf</code>文件， 作备份</p>
+<p>3， 在新的<code>matlab.prf</code>中修改与<code>color</code>有关的属性</p>
+<p>4，重启<code>matlab</code>，修改主题就完成了</p>
+<h2 id="主题选择"><a href="#主题选择" class="headerlink" title="主题选择"></a>主题选择</h2><h3 id="黑色主题"><a href="#黑色主题" class="headerlink" title="黑色主题"></a>黑色主题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">Editor.VariableHighlighting.Color=C-6931898</span><br><span class="line">ColorsText=C-460558</span><br><span class="line">Colors_M_SystemCommands=C-448910</span><br><span class="line">Editorhighlight-lines=C-11974594</span><br><span class="line">Colors_M_Warnings=C-27648</span><br><span class="line">Colors_M_Strings=C-1647756</span><br><span class="line">Editor.NonlocalVariableHighlighting.TextColor=C-5471745</span><br><span class="line">Colors_HTML_HTMLLinks=C-16732805</span><br><span class="line">Colors_M_Comments=C-8355712</span><br><span class="line">Colors_M_Errors=C-65536</span><br><span class="line">Colors_M_UnterminatedStrings=C-5111808</span><br><span class="line">ColorsBackground=C-14211038</span><br><span class="line">Colors_M_Keywords=C-10036753</span><br><span class="line">Color_CmdWinWarnings=C-39936</span><br><span class="line">ColorsMLintAutoFixBackground=C-7973573</span><br><span class="line">Colors_M_Keywords=C-10036753</span><br><span class="line">Editorhighlight-lines=C-13553108</span><br><span class="line">Editorhighlight-caret-row-boolean-color=C-2167080</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ColorsUseSystem=Bfalse</span><br></pre></td></tr></table></figure>
+<h3 id="暖色主题"><a href="#暖色主题" class="headerlink" title="暖色主题"></a>暖色主题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Color_CmdWinErrors=C-1703936</span><br><span class="line">Color_CmdWinWarnings=C-39936</span><br><span class="line">ColorsBackground=C-198941</span><br><span class="line">ColorsMLintAutoFixBackground=C-1121868</span><br><span class="line">ColorsText=C-16304574</span><br><span class="line">ColorsUseMLintAutoFixBackground=Btrue</span><br><span class="line">ColorsUseSystem=Bfalse</span><br><span class="line">Colors_HTML_HTMLLinks=C-2935166</span><br><span class="line">Colors_M_Comments=C-7167583</span><br><span class="line">Colors_M_Errors=C-65536</span><br><span class="line">Colors_M_Keywords=C-8021760</span><br><span class="line">Colors_M_Strings=C-13983336</span><br><span class="line">Colors_M_SystemCommands=C-3454186</span><br><span class="line">Colors_M_UnterminatedStrings=C-5111808</span><br><span class="line">Colors_M_Warnings=C-27648</span><br><span class="line">Editor.NonlocalVariableHighlighting.TextColor=C-32640</span><br><span class="line">Editor.VariableHighlighting.Color=C-7167583</span><br><span class="line">EditorRightTextLimitLineColor=C-3355444</span><br></pre></td></tr></table></figure>
+<h3 id="darkmate"><a href="#darkmate" class="headerlink" title="darkmate"></a>darkmate</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">ColorsUseSystem=Bfalse</span><br><span class="line">ColorsUseMLintAutoFixBackground=Btrue</span><br><span class="line">Editor.VariableHighlighting.Automatic=Btrue</span><br><span class="line">Editor.NonlocalVariableHighlighting=Btrue</span><br><span class="line">EditorCodepadHighVisible=Btrue</span><br><span class="line">EditorCodeBlockDividers=Btrue</span><br><span class="line">Editorhighlight-caret-row-boolean=Btrue</span><br><span class="line">EditorRightTextLineVisible=Btrue</span><br><span class="line">EditorRightTextLimitLineWidth=I4                             # slightly wider</span><br><span class="line">ColorsText=C-1118482                                         # white</span><br><span class="line">ColorsBackground=C-14474461                                  # carbon</span><br><span class="line">Colors_M_Keywords=C-26368                                    # ambra</span><br><span class="line">Colors_M_Comments=C-10920873                                 # asfalto</span><br><span class="line">Colors_M_Strings=C-6881536                                   # lime</span><br><span class="line">Colors_M_UnterminatedStrings=C-202417                        # yellow</span><br><span class="line">Colors_M_SystemCommands=C-16725605                           # alga</span><br><span class="line">Colors_M_Errors=C-53398                                      # red</span><br><span class="line">Colors_HTML_HTMLLinks=C-6385153                              # violet</span><br><span class="line">Colors_M_Warnings=C-26368                                    # ambra</span><br><span class="line">ColorsMLintAutoFixBackground=C-11184811                      # </span><br><span class="line">Editor.VariableHighlighting.Color=C-4495617                  # purple</span><br><span class="line">Editor.NonlocalVariableHighlighting.TextColor=C-16725760     # green</span><br><span class="line">Editorhighlight-lines=C-15132391                             # </span><br><span class="line">Editorhighlight-caret-row-boolean-color=C-16777216           # black</span><br><span class="line">EditorRightTextLimitLineColor=C-13948117                     # </span><br><span class="line"># XML/HTML</span><br><span class="line">Editor.Language.XML.Color.pi-content=C-6425200</span><br></pre></td></tr></table></figure>
+<h3 id="darksteel"><a href="#darksteel" class="headerlink" title="darksteel"></a>darksteel</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">ColorsUseSystem=Bfalse</span><br><span class="line">ColorsUseMLintAutoFixBackground=Btrue</span><br><span class="line">Editor.VariableHighlighting.Automatic=Btrue</span><br><span class="line">Editor.NonlocalVariableHighlighting=Btrue</span><br><span class="line">EditorCodepadHighVisible=Btrue</span><br><span class="line">EditorCodeBlockDividers=Btrue</span><br><span class="line">Editorhighlight-caret-row-boolean=Btrue</span><br><span class="line">EditorRightTextLineVisible=Btrue</span><br><span class="line">EditorRightTextLimitLineWidth=I1</span><br><span class="line">ColorsText=C-1</span><br><span class="line">ColorsBackground=C-15066598</span><br><span class="line">Colors_M_Keywords=C-1208813</span><br><span class="line">Colors_M_Comments=C-14114579</span><br><span class="line">Colors_M_Strings=C-16724992</span><br><span class="line">Colors_M_UnterminatedStrings=C-4210944</span><br><span class="line">Colors_M_SystemCommands=C-7123493</span><br><span class="line">Colors_M_Errors=C-45747</span><br><span class="line">Colors_HTML_HTMLLinks=C-10592257</span><br><span class="line">Colors_M_Warnings=C-27648</span><br><span class="line">ColorsMLintAutoFixBackground=C-9223357</span><br><span class="line">Editor.VariableHighlighting.Color=C-11184786</span><br><span class="line">Editor.NonlocalVariableHighlighting.TextColor=C-16735351</span><br><span class="line">Editorhighlight-lines=C-14408662</span><br><span class="line">Editorhighlight-caret-row-boolean-color=C-12632257</span><br><span class="line">EditorRightTextLimitLineColor=C-5723992</span><br><span class="line"># TLC</span><br><span class="line">Editor.Language.TLC.Color.Colors_M_Keywords=C-16735351</span><br><span class="line"># C/C++</span><br><span class="line">Editor.Language.C.Color.preprocessor=C-16735351</span><br><span class="line"># VHDL</span><br><span class="line">Editor.Language.VHDL.Color.operator=C-16735351</span><br><span class="line"># Verilog</span><br><span class="line">Editor.Language.Verilog.Color.operator=C-16735351</span><br><span class="line"># XML</span><br><span class="line">Editor.Language.XML.Color.operator=C-1710454</span><br><span class="line">Editor.Language.XML.Color.doctype=C-6578958</span><br><span class="line">Editor.Language.XML.Color.pi-content=C-9868801</span><br></pre></td></tr></table></figure>
+<h3 id="monokai"><a href="#monokai" class="headerlink" title="monokai"></a>monokai</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">ColorsUseSystem=Bfalse</span><br><span class="line">ColorsUseMLintAutoFixBackground=Btrue</span><br><span class="line">Editor.VariableHighlighting.Automatic=Btrue</span><br><span class="line">Editor.NonlocalVariableHighlighting=Btrue</span><br><span class="line">EditorCodepadHighVisible=Btrue</span><br><span class="line">EditorCodeBlockDividers=Btrue</span><br><span class="line">Editorhighlight-caret-row-boolean=Bfalse</span><br><span class="line">EditorRightTextLineVisible=Btrue</span><br><span class="line">EditorRightTextLimitLineWidth=I1</span><br><span class="line">ColorsText=C-460560</span><br><span class="line">ColorsBackground=C-14211038</span><br><span class="line">Colors_M_Keywords=C-448910</span><br><span class="line">Colors_M_Comments=C-9080482</span><br><span class="line">Colors_M_Strings=C-1647756</span><br><span class="line">Colors_M_UnterminatedStrings=C-65536</span><br><span class="line">Colors_M_SystemCommands=C-16711936</span><br><span class="line">Colors_M_Errors=C-65536</span><br><span class="line">Colors_HTML_HTMLLinks=C-16711681</span><br><span class="line">Colors_M_Warnings=C-27648</span><br><span class="line">ColorsMLintAutoFixBackground=C-11974594</span><br><span class="line">Editor.VariableHighlighting.Color=C-10066330</span><br><span class="line">Editor.NonlocalVariableHighlighting.TextColor=C-16729641</span><br><span class="line">Editorhighlight-lines=C-13421773</span><br><span class="line">Editorhighlight-caret-row-boolean-color=C-10066330</span><br><span class="line">EditorRightTextLimitLineColor=C-3355444</span><br><span class="line">Color_CmdWinWarnings=C-26368</span><br></pre></td></tr></table></figure>
+<p>参考github效果：<br><a href="https://github.com/scottclowe/matlab-schemer/tree/master/schemes" target="_blank" rel="noopener">https://github.com/scottclowe/matlab-schemer/tree/master/schemes</a></p>
 
       
     <!--文章内版权说明开始-->
@@ -296,7 +223,7 @@ var _hmt = _hmt || [];
   
     <div class="declare">
     <strong>本文链接：</strong>
-    http://www.aomanhao.top/2018/06/08/sql_6_8/
+    http://www.aomanhao.top/2018/09/01/matlab_背景/
     <br>
     <strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。转载请注明出处！
     <br>
@@ -314,15 +241,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Matlab</a>
         		</li>
       		
 		</ul>
@@ -378,7 +297,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.aomanhao.top/2018/06/08/sql_6_8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.aomanhao.top/2018/09/01/matlab_背景/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -392,18 +311,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/06/15/sql_6_15/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数据库相关_6_15
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/06/04/database_3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">解决连接MySQL，报错10061，系统错误5</div>
+    <a href="/2018/08/31/Mysql基础/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mysql基础</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -431,7 +341,7 @@ var _hmt = _hmt || [];
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="sql_6_8" data-title="数据库相关_6_8" data-url="http://www.aomanhao.top/2018/06/08/sql_6_8/"></div>
+	<div class="ds-thread" data-thread-key="matlab_背景" data-title="Matlab背景颜色修改" data-url="http://www.aomanhao.top/2018/09/01/matlab_背景/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
