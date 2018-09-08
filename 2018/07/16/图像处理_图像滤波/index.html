@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="AomanHao的个人博客">
 <meta property="og:description" content="图像处理_图像滤波">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-30T01:50:51.310Z">
+<meta property="og:updated_time" content="2018-09-07T02:44:08.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图像处理_图像滤波">
 <meta name="twitter:description" content="图像处理_图像滤波">
@@ -283,6 +283,7 @@ var _hmt = _hmt || [];
 <p>3) 将所有的乘积相加，并将求和结果赋值于模板中心对应的像素</p>
 <h4 id="延拓"><a href="#延拓" class="headerlink" title="延拓"></a>延拓</h4><p>模板的行或列就会超出图像之外，因此常常采用延拓的方式解决外边界问题。常用的方法有四种，分别是<code>补零</code>、<code>重复</code>、<code>对称</code>和<code>循环</code>方式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">补零是指通过补零来扩展图像；</span><br><span class="line">重复是指通过复制外边界的值来扩展图像；</span><br><span class="line">对称是指通过镜像反射外边界的值来扩展图像；</span><br><span class="line">循环是指将图像看成二维周期函数的一个周期来扩展。</span><br></pre></td></tr></table></figure></p>
 <h4 id="均值滤波"><a href="#均值滤波" class="headerlink" title="均值滤波"></a>均值滤波</h4><h4 id="高斯滤波"><a href="#高斯滤波" class="headerlink" title="高斯滤波"></a>高斯滤波</h4><p>高斯滤波器宽度(决定着平滑程度)是由参数σ表征的，而且σ和平滑程度的关系是非常简单的．σ越大，高斯滤波器的频带就越宽，平滑程度就越好．通过调节平滑程度参数σ</p>
+<p>高斯分布：$h(x,y)=e^-(\frac{x^2+y^2}{2a^2})$</p>
 <h4 id="双边滤波"><a href="#双边滤波" class="headerlink" title="双边滤波"></a>双边滤波</h4><p>一种非线性的滤波方法，是结合图像的<code>空间邻近度</code>和<code>像素相似度</code>的的一种折中处理。它是一种<code>保持边缘</code>的非迭代平滑滤波方法。中心像素的距离和灰度差值的增大，邻域像素的权系数逐渐减小</p>
 <blockquote>
 <p>优点：保持边缘性能良好，对低频信息滤波良好<br>缺点：不能处理高频信息</p>
@@ -409,11 +410,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/opencv_斑点检测/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/图像分割_大津法/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Opencv_斑点检测
+          图像分割-大津法
         
       </div>
     </a>
@@ -604,10 +605,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
@@ -616,11 +613,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Github</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -628,15 +625,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Music</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,6 +638,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,6 +657,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -668,19 +669,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">最优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">

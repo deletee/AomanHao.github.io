@@ -6,31 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://www.aomanhao.top">
-  <title>使用LaTex添加公式到Hexo博客里 | AomanHao的个人博客</title>
+  <title>图像处理_灰度变换_直方图 | AomanHao的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用LaTex添加公式到Hexo博客里">
-<meta name="keywords" content="GitHub,Hexo">
+  <meta name="description" content="图像处理灰度变换直方图">
+<meta name="keywords" content="Opencv,图像处理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用LaTex添加公式到Hexo博客里">
-<meta property="og:url" content="http://www.aomanhao.top/2018/07/23/hexo_LeTex1/index.html">
+<meta property="og:title" content="图像处理_灰度变换_直方图">
+<meta property="og:url" content="http://www.aomanhao.top/2018/09/07/图像处理_灰度变换_直方图/index.html">
 <meta property="og:site_name" content="AomanHao的个人博客">
-<meta property="og:description" content="使用LaTex添加公式到Hexo博客里">
+<meta property="og:description" content="图像处理灰度变换直方图">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math1.png">
-<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math4.png">
-<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math2.png">
-<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math3.png">
-<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math5.png">
-<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math6.png">
-<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math7.png">
-<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math7.5.png">
-<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math8.png">
-<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math9.png">
-<meta property="og:updated_time" content="2018-08-29T08:11:17.274Z">
+<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/huidu_junheng1.png">
+<meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/huidu_guiding1.png">
+<meta property="og:updated_time" content="2018-09-08T04:14:28.831Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用LaTex添加公式到Hexo博客里">
-<meta name="twitter:description" content="使用LaTex添加公式到Hexo博客里">
-<meta name="twitter:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math1.png">
+<meta name="twitter:title" content="图像处理_灰度变换_直方图">
+<meta name="twitter:description" content="图像处理灰度变换直方图">
+<meta name="twitter:image" content="http://p3qhnc0eg.bkt.clouddn.com/blog/img/huidu_junheng1.png">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao的个人博客" type="application/atom+xml">
   
@@ -191,20 +183,20 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo_LeTex1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-图像处理_灰度变换_直方图" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      使用LaTex添加公式到Hexo博客里
+      图像处理_灰度变换_直方图
     </h1>
   
 
         
-        <a href="/2018/07/23/hexo_LeTex1/" class="archive-article-date">
-  	<time datetime="2018-07-23T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-23</time>
+        <a href="/2018/09/07/图像处理_灰度变换_直方图/" class="archive-article-date">
+  	<time datetime="2018-09-07T01:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-07</time>
 </a>
         
       </header>
@@ -218,7 +210,7 @@ var _hmt = _hmt || [];
       <div id="toc-article" class="toc-article">
           <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一步：-安装Kramed"><span class="toc-number">1.</span> <span class="toc-text">第一步： 安装Kramed</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二步：更改文件配置"><span class="toc-number">2.</span> <span class="toc-text">第二步：更改文件配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三步-停止使用-hexo-math，并安装mathjax包"><span class="toc-number">3.</span> <span class="toc-text">第三步: 停止使用 hexo-math，并安装mathjax包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四步-更新-Mathjax-的-配置文件"><span class="toc-number">4.</span> <span class="toc-text">第四步: 更新 Mathjax 的 配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第五步-更改默认转义规则"><span class="toc-number">5.</span> <span class="toc-text">第五步: 更改默认转义规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第六步-开启mathjax"><span class="toc-number">6.</span> <span class="toc-text">第六步: 开启mathjax</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的博客主页，欢迎访问"><span class="toc-number"></span> <span class="toc-text">我的博客主页，欢迎访问</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的CSDN主页，欢迎访问"><span class="toc-number"></span> <span class="toc-text">我的CSDN主页，欢迎访问</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的简书主页，欢迎访问"><span class="toc-number"></span> <span class="toc-text">我的简书主页，欢迎访问</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#我的GitHub主页，欢迎访问"><span class="toc-number"></span> <span class="toc-text">我的GitHub主页，欢迎访问</span></a>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#直方图均衡化-Histogram-Equalization"><span class="toc-number">1.</span> <span class="toc-text">直方图均衡化 Histogram Equalization</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#均衡化算法"><span class="toc-number">1.1.</span> <span class="toc-text">均衡化算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#均衡化过程中，必须要保证两个条件"><span class="toc-number">1.1.1.</span> <span class="toc-text">均衡化过程中，必须要保证两个条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#累积分布函数"><span class="toc-number">1.1.2.</span> <span class="toc-text">累积分布函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#直方图规定化"><span class="toc-number">1.2.</span> <span class="toc-text">直方图规定化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#局部直方图处理-amp-直方图统计"><span class="toc-number">1.3.</span> <span class="toc-text">局部直方图处理&amp;直方图统计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Opencv代码"><span class="toc-number">1.4.</span> <span class="toc-text">Opencv代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#灰度直方图均衡"><span class="toc-number">1.4.1.</span> <span class="toc-text">灰度直方图均衡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#直方图规定化-1"><span class="toc-number">1.4.2.</span> <span class="toc-text">直方图规定化</span></a></li></ol></li></ol></li></ol>
      </div>
      <script type="text/javascript">
       function showToc(){
@@ -238,48 +230,40 @@ var _hmt = _hmt || [];
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用LaTex添加公式到Hexo博客里</p>
+        <p>图像处理<em>灰度变换</em>直方图</p>
 <a id="more"></a>
-<font color="blue">代码编辑器，强烈推荐使用微软的 VS code，相比Atom开启迅速，使用方便，扩展丰富</font>
-
-
-<h2 id="第一步：-安装Kramed"><a href="#第一步：-安装Kramed" class="headerlink" title="第一步： 安装Kramed"></a>第一步： 安装Kramed</h2><p>hexo 默认的渲染引擎是 marked，但是 marked 不支持 mathjax。，所以需要更换Hexo的markdown渲染引擎为hexo-renderer-kramed引擎，后者支持mathjax公式输出。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math1.png" alt=""></p>
-<h2 id="第二步：更改文件配置"><a href="#第二步：更改文件配置" class="headerlink" title="第二步：更改文件配置"></a>第二步：更改文件配置</h2><p>打开<code>/node_modules/hexo-renderer-kramed/lib/renderer.js</code>，更改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// Change inline math rule</span><br><span class="line">function formatText(text) &#123;</span><br><span class="line">    // Fit kramed&apos;s rule: $$ + \1 + $$</span><br><span class="line">    return text.replace(/`\$(.*?)\$`/g, &apos;$$$$$1$$$$&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">为，直接返回text</span><br><span class="line"></span><br><span class="line">// Change inline math rule</span><br><span class="line">function formatText(text) &#123;</span><br><span class="line">    return text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math4.png" alt="这里写图片描述"></p>
-<h2 id="第三步-停止使用-hexo-math，并安装mathjax包"><a href="#第三步-停止使用-hexo-math，并安装mathjax包" class="headerlink" title="第三步: 停止使用 hexo-math，并安装mathjax包"></a>第三步: 停止使用 hexo-math，并安装mathjax包</h2><p>卸载hexo-math<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-math --save</span><br></pre></td></tr></table></figure></p>
-<p>安装 hexo-renderer-mathjax 包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-mathjax --save</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math2.png" alt="这里写图片描述"><br><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math3.png" alt="这里写图片描述"></p>
-<h2 id="第四步-更新-Mathjax-的-配置文件"><a href="#第四步-更新-Mathjax-的-配置文件" class="headerlink" title="第四步: 更新 Mathjax 的 配置文件"></a>第四步: 更新 Mathjax 的 配置文件</h2><p>打开<code>/node_modules/hexo-renderer-mathjax/mathjax.html</code><br>如图所示更改<code>&lt;script&gt;</code>为：<br>即注释掉<code>&lt;script&gt;</code>代码，并把以下代码复制到对应位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math5.png" alt="这里写图片描述"></p>
-<h2 id="第五步-更改默认转义规则"><a href="#第五步-更改默认转义规则" class="headerlink" title="第五步: 更改默认转义规则"></a>第五步: 更改默认转义规则</h2><p>因为LaTeX与markdown语法有语义冲突，所以 hexo 默认的转义规则会将一些字符进行转义，所以我们需要对默认的规则进行修改.<br> 打开<code>/node_modules\kramed\lib\rules\inline.js</code><br> 1、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span><br></pre></td></tr></table></figure></p>
-<p>更改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([`*\[\]()# +\-.!_&gt;])/,</span><br></pre></td></tr></table></figure></p>
-<p>2、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure></p>
-<p>更改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math6.png" alt="这里写图片描述"></p>
-<h2 id="第六步-开启mathjax"><a href="#第六步-开启mathjax" class="headerlink" title="第六步: 开启mathjax"></a>第六步: 开启mathjax</h2><p>打开<code>/themes/yilia</code>主题目录下的<code>config.yml</code>文件<br>因为我用的<code>yilia</code>主题，所以路径是<code>/themes/yilia</code></p>
-<p>我们需要在<code>config.yml</code>文件 中开启 Mathjax， 找到 mathjax 字段添加如下代码：(不同的主题配置方法略微有区别)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure></p>
-<p>或者<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure></p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math7.png" alt="这里写图片描述"></p>
-<p><font color="red" size="2">注意的是：，无论是配置文件还是博客文件，配置项跟配置参数均有有一个空格，否则会配置失败</font><br><br>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mathjax: true（mathjax:空格true）</span><br><span class="line">而不是</span><br><span class="line">mathjax:true（mathjax:true）</span><br></pre></td></tr></table></figure></p>
-<p>写博客文件时，要开启 <code>Mathjax</code>选项，， 添加以下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mathjax: true</span><br></pre></td></tr></table></figure>
-<p>例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 特征提取——局部特征</span><br><span class="line">date: 2018-07-16 09:39:40</span><br><span class="line">tags: [GitHub, Mysql]</span><br><span class="line">mathjax: true</span><br></pre></td></tr></table></figure></p>
-<p>如下图所示</p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math7.5.png" alt="这里写图片描述"></p>
-<p>通过以上步骤，我们就可以在 hexo 中使用 Mathjax 来书写数学公式。</p>
-<p>效果展示：</p>
-<p><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math8.png" alt="这里写图片描述"><br><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/hexo-math9.png" alt="这里写图片描述"></p>
-<h1 id="我的博客主页，欢迎访问"><a href="#我的博客主页，欢迎访问" class="headerlink" title="我的博客主页，欢迎访问"></a><a href="http://www.haoloverongrong.top/" target="_blank" rel="noopener">我的博客主页，欢迎访问</a></h1><h1 id="我的CSDN主页，欢迎访问"><a href="#我的CSDN主页，欢迎访问" class="headerlink" title="我的CSDN主页，欢迎访问"></a><a href="https://blog.csdn.net/Aoman_Hao" target="_blank" rel="noopener">我的CSDN主页，欢迎访问</a></h1><h1 id="我的简书主页，欢迎访问"><a href="#我的简书主页，欢迎访问" class="headerlink" title="我的简书主页，欢迎访问"></a><a href="https://www.jianshu.com/u/4082f682db35" target="_blank" rel="noopener">我的简书主页，欢迎访问</a></h1><h1 id="我的GitHub主页，欢迎访问"><a href="#我的GitHub主页，欢迎访问" class="headerlink" title="我的GitHub主页，欢迎访问"></a><a href="https://github.com/AomanHao" target="_blank" rel="noopener">我的GitHub主页，欢迎访问</a></h1><p><a href="https://blog.csdn.net/crazy_scott/article/details/79293576" target="_blank" rel="noopener">参考文章1</a><br><a href="https://blog.csdn.net/u014630987/article/details/78670258" target="_blank" rel="noopener">参考文章2</a></p>
-<p><a href="https://www.jianshu.com/p/a0aa94ef8ab2" target="_blank" rel="noopener">https://www.jianshu.com/p/a0aa94ef8ab2</a></p>
-
+<h2 id="直方图均衡化-Histogram-Equalization"><a href="#直方图均衡化-Histogram-Equalization" class="headerlink" title="直方图均衡化 Histogram Equalization"></a>直方图均衡化 Histogram Equalization</h2><p>假如图像的灰度分布不均匀，其灰度分布集中在较窄的范围内，使图像的细节不够清晰，对比度较低。通常采用<strong>直方图均衡化</strong>及<strong>直方图规定化</strong>两种变换，使图像的灰度范围拉开或使灰度均匀分布，从而增大反差，使图像细节清晰，以达到增强的目的。<br>直方图均衡化，对图像进行非线性拉伸，重新分配图像的灰度值，使一定范围内图像的灰度值大致相等。这样，原来直方图中间的峰值部分对比度得到增强，而两侧的谷底部分对比度降低，输出图像的直方图是一个较为平坦的直方图。</p>
+<h3 id="均衡化算法"><a href="#均衡化算法" class="headerlink" title="均衡化算法"></a>均衡化算法</h3><p>直方图的均衡化实际也是一种灰度的变换过程，将当前的灰度分布通过一个变换函数，变换为范围更宽、灰度分布更均匀的图像。也就是将原图像的直方图修改为在整个灰度区间内大致均匀分布，因此扩大了图像的动态范围，增强图像的对比度。通常均衡化选择的变换函数是灰度的累积概率，直方图均衡化算法的步骤：</p>
+<p>1、计算原图像的灰度直方图 P(Sk)=nkn，其中n为像素总数，nk为灰度级Sk的像素个数</p>
+<p>2、计算原始图像的累积直方图 CDF(Sk)=∑i=0knin=∑i=0kPs(Si)<br>Dj=L⋅CDF(Si)，其中 Dj是目的图像的像素，CDF(Si)是源图像灰度为i的累积分布，L是图像中最大灰度级（灰度图为255）直接应用该方法得到图像的灰度直方图</p>
+<p>3\将灰度直方图进行归一化，计算灰度的累积概率；<br>创建灰度变化的查找表<br>应用查找表，将原图像变换为灰度均衡的图像</p>
+<h4 id="均衡化过程中，必须要保证两个条件"><a href="#均衡化过程中，必须要保证两个条件" class="headerlink" title="均衡化过程中，必须要保证两个条件"></a>均衡化过程中，必须要保证两个条件</h4><blockquote>
+<p>1、像素无论怎么映射，一定要保证原来的大小关系不变，较亮的区域，依旧是较亮的，较暗依旧暗，只是对比度增大，绝对不能明暗颠倒；<br><br>2、如果是八位图像，那么像素映射函数的值域应在0和255之间的，不能越界。</p>
+</blockquote>
+<p>综合以上两个条件，累积分布函数是个好的选择，因为<strong>累积分布函数</strong>是<strong>单调增函数</strong>（控制大小关系），并且值域是0到1（控制越界问题），所以直方图均衡化中使用的是累积分布函数。</p>
+<h4 id="累积分布函数"><a href="#累积分布函数" class="headerlink" title="累积分布函数"></a>累积分布函数</h4><p>累积分布函数具有一些好的性质，那么如何运用累积分布函数使得直方图均衡化？比较概率分布函数和累积分布函数，前者的二维图像是参差不齐的，后者是单调递增的。直方图均衡化过程中，映射方法是</p>
+<script type="math/tex; mode=display">S_k = \sum_{j=0}^k\frac{n_j}{n} . k=0,1...,L-1</script><p>$n$是图像素总和，$n_k$是当前灰度级的像素个数，$L$是图像中灰度级总数</p>
+<p>操作步骤有:<br><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/huidu_junheng1.png" alt=""></p>
+<h3 id="直方图规定化"><a href="#直方图规定化" class="headerlink" title="直方图规定化"></a>直方图规定化</h3><p>直方图规定化，就是对原始图像做变换，使得变换后的图像的直方图跟我们规定的一样。</p>
+<p>具体步骤如下：</p>
+<p>1、首先对原始图像做直方图均衡化，得到每个像素s和累积分布T(s);</p>
+<p>2、根据需要的规定化直方图，求累积分布G(Z)；</p>
+<p>3、显然，如果累积直方图中有0值，那么是不会分配像素值的，因为0乘以255还是零。</p>
+<p>4、对于每一个T（s）（假设其像素值为ss）,找到在G（Z）中与其差值最小的那个G（z）值（假设对应的像素值为zz），那么规定化后就把ss变换为zz。</p>
+<p>直方图规定化流程下图：<br><img src="http://p3qhnc0eg.bkt.clouddn.com/blog/img/huidu_guiding1.png" alt=""></p>
+<p>1、计算原图像的累积直方图</p>
+<p>2、计算规定直方图的累积直方图</p>
+<p>3、计算两累积直方图的差值的绝对值</p>
+<p>4、根据累积直方图差值建立灰度级的映射</p>
+<h3 id="局部直方图处理-amp-直方图统计"><a href="#局部直方图处理-amp-直方图统计" class="headerlink" title="局部直方图处理&amp;直方图统计"></a>局部直方图处理&amp;直方图统计</h3><h3 id="Opencv代码"><a href="#Opencv代码" class="headerlink" title="Opencv代码"></a>Opencv代码</h3><h4 id="灰度直方图均衡"><a href="#灰度直方图均衡" class="headerlink" title="灰度直方图均衡"></a>灰度直方图均衡</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line">// HistogramGrayEqualizeHist.cpp : 定义控制台应用程序的入口点。</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#include &quot;stdafx.h&quot;</span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;opencv2/core/core.hpp&gt;   //cvGetSize  cvCreateImage</span><br><span class="line">#include &lt;opencv2/highgui/highgui.hpp&gt;</span><br><span class="line">#include &lt;opencv2/opencv.hpp&gt;  //cvResize cvInitMatHeader cvGetMinMaxHistValue cvCvtColor</span><br><span class="line">#include &lt;opencv2/imgproc/imgproc.hpp&gt;</span><br><span class="line"></span><br><span class="line">#ifdef _DEBUG</span><br><span class="line">#pragma comment(lib, &quot;opencv_core244d&quot;)</span><br><span class="line">#pragma comment(lib, &quot;opencv_highgui244d&quot;)</span><br><span class="line">#pragma comment(lib, &quot;opencv_imgproc244d&quot;)  //cvResize</span><br><span class="line">#else</span><br><span class="line">#pragma comment(lib, &quot;opencv_core244d&quot;)</span><br><span class="line">#pragma comment(lib, &quot;opencv_highgui244d&quot;)</span><br><span class="line">#pragma comment(lib, &quot;opencv_imgproc244d&quot;)  //cvResize</span><br><span class="line">#endif</span><br><span class="line">#define cvQueryHistValue_1D(hist,idx0) ((float)cvGetReal1D( (hist)-&gt;bins, (idx0)))</span><br><span class="line"></span><br><span class="line">using namespace std;  </span><br><span class="line">#pragma comment(linker, &quot;/subsystem:\&quot;windows\&quot; /entry:\&quot;mainCRTStartup\&quot;&quot;)  </span><br><span class="line">void FillWhite(IplImage *pImage)  </span><br><span class="line">&#123;  </span><br><span class="line">    cvRectangle(pImage, cvPoint(0, 0), cvPoint(pImage-&gt;width, pImage-&gt;height), CV_RGB(255, 255, 255), CV_FILLED);  </span><br><span class="line">&#125;  </span><br><span class="line">// 创建灰度图像的直方图  </span><br><span class="line">CvHistogram* CreateGrayImageHist(IplImage **ppImage)  </span><br><span class="line">&#123;  </span><br><span class="line">    int nHistSize = 256;  </span><br><span class="line">    float fRange[] = &#123;0, 255&#125;;  //灰度级的范围    </span><br><span class="line">    float *pfRanges[] = &#123;fRange&#125;;    </span><br><span class="line">    CvHistogram *pcvHistogram = cvCreateHist(1, &amp;nHistSize, CV_HIST_ARRAY, pfRanges);  </span><br><span class="line">    cvCalcHist(ppImage, pcvHistogram);  </span><br><span class="line">    return pcvHistogram;  </span><br><span class="line">&#125;  </span><br><span class="line">// 根据直方图创建直方图图像  </span><br><span class="line">IplImage* CreateHisogramImage(int nImageWidth, int nScale, int nImageHeight, CvHistogram *pcvHistogram)  </span><br><span class="line">&#123;  </span><br><span class="line">    IplImage *pHistImage = cvCreateImage(cvSize(nImageWidth * nScale, nImageHeight), IPL_DEPTH_8U, 1);  </span><br><span class="line">    FillWhite(pHistImage);  </span><br><span class="line">  </span><br><span class="line">    //统计直方图中的最大直方块  </span><br><span class="line">    float fMaxHistValue = 0;  </span><br><span class="line">    cvGetMinMaxHistValue(pcvHistogram, NULL, &amp;fMaxHistValue, NULL, NULL);  </span><br><span class="line">  </span><br><span class="line">    //分别将每个直方块的值绘制到图中  </span><br><span class="line">    int i;  </span><br><span class="line">    for(i = 0; i &lt; nImageWidth; i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        float fHistValue = cvQueryHistValue_1D(pcvHistogram, i); //像素为i的直方块大小  </span><br><span class="line">        int nRealHeight = cvRound((fHistValue / fMaxHistValue) * nImageHeight);  //要绘制的高度  </span><br><span class="line">        cvRectangle(pHistImage,  </span><br><span class="line">            cvPoint(i * nScale, nImageHeight - 1),  </span><br><span class="line">            cvPoint((i + 1) * nScale - 1, nImageHeight - nRealHeight),  </span><br><span class="line">            cvScalar(i, 0, 0, 0),   </span><br><span class="line">            CV_FILLED  </span><br><span class="line">            );   </span><br><span class="line">    &#125;  </span><br><span class="line">    return pHistImage;  </span><br><span class="line">&#125;  </span><br><span class="line">int main( int argc, char** argv )  </span><br><span class="line">&#123;     </span><br><span class="line">    const char *pstrWindowsSrcTitle = &quot;原图&quot;;  </span><br><span class="line">    const char *pstrWindowsGrayTitle = &quot;灰度图&quot;;  </span><br><span class="line">    const char *pstrWindowsHistTitle = &quot;直方图&quot;;  </span><br><span class="line">    const char *pstrWindowsGrayEqualizeTitle = &quot;灰度图-均衡化后&quot;;  </span><br><span class="line">    const char *pstrWindowsHistEqualizeTitle = &quot;直方图-均衡化后&quot;;  </span><br><span class="line">      </span><br><span class="line">    // 从文件中加载原图  </span><br><span class="line">    // IplImage *pSrcImage = cvLoadImage(&quot;./images/yangmi.jpg&quot;, CV_LOAD_IMAGE_UNCHANGED);  </span><br><span class="line">    IplImage *pSrcImage = cvLoadImage(&quot;./images/beauty.png&quot;, CV_LOAD_IMAGE_UNCHANGED);  </span><br><span class="line">    IplImage *pGrayImage = cvCreateImage(cvGetSize(pSrcImage), IPL_DEPTH_8U, 1);  </span><br><span class="line">    IplImage *pGrayEqualizeImage = cvCreateImage(cvGetSize(pSrcImage), IPL_DEPTH_8U, 1);  </span><br><span class="line">      </span><br><span class="line">    // 灰度图  </span><br><span class="line">    cvCvtColor(pSrcImage, pGrayImage, CV_BGR2GRAY);  </span><br><span class="line">    // 直方图图像数据  </span><br><span class="line">    int nHistImageWidth = 255;  </span><br><span class="line">    int nHistImageHeight = 150;   </span><br><span class="line">    int nScale = 2;    </span><br><span class="line">  </span><br><span class="line">    // 灰度直方图及直方图图像  </span><br><span class="line">    CvHistogram *pcvHistogram = CreateGrayImageHist(&amp;pGrayImage);  </span><br><span class="line">    IplImage *pHistImage = CreateHisogramImage(nHistImageWidth, nScale, nHistImageHeight, pcvHistogram);  </span><br><span class="line">  </span><br><span class="line">    // 均衡化 </span><br><span class="line">    //函数功能：直方图均衡化，该函数能归一化图像亮度和增强对比度</span><br><span class="line">    //第一个参数表示输入图像，必须为灰度图（8位，单通道图）</span><br><span class="line">    //第二个参数表示输出图像</span><br><span class="line">    //该函数采用如下法则对输入图像进行直方图均衡化：</span><br><span class="line">        //1：计算输入图像的直方图H。</span><br><span class="line">        //2：直方图归一化，因此直方块和为255。</span><br><span class="line">        //3：计算直方图积分，H&apos;(i) = Sum(H(j)) (0&lt;=j&lt;=i)。</span><br><span class="line">        //4：采用H&apos;作为查询表：dst(x, y) = H&apos;(src(x, y))进行图像变换。</span><br><span class="line">    cvEqualizeHist(pGrayImage, pGrayEqualizeImage);  </span><br><span class="line">  </span><br><span class="line">    // 均衡化后的灰度直方图及直方图图像  </span><br><span class="line">    CvHistogram *pcvHistogramEqualize = CreateGrayImageHist(&amp;pGrayEqualizeImage);         </span><br><span class="line">    IplImage *pHistEqualizeImage = CreateHisogramImage(nHistImageWidth, nScale, nHistImageHeight, pcvHistogramEqualize);  </span><br><span class="line">  </span><br><span class="line">    // 显示  </span><br><span class="line">    cvNamedWindow(pstrWindowsSrcTitle); </span><br><span class="line">    cvNamedWindow(pstrWindowsGrayTitle); </span><br><span class="line">    cvNamedWindow(pstrWindowsGrayEqualizeTitle); </span><br><span class="line">    cvNamedWindow(pstrWindowsHistTitle); </span><br><span class="line">    cvNamedWindow(pstrWindowsHistEqualizeTitle); </span><br><span class="line">    cvShowImage(pstrWindowsSrcTitle,pSrcImage);</span><br><span class="line">    cvShowImage(pstrWindowsGrayTitle,pGrayImage);</span><br><span class="line">    cvShowImage(pstrWindowsGrayEqualizeTitle,pGrayEqualizeImage);</span><br><span class="line">    cvShowImage(pstrWindowsHistTitle,pHistImage);</span><br><span class="line">    cvShowImage(pstrWindowsHistEqualizeTitle,pHistEqualizeImage);</span><br><span class="line">    cvWaitKey(0);  </span><br><span class="line">    //回收资源代码…  </span><br><span class="line">    cvDestroyWindow(pstrWindowsSrcTitle);</span><br><span class="line">    cvDestroyWindow(pstrWindowsGrayTitle);</span><br><span class="line">    cvDestroyWindow(pstrWindowsGrayEqualizeTitle);</span><br><span class="line">    cvDestroyWindow(pstrWindowsHistTitle);</span><br><span class="line">    cvDestroyWindow(pstrWindowsHistEqualizeTitle);</span><br><span class="line">    cvReleaseImage(&amp;pSrcImage);</span><br><span class="line">    cvReleaseImage(&amp;pGrayImage);</span><br><span class="line">    cvReleaseImage(&amp;pGrayEqualizeImage);</span><br><span class="line">    cvReleaseImage(&amp;pHistImage);</span><br><span class="line">    cvReleaseImage(&amp;pHistEqualizeImage);</span><br><span class="line">    return 0;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="直方图规定化-1"><a href="#直方图规定化-1" class="headerlink" title="直方图规定化"></a>直方图规定化</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">void hist_specify(const Mat &amp;src, const Mat &amp;dst,Mat &amp;result)</span><br><span class="line">&#123;</span><br><span class="line">    Histogram1D hist1D;</span><br><span class="line">    MatND src_hist = hist1D.getHistogram(src);</span><br><span class="line">    MatND dst_hist = hist1D.getHistogram(dst);</span><br><span class="line"></span><br><span class="line">    float src_cdf[256] = &#123; 0 &#125;;</span><br><span class="line">    float dst_cdf[256] = &#123; 0 &#125;;</span><br><span class="line"></span><br><span class="line">    // 源图像和目标图像的大小不一样，要将得到的直方图进行归一化处理</span><br><span class="line">    src_hist /= (src.rows * src.cols);</span><br><span class="line">    dst_hist /= (dst.rows * dst.cols);</span><br><span class="line"></span><br><span class="line">    // 计算原始直方图和规定直方图的累积概率</span><br><span class="line">    for (int i = 0; i &lt; 256; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (i == 0)</span><br><span class="line">        &#123;</span><br><span class="line">            src_cdf[i] = src_hist.at&lt;float&gt;(i);</span><br><span class="line">            dst_cdf[i] = dst_hist.at&lt;float&gt;(i);</span><br><span class="line">        &#125;</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            src_cdf[i] = src_cdf[i - 1] + src_hist.at&lt;float&gt;(i);</span><br><span class="line">            dst_cdf[i] = dst_cdf[i - 1] + dst_hist.at&lt;float&gt;(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 累积概率的差值</span><br><span class="line">    float diff_cdf[256][256];</span><br><span class="line">    for (int i = 0; i &lt; 256; i++)</span><br><span class="line">        for (int j = 0; j &lt; 256; j++)</span><br><span class="line">            diff_cdf[i][j] = fabs(src_cdf[i] - dst_cdf[j]);</span><br><span class="line"></span><br><span class="line">    // 构建灰度级映射表</span><br><span class="line">    Mat lut(1, 256, CV_8U);</span><br><span class="line">    for (int i = 0; i &lt; 256; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        // 查找源灰度级为ｉ的映射灰度</span><br><span class="line">        //　和ｉ的累积概率差值最小的规定化灰度</span><br><span class="line">        float min = diff_cdf[i][0];</span><br><span class="line">        int index = 0;</span><br><span class="line">        for (int j = 1; j &lt; 256; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (min &gt; diff_cdf[i][j])</span><br><span class="line">            &#123;</span><br><span class="line">                min = diff_cdf[i][j];</span><br><span class="line">                index = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        lut.at&lt;uchar&gt;(i) = static_cast&lt;uchar&gt;(index);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 应用查找表，做直方图规定化</span><br><span class="line">    LUT(src, lut, result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     <!--文章内版权说明开始-->
     
   
     <div class="declare">
     <strong>本文链接：</strong>
-    http://www.aomanhao.top/2018/07/23/hexo_LeTex1/
+    http://www.aomanhao.top/2018/09/07/图像处理_灰度变换_直方图/
     <br>
     <strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>进行许可。转载请注明出处！
     <br>
@@ -297,11 +281,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Opencv</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">图像处理</a>
         		</li>
       		
 		</ul>
@@ -357,7 +341,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.aomanhao.top/2018/07/23/hexo_LeTex1/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.aomanhao.top/2018/09/07/图像处理_灰度变换_直方图/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -371,18 +355,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/08/01/git_update_error1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          git_update_error1
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/07/22/机器学习_最优化_损失函数/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">机器学习_最优化_损失函数</div>
+    <a href="/2018/09/04/机器学习面试精华/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">机器学习面试</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -410,7 +385,7 @@ var _hmt = _hmt || [];
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hexo_LeTex1" data-title="使用LaTex添加公式到Hexo博客里" data-url="http://www.aomanhao.top/2018/07/23/hexo_LeTex1/"></div>
+	<div class="ds-thread" data-thread-key="图像处理_灰度变换_直方图" data-title="图像处理_灰度变换_直方图" data-url="http://www.aomanhao.top/2018/09/07/图像处理_灰度变换_直方图/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
