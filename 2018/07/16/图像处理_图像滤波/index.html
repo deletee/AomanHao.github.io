@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="AomanHao的个人博客">
 <meta property="og:description" content="图像处理_图像滤波">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-07T02:44:08.461Z">
+<meta property="og:updated_time" content="2018-09-13T13:48:33.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图像处理_图像滤波">
 <meta name="twitter:description" content="图像处理_图像滤波">
@@ -207,7 +207,7 @@ var _hmt = _hmt || [];
       <div id="toc-article" class="toc-article">
           <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#空域滤波"><span class="toc-number">1.</span> <span class="toc-text">空域滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#滤波模板"><span class="toc-number">1.1.</span> <span class="toc-text">滤波模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性空域滤波"><span class="toc-number">1.2.</span> <span class="toc-text">线性空域滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#模板卷积"><span class="toc-number">1.2.1.</span> <span class="toc-text">模板卷积</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#延拓"><span class="toc-number">1.2.2.</span> <span class="toc-text">延拓</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#均值滤波"><span class="toc-number">1.2.3.</span> <span class="toc-text">均值滤波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#高斯滤波"><span class="toc-number">1.2.4.</span> <span class="toc-text">高斯滤波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#双边滤波"><span class="toc-number">1.2.5.</span> <span class="toc-text">双边滤波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#中值滤波"><span class="toc-number">1.2.6.</span> <span class="toc-text">中值滤波</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#频域滤波"><span class="toc-number">2.</span> <span class="toc-text">频域滤波</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#空域滤波"><span class="toc-number">1.</span> <span class="toc-text">空域滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#滤波模板"><span class="toc-number">1.1.</span> <span class="toc-text">滤波模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性空域滤波"><span class="toc-number">1.2.</span> <span class="toc-text">线性空域滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#模板卷积"><span class="toc-number">1.2.1.</span> <span class="toc-text">模板卷积</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#延拓"><span class="toc-number">1.2.2.</span> <span class="toc-text">延拓</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#均值滤波"><span class="toc-number">1.2.3.</span> <span class="toc-text">均值滤波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#高斯滤波"><span class="toc-number">1.2.4.</span> <span class="toc-text">高斯滤波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#双边滤波"><span class="toc-number">1.2.5.</span> <span class="toc-text">双边滤波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#中值滤波"><span class="toc-number">1.2.6.</span> <span class="toc-text">中值滤波</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#频域滤波"><span class="toc-number">2.</span> <span class="toc-text">频域滤波</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-代码"><span class="toc-number">3.</span> <span class="toc-text">C++代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#均值滤波-1"><span class="toc-number">3.1.</span> <span class="toc-text">均值滤波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中值滤波-1"><span class="toc-number">3.2.</span> <span class="toc-text">中值滤波</span></a></li></ol></li></ol>
      </div>
      <script type="text/javascript">
       function showToc(){
@@ -291,7 +291,7 @@ var _hmt = _hmt || [];
 <p>假设高斯函数表达式如下：</p>
 <script type="math/tex; mode=display">W_ij=\frac{1}{K_i}e^-\frac{(x_j-x_i)^2}{σ^2_G}</script><p>K是归一化的常量，W是权重，权重只跟像素之间的空间距离有关系。</p>
 <p>双边滤波器:</p>
-<script type="math/tex; mode=display">W_ij=\frac{1}{K_i}e^-\frac{(x_j-x_i)^2}{σ^2_G}e^-\frac{(I_j-I_i)^2}{σ^2_r}</script><h4 id="中值滤波"><a href="#中值滤波" class="headerlink" title="中值滤波"></a>中值滤波</h4><p>中值滤波是统计排序滤波的一种，中值滤波对椒盐噪声效果好；滤波图像边缘信息好，边缘清晰<br>|统计排序滤波：||||<br>|-|-|-|-|<br>|最大值滤波|有效地滤除椒噪声(黑色)|寻找最亮点，亮化图片|<br>|最小值滤波|有效地滤除盐噪声(白色)|寻找最暗点，暗化图片|<br>|自适应中值滤波|有效地滤除椒盐噪声|钝化图像、去除噪音|</p>
+<script type="math/tex; mode=display">W_ij=\frac{1}{K_i}e^-\frac{(x_j-x_i)^2}{σ^2_G}e^-\frac{(I_j-I_i)^2}{σ^2_r}</script><h4 id="中值滤波"><a href="#中值滤波" class="headerlink" title="中值滤波"></a>中值滤波</h4><p>中值滤波是统计排序滤波的一种，中值滤波对椒盐噪声效果好；滤波图像边缘信息好，边缘清晰<br>|统计排序滤波|||<br>|-|-|-|<br>|最大值滤波|有效地滤除椒噪声(黑色)|寻找最亮点，亮化图片|<br>|最小值滤波|有效地滤除盐噪声(白色)|寻找最暗点，暗化图片|<br>|自适应中值滤波|有效地滤除椒盐噪声|钝化图像、去除噪音|</p>
 <p>操作步骤：</p>
 <p>1) 将模板在图像中遍历</p>
 <p>2) 将模板对应的邻域内像素的灰度值排序</p>
@@ -310,12 +310,12 @@ var _hmt = _hmt || [];
 <tr>
 <td></td>
 <td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
 </div>
-
+<h2 id="C-代码"><a href="#C-代码" class="headerlink" title="C++代码"></a>C++代码</h2><h3 id="均值滤波-1"><a href="#均值滤波-1" class="headerlink" title="均值滤波"></a>均值滤波</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">void meanFilter (unsigned char* corrupted, unsigned char* smooth, int width, int height)  </span><br><span class="line">&#123;  </span><br><span class="line">      </span><br><span class="line">    memcpy ( smooth, corrupted, width*height*sizeof(unsigned char) );  </span><br><span class="line">      </span><br><span class="line">    for (int j=1;j&lt;height-1;j++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        for (int i=1;i&lt;width-1;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            smooth [ j*width+i ] = (    corrupted [ (j-1)*width+(i-1) ] + corrupted [ (j-1)*width+i] + corrupted [ (j-1)*width+(i+1) ] +  </span><br><span class="line">                                        corrupted [ j*width+(i-1) ]     + corrupted [ j*width+i]     + corrupted [ j*width+(i+1) ] +  </span><br><span class="line">                                        corrupted [ (j+1)*width+(i-1) ] + corrupted [ (j+1)*width+i] + corrupted [ (j+1)*width+(i+1) ] ) / 9;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="中值滤波-1"><a href="#中值滤波-1" class="headerlink" title="中值滤波"></a>中值滤波</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">void medianFilter (unsigned char* corrupted, unsigned char* smooth, int width, int height)  </span><br><span class="line">&#123;  </span><br><span class="line">      </span><br><span class="line">    memcpy ( smooth, corrupted, width*height*sizeof(unsigned char) );  </span><br><span class="line">    for (int j=1;j&lt;height-1;j++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        for (int i=1;i&lt;width-1;i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">            int k = 0;  </span><br><span class="line">            unsigned char window[9];  </span><br><span class="line">            for (int jj = j - 1; jj &lt; j + 2; ++jj)  </span><br><span class="line">                for (int ii = i - 1; ii &lt; i + 2; ++ii)  </span><br><span class="line">                    window[k++] = corrupted[jj * width + ii];  </span><br><span class="line">            //   Order elements (only half of them)  </span><br><span class="line">            for (int m = 0; m &lt; 5; ++m)  </span><br><span class="line">            &#123;  </span><br><span class="line">                int min = m;  </span><br><span class="line">                for (int n = m + 1; n &lt; 9; ++n)  </span><br><span class="line">                    if (window[n] &lt; window[min])  </span><br><span class="line">                        min = n;  </span><br><span class="line">                //   Put found minimum element in its place  </span><br><span class="line">                unsigned char temp = window[m];  </span><br><span class="line">                window[m] = window[min];  </span><br><span class="line">                window[min] = temp;  </span><br><span class="line">            &#125;  </span><br><span class="line">            smooth[ j*width+i ] = window[4];  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     <!--文章内版权说明开始-->
     
@@ -410,18 +410,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/图像分割_大津法/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/16/图像处理_图像增强/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          图像分割-大津法
+          图像处理_图像增强
         
       </div>
     </a>
   
   
-    <a href="/2018/07/16/opencv_ocr/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">opencv_ocr</div>
+    <a href="/2018/07/16/特征提取_局部特征_SIFT/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">特征提取——局部特征-SIFT算法尺度不变性的理解</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -605,15 +605,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -641,6 +641,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
@@ -657,10 +661,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">笔面经</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
@@ -669,19 +669,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
               <li class="article-tag-list-item">
