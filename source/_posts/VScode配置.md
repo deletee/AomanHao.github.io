@@ -9,6 +9,13 @@ VScode配置
 
 <!--more-->
 
+### VScode插件
+
+Git History（装完输入 git log有惊喜)
+Git Lens（让本就集成了 git 的 VSC 更加强大）
+
+
+
 ### VScode设置中文界面
 
 ```
