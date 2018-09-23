@@ -1,7 +1,7 @@
 ---
 title: Hexo博客 报错 Cannot read property 'replace' of null
 date: 2018-08-28 09:39:40
-tags: [Hexo, Github]
+tags: [Hexo, GitHub]
 toc: true
 ---
 
@@ -14,6 +14,7 @@ Hexo博客 报错 Cannot read property 'replace' of null
 报错内容如下
 ```
 FATAL Cannot read property 'replace' of null
+
 TypeError: Cannot read property 'replace' of null
 
 ```
@@ -40,4 +41,4 @@ permalink_defaults:
 root，url属性配置正确，填写自己对应的
 
 
-[cankao](https://www.jianshu.com/p/449accb044b4)
+[参考文章](https://www.jianshu.com/p/449accb044b4)

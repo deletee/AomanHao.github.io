@@ -1,7 +1,7 @@
 ---
 title: Hexo博客yilia主题首页添加helper-live2d模型插件
 date: 2018-08-23 09:39:40
-tags: [Hexo, Github, yilia]
+tags: [Hexo, GitHub, yilia]
 toc: true
 ---
 
