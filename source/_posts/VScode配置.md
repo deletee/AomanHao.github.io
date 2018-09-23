@@ -12,8 +12,13 @@ VScode配置
 ### VScode插件
 
 Git History（装完输入 git log有惊喜)
-Git Lens（让本就集成了 git 的 VSC 更加强大）
+Git Lens（让本就集成了 git 的 VSC 更加强大
+Markdown Preview Enhanced(markdown 预览)
+Emoji Code
 
+---------------------
+
+本文来自 young_Emily 的CSDN 博客 ，全文地址请点击：https://blog.csdn.net/young_Emily/article/details/78599819?utm_source=copy 
 
 
 ### VScode设置中文界面
