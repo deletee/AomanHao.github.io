@@ -104,6 +104,8 @@ python脚本文件原作者GitHub地址：`https://github.com/lawlite19/Blog-Bac
 
 下载python2或者3，在`cmd`运行窗口运行`python tool.py`
 
+![](http://p3qhnc0eg.bkt.clouddn.com/img/blog/blog_python1.png)
+
 `tool.py`是运行主函数，`ImageProcess`图像处理功能函数，包括裁剪、压缩等
 
 git_operation()方法:
@@ -118,7 +120,6 @@ handle_photo()方法:
 ### 5.注意事项
 5.1 
 最前面是日期，然后用_进行分隔；后面是图片的描述信息，注意不要包含_和.符号
-
 
 图片应该这样命名: 2016-10-12_xxx.jpg/png；存放在photos中，然后脚本运行会生成压缩图片，放置在`min_photos`文件夹中。
 
