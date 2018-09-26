@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="AomanHao的个人博客">
 <meta property="og:description" content="图像处理_图像滤波">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-13T13:48:33.648Z">
+<meta property="og:updated_time" content="2018-09-25T13:32:37.128Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图像处理_图像滤波">
 <meta name="twitter:description" content="图像处理_图像滤波">
@@ -219,7 +219,7 @@ var _hmt = _hmt || [];
       <div id="toc-article" class="toc-article">
           <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#空域滤波"><span class="toc-number">1.</span> <span class="toc-text">空域滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#滤波模板"><span class="toc-number">1.1.</span> <span class="toc-text">滤波模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性空域滤波"><span class="toc-number">1.2.</span> <span class="toc-text">线性空域滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#模板卷积"><span class="toc-number">1.2.1.</span> <span class="toc-text">模板卷积</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#延拓"><span class="toc-number">1.2.2.</span> <span class="toc-text">延拓</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#均值滤波"><span class="toc-number">1.2.3.</span> <span class="toc-text">均值滤波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#高斯滤波"><span class="toc-number">1.2.4.</span> <span class="toc-text">高斯滤波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#双边滤波"><span class="toc-number">1.2.5.</span> <span class="toc-text">双边滤波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#中值滤波"><span class="toc-number">1.2.6.</span> <span class="toc-text">中值滤波</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#频域滤波"><span class="toc-number">2.</span> <span class="toc-text">频域滤波</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-代码"><span class="toc-number">3.</span> <span class="toc-text">C++代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#均值滤波-1"><span class="toc-number">3.1.</span> <span class="toc-text">均值滤波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中值滤波-1"><span class="toc-number">3.2.</span> <span class="toc-text">中值滤波</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#噪声"><span class="toc-number">1.</span> <span class="toc-text">噪声</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#空域滤波"><span class="toc-number">2.</span> <span class="toc-text">空域滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#滤波模板"><span class="toc-number">2.1.</span> <span class="toc-text">滤波模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线性空域滤波"><span class="toc-number">2.2.</span> <span class="toc-text">线性空域滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#模板卷积"><span class="toc-number">2.2.1.</span> <span class="toc-text">模板卷积</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#延拓"><span class="toc-number">2.2.2.</span> <span class="toc-text">延拓</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#均值滤波"><span class="toc-number">2.2.3.</span> <span class="toc-text">均值滤波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#高斯滤波"><span class="toc-number">2.2.4.</span> <span class="toc-text">高斯滤波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#双边滤波"><span class="toc-number">2.2.5.</span> <span class="toc-text">双边滤波</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#中值滤波"><span class="toc-number">2.2.6.</span> <span class="toc-text">中值滤波</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#频域滤波"><span class="toc-number">3.</span> <span class="toc-text">频域滤波</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-代码"><span class="toc-number">4.</span> <span class="toc-text">C++代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#均值滤波-1"><span class="toc-number">4.1.</span> <span class="toc-text">均值滤波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#中值滤波-1"><span class="toc-number">4.2.</span> <span class="toc-text">中值滤波</span></a></li></ol></li></ol>
      </div>
      <script type="text/javascript">
       function showToc(){
@@ -241,6 +241,14 @@ var _hmt = _hmt || [];
       
         <p>图像处理_图像滤波</p>
 <a id="more"></a>
+<h2 id="噪声"><a href="#噪声" class="headerlink" title="噪声"></a>噪声</h2><p>加性噪声一般指热噪声、散弹噪声等，它们与信号的关系是相加，不管有没有信号，噪声都存在。 </p>
+<blockquote>
+<p>高斯白噪声包括热噪声和散粒噪声。在通信信道测试和建模中，高斯噪声被用作加性白噪声以产生加性白高斯噪声。</p>
+<p>加性高斯白噪声只是白噪声的一种，另有泊松白噪声等,加性高斯白噪声在通信领域中指的是一种各频谱分量服从均匀分布（即白噪声），且幅度服从高斯分布的噪声信号。因其可加性、幅度服从高斯分布且为白噪声的一种而得名。</p>
+</blockquote>
+<p>而乘性噪声一般由信道不理想引起，它们与信号的关系是相乘，信号在它在，信号不在他也就不在。 </p>
+<p>一般通信中把加性随机性看成是系统的背景噪声； </p>
+<p>而乘性随机性看成系统的时变性（如衰落或者多普勒）或者非线性所造成的。</p>
 <h2 id="空域滤波"><a href="#空域滤波" class="headerlink" title="空域滤波"></a>空域滤波</h2><p>空域滤波可以用于非线性滤波，但是频域滤波不能用于非线性滤波</p>
 <div class="table-container">
 <table>
@@ -613,6 +621,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Mysql</a>
               </li>
              
@@ -625,15 +637,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">VScode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -649,15 +657,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GUI</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,11 +689,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像插值</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -697,11 +701,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">最优化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">特征提取</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
