@@ -8,14 +8,13 @@
   <link rel="dns-prefetch" href="http://www.aomanhao.top">
   <title>Hexo添加相册 | AomanHao的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hexo添加相册">
-<meta name="keywords" content="Hexo,GitHub">
+  <meta name="keywords" content="Hexo,GitHub">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo添加相册">
 <meta property="og:url" content="http://www.aomanhao.top/2018/09/23/Hexo相册/index.html">
 <meta property="og:site_name" content="AomanHao的个人博客">
-<meta property="og:description" content="Hexo添加相册">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://ph04wnm2q.bkt.clouddn.com/bg/magazine-unlock-01-2.3.997-_7427437DC9CBCC3EDFC866F3B05985F9.jpg">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/img/blog/blog_photos_1.png">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/img/blog/blog_head_photo1.png">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/img/blog/blog_backup1.png">
@@ -29,11 +28,10 @@
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/img/blog/blog_python1.png">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/img/blog/blog_photos_git_4.png">
 <meta property="og:image" content="http://p3qhnc0eg.bkt.clouddn.com/img/blog/blog_photos_git_5.png">
-<meta property="og:updated_time" content="2018-10-11T12:20:24.710Z">
+<meta property="og:updated_time" content="2018-10-22T13:27:23.545Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo添加相册">
-<meta name="twitter:description" content="Hexo添加相册">
-<meta name="twitter:image" content="http://p3qhnc0eg.bkt.clouddn.com/img/blog/blog_photos_1.png">
+<meta name="twitter:image" content="http://ph04wnm2q.bkt.clouddn.com/bg/magazine-unlock-01-2.3.997-_7427437DC9CBCC3EDFC866F3B05985F9.jpg">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao的个人博客" type="application/atom+xml">
   
@@ -247,7 +245,7 @@ var _hmt = _hmt || [];
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hexo添加相册<br><a id="more"></a></p>
+        <p><img src="http://ph04wnm2q.bkt.clouddn.com/bg/magazine-unlock-01-2.3.997-_7427437DC9CBCC3EDFC866F3B05985F9.jpg" alt=""><br><a id="more"></a></p>
 <h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>1.在主页上必须有一个可供点击的相册连接<br>2.要用 hexo 生成一个 photos.html 文件<br>3.photos.html 中的图片数据来源?因为这是一个静态页面所有要有一个 json 文件<br>4.json 文件中有含有信息,图片的文件名.<br>5.图片要有一个完整的路径,用github的空间<br>6.Python脚本剪裁、压缩、上传图片到自定义的github备份仓库中<br>不多说废话了,顺着思路逐一解决问题吧</p>
 <h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="1-在主页上必须有一个可供点击的连接"><a href="#1-在主页上必须有一个可供点击的连接" class="headerlink" title="1.在主页上必须有一个可供点击的连接"></a>1.在主页上必须有一个可供点击的连接</h3><p><code>BLOG\source</code>目录下创建一个<code>photos</code>目录，目的是存放利用脚本生成的json 文件和渲染文件。</p>
 <p><img src="http://p3qhnc0eg.bkt.clouddn.com/img/blog/blog_photos_1.png" alt=""></p>
@@ -403,8 +401,8 @@ var _hmt = _hmt || [];
     </a>
   
   
-    <a href="/2018/09/19/VScode配置/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">VScode配置</div>
+    <a href="/2018/09/19/Git配置/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git配置</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -600,11 +598,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">VScode</a>
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" class="js-tag color2">VScode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -652,6 +650,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像插值</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
@@ -661,10 +663,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像插值</a>
               </li>
              
               <li class="article-tag-list-item">
