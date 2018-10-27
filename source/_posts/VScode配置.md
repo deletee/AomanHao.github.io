@@ -5,7 +5,7 @@ tags: [VScode]
 toc: true
 ---
 
-VScode配置
+<img width="800" height="800" src="http://ph04wnm2q.bkt.clouddn.com/bg/magazine-unlock-01-2.3.972-_1e1e6ebdd97d46788ea6fe0b42162af7.jpg"/>
 
 <!--more-->
 

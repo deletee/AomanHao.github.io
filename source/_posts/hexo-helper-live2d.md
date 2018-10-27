@@ -5,7 +5,7 @@ tags: [Hexo, GitHub, yilia]
 toc: true
 ---
 
-Hexo博客yilia主题首页添加helper-live2d模型插件
+<img width="800" height="800" src="http://ph04wnm2q.bkt.clouddn.com/bg/magazine-unlock-01-2.3.1005-_1FB17B4DEA7E0EB28F601DEACD12C904.jpg"/>
 
 <!--more-->
 

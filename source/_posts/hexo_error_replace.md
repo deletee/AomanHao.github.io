@@ -5,7 +5,7 @@ tags: [Hexo, GitHub]
 toc: true
 ---
 
-Hexo博客 报错 Cannot read property 'replace' of null
+<img width="800" height="800" src="http://ph04wnm2q.bkt.clouddn.com/bg/magazine-unlock-01-2.3.1003-_888F66AA592CE88202C711A7FB9371B2.jpg"/>
 
 <!--more-->
 
