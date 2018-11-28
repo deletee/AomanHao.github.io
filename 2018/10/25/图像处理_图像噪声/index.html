@@ -14,11 +14,11 @@
 <meta property="og:url" content="http://www.aomanhao.top/2018/10/25/图像处理_图像噪声/index.html">
 <meta property="og:site_name" content="AomanHao的个人博客">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://ph04wnm2q.bkt.clouddn.com/bg/magazine-unlock-01-2.3.962-_42ca98dfa4d640f38e57b13edcdb3f04.jpg">
-<meta property="og:updated_time" content="2018-10-28T13:59:52.535Z">
+<meta property="og:image" content="http://ph04wnm2q.bkt.clouddn.com/bg/magazine-unlock-01-2.3.997-_7427437DC9CBCC3EDFC866F3B05985F9.jpg">
+<meta property="og:updated_time" content="2018-10-29T13:00:43.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图像处理_图像噪声">
-<meta name="twitter:image" content="http://ph04wnm2q.bkt.clouddn.com/bg/magazine-unlock-01-2.3.962-_42ca98dfa4d640f38e57b13edcdb3f04.jpg">
+<meta name="twitter:image" content="http://ph04wnm2q.bkt.clouddn.com/bg/magazine-unlock-01-2.3.997-_7427437DC9CBCC3EDFC866F3B05985F9.jpg">
   
     <link rel="alternative" href="/atom.xml" title="AomanHao的个人博客" type="application/atom+xml">
   
@@ -212,7 +212,7 @@ var _hmt = _hmt || [];
       <div id="toc-article" class="toc-article">
           <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
           <strong class="toc-title">文章目录</strong>
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#噪声"><span class="toc-number">1.</span> <span class="toc-text">噪声</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#椒盐噪声"><span class="toc-number">1.1.</span> <span class="toc-text">椒盐噪声</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#噪声"><span class="toc-number">1.</span> <span class="toc-text">噪声</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#椒盐噪声"><span class="toc-number">1.1.</span> <span class="toc-text">椒盐噪声</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#高斯噪声"><span class="toc-number">1.2.</span> <span class="toc-text">高斯噪声</span></a></li></ol></li></ol>
      </div>
      <script type="text/javascript">
       function showToc(){
@@ -232,7 +232,7 @@ var _hmt = _hmt || [];
 <!-- 目录内容结束 -->
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img width="800" height="800" src="http://ph04wnm2q.bkt.clouddn.com/bg/magazine-unlock-01-2.3.962-_42ca98dfa4d640f38e57b13edcdb3f04.jpg"></p>
+        <p><img width="800" height="800" src="http://ph04wnm2q.bkt.clouddn.com/bg/magazine-unlock-01-2.3.997-_7427437DC9CBCC3EDFC866F3B05985F9.jpg"></p>
 <a id="more"></a>
 <h2 id="噪声"><a href="#噪声" class="headerlink" title="噪声"></a>噪声</h2><p>加性噪声一般指热噪声、散弹噪声等，它们与信号的关系是相加，不管有没有信号，噪声都存在。 </p>
 <blockquote>
@@ -243,12 +243,9 @@ var _hmt = _hmt || [];
 <p>一般通信中把加性随机性看成是系统的背景噪声； </p>
 <p>而乘性随机性看成系统的时变性（如衰落或者多普勒）或者非线性所造成的。</p>
 <h3 id="椒盐噪声"><a href="#椒盐噪声" class="headerlink" title="椒盐噪声"></a>椒盐噪声</h3><p>定义：椒盐噪声又称为双极脉冲噪声，这种噪声表现的特点是噪声像素的灰度值与邻域像素有着明显差异，而其余像素的灰度值保持不变，因此在图像中造成过亮或过暗的像素点。椒盐噪声严重影响图像的视觉质量，给图像的边缘检测、纹理或者特征点提取等造成困难。</p>
-<p>去椒盐噪声办法<br>1、中值滤波</p>
-<p>2、开关中值滤波器 <a href="Detail - preserving median based filters in image rocessing">参考文献</a></p>
-<p>3、自适应中值滤波器 <a href="Adaptive median filters : New algorithms and results">参考文献</a></p>
-<p>4、自适应中心加权中值滤波器<a href="adaptive impulse detection using center Weighted median filter">参考文献</a></p>
-<p>5、基于决策的算法ＤＢＡ <a href="A new fast and efficient decision Based algorithm for removal of high density impulse noises">参考文献</a></p>
-
+<p>去椒盐噪声办法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1、中值滤波</span><br><span class="line"></span><br><span class="line">2、开关中值滤波器 SMF（Switching Median Filter）[参考文献](Detail - preserving median based filters in image rocessing)</span><br><span class="line"></span><br><span class="line">3、自适应中值滤波器 AMF（Adaptive Median Filter）[参考文献](Adaptive median filters : New algorithms and results)</span><br><span class="line"></span><br><span class="line">4、自适应中心加权中值滤波器 ACWMF（Adaptive Center Weighted Median Filter） [参考文献](adaptive impulse detection using center Weighted median filter)</span><br><span class="line"></span><br><span class="line">5、基于决策的算法ＤＢＡ ( Decision Based Algorithm) [参考文献](A new fast and efficient decision Based algorithm for removal of high density impulse noises)</span><br></pre></td></tr></table></figure></p>
+<p>一般会选择先检测再滤波的思路，通过开关机制抑制噪声，上述方法对低噪声水平的椒盐噪声处理效果良好，噪声水平过高无法得到理想的结果。因为基于中值的滤波方法仅考虑图像局部区域像素点的顺序阶信息，没有充分利用像素点之间的相关性或相似性。噪声像素点的估计值可能与真实值有较大偏差，很难保持图像的细节信息。</p>
+<h3 id="高斯噪声"><a href="#高斯噪声" class="headerlink" title="高斯噪声"></a>高斯噪声</h3>
       
     <!--文章内版权说明开始-->
     
@@ -342,6 +339,15 @@ var _hmt = _hmt || [];
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/10/25/图像处理_DCT/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          图像处理_图像噪声
+        
+      </div>
+    </a>
   
   
     <a href="/2018/10/10/记事18_08_28/" id="article-nav-older" class="article-nav-link-wrap">
@@ -541,10 +547,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">VScode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
@@ -557,19 +559,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">笔面试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Matlab</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">GUI</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">笔面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">VScode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -585,11 +591,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
+                <a href="javascript:void(0)" class="js-tag color4">C++</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">C++</a>
+                <a href="javascript:void(0)" class="js-tag color5">图像增强</a>
               </li>
              
               <li class="article-tag-list-item">
